@@ -13,9 +13,8 @@
 						<tr>
 							<th>no.</th>
 							<th>Team Name</th>
-							<th>Link</th>
-							<th>Description</th>
-							<th>Actions</th>
+							<th>File</th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody class="table-border-bottom-0">
@@ -25,11 +24,11 @@
 							<td>
 								<strong>{{ $project->team_name }}</strong>
 							</td>
-							<td><a href="{{ $project->project_link }}">{{ $project->project_link }}</a></td>
+							<td><a href="{{ $project->project_file }}">{{ $project->project_file }}</a></td>
 							<td>{{ $project->project_desc }}</td>
 							<td>
-								<a href="{{ $project->project_link }}" class="btn btn-info hide-arrow">
-									<i class="bx bx-link"></i> Buka Link
+								<a href="{{ asset('/storage/' . $project->project_file) }}" target="_blank" class="btn btn-info hide-arrow">
+									<i class="bx bx-link"></i> Open File
 								</a>
 							</td>
 						</tr>

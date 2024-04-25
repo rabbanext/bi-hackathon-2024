@@ -41,7 +41,7 @@
         <div class="form-floating mb-3">
             <input type="password" class="form-control @error('password') is-invalid @enderror" name="password"
                 placeholder="password" required autofocus>
-            <label for="floatingPassword">password</label>
+            <label for="floatingPassword">Password</label>
             @error('password')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -60,17 +60,14 @@
             @enderror
         </div>
 
-        <button type="submit" class="w-100 btn btn-lg btn-primary mb-3">
+        <button type="submit" class="w-100 btn btn-lg btn-primary">
             {{ __('Register') }}
         </button>
 
     </form>
 
-    <p class="text-center">
-        <span>Already have an account?</span>
-        <a href="login">
-            <span>Log in</span>
-        </a>
-    </p>
 </div>
+<p class="text-center mt-4">
+    Already have an account? <a href="login" class="text-info">Log in</a>
+</p>
 @endsection

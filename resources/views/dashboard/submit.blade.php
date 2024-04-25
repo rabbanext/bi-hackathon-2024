@@ -209,16 +209,35 @@
                         <div class="col-12">
                             <hr class="my-3">
                             <h5>Proposal (PDF)</h5>
-                            <label for="project_file" class="drop-zone">
-                                <span class="drop-zone__prompt">Drag & Drop or click here to choose .pdf file</span>
-                                <input type="file" name="project_file" id="project_file" class="drop-zone__input" accept=".pdf" style="display: none;" required>
-                            </label>
-                            <div class="file-preview"></div>
+                            @if (Auth::user()->project_file != null)
+                                <div class="mb-3">
+                                    <p class="mb-0">Uploaded Proposal File: <a href="{{ asset('/storage/' . Auth::user()->project_file) }}" target="_blank">{{ Auth::user()->project_file }}</a></p>
+                                    <label>
+                                        <input type="radio" name="change_file" value="no" checked> Keep current file
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="change_file" value="yes"> Upload new file
+                                    </label>
+                                    <div id="new-file-upload" style="display: none;">
+                                        <label for="project_file" class="drop-zone">
+                                            <span class="drop-zone__prompt">Drag & Drop or click here to choose new .pdf file</span>
+                                            <input type="file" name="project_file" id="project_file" class="drop-zone__input" accept=".pdf" style="display: none;">
+                                        </label>
+                                        <div class="file-preview"></div>
+                                    </div>
+                                </div>
+                            @else
+                                <label for="project_file" class="drop-zone">
+                                    <span class="drop-zone__prompt">Drag & Drop or click here to choose .pdf file</span>
+                                    <input type="file" name="project_file" id="project_file" class="drop-zone__input" accept=".pdf" style="display: none;">
+                                </label>
+                                <div class="file-preview"></div>
+                            @endif
                         </div>
                     </div>
                     
                     <div class="text-center">
-                        @if (Auth::user()->project_desc == null)
+                        @if (Auth::user()->institution == null)
                             <button type="submit" class="btn btn-primary">Submit</button>
                         @else
                             <button type="submit" class="btn btn-primary">Update</button>
@@ -476,5 +495,22 @@
         const i = Math.floor(Math.log(bytes) / Math.log(k));
         return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
       }
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var changeFileRadios = document.querySelectorAll('input[name="change_file"]');
+        var newFileUpload = document.getElementById('new-file-upload');
+
+        changeFileRadios.forEach(function (radio) {
+            radio.addEventListener('change', function () {
+                if (this.value === 'yes') {
+                    newFileUpload.style.display = 'block';
+                } else {
+                    newFileUpload.style.display = 'none';
+                }
+            });
+        });
     });
 </script>

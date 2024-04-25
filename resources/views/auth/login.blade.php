@@ -21,7 +21,7 @@
         <div class="form-floating mb-3">
             <input type="password" class="form-control @error('password') is-invalid @enderror" name="password"
                 placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" required autofocus>
-            <label for="floatingPassword">password</label>
+            <label for="floatingPassword">Password</label>
             @error('password')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -43,21 +43,18 @@
 
                 </div>
                 @endif
-                <a href="{{ route('password.request') }}">
+                <a href="{{ route('password.request') }}" class="text-info">
                     Forgot Password?
                 </a>
             </div>
         </div>
-        <button class="w-100 btn btn-lg btn-primary mb-3" type="submit">
+        <button class="w-100 btn btn-lg btn-primary" type="submit">
             {{ __('Log in') }}
         </button>
     </form>
 
 </div>
-<p class="text-center">
-    <span>Are you new?</span>
-    <a href="register">
-        <span>Create an account</span>
-    </a>
+<p class="text-center mt-4">
+    Are you new? <a href="register" class="text-info">Create an account</a>
 </p>
 @endsection

@@ -56,7 +56,7 @@
 		<li class="menu-item {{ Request::is('projects') ? 'active' : '' }}">
 			<a href="/projects" class="menu-link">
 				<i class="menu-icon tf-icons bx bx-box"></i>
-				<div data-i18n="Basic">User's Project Link</div>
+				<div data-i18n="Basic">User's Project Files</div>
 			</a>
 		</li>
 		@elseif (Auth::user()->type == "super-admin")
@@ -68,19 +68,6 @@
 			<a href="/admins" class="menu-link">
 				<i class="menu-icon tf-icons bx bx-user"></i>
 				<div data-i18n="Basic">Admins</div>
-			</a>
-		</li>
-		<!-- Admin -->
-		<li class="menu-item {{ Request::is('users') ? 'active' : '' }}">
-			<a href="/users" class="menu-link">
-				<i class="menu-icon tf-icons bx bx-user"></i>
-				<div data-i18n="Basic">Users</div>
-			</a>
-		</li>
-		<li class="menu-item {{ Request::is('projects') ? 'active' : '' }}">
-			<a href="/projects" class="menu-link">
-				<i class="menu-icon tf-icons bx bx-box"></i>
-				<div data-i18n="Basic">User's Project Link</div>
 			</a>
 		</li>
 		@endif

@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth; // Add this line at the top
-use Illuminate\Support\Facades\Storage; // Add this line at the top
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardController extends Controller
 {
@@ -39,11 +39,6 @@ class DashboardController extends Controller
     }
 
     /* MENU */
-    //Peserta
-    // public function profile()
-    // {
-    //     return view('dashboard.profile');
-    // }
     // Show the submit form.
     public function submit(User $post)
     {
@@ -59,50 +54,24 @@ class DashboardController extends Controller
         return view('dashboard.submit', compact('post', 'members', 'count'));
     }
 
-
     // Submit project link.
     public function update(Request $request, User $post)
     {
         if ($request->hasFile('project_file')) {
             $file = $request->file('project_file');
             $originalFileName = $file->getClientOriginalName();
-
-            // Rename the file if it contains spaces
-            $fileName = str_replace(' ', '_', $originalFileName);
-
-            // Save the file name to the database
-            Auth::user()->update(['project_file' => $fileName]); // Assuming 'project_file' is the field in your database to store the file name
-            
-            // Move the uploaded file to the desired location with the new filename
-            $file->move(storage_path('app/project_files'), $fileName);
+            $teamName = str_replace(' ', '_', Auth::user()->team_name);
+            $dateTime = date('Ymd_His');
+            $fileName = $teamName . '_' . $dateTime . '.' . $file->getClientOriginalExtension();
+            $file->move(storage_path('app/public'), $fileName);
+            Auth::user()->project_file = $fileName;
         }
 
-        // Update other fields if needed
+        // Update other fields
         Auth::user()->update($request->except('project_file')); // Exclude 'project_file' from mass assignment
 
         return back()->with('success', 'Submitted!');
     }
-
-/////
-    // // Show the profile form.
-    // public function editprof(User $ngen)
-    // {
-    //     return view('dashboard.editprof',compact('ngen'));
-    // }
-    // // Edit profile link.
-    // public function edit(Request $request, User $ngen)
-    // {
-    //     $request->validate([
-    //         'fakultas' => 'required',
-    //         'jurusan' => 'required',
-    //     ]);
-    
-    //     $ngen->edit($request->all());
-    
-    //     return back()->with('success','Submitted!');
-    // }
-
-
 
     //Admin
     public function projects()

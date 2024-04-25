@@ -25,6 +25,9 @@ Auth::routes(['verify' => true]);
 All People Home Route
 --------------------------------------------*/
 Route::get('/home', [DashboardController::class, 'home'])->name('home');
+Route::get('/logout', function () {
+    return view('auth/login');
+});
 
 /*------------------------------------------
 All Normal Users Routes List
@@ -50,6 +53,4 @@ All Super Admin Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:super-admin'])->group(function () {
     Route::get('/admins', [DashboardController::class, 'admins'])->name('admins');
-    Route::get('/users', [DashboardController::class, 'users'])->name('users');
-    Route::get('/projects', [DashboardController::class, 'projects']);
 });

@@ -57,18 +57,18 @@
 
       <!-- Logo -->
       <div class="nav-logo">
-        <a href="../index.html" class="logo me-1 me-lg-3"><img src="../img/logo-bi.png" alt="" class="img-fluid"></a>
-        <a href="../index.html" class="logo me-lg-0"><img src="../img/logo.png" alt="" class="img-fluid"></a>
+        <a href="../" class="logo me-1 me-lg-3"><img src="../img/logo-bi.png" alt="" class="img-fluid"></a>
+        <a href="../" class="logo me-lg-0"><img src="../img/logo.png" alt="" class="img-fluid"></a>
       </div>
 
       <nav id="navbar" class="navbar order-last order-lg-0 ms-auto">
         <ul>
-          <li><a class="nav-link scrollto" href="../index.html#about">About</a></li>
-          <li><a class="nav-link scrollto" href="../index.html#problem-statements">Problem Statements</a></li>
-          <li><a class="nav-link scrollto" href="../index.html#timeline">Timeline</a></li>
-          <li><a class="nav-link scrollto" href="../index.html#prizes">Prizes</a></li>
-          <!-- <li><a class="nav-link scrollto" href="../index.html#">Registration</a></li> -->
-          <li><a class="nav-link scrollto" href="../index.html#faq">FAQ</a></li>
+          <li><a class="nav-link scrollto" href="../#about">About</a></li>
+          <li><a class="nav-link scrollto" href="../#problem-statements">Problem Statements</a></li>
+          <li><a class="nav-link scrollto" href="../#timeline">Timeline</a></li>
+          <li><a class="nav-link scrollto" href="../#prizes">Prizes</a></li>
+          <!-- <li><a class="nav-link scrollto" href="../#">Registration</a></li> -->
+          <li><a class="nav-link scrollto" href="../#faq">FAQ</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
