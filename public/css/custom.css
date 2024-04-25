@@ -1,0 +1,454 @@
+body {
+    color: #2e2e2e;
+    background-color: #f5f5f7;
+    background-image: url("/img/bg/2.webp");
+    background-attachment: fixed;
+    background-size: contain;
+    background-position: bottom;
+    font-family: "Google Sans", sans-serif;
+    line-height: 1.4;
+}
+@media screen and (min-width: 768px) {
+    body {
+        background-image: url("/img/bg/1.webp");
+        background-attachment: fixed;
+        background-size: cover;
+    }
+}
+@media screen and (max-width: 768px) {
+    body {
+        background-attachment: fixed;
+    }
+}
+
+h1,
+h2 {
+    font-weight: 700 !important;
+    letter-spacing: -0.005em;
+}
+.display-2 {
+    color: #f5f5f7;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    filter: drop-shadow(1px 1px 0 #d13636) drop-shadow(1px 1px 0 #f2ff00)
+        drop-shadow(1px 1px 0 #0c6bdf);
+}
+.display-2 span {
+    color: #000 !important;
+    font-size: 14px !important;
+    filter: drop-shadow(1px 1px 0 #fff) !important;
+}
+.container {
+    max-width: 1111px;
+}
+.top-container {
+    padding: 10px;
+    background-color: bisque;
+    /* line-height: 5px; */
+}
+.sticky-top {
+    position: sticky;
+    top: 12px;
+    padding: 5px;
+}
+.navbar {
+    margin: 5px;
+    margin-top: 0;
+    padding: 10px !important;
+    border-radius: 1.5em;
+    z-index: 1;
+}
+.navbar-toggler {
+    padding: 0;
+    border: 0;
+}
+.navbar li {
+    margin: auto;
+}
+a.nav-link {
+    color: #2e2e2e !important;
+    font-weight: 500;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px !important;
+    border: 2px solid #2e2e2e;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 10px;
+}
+#countdown {
+    padding-right: 10px;
+    margin: 0 !important;
+}
+.countdown h4 {
+    margin-bottom: -7px;
+}
+.btn-nav-register {
+    color: #2e2e2e;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 5px 30px;
+    background-color: #fabf2c;
+    border-left: 2px solid #2e2e2e;
+    /* border-style: none none none none; */
+    border-radius: 0 3px 3px 0;
+}
+.btn-nav-register:hover {
+    /* font-weight: 700; */
+    color: #2e2e2e;
+    background-color: #dd9e00;
+}
+@media screen and (min-width: 768px) {
+    .countdown-container .btn {
+        border-radius: 5px;
+        padding: 8px 25px;
+        margin: 0 -5px 0 10px !important;
+    }
+}
+#hero {
+    height: 100vh;
+    margin-top: -70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* bg card effect */
+.bg-blue {
+    padding: 30px 0;
+    background-color: #ffffff;
+    background-clip: border-box;
+    background-color: rgb(83, 172, 255);
+}
+.bg-main {
+    background-color: #323d5a;
+}
+.bg-second {
+    background-color: #fabf2c;
+}
+.bg-third {
+    background-image: url("https://member.digitalscommunity.co.id/assets/digicom/images/bg-themes/1.png");
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 30px 0;
+}
+.bg-dark-blue {
+    padding: 30px 0;
+    background-color: #ffffff;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+/* Drop Shadow */
+.flat-card {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 0.7em;
+    border: 2px solid #2e2e2e;
+}
+.ds-black {
+    filter: drop-shadow(3px 3px 0 #2e2e2e);
+}
+.ds-black:hover {
+    filter: none;
+}
+.ds-primary {
+    filter: drop-shadow(3px 3px 0 #fabf2c);
+}
+.btn-lang-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.btn-lang {
+    background-color: #ffffff;
+    color: #000;
+    border: 2px solid #2e2e2e;
+    filter: drop-shadow(1px 1px 0 #fabf2c);
+    padding: 5px 10px;
+    margin: 3px 1px;
+    border-radius: 5px;
+}
+.btn-lang:hover {
+    background-color: #ffffff;
+    border: 2px solid #2e2e2e;
+    filter: none;
+    padding: 5px 10px;
+    margin: 3px 1px;
+}
+.btn-lang img {
+    width: 25px;
+}
+
+/* Prize */
+.prize-card {
+    background-image: url("/img/bg/3.webp");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: 120%;
+}
+.prize-tag {
+    font-weight: 900;
+    font-size: 30px;
+    font-weight: 700;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: url("https://thumbs.gfycat.com/ChubbyInsignificantHalcyon-max-1mb.gif");
+    background-position: bottom;
+    background-size: cover;
+}
+@media (min-width: 900px) {
+    .prize-tag {
+        font-size: 45px;
+    }
+}
+@media (min-width: 1200px) {
+    .prize-tag {
+        font-size: 85px;
+    }
+}
+/* Timeline */
+/*==================================
+    TIMELINE
+==================================*/
+/*-- GENERAL STYLES
+------------------------------*/
+.timeline {
+    line-height: 1.4em;
+    list-style: none;
+    margin: auto;
+    padding: 0;
+    width: 100%;
+}
+@media screen and (min-width: 768px) {
+    .timeline {
+        width: 80%;
+    }
+}
+.timeline h1,
+.timeline h2,
+.timeline h3,
+.timeline h4,
+.timeline h5,
+.timeline h6 {
+    line-height: inherit;
+}
+
+/*----- TIMELINE ITEM -----*/
+.timeline-item {
+    padding-left: 40px;
+    position: relative;
+}
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+/*----- TIMELINE INFO -----*/
+.timeline-info {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 0 0 0.5em 0;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.timeline-info .container {
+    background-color: #fabf2c;
+    border: 2px solid #2e2e2e;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/*----- TIMELINE MARKER -----*/
+.timeline-marker {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15px;
+}
+.timeline-marker:before {
+    background: #fabf2c;
+    border: 3px solid transparent;
+    border-radius: 100%;
+    content: "";
+    display: block;
+    height: 15px;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 15px;
+    transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+.timeline-marker:after {
+    content: "";
+    width: 3px;
+    background: #2e2e2e;
+    display: block;
+    position: absolute;
+    top: 24px;
+    bottom: 0;
+    left: 6px;
+}
+.timeline-item:last-child .timeline-marker:after {
+    content: none;
+}
+
+.timeline-item:not(.period):hover .timeline-marker:before {
+    background: transparent;
+    border: 3px solid #dd9e00;
+}
+
+/*----- TIMELINE CONTENT -----*/
+.timeline-content {
+    padding-bottom: 40px;
+}
+.timeline-content p:last-child {
+    margin-bottom: 0;
+}
+.timeline-content .container {
+    background-color: #ffffff;
+    border: 2px solid #2e2e2e;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/*----- TIMELINE PERIOD -----*/
+.period {
+    padding: 0;
+}
+.period .timeline-info {
+    display: none;
+}
+.period .timeline-marker:before {
+    background: transparent;
+    content: "";
+    width: 15px;
+    height: auto;
+    border: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 30px;
+    position: absolute;
+    border-top: 3px solid #2e2e2e;
+    border-bottom: 3px solid #2e2e2e;
+}
+.period .timeline-marker:after {
+    content: "";
+    height: 32px;
+    top: auto;
+}
+.period .timeline-content {
+    padding: 40px 0 70px;
+}
+.period .timeline-title {
+    margin: 0;
+}
+/*----------------------------------------------
+    MOD: TIMELINE SPLIT
+----------------------------------------------*/
+@media (min-width: 768px) {
+    .timeline-split .timeline,
+    .timeline-centered .timeline {
+        display: table;
+    }
+    .timeline-split .timeline-item,
+    .timeline-centered .timeline-item {
+        display: table-row;
+        padding: 0;
+    }
+    .timeline-split .timeline-info,
+    .timeline-centered .timeline-info,
+    .timeline-split .timeline-marker,
+    .timeline-centered .timeline-marker,
+    .timeline-split .timeline-content,
+    .timeline-centered .timeline-content,
+    .timeline-split .period .timeline-info,
+    .timeline-centered .period .timeline-info {
+        display: table-cell;
+        vertical-align: top;
+    }
+    .timeline-split .timeline-marker,
+    .timeline-centered .timeline-marker {
+        position: relative;
+    }
+    .timeline-split .timeline-content,
+    .timeline-centered .timeline-content {
+        padding-left: 30px;
+    }
+    .timeline-split .timeline-info,
+    .timeline-centered .timeline-info {
+        padding-right: 30px;
+    }
+    .timeline-split .period .timeline-title,
+    .timeline-centered .period .timeline-title {
+        position: relative;
+        left: -45px;
+    }
+}
+
+/* Accordion */
+.accordion button {
+    font-weight: 700;
+}
+.accordion-body {
+    border-top: 2px solid #2e2e2e;
+    /* color: #f5f5f7; */
+}
+.accordion-item {
+    border: 2px solid #2e2e2e;
+}
+.accordion-item:first-of-type {
+    border-top-left-radius: 0.7em !important;
+    border-top-right-radius: 0.7em !important;
+}
+.accordion-item:last-of-type {
+    border-bottom-left-radius: 0.7em !important;
+    border-bottom-right-radius: 0.7em !important;
+}
+.accordion-item:first-of-type .accordion-button:not(.collapsed) {
+    border-top-left-radius: 0.6em !important;
+    border-top-right-radius: 0.6em !important;
+    color: #2e2e2e;
+    background-color: #fabf2c;
+}
+
+.accordion-item .accordion-button:not(.collapsed) {
+    color: #2e2e2e;
+    background-color: #fabf2c;
+}
+.accordion-button.collapsed {
+    background-color: transparent;
+}
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232e2e2e'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+section::before {
+    display: block;
+    content: " ";
+    margin-top: -120px;
+    height: 120px;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Footer */
+/*==================================
+    Footer
+==================================*/
+.footer {
+    background-color: #323d5a;
+    padding: 20px;
+}
+.footer p {
+    margin: 0;
+    color: #ffffff;
+}

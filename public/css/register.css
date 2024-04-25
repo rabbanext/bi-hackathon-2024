@@ -1,0 +1,53 @@
+.drop-zone {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.drop-zone__prompt {
+  font-size: 16px;
+}
+
+.drop-zone__input {
+  display: none;
+}
+
+.file-preview {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.file-preview__item {
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  position: relative;
+}
+
+.file-preview__item img {
+  max-width: 100px;
+  max-height: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.file-preview__item .remove-file {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 0px 8px;
+  cursor: pointer;
+  color: #000;
+}
+
+.form-floating > label {
+  color: #727272;
+}
