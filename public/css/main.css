@@ -787,12 +787,13 @@ body {
   # Prizes
   --------------------------------------------------------------*/
   #prizes{
-    min-height: 100vh;
+    min-height: 80vh;
     color: #FFFFFF;
   }
   
   .prizes .container {
     margin: auto !important;
+    top: 50%;
   }
   
   .prizes .prize-content {
