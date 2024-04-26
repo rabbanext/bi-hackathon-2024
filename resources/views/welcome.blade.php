@@ -2,31 +2,41 @@
 <html lang="en">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EPG8DF2B75"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EPG8DF2B75');
+  </script>
+
   <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta property="og:locale" content="id_ID" />
-    <meta http-equiv="Cache-control" content="public">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta property="og:locale" content="id_ID" />
+  <meta http-equiv="Cache-control" content="public">
 
-    <meta name="theme-color" content="#2A73AC">
+  <meta name="theme-color" content="#2A73AC">
 
-    <meta name="author" content="rabbanext" />
-    <meta name="description" content="Hackathon Bank Indonesia 2024" />
+  <meta name="author" content="rabbanext" />
+  <meta name="description" content="Hackathon Bank Indonesia 2024" />
 
-    <meta property="og:site_name" content="Hackathon Bank Indonesia 2024" />
-    <meta property="og:title" content="Hackathon Bank Indonesia 2024" />
-    <meta property="og:description" content="Artificial Intelligence & Machine Learning for Digital Economy and Finance in Indonesia" />
-    <meta property="og:url" content="https://hackathon.fekdi.co.id" />
-    <meta property="og:image" content="/img/hero/hero-hackathon.png" />
-    <meta property="og:image:secure_url" content="/img/hero/hero-hackathon.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="660" />
-    <meta property="og:image:height" content="176" />
-    <meta property="og:image:alt" content="Rabbanext" />
-    <title>Hackathon Bank Indonesia 2024</title>
+  <meta property="og:site_name" content="Hackathon Bank Indonesia 2024" />
+  <meta property="og:title" content="Hackathon Bank Indonesia 2024" />
+  <meta property="og:description" content="Artificial Intelligence & Machine Learning for Digital Economy and Finance in Indonesia" />
+  <meta property="og:url" content="https://hackathon.fekdi.co.id" />
+  <meta property="og:image" content="/img/hero/hero-hackathon.png" />
+  <meta property="og:image:secure_url" content="/img/hero/hero-hackathon.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="660" />
+  <meta property="og:image:height" content="176" />
+  <meta property="og:image:alt" content="Rabbanext" />
+  <title>Hackathon Bank Indonesia 2024</title>
 
-    <!-- Favicons -->
-    <link href="/img/favicon.png" rel="icon">
-    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Favicons -->
+  <link href="/img/favicon.png" rel="icon">
+  <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link
@@ -441,9 +451,9 @@
     <!-- End Timeline Section -->
 
     <!-- ======= Prizes Section ======= -->
-    <section id="prizes" class="prizes">
+    <section id="prizes" class="prizes d-flex flex-column align-items-center justify-content-center">
       <div class="container" data-aos="zoom-in">
-        <div class="d-flex flex-column align-items-center justify-content-center" data-aos="fade-left" data-aos-delay="100">
+        <div class="" data-aos="fade-left" data-aos-delay="100">
           <div class="section-title text-center pb-1">
             <p>HADIAH</p>
           </div>
