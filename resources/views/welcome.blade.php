@@ -53,7 +53,7 @@
   <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/main_style.css" rel="stylesheet">
 
 </head>
 
@@ -483,6 +483,9 @@
               </div>
             </div>
           </div>
+          <div class="prize-content mx-0 mx-lg-5 mb-3">
+            <h5 class="fst-italic">Including other attractive prizes for favourite finalist</h5>
+          </div>
           <div class="prize-content mx-0 mx-lg-5">
             <h5 class="fst-italic">Kesempatan untuk mendapatkan peluang dalam business matching, innovator scouting, dan in-depth piloting pada inisiatif digital Bank Indonesia</h5>
           </div>
@@ -490,6 +493,30 @@
 
       </div>
     </section><!-- End Prizes Section -->
+
+    <!-- ======= Media Partners Section ======= -->
+    <section id="media-partners" class="media-partners">
+      <div class="container" data-aos="zoom-in">
+        <div class="section-title text-center">
+          <p>Media Partners</p>
+        </div>
+        <div class="section-content" data-aos="fade-left" data-aos-delay="100">
+          <div class="media-partners-wrapper d-flex justify-content-center flex-wrap"><!-- Updated: Removed row and column classes -->
+            <div class="media-partner-img-container">
+              <img src="/img/media-partners/korika.png" class="img-media-partner mb-3" alt="">
+            </div>
+            <div class="media-partner-img-container">
+              <img src="/img/media-partners/dsi.png" class="img-media-partner mb-3" alt="">
+            </div>
+            <div class="media-partner-img-container">
+              <img src="/img/media-partners/gdsc.png" class="img-media-partner mb-3" alt="">
+            </div>
+          </div>
+        </div><!-- End .content-->
+      </div>
+    </section><!-- End Media Partners Section -->
+
+
 
     <!-- ======= Frequently Asked Questions Section ======= -->
     <section id="faq" class="faq section-bg">
