@@ -54,7 +54,7 @@
   <link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="../css/main.css" rel="stylesheet">
+  <link href="../css/main_style.css" rel="stylesheet">
   <link href="../css/register.css" rel="stylesheet">
 
 </head>

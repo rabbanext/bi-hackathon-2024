@@ -1,186 +1,253 @@
 <!DOCTYPE html>
-
-<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/"
-	data-template="vertical-menu-template-free">
+<html lang="en">
 
 <head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EPG8DF2B75"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EPG8DF2B75"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-		gtag('config', 'G-EPG8DF2B75');
-	</script>
-	
-	<meta charset="utf-8" />
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    gtag('config', 'G-EPG8DF2B75');
+  </script>
+  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta property="og:locale" content="id_ID" />
+  <meta http-equiv="Cache-control" content="public">
 
-	<title>Dashboard | Bank Indonesia Hackathon 2024</title>
+  <meta name="theme-color" content="#2A73AC">
 
-	<!-- CSRF Token -->
-	<meta name="csrf-token" content="{{ csrf_token() }}">
+  <meta name="author" content="rabbanext" />
+  <meta name="description" content="Hackathon Bank Indonesia 2024" />
 
-	<!-- Favicon -->
-	<link rel="icon" type="image/x-icon" href="/img/favicon/favicon.png" />
+  <meta property="og:site_name" content="Register | Hackathon Bank Indonesia 2024" />
+  <meta property="og:title" content="Register | Hackathon Bank Indonesia 2024" />
+  <meta property="og:description"
+    content="Artificial Intelligence & Machine Learning for Digital Economy and Finance in Indonesia" />
+  <meta property="og:url" content="https://hackathon.fekdi.co.id" />
+  <meta property="og:image" content="../img/hero/hero-hackathon.png" />
+  <meta property="og:image:secure_url" content="../img/hero/hero-hackathon.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="660" />
+  <meta property="og:image:height" content="176" />
+  <meta property="og:image:alt" content="Rabbanext" />
+  <title>Register | Hackathon Bank Indonesia 2024</title>
 
-	<!-- Fonts -->
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-		rel="stylesheet" />
+  <!-- Favicons -->
+  <link href="../img/favicon.png" rel="icon">
+  <link href="../img/apple-touch-icon.png" rel="apple-touch-icon">
 
-	<!-- Icons. Uncomment required icon fonts -->
-	<link rel="stylesheet" href="/fonts/boxicons.css" />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Exo:300,300i,400,400i,600,600i,700,700i|family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
-	<!-- Core CSS -->
-	<link rel="stylesheet" href="/css/core.css" class="template-customizer-core-css" />
-	<link rel="stylesheet" href="/css/theme-default.css" class="template-customizer-theme-css" />
-	<link rel="stylesheet" href="/css/demo.css" />
-	<link rel="stylesheet" href="/css/register.css" />
+  <!-- Vendor CSS Files -->
+  <link href="/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-	<!-- Page CSS -->
+  <!-- Template Main CSS File -->
+  <link href="/css/main_style.css" rel="stylesheet">
+  <link href="/css/register.css" rel="stylesheet">
 
-	<!-- Helpers -->
-	<script src="/js/helpers.js"></script>
-
-	<!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-	<!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-	<script src="js/config.js"></script>
 </head>
 
 <body>
-	<!-- Layout wrapper -->
-	<div class="layout-wrapper layout-content-navbar">
-		<div class="layout-container">
 
-			<!-- Sidebar -->
-			@include('dashboard.layouts.partials.sidebar');
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-lg-between">
 
-			<div class="layout-page">
+      <!-- Logo -->
+      <div class="nav-logo">
+        <a href="../" class="logo me-1 me-lg-3"><img src="../img/logo-bi.png" alt="" class="img-fluid"></a>
+        <a href="../" class="logo me-lg-0"><img src="../img/logo.png" alt="" class="img-fluid"></a>
+      </div>
 
-				<!-- Navbar -->
-				@include('dashboard.layouts.partials.navbar')
+      <nav id="navbar" class="navbar order-last order-lg-0 ms-auto">
+        <ul>
+          <li><a class="nav-link scrollto" href="../#about">About</a></li>
+          <li><a class="nav-link scrollto" href="../#problem-statements">Problem Statements</a></li>
+          <li><a class="nav-link scrollto" href="../#timeline">Timeline</a></li>
+          <li><a class="nav-link scrollto" href="../#prizes">Prizes</a></li>
+          <!-- <li><a class="nav-link scrollto" href="../#">Registration</a></li> -->
+          <li><a class="nav-link scrollto" href="../#faq">FAQ</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
 
-				<!-- Content wrapper -->
-				@yield('content')
-				<!-- Content wrapper -->
+      @auth
+        <a class="nav-link dropdown-toggle hide-arrow ms-5" href="javascript:void(0);" data-bs-toggle="dropdown">
+            Welcome, {{ Auth::user()->name }}
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          @if (Auth::user()->type == "user")
+          <li>
+              <a class="dropdown-item" href="/profile">
+                  <i class="bx bx-user me-2"></i>
+                  <span class="align-middle">My Profile</span>
+              </a>
+          </li>
+          <li>
+              <a class="dropdown-item" href="/submit">
+                  <i class="bx bx-upload me-2"></i>
+                  <span class="align-middle">Submit</span>
+              </a>
+          </li>
+          @elseif (Auth::user()->type == "admin")
+          <li>
+              <a class="dropdown-item" href="/users">
+                  <i class="bx bx-upload me-2"></i>
+                  <span class="align-middle">Users</span>
+              </a>
+          </li>
+          <li>
+              <a class="dropdown-item" href="/projects">
+                  <i class="bx bx-upload me-2"></i>
+                  <span class="align-middle">Projects</span>
+              </a>
+          </li>
+          @endif
+          <li>
+              <a class="dropdown-item" href="{{ route('logout') }}"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  <i class="bx bx-power-off me-2 text-danger"></i>
+                  <span class="align-middle">{{ __('Logout') }}</span>
+              </a>
 
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+              </form>
+          </li>
+        </ul>
+      @else
+        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Available from 29 April 2024">
+            <button class="btn btn-primary btn-header-primary ms-4" type="button" disabled>Register</button>
+        </span>
+      @endauth
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Register Section ======= -->
+    <section id="register" class="register">
+      	<div class="container" data-aos="zoom-in">
+		  <div class="layout-container">
+				<!-- Sidebar -->
+
+
+				<!-- <div class="layout-page"> -->
+
+					<!-- Navbar -->
+
+
+
+		@if (Auth::user()->otp_verified_at === null && Auth::user()->type === "user")
+        <div class="section-title pb-2 my-5">
+          <h2>Verification</h2>
+          <p>Verify WhatsApp Number</p>
+        </div>
+        <div class="section-content mb-3">
+            <div class="d-flex align-items-end row">
+                <div class="col-sm-8">
+                    <div class="card-body">
+                        <p class="mb-4">
+                            Please Verify Your WhatsApp Number
+                        </p>
+                        <a href="/verify-otp" class="btn btn-sm btn-primary">Verify Your WhatsApp Number</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @else
+					<!-- Content wrapper -->
+					@yield('content')
+					<!-- Content wrapper -->
+@endif
+				<!-- </div> -->
 			</div>
-		</div>
+      	</div>
+    </section>
+    <!-- End Register Section -->
 
-		<!-- Overlay -->
-		<div class="layout-overlay layout-menu-toggle"></div>
-	</div>
-	<!-- / Layout wrapper -->
+  </main><!-- End #main -->
 
-	<script>
-		function displayCalendar(month, year){
-        
-			var monthNow = new Date().getMonth();
-			var yearNow = new Date().getFullYear();;
-			var nextMonth = month+1;
-			var prevMonth = month-1;
-			var day = 0;
-			
-			if((month == monthNow)&&(year == yearNow)){
-				var day = new Date().getDate();
-			}
-			
-			var htmlContent ="";
-			var FebNumberOfDays ="";
-			var counter = 1;
-			var Nameday = 1;
-			
-			if (month == 1){
-				if ( (year%100!=0) && (year%4==0) || (year%400==0)){
-					FebNumberOfDays = 29;
-					}else{
-					FebNumberOfDays = 28;
-				}
-			}
-			
-			var monthNames = ["Januari","Febuari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November", "Desember"];
-			var monthNum = ["1","2","3","4","5","6","7","8","9","10","11", "12"];
-			var dayNames = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
-			var dayPerMonth = ["31", ""+FebNumberOfDays+"","31","30","31","30","31","31","30","31","30","31"]
-			var nextDate = new Date(nextMonth +' 1 ,'+year);
-			var weekdays = nextDate.getDay();
-			var weekdays2 = weekdays
-			var numOfDays = dayPerMonth[month];
-											
-			while (weekdays>0){
-			htmlContent += "<li style='padding:1 0 0;'></li>";
-				weekdays--;
-			}
-			
-			while (counter <= numOfDays){
-				
-				if (weekdays2 > 6){
-					weekdays2 = 0;
-					htmlContent += "</ul><ul>";
-				}
-				if (counter == day){
-					htmlContent +="<li class='dayNow'>"+counter+"</li>";
-					Nameday = counter;
-					}else{
-					htmlContent +="<li>"+counter+"</li>";
-				}
-				weekdays2++;
-				counter++;
-			}
-			
-			document.getElementById("monthNow").innerHTML= monthNames[month]+" "+ year ;
-			document.getElementById("daysNum").innerHTML= "<ul id="+monthNum[month]+" class="+year+">"+htmlContent+"</ul>";
-		}
-    
-    
-		(function() {
-			var dateNow = new Date();
-			var month = dateNow.getMonth();
-			var year = dateNow.getFullYear();
-			displayCalendar(month,year)
-		})(window);
-		
-		
-		document.getElementById("nextMonth").onclick = function(){
-			var idmonth = document.getElementById("daysNum");
-			var month = idmonth.getElementsByTagName("ul")[0].id;
-			var nextYear = idmonth.getElementsByTagName("ul")[0].className;
-			var nextMonth = Number(month);
-			if(nextMonth == 12){
-				nextMonth = 0;
-				nextYear = Number(nextYear) + 1
-			}
-			displayCalendar(nextMonth,nextYear);
-		}
-		
-		
-		document.getElementById("prevMonth").onclick = function(){
-			var idmonth = document.getElementById("daysNum");
-			var month = idmonth.getElementsByTagName("ul")[0].id;
-			var prevYear = idmonth.getElementsByTagName("ul")[0].className;
-			var prevMonth = Number(month) - 2;
-			if(prevMonth < 0 ){
-				prevMonth = 11;    
-				prevYear = Number(prevYear) - 1
-			}
-			displayCalendar(prevMonth,prevYear);
-		}
-	</script>
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+  
+          <div class="col-lg-4 col-md-6">
+            <img src="../img/hero/logo-bi.png" width="150" class="img-fluid mb-3" alt="">
+            <p>
+              <strong>Address:</strong>
+              Jalan M.H. Thamrin No. 2, <br>
+              Jakarta Pusat, DKI Jakarta 10350
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <h4>Contact</h4>
+            <p>
+              <strong>Phone:</strong> +62 81 131 131 131<br>
+              <strong>Email:</strong> hackathonfekdi@bi.go.id
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <h4>Social Media</h4>
+            <div class="social-links">
+              <a href="https://www.instagram.com/bank_indonesia/"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.instagram.com/fekdi_indonesia/"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.youtube.com/@BankIndonesiaChannel/"><i class="bx bxl-youtube"></i></a>
+              <a href="https://www.facebook.com/BankIndonesiaOfficial/"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.tiktok.com/@bank_indonesia/"><i class="bx bxl-tiktok"></i></a>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div id="particles-js" class="d-none"></div>
+        <div class="container">
+          <div class="copyright">
+            &copy; Copyright 2024 <strong><span>Bank Indonesia</span></strong>
+          </div>
+          <div class="credits">
+            All Rights Reserved
+          </div>
+        </div>
+      </div>
+    </footer><!-- End Footer -->
 
-	<!-- Core JS -->
-	<script src="/js/bootstrap.js"></script>
-	<!-- Crisp -->
-	<script type="text/javascript">
-		window.$crisp=[];window.CRISP_WEBSITE_ID="-JzqEmX56venQuQw4YV8";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
-	</script>
+  <div id="preloader">
+    <!-- <img src="https://cdn.dribbble.com/users/507150/screenshots/5380757/black_sphere_processing.gif" alt="Loading..." /> -->
+    <img
+      src="https://cdn.dribbble.com/users/126066/screenshots/6605444/__-organic-artificial-intelligence-design-by-gleb-kuznetsov_-for-milkinside7_1-__.gif"
+      alt="Loading..." />
+    <h5>Loading</h5>
+  </div>
 
-	<!-- Place this tag in your head or just before your close body tag. -->
-	<script async defer src="https://buttons.github.io/buttons.js"></script>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../vendor/aos/aos.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../js/main.js"></script>
+
 </body>
 
 </html>

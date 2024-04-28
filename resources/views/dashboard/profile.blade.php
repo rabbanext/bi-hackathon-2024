@@ -5,8 +5,11 @@
 	<!-- Content -->
 
 	<div class="container-xxl flex-grow-1 container-p-y">
-		<div class="card mb-4">
-			<h5 class="card-header">Profile Details</h5>
+		<div class="section-title pb-2 my-5">
+          <h2>Your Profile</h2>
+          <p>Your Profile</p>
+        </div>
+		<div class="section-content mb-4">
 			<!-- Account -->
 			<div class="card-body">
 				@if ($message = Session::get('success'))
@@ -19,35 +22,45 @@
 					@method('PUT')
 
 					<div class="row">
-						<div class="mb-3 col-md-12">
-							<label for="name" class="form-label">Name</label>
-							<input class="form-control" type="text" id="name" name="name"
-								value="{{ Auth::user()->name }}" placeholder="John Doel" autofocus required />
+						<div class="col-12">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" name="name" value="{{ Auth::user()->name }}" placeholder="Name" aria-describedby="floatingInputLink" required />
+                                <label for="name">Name</label>
+                            </div>
+                        </div>
+						<div class="mb-3 col-md-6">
+							<div class="form-floating mb-3">
+								<input class="form-control @error('email') is-invalid @enderror" type="email" id="email" name="email"
+									value="{{ Auth::user()->email }}" placeholder="john.doel@example.com" autocomplete="email" required autofocus>
+								<label for="floatingEmail">Email</label>
+								@error('email')
+								<span class="invalid-feedback" role="alert">
+									<strong>{{ $message }}</strong>
+								</span>
+								@enderror
+							</div>
 						</div>
 						<div class="mb-3 col-md-6">
-							<label for="email" class="form-label">E-mail</label>
-							<input class="form-control" type="text" id="email" name="email"
-								value="{{ Auth::user()->email }}" placeholder="john.doel@example.com" required
-								readonly />
-						</div>
-						<div class="mb-3 col-md-6">
-							<label class="form-label" for="nowa">Nomor WhatsApp</label>
-							<div class="input-group input-group-merge">
-								<span class="input-group-text">ID (+62)</span>
-								<input type="text" id="nowa" name="nowa" class="form-control"
-									value="{{ Auth::user()->nowa }}" placeholder="812 6404 6414" required />
+							<div class="form-floating mb-3">
+								<input class="form-control @error('nowa') is-invalid @enderror" type="text" id="nowa" name="nowa"
+									value="{{ Auth::user()->nowa }}" placeholder="john.doel@example.com" autocomplete="nowa" required readonly>
+								<label for="floatingnowa">WhatsApp Number</label>
+								@error('nowa')
+								<span class="invalid-feedback" role="alert">
+									<strong>{{ $message }}</strong>
+								</span>
+								@enderror
 							</div>
 						</div>
 					</div>
 					<div class="mt-2">
 						<button type="submit" class="btn btn-primary me-2">Save changes</button>
-						<button type="reset" class="btn btn-outline-secondary">Reset</button>
 					</div>
 				</form>
 			</div>
 			<!-- /Account -->
 		</div>
-		<div class="card">
+		<!-- <div class="card">
 			<h5 class="card-header">Delete Account</h5>
 			<div class="card-body">
 				<div class="mb-3 col-12 mb-0">
@@ -66,7 +79,7 @@
 					<button type="submit" class="btn btn-danger deactivate-account">Deactivate Account</button>
 				</form>
 			</div>
-		</div>
+		</div> -->
 	</div>
 	<!-- / Content -->
 

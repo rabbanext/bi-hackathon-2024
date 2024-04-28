@@ -3,17 +3,19 @@
 @section('content')
 <div class="content-wrapper">
 	<!-- Content -->
-
 	<div class="container-xxl flex-grow-1 container-p-y">
-		<div class="card">
-			<h5 class="card-header">Projects</h5>
+		<div class="section-title pb-2 my-5">
+          <h2>Projects</h2>
+          <p>Projects</p>
+        </div>
+        <div class="section-content mb-3">
 			<div class="table-responsive text-nowrap">
 				<table class="table table-hover">
 					<thead>
 						<tr>
 							<th>no.</th>
 							<th>Team Name</th>
-							<th>File</th>
+							<th>File Name</th>
 							<th></th>
 						</tr>
 					</thead>
@@ -25,7 +27,6 @@
 								<strong>{{ $project->team_name }}</strong>
 							</td>
 							<td><a href="{{ $project->project_file }}">{{ $project->project_file }}</a></td>
-							<td>{{ $project->project_desc }}</td>
 							<td>
 								<a href="{{ asset('/storage/' . $project->project_file) }}" target="_blank" class="btn btn-info hide-arrow">
 									<i class="bx bx-link"></i> Open File

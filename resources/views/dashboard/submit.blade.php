@@ -4,24 +4,11 @@
 <div class="content-wrapper">
     <!-- Content -->
     <div class="container-xxl flex-grow-1 container-p-y">
-        @if (Auth::user()->nowa == null && Auth::user()->type == "user")
-        <div class="card mb-3">
-            <div class="d-flex align-items-end row">
-                <div class="col-sm-8">
-                    <div class="card-body">
-                        <h5 class="card-title text-primary">Complete Your Profile</h5>
-                        <p class="mb-4">
-                            Please Complete Your Profile Before Submit
-                        </p>
-
-                        <a href="/profile" class="btn btn-sm btn-outline-primary">Edit Profile</a>
-                    </div>
-                </div>
-            </div>
+        <div class="section-title pb-2 my-5">
+          <h2>Submission</h2>
+          <p>Submit Your Project</p>
         </div>
-        @else
-        <div class="card mb-4">
-            <h4 class="card-header">Submit Your Project</h4>
+        <div class="section-content mb-4">
             <div class="card-body">
                 @if ($message = Session::get('success'))
                 <div class="alert alert-success">
@@ -246,7 +233,6 @@
                 </form>
             </div>
         </div>
-        @endif
     </div>
     <!-- / Content -->
 
@@ -386,29 +372,31 @@
                 var linksContainer = document.getElementById('links');
                 var newLinkDiv = document.createElement('div');
                 newLinkDiv.innerHTML = `
-                <div class="row">
-                    <div class="col-12 col-lg-6">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="floatingInput" name="project_link[]"
-                                value="" placeholder="https://"
-                                aria-describedby="floatingInputLink" required />
-                            <label for="floatingInput">Link (Github/Website/Drive/Other Link)</label>
-                            <div id="floatingInputLink" class="form-text">
-                                https://github.com/username/repository
+                <div class="mb-3 section-content p-2">
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="floatingInput" name="project_link[]"
+                                    value="" placeholder="https://"
+                                    aria-describedby="floatingInputLink" required />
+                                <label for="floatingInput">Link (Github/Website/Drive/Other Link)</label>
+                                <div id="floatingInputLink" class="form-text">
+                                    https://github.com/username/repository
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="floatingInput" name="project_desc[]"
+                                    value="" placeholder="This project is about.."
+                                    aria-describedby="floatingInputLink" required />
+                                <label for="floatingInput">Description</label>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-6">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="floatingInput" name="project_desc[]"
-                                value="" placeholder="This project is about.."
-                                aria-describedby="floatingInputLink" required />
-                            <label for="floatingInput">Description</label>
-                        </div>
+                    <div class="col-md-12 text-center mb-3">
+                        <button type="button" class="btn btn-danger remove-link-btn">Remove Item</button>
                     </div>
-                </div>
-                <div class="col-md-12 text-center mb-3">
-                    <button type="button" class="btn btn-danger remove-link-btn">Remove Item</button>
                 </div>
                 `;
                 linksContainer.appendChild(newLinkDiv);
