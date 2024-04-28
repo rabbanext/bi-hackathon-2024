@@ -26,7 +26,7 @@
 							<td>
 								<strong>{{ $project->team_name }}</strong>
 							</td>
-							<td><a href="{{ $project->project_file }}">{{ $project->project_file }}</a></td>
+							<td>{{ $project->project_file }}</td>
 							<td>
 								<a href="{{ asset('/storage/' . $project->project_file) }}" target="_blank" class="btn btn-info hide-arrow">
 									<i class="bx bx-link"></i> Open File

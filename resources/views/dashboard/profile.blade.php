@@ -6,8 +6,8 @@
 
 	<div class="container-xxl flex-grow-1 container-p-y">
 		<div class="section-title pb-2 my-5">
-          <h2>Your Profile</h2>
-          <p>Your Profile</p>
+          <h2>Profile</h2>
+          <p>Profile</p>
         </div>
 		<div class="section-content mb-4">
 			<!-- Account -->
@@ -31,7 +31,7 @@
 						<div class="mb-3 col-md-6">
 							<div class="form-floating mb-3">
 								<input class="form-control @error('email') is-invalid @enderror" type="email" id="email" name="email"
-									value="{{ Auth::user()->email }}" placeholder="john.doel@example.com" autocomplete="email" required autofocus>
+									value="{{ Auth::user()->email }}" placeholder="john.doel@example.com" autocomplete="email" required readonly>
 								<label for="floatingEmail">Email</label>
 								@error('email')
 								<span class="invalid-feedback" role="alert">
@@ -41,15 +41,23 @@
 							</div>
 						</div>
 						<div class="mb-3 col-md-6">
-							<div class="form-floating mb-3">
-								<input class="form-control @error('nowa') is-invalid @enderror" type="text" id="nowa" name="nowa"
-									value="{{ Auth::user()->nowa }}" placeholder="john.doel@example.com" autocomplete="nowa" required readonly>
-								<label for="floatingnowa">WhatsApp Number</label>
-								@error('nowa')
-								<span class="invalid-feedback" role="alert">
-									<strong>{{ $message }}</strong>
-								</span>
-								@enderror
+							<div class="input-group mb-3">
+								<span class="input-group-text">+62</span>
+								<div class="form-floating flex-grow-1">
+									<input type="tel" class="form-control @error('nowa') is-invalid @enderror" id="floatingInputGroup1" name="nowa" placeholder="WhatsApp Number" value="{{ Auth::user()->nowa }}" inputmode="numeric" pattern="[0-9]*" required>
+									<label for="floatingInputGroup1">WhatsApp Number</label>
+									@error('nowa')
+									@if($message == 'The nowa has already been taken.')
+									<div class="invalid-feedback" role="alert">
+										<strong>The WhatsApp Number has already been taken.</strong>
+									</div>
+									@else
+									<div class="invalid-feedback" role="alert">
+										<strong>{{ $message }}</strong>
+									</div>
+									@endif
+									@enderror
+								</div>
 							</div>
 						</div>
 					</div>

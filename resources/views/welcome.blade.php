@@ -53,20 +53,19 @@
   <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="/css/main_style.css" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-  <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-lg-between">
 
       <!-- Logo -->
-      <div class="nav-logo">
-        <a href="#" class="logo me-1 me-lg-3"><img src="/img/logo-bi.png" alt="" class="img-fluid"></a>
-        <a href="#" class="logo me-lg-0"><img src="/img/logo.png" alt="" class="img-fluid"></a>
+      <div class="nav-logo flex-grow-1">
+        <a href="#" class="logo me-1 me-lg-3"><img src="/img/logo-bi.png" alt="" class="img-fluid logo-img"></a>
+        <a href="#" class="logo me-lg-0"><img src="/img/logo.png" alt="" class="img-fluid logo-img"></a>
       </div>
 
       <nav id="navbar" class="navbar order-last order-lg-0 ms-auto">
@@ -75,18 +74,64 @@
           <li><a class="nav-link scrollto" href="#problem-statements">Problem Statements</a></li>
           <li><a class="nav-link scrollto" href="#timeline">Timeline</a></li>
           <li><a class="nav-link scrollto" href="#prizes">Prizes</a></li>
-          <!-- <li><a class="nav-link scrollto" href="#">Registration</a></li> -->
+          <!-- Additional navigation items will be added here -->
           <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Available from 29 April 2024">
-        <button class="btn btn-primary btn-header-primary ms-4" type="button" disabled>Register</button>
-      </span>
+      @auth
+        <a class="nav-link dropdown-toggle hide-arrow ms-5" href="javascript:void(0);" data-bs-toggle="dropdown">
+            Welcome, {{ Auth::user()->name }}
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          @if (Auth::user()->type == "user")
+            <li>
+                <a class="dropdown-item" href="/profile">
+                    <i class="bx bx-user me-2"></i>
+                    <span class="align-middle">My Profile</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="/submit">
+                    <i class="bx bx-upload me-2"></i>
+                    <span class="align-middle">Submit</span>
+                </a>
+            </li>
+            @elseif (Auth::user()->type == "admin")
+            <li>
+                <a class="dropdown-item" href="/users">
+                    <i class="bx bx-upload me-2"></i>
+                    <span class="align-middle">Users</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="/projects">
+                    <i class="bx bx-upload me-2"></i>
+                    <span class="align-middle">Projects</span>
+                </a>
+            </li>
+          @endif
+          <li>
+              <a class="dropdown-item" href="{{ route('logout') }}"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  <i class="bx bx-power-off me-2 text-danger"></i>
+                  <span class="align-middle">{{ __('Logout') }}</span>
+              </a>
+
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+              </form>
+          </li>
+        </ul>
+      @else
+        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Available from 29 April 2024">
+            <button class="btn btn-primary btn-header-primary ms-4" type="button" disabled>Register</button>
+        </span>
+      @endauth
       
     </div>
-  </header><!-- End Header -->
+</header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center justify-content-center">
@@ -120,29 +165,28 @@
     <section id="announcement" class="announcement">
       <div class="container" data-aos="fade-up">
         <div class="section-title pb-2 ms-2">
-          <h2>Announcement</h2>
-          <p>Announcement</p>
+          <h2>Announcements</h2>
+          <p>Announcements</p>
         </div>
-        <div data-aos="fade-right" data-aos-delay="100">
-          <div class="content section-content">
-            <div class="row">
-              <div class="col-4">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="announcement-poster" data-aos="fade-right" data-aos-delay="100">
+              <a href="/img/announcement/1.jpeg" data-glightbox="announcement-gallery" data-title="Kick off dan Seminar Hackathon - 29 April 2024">
                 <img src="/img/announcement/1.jpeg" class="img-fluid" alt="Kick off dan Seminar Hackathon">
-              </div>
-              <div class="col-8">
-                <h4>
-                  Kick off dan Seminar Hackathon - 29 April 2024
-                </h4>
-                <p>
-                  Daftarkan dirimu menjadi bagian dari Kickoff dan Seminar Hackathon 2024.
-                </p>
-                <a href="https://bi-go-id.zoom.us/meeting/register/tJArfu6trzMsH9XjY18GWt9pHbTZgpsi0Mk6#/registration" class="btn btn-primary">Register</a>
-              </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="announcement-details">
+              <h3>Kick off dan Seminar Hackathon - 29 April 2024</h3>
+              <p>Daftarkan dirimu menjadi bagian dari Kickoff dan Seminar Hackathon 2024.</p>
+              <a href="https://bi-go-id.zoom.us/meeting/register/tJArfu6trzMsH9XjY18GWt9pHbTZgpsi0Mk6#/registration" class="btn btn-primary">Register Now</a>
             </div>
           </div>
         </div>
       </div>
-    </section><!-- End Announcement Section -->
+    </section>
+    <!-- End Announcement Section -->
     
     <!-- ======= Quotes Section ======= -->
     <!-- <section id="quotes" class="quotes">

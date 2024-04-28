@@ -232,6 +232,16 @@ body {
     padding: 15px 0;
     color: #FFFFFF;
   }
+
+  .nav-logo {
+    flex-grow: 1; /* Allow the logo container to grow and shrink */
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    max-width: 100%;
+}
   
   #header.header-scrolled,
   #header.header-inner-pages {
@@ -706,6 +716,28 @@ body {
     text-align: justify;
   }
   
+  /*--------------------------------------------------------------
+  # Announcement
+  --------------------------------------------------------------*/
+  .announcement-poster img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .announcement-details {
+    padding: 0 20px;
+  }
+  
+  .announcement-details h3 {
+    margin-top: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .announcement-details {
+      padding: 20px;
+    }
+  }
+
   /*--------------------------------------------------------------
   # Timeline
   --------------------------------------------------------------*/

@@ -26,7 +26,7 @@
         <div class="form-floating mb-3">
             <input class="form-control @error('password') is-invalid @enderror" type="password" name="password" required
                 autocomplete="password" autofocus>
-            <label for="floatingName">Password</label>
+            <label for="floatingName">New Password</label>
 
             @error('password')
             <span class="invalid-feedback" role="alert">
@@ -38,7 +38,7 @@
         <div class="form-floating mb-3">
             <input class="form-control @error('password') is-invalid @enderror" type="password" name="password_confirmation"
                 required autocomplete="password" autofocus>
-            <label for="floatingName">Confirm Password</label>
+            <label for="floatingName">Confirm New Password</label>
 
             @error('password')
             <span class="invalid-feedback" role="alert">

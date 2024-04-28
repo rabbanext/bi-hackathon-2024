@@ -19,9 +19,6 @@ class DashboardController extends Controller
         $this->middleware(['auth','verified']);
     }
 
-
-
-
     //Homelanding
     public function superAdminHome()
     {
@@ -33,7 +30,7 @@ class DashboardController extends Controller
     }
     public function home()
     {
-        return view('dashboard.index', [
+        return view('dashboard.profile', [
             'profile' => User::where('id', auth()->user()->id)->get()
         ]);
     }
@@ -45,41 +42,74 @@ class DashboardController extends Controller
         $count = User::all();
 
         $members = User::where('id', auth()->user()->id)->get();
-        $count = User::where('id', auth()->user()->id)
+        $countMember = User::where('id', auth()->user()->id)
             ->whereNotNull('member_name')
             ->selectRaw('COALESCE(SUM(JSON_LENGTH(member_role)), 0) as total_count')
             ->first()
             ->total_count;
+        $countLink = User::where('id', auth()->user()->id)
+            ->whereNotNull('project_link')
+            ->selectRaw('COALESCE(SUM(JSON_LENGTH(project_link)), 0) as total_count')
+            ->first()
+            ->total_count;
 
-        return view('dashboard.submit', compact('post', 'members', 'count'));
+        return view('dashboard.submit', compact('post', 'members', 'countMember', 'countLink'));
     }
 
     // Submit project link.
-    public function update(Request $request, User $post)
-    {
-        if ($request->hasFile('project_file')) {
-            $file = $request->file('project_file');
-            $originalFileName = $file->getClientOriginalName();
-            $teamName = str_replace(' ', '_', Auth::user()->team_name);
-            $dateTime = date('Ymd_His');
-            $fileName = $teamName . '_' . $dateTime . '.' . $file->getClientOriginalExtension();
-            $file->move(storage_path('app/public'), $fileName);
-            Auth::user()->project_file = $fileName;
-        }
+    public function update(Request $request, $id)
+{
+    $user = User::findOrFail($id);
 
-        // Update other fields
-        Auth::user()->update($request->except('project_file')); // Exclude 'project_file' from mass assignment
+    // Validate the form data
+    $validatedData = $request->validate([
+        // Validation rules for other fields...
+    ]);
 
-        return back()->with('success', 'Submitted!');
+    // Update the user's data
+    $user->update($validatedData);
+
+    if (empty($validatedData['member_name'])) {
+        $user->update([
+            'member_name' => null,
+            'member_role' => null,
+            'member_domicile' => null,
+            'member_email' => null,
+            'member_date_of_birth' => null,
+            'member_profession' => null,
+        ]);
     }
+    if (empty($validatedData['project_link'])) {
+        $user->update([
+            'project_link' => null,
+            'project_desc' => null,
+        ]);
+    }
+    if ($request->hasFile('project_file')) {
+        $file = $request->file('project_file');
+        $originalFileName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+        $originalFileName = str_replace(' ', '_', $originalFileName);
+        $teamName = str_replace(' ', '_', Auth::user()->team_name);
+        $dateTime = date('Ymd_His');
+        $extension = $file->getClientOriginalExtension();
+        $fileName = $originalFileName . '_' . $teamName . '_' . $dateTime . '.' . $extension;
+        $file->move(storage_path('app/public'), $fileName);
+        Auth::user()->project_file = $fileName;
+    }    
+
+    // Update other fields
+    Auth::user()->update($request->except('project_file')); // Exclude 'project_file' from mass assignment
+
+    return back()->with('success', 'Form Submitted!');
+}
+
 
     //Admin
     public function projects()
     {
-        return view('dashboard.projects', [
-            'projects' => User::whereNotNull('project_link')->get()
+        $projects = User::whereNotNull('project_file')->get();
 
-        ]);
+        return view('dashboard.projects', ['projects' => $projects]);
     }
     public function users()
     {

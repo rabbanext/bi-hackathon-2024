@@ -27,8 +27,8 @@
   <meta property="og:description"
     content="Artificial Intelligence & Machine Learning for Digital Economy and Finance in Indonesia" />
   <meta property="og:url" content="https://hackathon.fekdi.co.id" />
-  <meta property="og:image" content="../img/hero/hero-hackathon.png" />
-  <meta property="og:image:secure_url" content="../img/hero/hero-hackathon.png" />
+  <meta property="og:image" content="/img/hero/hero-hackathon.png" />
+  <meta property="og:image:secure_url" content="/img/hero/hero-hackathon.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="660" />
   <meta property="og:image:height" content="176" />
@@ -36,8 +36,8 @@
   <title>Register | Hackathon Bank Indonesia 2024</title>
 
   <!-- Favicons -->
-  <link href="../img/favicon.png" rel="icon">
-  <link href="../img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="/img/favicon.png" rel="icon">
+  <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link
@@ -45,17 +45,17 @@
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="../vendor/aos/aos.css" rel="stylesheet">
-  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="../vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="../vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="../css/main_style.css" rel="stylesheet">
-  <link href="../css/register.css" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/register.css" rel="stylesheet">
 
 </head>
 
@@ -67,25 +67,71 @@
 
       <!-- Logo -->
       <div class="nav-logo">
-        <a href="../" class="logo me-1 me-lg-3"><img src="../img/logo-bi.png" alt="" class="img-fluid"></a>
-        <a href="../" class="logo me-lg-0"><img src="../img/logo.png" alt="" class="img-fluid"></a>
+        <a href="/" class="logo me-1 me-lg-3"><img src="/img/logo-bi.png" alt="" class="img-fluid"></a>
+        <a href="/" class="logo me-lg-0"><img src="/img/logo.png" alt="" class="img-fluid"></a>
       </div>
 
       <nav id="navbar" class="navbar order-last order-lg-0 ms-auto">
         <ul>
-          <li><a class="nav-link scrollto" href="../#about">About</a></li>
-          <li><a class="nav-link scrollto" href="../#problem-statements">Problem Statements</a></li>
-          <li><a class="nav-link scrollto" href="../#timeline">Timeline</a></li>
-          <li><a class="nav-link scrollto" href="../#prizes">Prizes</a></li>
-          <!-- <li><a class="nav-link scrollto" href="../#">Registration</a></li> -->
-          <li><a class="nav-link scrollto" href="../#faq">FAQ</a></li>
+          <li><a class="nav-link scrollto" href="/#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/#problem-statements">Problem Statements</a></li>
+          <li><a class="nav-link scrollto" href="/#timeline">Timeline</a></li>
+          <li><a class="nav-link scrollto" href="/#prizes">Prizes</a></li>
+          <!-- <li><a class="nav-link scrollto" href="/#">Registration</a></li> -->
+          <li><a class="nav-link scrollto" href="/#faq">FAQ</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Available from 29 April 2024">
-        <button class="btn btn-primary btn-header-primary ms-4" type="button" disabled>Register</button>
-      </span>
+      @auth
+        <a class="nav-link dropdown-toggle hide-arrow ms-5" href="javascript:void(0);" data-bs-toggle="dropdown">
+            Welcome, {{ Auth::user()->name }}
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          @if (Auth::user()->type == "user")
+            <li>
+                <a class="dropdown-item" href="/profile">
+                    <i class="bx bx-user me-2"></i>
+                    <span class="align-middle">My Profile</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="/submit">
+                    <i class="bx bx-upload me-2"></i>
+                    <span class="align-middle">Submit</span>
+                </a>
+            </li>
+            @elseif (Auth::user()->type == "admin")
+            <li>
+                <a class="dropdown-item" href="/users">
+                    <i class="bx bx-upload me-2"></i>
+                    <span class="align-middle">Users</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="/projects">
+                    <i class="bx bx-upload me-2"></i>
+                    <span class="align-middle">Projects</span>
+                </a>
+            </li>
+          @endif
+          <li>
+              <a class="dropdown-item" href="{{ route('logout') }}"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  <i class="bx bx-power-off me-2 text-danger"></i>
+                  <span class="align-middle">{{ __('Logout') }}</span>
+              </a>
+
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+              </form>
+          </li>
+        </ul>
+      @else
+        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Available from 29 April 2024">
+            <button class="btn btn-primary btn-header-primary ms-4" type="button" disabled>Register</button>
+        </span>
+      @endauth
 
     </div>
   </header><!-- End Header -->
@@ -108,7 +154,7 @@
         <div class="row">
   
           <div class="col-lg-4 col-md-6">
-            <img src="../img/hero/logo-bi.png" width="150" class="img-fluid mb-3" alt="">
+            <img src="/img/hero/logo-bi.png" width="150" class="img-fluid mb-3" alt="">
             <p>
               <strong>Address:</strong>
               Jalan M.H. Thamrin No. 2, <br>
@@ -160,15 +206,15 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="../vendor/aos/aos.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="../vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="../vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/vendor/aos/aos.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
   <!-- Main JS File -->
-  <script src="../js/main.js"></script>
+  <script src="/js/main.js"></script>
 
   <!-- Add member JS -->
   <script>
