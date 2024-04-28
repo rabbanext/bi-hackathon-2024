@@ -125,8 +125,8 @@
           </li>
         </ul>
       @else
-        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Available from 29 April 2024">
-            <button class="btn btn-primary btn-header-primary ms-4" type="button" disabled>Register</button>
+        <span id="register-btn-container" class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Available from 29 April 2024">
+          <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button" disabled>Register</button>
         </span>
       @endauth
       
@@ -559,8 +559,16 @@
         </div><!-- End .content-->
       </div>
     </section><!-- End Media Partners Section -->
-
-
+    
+    <!-- ======= Guide Book Section ======= -->
+    <section id="media-partners" class="media-partners">
+      <div class="container" data-aos="zoom-in">
+        <div class="section-title text-center">
+          <p>Guide Book</p>
+        </div>
+        <i class="bx bx-download"></i>
+      </div>
+    </section><!-- End Guide Book Section -->
 
     <!-- ======= Frequently Asked Questions Section ======= -->
     <section id="faq" class="faq section-bg">
@@ -784,7 +792,24 @@
       $('[data-bs-toggle="tooltip"]').tooltip();
     });
   </script>
-  
+
+  <script>
+    function enableRegisterButton() {
+      document.getElementById('register-btn').removeAttribute('disabled');
+    }
+
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate());
+    tomorrow.setHours(10, 0, 0, 0);
+    const now = new Date();
+    const timeRemaining = tomorrow.getTime() - now.getTime();
+
+    if (timeRemaining > 0) {
+      setTimeout(enableRegisterButton, timeRemaining);
+    } else {
+      enableRegisterButton();
+    }
+  </script>
 </body>
 
 </html>

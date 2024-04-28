@@ -22,8 +22,8 @@
   <meta name="author" content="rabbanext" />
   <meta name="description" content="Hackathon Bank Indonesia 2024" />
 
-  <meta property="og:site_name" content="Register | Hackathon Bank Indonesia 2024" />
-  <meta property="og:title" content="Register | Hackathon Bank Indonesia 2024" />
+  <meta property="og:site_name" content="Hackathon Bank Indonesia 2024" />
+  <meta property="og:title" content="Hackathon Bank Indonesia 2024" />
   <meta property="og:description"
     content="Artificial Intelligence & Machine Learning for Digital Economy and Finance in Indonesia" />
   <meta property="og:url" content="https://hackathon.fekdi.co.id" />
@@ -33,7 +33,7 @@
   <meta property="og:image:width" content="660" />
   <meta property="og:image:height" content="176" />
   <meta property="og:image:alt" content="Rabbanext" />
-  <title>Register | Hackathon Bank Indonesia 2024</title>
+  <title>Hackathon Bank Indonesia 2024</title>
 
   <!-- Favicons -->
   <link href="/img/favicon.png" rel="icon">
@@ -128,8 +128,8 @@
           </li>
         </ul>
       @else
-        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Available from 29 April 2024">
-            <button class="btn btn-primary btn-header-primary ms-4" type="button" disabled>Register</button>
+        <span id="register-btn-container" class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Available from 29 April 2024">
+          <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button" disabled>Register</button>
         </span>
       @endauth
     </div>
@@ -228,6 +228,23 @@
   <!-- Main JS File -->
   <script src="/js/main.js"></script>
 
+  <script>
+    function enableRegisterButton() {
+      document.getElementById('register-btn').removeAttribute('disabled');
+    }
+
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate());
+    tomorrow.setHours(10, 0, 0, 0);
+    const now = new Date();
+    const timeRemaining = tomorrow.getTime() - now.getTime();
+
+    if (timeRemaining > 0) {
+      setTimeout(enableRegisterButton, timeRemaining);
+    } else {
+      enableRegisterButton();
+    }
+  </script>
 </body>
 
 </html>
