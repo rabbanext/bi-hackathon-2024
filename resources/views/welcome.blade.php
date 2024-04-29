@@ -592,7 +592,8 @@
                   <div id="faq1" class="collapse show" data-bs-parent=".faq-list">
                     <p>a. Calon peserta merupakan Warga Negara Indonesia.</p>
                     <p>b. Calon peserta dapat membentuk tim dengan jumlah maksimal 4 anggota.</p>
-                    <p>c. Tim dapat mewakili perorangan maupun perusahaan/universitas/institusi.</p>
+                    <p>Silakan cek syarat dan ketentuan registrasi pada link berikut <a class="text-info" href="/documents/Guideline_-_Bank_Indonesia_Hackathon_2024.pdf">Guideline</a> </p>
+                    <p>Pastikan format submisi proposal kamu sesuai dengan format berikut <a class="text-info" href="/documents/Panduan_Proposal_-_Bank_Indonesia_Hackathon_2024.pdf">Format Proposal</a> </p>
                   </div>
                 </li>
 
