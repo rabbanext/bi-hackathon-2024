@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use App\Notifications\SubmissionConfirmation;
 
 class DashboardController extends Controller
 {
@@ -58,50 +59,53 @@ class DashboardController extends Controller
 
     // Submit project link.
     public function update(Request $request, $id)
-{
-    $user = User::findOrFail($id);
+    {
+        $user = User::findOrFail($id);
 
-    // Validate the form data
-    $validatedData = $request->validate([
-        // Validation rules for other fields...
-    ]);
-
-    // Update the user's data
-    $user->update($validatedData);
-
-    if (empty($validatedData['member_name'])) {
-        $user->update([
-            'member_name' => null,
-            'member_role' => null,
-            'member_domicile' => null,
-            'member_email' => null,
-            'member_date_of_birth' => null,
-            'member_profession' => null,
+        // Validate the form data
+        $validatedData = $request->validate([
+            // Validation rules for other fields...
         ]);
-    }
-    if (empty($validatedData['project_link'])) {
-        $user->update([
-            'project_link' => null,
-            'project_desc' => null,
-        ]);
-    }
-    if ($request->hasFile('project_file')) {
-        $file = $request->file('project_file');
-        $originalFileName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
-        $originalFileName = str_replace(' ', '_', $originalFileName);
-        $teamName = str_replace(' ', '_', Auth::user()->team_name);
-        $dateTime = date('Ymd_His');
-        $extension = $file->getClientOriginalExtension();
-        $fileName = $originalFileName . '_' . $teamName . '_' . $dateTime . '.' . $extension;
-        $file->move(storage_path('app/public'), $fileName);
-        Auth::user()->project_file = $fileName;
-    }    
 
-    // Update other fields
-    Auth::user()->update($request->except('project_file')); // Exclude 'project_file' from mass assignment
+        // Update the user's data
+        $user->update($validatedData);
 
-    return back()->with('success', 'Form Submitted!');
-}
+        if (empty($validatedData['member_name'])) {
+            $user->update([
+                'member_name' => null,
+                'member_role' => null,
+                'member_domicile' => null,
+                'member_email' => null,
+                'member_date_of_birth' => null,
+                'member_profession' => null,
+            ]);
+        }
+        if (empty($validatedData['project_link'])) {
+            $user->update([
+                'project_link' => null,
+                'project_desc' => null,
+            ]);
+        }
+        if ($request->hasFile('project_file')) {
+            $file = $request->file('project_file');
+            $originalFileName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+            $originalFileName = str_replace(' ', '_', $originalFileName);
+            $teamName = str_replace(' ', '_', Auth::user()->team_name);
+            $dateTime = date('Ymd_His');
+            $extension = $file->getClientOriginalExtension();
+            $fileName = $originalFileName . '_' . $teamName . '_' . $dateTime . '.' . $extension;
+            $file->move(storage_path('app/public'), $fileName);
+            Auth::user()->project_file = $fileName;
+
+            $user = Auth::user();
+            $user->notify(new SubmissionConfirmation());
+        }    
+
+        // Update other fields
+        Auth::user()->update($request->except('project_file')); // Exclude 'project_file' from mass assignment
+        
+        return back()->with('success', 'Form Submitted!');
+    }
 
 
     //Admin
