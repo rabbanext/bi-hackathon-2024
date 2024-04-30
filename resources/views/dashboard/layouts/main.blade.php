@@ -20,10 +20,10 @@
   <meta name="theme-color" content="#2A73AC">
 
   <meta name="author" content="rabbanext" />
-  <meta name="description" content="Hackathon Bank Indonesia 2024" />
+  <meta name="description" content="Bank Indonesia Hackathon 2024" />
 
-  <meta property="og:site_name" content="Hackathon Bank Indonesia 2024" />
-  <meta property="og:title" content="Hackathon Bank Indonesia 2024" />
+  <meta property="og:site_name" content="Bank Indonesia Hackathon 2024" />
+  <meta property="og:title" content="Bank Indonesia Hackathon 2024" />
   <meta property="og:description"
     content="Artificial Intelligence & Machine Learning for Digital Economy and Finance in Indonesia" />
   <meta property="og:url" content="https://hackathon.fekdi.co.id" />
@@ -33,7 +33,7 @@
   <meta property="og:image:width" content="660" />
   <meta property="og:image:height" content="176" />
   <meta property="og:image:alt" content="Rabbanext" />
-  <title>Hackathon Bank Indonesia 2024</title>
+  <title>Bank Indonesia Hackathon 2024</title>
 
   <!-- Favicons -->
   <link href="/img/favicon.png" rel="icon">
@@ -54,7 +54,7 @@
   <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/css.css" rel="stylesheet">
   <link href="/css/register.css" rel="stylesheet">
 
 </head>
@@ -84,8 +84,8 @@
       </nav><!-- .navbar -->
 
       @auth
-        <a class="nav-link dropdown-toggle hide-arrow ms-5" href="javascript:void(0);" data-bs-toggle="dropdown">
-            Welcome, {{ Auth::user()->name }}
+        <a href="javascript:void(0);" data-bs-toggle="dropdown">
+          <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button">Submit Proposal</button>
         </a>
         <ul class="dropdown-menu dropdown-menu-end">
           @if (Auth::user()->type == "user")
@@ -128,9 +128,9 @@
           </li>
         </ul>
       @else
-        <span id="register-btn-container" class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Available from 29 April 2024">
+        <a href="/register">
           <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button" disabled>Register</button>
-        </span>
+        </a>
       @endauth
     </div>
   </header><!-- End Header -->

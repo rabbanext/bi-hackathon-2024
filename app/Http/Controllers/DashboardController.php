@@ -93,7 +93,7 @@ class DashboardController extends Controller
             $teamName = str_replace(' ', '_', Auth::user()->team_name);
             $dateTime = date('Ymd_His');
             $extension = $file->getClientOriginalExtension();
-            $fileName = $originalFileName . '_' . $teamName . '_' . $dateTime . '.' . $extension;
+            $fileName = $originalFileName . '_' . $dateTime . '.' . $extension;
             $file->move(storage_path('app/public'), $fileName);
             Auth::user()->project_file = $fileName;
 

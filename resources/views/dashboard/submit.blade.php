@@ -6,14 +6,14 @@
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="section-title pb-2 my-5">
           <h2>Submission</h2>
-          <p>Submit Your Project</p>
+          <p>Submit Proposal</p>
         </div>
         <div class="row">
             <div class="col-12 col-md-6">
                 <div class="section-content mb-4">
                     <h5>Guideline</h5>
                     <p class="mb-0">Silakan cek syarat dan ketentuan registrasi pada link berikut:</p>
-                    <a class="text-info mb-0" href="/documents/Guideline_-_Bank_Indonesia_Hackathon_2024.pdf">Guideline</a>
+                    <a class="text-info mb-0" href="https://drive.google.com/file/d/1QaFXcU4tNsnxPGprJbVeaQ9c1_yS7_yp/view?usp=sharing">Guideline</a>
                 </div>
             </div>
             <div class="col-12 col-md-6">

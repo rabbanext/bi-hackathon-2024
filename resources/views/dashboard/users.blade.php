@@ -27,9 +27,9 @@
 							<td><strong>{{ $user->name }}</strong>
 							<td>{{ $user->email }}
 								@if ($user->email_verified_at == null)
-								<span class="badge bg-label-danger me-1">Not Verified</span>
+								<span class="badge bg-secondary me-1">Not Verified</span>
 								@else
-								<span class="badge bg-label-success me-1">Verified</span>
+								<span class="badge bg-success me-1">Verified</span>
 								@endif
 							</td>
 							<td>
@@ -40,7 +40,7 @@
 								@endif
 							</td>
 							<td>
-								<a href="{{ $user->project_link }}" data-bs-toggle="modal" data-bs-target="#modal{{ $user->id }}" class="btn btn-primary hide-arrow">
+								<a href="{{ $user->project_link }}" data-bs-toggle="modal" data-bs-target="#modal{{ $user->id }}" class="btn btn-info hide-arrow">
 									<i class="bx bx-info-circle"></i> Details
 								</a>
 							</td>

@@ -64,9 +64,9 @@ class LoginController extends Controller
 
         if (auth()->attempt($credentials)) {
             if ($user->type == 'super-admin') {
-                return redirect()->route('super.admin.home');
+                return redirect()->route('admins');
             } elseif ($user->type == 'admin') {
-                return redirect()->route('admin.home');
+                return redirect()->route('users');
             } else {
                 return redirect()->route('home');
             }

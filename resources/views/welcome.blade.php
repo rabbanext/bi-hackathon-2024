@@ -20,10 +20,10 @@
   <meta name="theme-color" content="#2A73AC">
 
   <meta name="author" content="rabbanext" />
-  <meta name="description" content="Hackathon Bank Indonesia 2024" />
+  <meta name="description" content="Bank Indonesia Hackathon 2024" />
 
-  <meta property="og:site_name" content="Hackathon Bank Indonesia 2024" />
-  <meta property="og:title" content="Hackathon Bank Indonesia 2024" />
+  <meta property="og:site_name" content="Bank Indonesia Hackathon 2024" />
+  <meta property="og:title" content="Bank Indonesia Hackathon 2024" />
   <meta property="og:description" content="Artificial Intelligence & Machine Learning for Digital Economy and Finance in Indonesia" />
   <meta property="og:url" content="https://hackathon.fekdi.co.id" />
   <meta property="og:image" content="/img/hero/hero-hackathon.png" />
@@ -32,7 +32,7 @@
   <meta property="og:image:width" content="660" />
   <meta property="og:image:height" content="176" />
   <meta property="og:image:alt" content="Rabbanext" />
-  <title>Hackathon Bank Indonesia 2024</title>
+  <title>Bank Indonesia Hackathon 2024</title>
 
   <!-- Favicons -->
   <link href="/img/favicon.png" rel="icon">
@@ -53,7 +53,7 @@
   <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/css.css" rel="stylesheet">
 
 </head>
 
@@ -81,8 +81,8 @@
       </nav><!-- .navbar -->
 
       @auth
-        <a class="nav-link dropdown-toggle hide-arrow ms-5" href="javascript:void(0);" data-bs-toggle="dropdown">
-            Welcome, {{ Auth::user()->name }}
+        <a href="javascript:void(0);" data-bs-toggle="dropdown">
+          <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button">Submit Proposal</button>
         </a>
         <ul class="dropdown-menu dropdown-menu-end">
           @if (Auth::user()->type == "user")
@@ -125,9 +125,9 @@
           </li>
         </ul>
       @else
-        <span id="register-btn-container" class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Available from 29 April 2024">
-          <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button" disabled>Register</button>
-        </span>
+        <a href="/register">
+          <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button">Register</button>
+        </a>
       @endauth
       
     </div>
@@ -171,15 +171,15 @@
         <div class="row">
           <div class="col-md-6">
             <div class="announcement-poster" data-aos="fade-right" data-aos-delay="100">
-              <a href="/img/announcement/1.jpeg" data-glightbox="announcement-gallery" data-title="Kick off dan Seminar Hackathon - 29 April 2024">
-                <img src="/img/announcement/1.jpeg" class="img-fluid" alt="Kick off dan Seminar Hackathon">
+              <a href="/img/announcement/2.jpeg" data-glightbox="announcement-gallery" data-title="Hackathon Bank Indonesia 2024">
+                <img src="/img/announcement/2.jpeg" class="img-fluid" alt="Hackathon Bank Indonesia 2024">
               </a>
             </div>
           </div>
           <div class="col-md-6">
             <div class="announcement-details">
-              <h3>Kick off dan Seminar Hackathon - 29 April 2024</h3>
-              <p>Daftarkan dirimu menjadi bagian dari Kickoff dan Seminar Hackathon 2024.</p>
+              <h3>Registrasi Hackathon - 29 April s.d 6 Juni 2024</h3>
+              <p>Daftarkan dirimu menjadi bagian dari Hackathon Bank Indonesia 2024.</p>
               <a href="https://bi-go-id.zoom.us/meeting/register/tJArfu6trzMsH9XjY18GWt9pHbTZgpsi0Mk6#/registration" class="btn btn-primary">Register Now</a>
             </div>
           </div>
@@ -287,7 +287,7 @@
           <div class="col-12 col-lg-4 px-2 mb-3">
             <div class="section-content">
               <div class="h-100" style="min-height: 260px;">
-                <h4>Efficient Decision Making Process</h4>
+                <h4>Efficient Decision Making Process and Data Processing</h4>
                 <p class="paragraph mb-auto">
                   Dalam sub tema Hackathon ini, peserta perlu mengeksplorasi bagaimana AI/ML dapat memanfaatkan kehandalan dalam menangani data terstruktur maupun tidak terstruktur untuk meningkatkan proses pengambilan keputusan dalam institusi/perusahaan secara lebih cepat dan akurat.
                 </p>
@@ -336,7 +336,7 @@
           <div class="col-12 col-lg-4 px-2 mb-3">
             <div class="section-content">
               <div class="h-100" style="min-height: 260px;">
-                <h4>Expanding Market Acceptance and Innovative Prizes</h4>
+                <h4>Expanding Market Acceptance and Innovative Services</h4>
                 <p class="paragraph mb-auto">
                   Dalam sub tema Hackathon ini, peserta perlu mengeksplorasi bagaimana AI/ML dapat menjadi pendorong  dalam memperluas penerimaan pasar serta menyajikan layanan-layanan yang inovatif, yang pada gilirannya akan memperkuat posisi perusahaan dalam industri yang dinamis serta meningkatkan inklusi keuangan.
                 </p>
@@ -430,7 +430,7 @@
             <div class="section-content">
               <h4>Kick off dan Seminar Hackathon</h4>
               <p>
-                Kick-Off dan seminar sebagai acara pembuka rangkaian kegiatan Hackathon Bank Indonesia 2024 yang dilakukan bersama Subject Matter Expert, Akademisi, serta Komunitas AI/ML di Indonesia.
+                Kick-Off dan seminar sebagai acara pembuka rangkaian kegiatan Bank Indonesia Hackathon 2024 yang dilakukan bersama Subject Matter Expert, Akademisi, serta Komunitas AI/ML di Indonesia.
               </p>
             </div>
           </div>
@@ -439,7 +439,7 @@
             <div class="section-content">
               <h4>Registrasi Hackathon</h4>
               <p>
-                Pendaftaran tim serta pengunggahan solusi terhadap Problem Statement Hackathon Bank Indonesia 2024 yang dilakukan via website.
+                Pendaftaran tim serta pengunggahan solusi terhadap Problem Statement Bank Indonesia Hackathon 2024 yang dilakukan via website.
               </p>
             </div>
           </div>
@@ -448,7 +448,7 @@
             <div class="section-content">
               <h4>Pengumuman Finalis</h4>
               <p>
-                Pengumuman 10 finalis Hackathon Bank Indonesia 2024. Seluruh finalis wajib menghadiri kegiatan Karantina, Penjurian Akhir serta Showcasing.
+                Pengumuman 10 finalis Bank Indonesia Hackathon 2024. Seluruh finalis wajib menghadiri kegiatan Karantina, Penjurian Akhir serta Showcasing.
               </p>
             </div>
           </div>
@@ -559,16 +559,6 @@
         </div><!-- End .content-->
       </div>
     </section><!-- End Media Partners Section -->
-    
-    <!-- ======= Guide Book Section ======= -->
-    <section id="media-partners" class="media-partners">
-      <div class="container" data-aos="zoom-in">
-        <div class="section-title text-center">
-          <p>Guide Book</p>
-        </div>
-        <i class="bx bx-download"></i>
-      </div>
-    </section><!-- End Guide Book Section -->
 
     <!-- ======= Frequently Asked Questions Section ======= -->
     <section id="faq" class="faq section-bg">
@@ -592,7 +582,8 @@
                   <div id="faq1" class="collapse show" data-bs-parent=".faq-list">
                     <p>a. Calon peserta merupakan Warga Negara Indonesia.</p>
                     <p>b. Calon peserta dapat membentuk tim dengan jumlah maksimal 4 anggota.</p>
-                    <p>Silakan cek syarat dan ketentuan registrasi pada link berikut <a class="text-info" href="/documents/Guideline_-_Bank_Indonesia_Hackathon_2024.pdf">Guideline</a> </p>
+                    <p>c. Calon peserta bukan merupakan pegawai Organik Bank Indonesia.</p>
+                    <p>Silakan cek syarat dan ketentuan registrasi pada link berikut <a class="text-info" href="https://drive.google.com/file/d/1QaFXcU4tNsnxPGprJbVeaQ9c1_yS7_yp/view?usp=sharing">Guideline</a> </p>
                     <p>Pastikan format submisi proposal kamu sesuai dengan format berikut <a class="text-info" href="/documents/Panduan_Proposal_-_Bank_Indonesia_Hackathon_2024.pdf">Format Proposal</a> </p>
                   </div>
                 </li>
