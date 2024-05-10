@@ -504,21 +504,6 @@ body {
   /*--------------------------------------------------------------
   # Hero Section
   --------------------------------------------------------------*/
-  #particles-js {
-    background-color: #000609;
-    background-image: url("../img/bg/earthing.jpg");
-    background-repeat: no-repeat;
-    background-position: center left;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
-  
   #hero {
     width: 100%;
     min-height: 100vh;
@@ -706,6 +691,9 @@ body {
   # About
   --------------------------------------------------------------*/
   #about {
+    background: url("../img/bg/earthing.jpg"), #01060A;
+    background-repeat: no-repeat;
+    background-position: center left;
     position: relative;
     color: #FFFFFF;
   }

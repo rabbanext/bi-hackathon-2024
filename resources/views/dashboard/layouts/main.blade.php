@@ -54,6 +54,7 @@
   <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
+  <!--<link href="/css/main_.css" rel="stylesheet">-->
   <link href="/css/css.css" rel="stylesheet">
   <link href="/css/register.css" rel="stylesheet">
 
@@ -194,7 +195,6 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <div id="particles-js" class="d-none"></div>
         <div class="container">
           <div class="copyright">
             &copy; Copyright 2024 <strong><span>Bank Indonesia</span></strong>
@@ -223,7 +223,6 @@
   <script src="/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
   <!-- Main JS File -->
   <script src="/js/main.js"></script>

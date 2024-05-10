@@ -2,21 +2,85 @@
 
 @section('content')
 <div class="content-wrapper">
-	<!-- Content -->
-	<div class="container-xxl flex-grow-1 container-p-y">
-		<div class="section-title pb-2 my-5">
-          <h2>Users</h2>
-          <p>Users</p>
+    <!-- Content -->
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <div class="section-title pb-2 my-5">
+            <h2>Users</h2>
+            <p>Users</p>
         </div>
+
+		<div class="section-content mb-3">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Statistic</th>
+						<th>Total</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>User Registered</td>
+						<td>{{ count($users) }}</td>
+					</tr>
+					<tr>
+						<td>User with Email Verified</td>
+						<td>{{ $users->whereNotNull('email_verified_at')->count() }}</td>
+					</tr>
+					<tr>
+						<td>User with Email Not Verified</td>
+						<td>{{ $users->whereNull('email_verified_at')->count() }}</td>
+					</tr>
+					<tr>
+						<td>User with Project Submitted</td>
+						<td>{{ $users->whereNotNull('project_file')->count() }}</td>
+					</tr>
+					<tr>
+						<td>User with Project Not Submitted</td>
+						<td>{{ $users->whereNull('project_file')->count() }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
         <div class="section-content mb-3">
-			<div class="table-responsive text-nowrap">
-				<table class="table table-hover">
+			<h5>Filter</h5>
+			<div class="row mb-5">
+				<div class="col-6 mb-3">
+					<p style="display: inline;">Email Verification: </p>
+					<div class="btn-group" role="group" aria-label="Email Verification">
+						<input type="radio" class="btn-check" name="email-verified-filter" value="all" id="verified0" autocomplete="off" checked>
+						<label class="btn btn-outline-info btn-sm" for="verified0">All</label>
+
+						<input type="radio" class="btn-check" name="email-verified-filter" value="verified" id="verified1" autocomplete="off">
+						<label class="btn btn-outline-info btn-sm" for="verified1">Verified</label>
+
+						<input type="radio" class="btn-check" name="email-verified-filter" value="not-verified" id="verified2" autocomplete="off">
+						<label class="btn btn-outline-info btn-sm" for="verified2">Not Verified</label>
+					</div>
+				</div>
+				<div class="col-6 mb-3">
+					<p style="display: inline;">Project Status: </p>
+					<div class="btn-group" role="group" aria-label="Project Status">
+						<input type="radio" class="btn-check" name="project-file-filter" value="all" id="submitted0" autocomplete="off" checked>
+						<label class="btn btn-outline-info btn-sm" for="submitted0">All</label>
+
+						<input type="radio" class="btn-check" name="project-file-filter" value="submitted" id="submitted1" autocomplete="off">
+						<label class="btn btn-outline-info btn-sm" for="submitted1">Submitted</label>
+
+						<input type="radio" class="btn-check" name="project-file-filter" value="not-submitted" id="submitted2" autocomplete="off">
+						<label class="btn btn-outline-info btn-sm" for="submitted2">Not Submitted</label>
+					</div>
+				</div>
+			</div>
+            <div class="table-responsive text-nowrap">
+				<table id="users-table" class="table table-hover">
 					<thead>
 						<tr>
 							<th>no.</th>
 							<th>Name</th>
+							<th>WhatsApp</th>
 							<th>Email</th>
-							<th></th>
+							<th>Project</th>
 							<th>Details</th>
 						</tr>
 					</thead>
@@ -24,19 +88,28 @@
 						@foreach ($users as $user)
 						<tr>
 							<td>{{ $loop->iteration }}</td>
-							<td><strong>{{ $user->name }}</strong>
-							<td>{{ $user->email }}
-								@if ($user->email_verified_at == null)
-								<span class="badge bg-secondary me-1">Not Verified</span>
+							<td><strong>{{ $user->name }}</strong></td>
+							<td>
+								{{ $user->nowa }}
+								@if ($user->otp_verified_at == null)
+								<span class="badge bg-secondary me-1">Unverified</span>
 								@else
 								<span class="badge bg-success me-1">Verified</span>
 								@endif
 							</td>
 							<td>
-								@if ($user->team_name == null)
-								Project Not Submitted
+								{{ $user->email }}
+								@if ($user->email_verified_at == null)
+								<span class="badge bg-secondary me-1">Unverified</span>
 								@else
-								Project Submitted
+								<span class="badge bg-success me-1">Verified</span>
+								@endif
+							</td>
+							<td>
+								@if ($user->project_file == null)
+								Not Submitted
+								@else
+								Submitted
 								@endif
 							</td>
 							<td>
@@ -48,16 +121,10 @@
 						@endforeach
 					</tbody>
 				</table>
-			</div>
-		</div>
-
-	</div>
-	<!-- / Content -->
-
-	<!-- Footer -->
-	@include('dashboard.layouts.partials.footer')
-
-	<div class="content-backdrop fade"></div>
+        	</div>
+    	</div>
+    </div>
+    <!-- / Content -->
 </div>
 @endsection
 @foreach ($users as $user)
@@ -94,7 +161,11 @@
 							</tr>
 							<tr>
 								<th>Project File</th>
-								<td>{{ $user->project_file }}</td>
+								<td>
+								    <a href="{{ asset('/storage/' . $user->project_file) }}">
+                                        {{ $user->project_file }}
+                                    </a>
+                                </td>
 							</tr>
 						</tbody>
 					</table>
@@ -175,3 +246,43 @@
 	</div>
 </div>
 @endforeach
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var table = $('#users-table').DataTable();
+
+        // Custom filter for project file
+        $('input[name="project-file-filter"]').on('change', function() {
+            var value = $(this).val();
+            table.columns(4).search(value === 'all' ? '' : (value === 'submitted' ? '^Submitted$' : '^Not Submitted$'), true, false).draw();
+        });
+
+        // Custom filter for email verification
+		$('input[name="email-verified-filter"]').on('change', function() {
+			var value = $(this).val();
+			if (value === 'all') {
+				table.columns(3).search('').draw();
+			} else if (value === 'verified') {
+				table.column(3).search('\\bVerified\\b', true, false).draw();
+			} else if (value === 'not-verified') {
+				table.column(3).search('\\bUnverified\\b', true, false).draw();
+			}
+		});
+    });
+</script>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+<style>
+	.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+		color: #FFFFFF !important;
+	}
+	.dataTables_wrapper .dataTables_length select {
+		color: #FFFFFF !important;
+	}
+
+    table.dataTable tbody tr {
+        background-color: transparent !important;
+    }
+</style>

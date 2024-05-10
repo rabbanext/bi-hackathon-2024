@@ -74,7 +74,6 @@
           <li><a class="nav-link scrollto" href="#problem-statements">Problem Statements</a></li>
           <li><a class="nav-link scrollto" href="#timeline">Timeline</a></li>
           <li><a class="nav-link scrollto" href="#prizes">Prizes</a></li>
-          <!-- Additional navigation items will be added here -->
           <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -98,7 +97,7 @@
                     <span class="align-middle">Submit</span>
                 </a>
             </li>
-            @elseif (Auth::user()->type == "admin")
+          @elseif (Auth::user()->type == "admin")
             <li>
                 <a class="dropdown-item" href="/users">
                     <i class="bx bx-upload me-2"></i>
@@ -180,12 +179,12 @@
             <div class="announcement-details">
               <h3>Registrasi Hackathon - 29 April s.d 6 Juni 2024</h3>
               <p>Daftarkan dirimu menjadi bagian dari Hackathon Bank Indonesia 2024.</p>
-              <a href="https://bi-go-id.zoom.us/meeting/register/tJArfu6trzMsH9XjY18GWt9pHbTZgpsi0Mk6#/registration" class="btn btn-primary">Register Now</a>
+              <a href="/register" class="btn btn-primary">Register Now</a>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </section> 
     <!-- End Announcement Section -->
     
     <!-- ======= Quotes Section ======= -->
@@ -228,7 +227,6 @@
     
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
-      <div id="particles-js"></div>
       <div class="container" data-aos="fade-up">
         <div class="row">
           <div class="col-lg-4" data-aos="fade-left" data-aos-delay="100">
@@ -583,8 +581,8 @@
                     <p>a. Calon peserta merupakan Warga Negara Indonesia.</p>
                     <p>b. Calon peserta dapat membentuk tim dengan jumlah maksimal 4 anggota.</p>
                     <p>c. Calon peserta bukan merupakan pegawai Organik Bank Indonesia.</p>
-                    <p>Silakan cek syarat dan ketentuan registrasi pada link berikut <a class="text-info" href="https://drive.google.com/file/d/1QaFXcU4tNsnxPGprJbVeaQ9c1_yS7_yp/view?usp=sharing">Guideline</a> </p>
-                    <p>Pastikan format submisi proposal kamu sesuai dengan format berikut <a class="text-info" href="/documents/Panduan_Proposal_-_Bank_Indonesia_Hackathon_2024.pdf">Format Proposal</a> </p>
+                    <p>Silakan cek syarat dan ketentuan registrasi pada link berikut <a class="text-info" href="https://drive.google.com/file/d/1z0F7rhKOMln5YM4239JRbqaU1fYJnXRW/view?usp=sharing">Guideline</a> </p>
+                    <p>Pastikan format submisi proposal kamu sesuai dengan format berikut <a class="text-info" href="https://drive.google.com/file/d/1i6f29tivKJYggfPOI6WGHLhWhhJsJ5uO/view?usp=sharing">Format Proposal</a> </p>
                   </div>
                 </li>
 
@@ -631,6 +629,17 @@
                   </div>
                   <div id="faq5" class="collapse" data-bs-parent=".faq-list">
                     <p>Peserta dapat memilih lebih dari satu problem statement, namun tetap dihitung sesuai dengan relevansi masalah dan solusi yang dihasilkan.</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">
+                    Bagaimana dataset yang digunakan untuk proses submisi proposal?
+                    <i class="bi bi-chevron-down icon-show"></i>
+                    <i class="bi bi-chevron-up icon-close"></i>
+                  </div>
+                  <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+                    <p>Dapat kami sampaikan bahwa tidak ada pengaturan penggunaan dataset pada tahap awal (pembuatan proposal), dan peserta dapat memanfaatkan berbagai sumber data sepanjang relevan dengan use case yang diangkat (e.g., open data dan data instansi/Lembaga). Namun, peserta diharapkan agar memperhatikan etika dan ketentuan yang ada dalam penggunaan data, a.l. UU Perlindungan Data Pribadi dan lisensi/perjanjian kerahasiaan pemilik data.</p>
                   </div>
                 </li>
 
@@ -773,7 +782,6 @@
   <script src="/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
   <!-- Main JS File -->
   <script src="/js/main.js"></script>

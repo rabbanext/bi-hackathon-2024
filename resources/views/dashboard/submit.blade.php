@@ -13,14 +13,14 @@
                 <div class="section-content mb-4">
                     <h5>Guideline</h5>
                     <p class="mb-0">Silakan cek syarat dan ketentuan registrasi pada link berikut:</p>
-                    <a class="text-info mb-0" href="https://drive.google.com/file/d/1QaFXcU4tNsnxPGprJbVeaQ9c1_yS7_yp/view?usp=sharing">Guideline</a>
+                    <a class="text-info mb-0" href="https://drive.google.com/file/d/1z0F7rhKOMln5YM4239JRbqaU1fYJnXRW/view?usp=sharing">Guideline</a>
                 </div>
             </div>
             <div class="col-12 col-md-6">
                 <div class="section-content mb-4">
                     <h5>Panduan Proposal</h5>
                     <p class="mb-0">Pastikan format submisi proposal kamu sesuai dengan format berikut:</p>
-                    <a class="text-info mb-0" href="/documents/Panduan_Proposal_-_Bank_Indonesia_Hackathon_2024.pdf">Panduan Proposal</a>
+                    <a class="text-info mb-0" href="https://drive.google.com/file/d/1i6f29tivKJYggfPOI6WGHLhWhhJsJ5uO/view?usp=sharing">Panduan Proposal</a>
                 </div>
             </div>
         </div>

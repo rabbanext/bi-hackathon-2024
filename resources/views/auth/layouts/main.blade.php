@@ -101,7 +101,7 @@
                     <span class="align-middle">Submit</span>
                 </a>
             </li>
-            @elseif (Auth::user()->type == "admin")
+          @elseif (Auth::user()->type == "admin")
             <li>
                 <a class="dropdown-item" href="/users">
                     <i class="bx bx-upload me-2"></i>
@@ -129,7 +129,7 @@
         </ul>
       @else
         <a href="/register">
-          <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button" disabled>Register</button>
+          <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button">Register</button>
         </a>
       @endauth
 
@@ -182,7 +182,6 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <div id="particles-js" class="d-none"></div>
         <div class="container">
           <div class="copyright">
             &copy; Copyright 2024 <strong><span>Bank Indonesia</span></strong>
@@ -211,7 +210,6 @@
   <script src="/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
   <!-- Main JS File -->
   <script src="/js/main.js"></script>
