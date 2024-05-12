@@ -1,4 +1,6 @@
 @extends('dashboard.layouts.main')
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.0.2/css/buttons.dataTables.css">
 
 @section('content')
 <div class="content-wrapper">
@@ -44,7 +46,7 @@
 		
         <div class="section-content mb-3">
 			<h5>Filter</h5>
-			<div class="row mb-5">
+			<div class="row mb-3">
 				<div class="col-6 mb-3">
 					<p style="display: inline;">Email Verification: </p>
 					<div class="btn-group" role="group" aria-label="Email Verification">
@@ -58,7 +60,7 @@
 						<label class="btn btn-outline-info btn-sm" for="verified2">Not Verified</label>
 					</div>
 				</div>
-				<div class="col-6 mb-3">
+				<div class="col-6 mb-3 text-end">
 					<p style="display: inline;">Project Status: </p>
 					<div class="btn-group" role="group" aria-label="Project Status">
 						<input type="radio" class="btn-check" name="project-file-filter" value="all" id="submitted0" autocomplete="off" checked>
@@ -72,8 +74,9 @@
 					</div>
 				</div>
 			</div>
+			<h5>Export</h5>
             <div class="table-responsive text-nowrap">
-				<table id="users-table" class="table table-hover">
+				<table id="users-table" class="table table-hover w-100">
 					<thead>
 						<tr>
 							<th>no.</th>
@@ -247,13 +250,54 @@
 </div>
 @endforeach
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function() {
-        var table = $('#users-table').DataTable();
+        
+    });
+</script>
 
-        // Custom filter for project file
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/buttons/3.0.2/js/dataTables.buttons.js"></script>
+<script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.html5.min.js"></script>
+<!-- Export to excel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<!-- Export to pdf -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+<script>
+    $(document).ready(function() {
+		var table = $('#users-table').DataTable({
+            layout: {
+                topStart: {
+                    buttons: [
+                        {
+                            extend: 'excel',
+                            text: 'Export to Excel',
+                            className: 'bg-info',
+                            filename: 'users_registered',
+                            title: 'Hackathon Bank Indonesia 2024 - Users Registered',
+                            exportOptions: {
+                                    columns: [0, 1, 2, 3, 4]
+                            },
+                        },
+                        {
+                            extend: 'pdf',
+                            text: 'Export to PDF',
+                            className: 'bg-info',
+                            filename: 'users_registered',
+                            title: 'Hackathon Bank Indonesia 2024 - Users Registered',
+                            exportOptions: {
+                                    columns: [0, 1, 2, 3, 4]
+                            },
+                        },
+                    ]
+                }
+            }
+        });
+
+		// Custom filter for project file
         $('input[name="project-file-filter"]').on('change', function() {
             var value = $(this).val();
             table.columns(4).search(value === 'all' ? '' : (value === 'submitted' ? '^Submitted$' : '^Not Submitted$'), true, false).draw();
@@ -272,17 +316,3 @@
 		});
     });
 </script>
-
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
-<style>
-	.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
-		color: #FFFFFF !important;
-	}
-	.dataTables_wrapper .dataTables_length select {
-		color: #FFFFFF !important;
-	}
-
-    table.dataTable tbody tr {
-        background-color: transparent !important;
-    }
-</style>

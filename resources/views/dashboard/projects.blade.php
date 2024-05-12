@@ -1,4 +1,6 @@
 @extends('dashboard.layouts.main')
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.0.2/css/buttons.dataTables.css">
 
 @section('content')
 <div class="content-wrapper">
@@ -10,7 +12,7 @@
         </div>
         <div class="section-content mb-3">
             <div class="table-responsive text-nowrap">
-                <table id="projects-table" class="table table-hover">
+                <table id="projects-table" class="table table-hover w-100">
                     <thead>
                         <tr>
                             <th>no.</th>
@@ -28,7 +30,7 @@
                             </td>
                             <td>{{ $project->project_file }}</td>
                             <td>
-                                <a href="{{ asset('/storage/' . $project->project_file) }}" target="_blank" class="btn btn-info hide-arrow">
+                                <a href="{{ asset('/storage/' . $project->project_file) }}" target="_blank" class="btn btn-sm btn-info hide-arrow">
                                     <i class="bx bx-link"></i> Open File
                                 </a>
                             </td>
@@ -45,23 +47,43 @@
 @endsection
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/buttons/3.0.2/js/dataTables.buttons.js"></script>
+<script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.html5.min.js"></script>
+<!-- Export to excel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<!-- Export to pdf -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
 <script>
     $(document).ready(function() {
-        $('#projects-table').DataTable();
+        var table = $('#projects-table').DataTable({
+            layout: {
+                topStart: {
+                    buttons: [
+                        {
+                            extend: 'excel',
+                            text: 'Export to Excel',
+                            className: 'bg-info',
+                            filename: 'users_projects',
+                            title: 'Hackathon Bank Indonesia 2024 - User\'s Projects',
+                            exportOptions: {
+                                    columns: [0, 1, 2]
+                            },
+                        },
+                        {
+                            extend: 'pdf',
+                            text: 'Export to PDF',
+                            className: 'bg-info',
+                            filename: 'users_projects',
+                            title: 'Hackathon Bank Indonesia 2024 - User\'s Projects',
+                            exportOptions: {
+                                    columns: [0, 1, 2]
+                            },
+                        },
+                    ]
+                }
+            }
+        });
     });
 </script>
-
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
-<style>
-	.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
-		color: #FFFFFF !important;
-	}
-	.dataTables_wrapper .dataTables_length select {
-		color: #FFFFFF !important;
-	}
-
-    table.dataTable tbody tr {
-        background-color: transparent !important;
-    }
-</style>
