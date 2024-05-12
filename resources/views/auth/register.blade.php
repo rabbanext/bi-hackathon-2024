@@ -38,6 +38,25 @@
             @enderror
         </div>
 
+        <div class="input-group mb-3">
+            <span class="input-group-text">+62</span>
+            <div class="form-floating flex-grow-1">
+                <input type="tel" class="form-control @error('nowa') is-invalid @enderror" id="floatingInputGroup1" name="nowa" placeholder="WhatsApp Number" value="{{ old('nowa') }}" inputmode="numeric" pattern="[0-9]*">
+                <label for="floatingInputGroup1">WhatsApp Number</label>
+                @error('nowa')
+                @if($message == 'The nowa has already been taken.')
+                <div class="invalid-feedback" role="alert">
+                    <strong>The WhatsApp Number has already been taken.</strong>
+                </div>
+                @else
+                <div class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </div>
+                @endif
+                @enderror
+            </div>
+        </div>
+        
         <div class="form-floating mb-3">
             <input type="password" class="form-control @error('password') is-invalid @enderror" name="password"
                 placeholder="password" required autofocus>

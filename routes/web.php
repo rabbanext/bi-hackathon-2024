@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\OtpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,3 +55,11 @@ All Super Admin Routes List
 Route::middleware(['auth', 'user-access:super-admin'])->group(function () {
     Route::get('/admins', [DashboardController::class, 'admins'])->name('admins');
 });
+
+/*------------------------------------------
+WhatsApp OTP Routes List
+--------------------------------------------*/
+Route::get('/verify-wa', [OtpController::class, 'showVerificationForm'])->name('verify.page');
+Route::post('/verify-wa', [OtpController::class, 'verify'])->name('verify.submit');
+Route::post('/resend-otp', [OtpController::class, 'resendOtp'])->name('resend.otp');
+Route::get('/submit', [DashboardController::class, 'submit'])->name('submit');
