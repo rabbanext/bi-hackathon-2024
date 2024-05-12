@@ -104,7 +104,12 @@ class DashboardController extends Controller
         // Update other fields
         Auth::user()->update($request->except('project_file')); // Exclude 'project_file' from mass assignment
         
-        return back()->with('success', 'Form Submitted!');
+        if ($request->filled('submitted')) {
+            return back()->with('success', '<strong>Form submitted!</strong> Thank you for your participation. Best of luck!');
+        } else {
+            return back()->with('success', '<strong>Form saved successfully!</strong> Feel free to edit and make any final adjustments before submission.');
+        }
+        
     }
 
 
