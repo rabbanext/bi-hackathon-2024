@@ -45,9 +45,6 @@
 	</div>
 	<!-- / Content -->
 
-	<!-- Footer -->
-	@include('dashboard.layouts.partials.footer')
-
 	<div class="content-backdrop fade"></div>
 </div>
 @endsection
