@@ -639,7 +639,7 @@
                     <i class="bi bi-chevron-up icon-close"></i>
                   </div>
                   <div id="faq5" class="collapse" data-bs-parent=".faq-list">
-                    <p>Dapat kami sampaikan bahwa tidak ada pengaturan penggunaan dataset pada tahap awal (pembuatan proposal), dan peserta dapat memanfaatkan berbagai sumber data sepanjang relevan dengan use case yang diangkat (e.g., open data dan data instansi/Lembaga). Namun, peserta diharapkan agar memperhatikan etika dan ketentuan yang ada dalam penggunaan data, a.l. UU Perlindungan Data Pribadi dan lisensi/perjanjian kerahasiaan pemilik data.</p>
+                    <p>Tidak ada pengaturan penggunaan dataset pada tahap awal (pembuatan proposal), dan peserta dapat memanfaatkan berbagai sumber data sepanjang relevan dengan use case yang diangkat (e.g., open data dan data instansi/Lembaga). Namun, peserta diharapkan agar memperhatikan etika dan ketentuan yang ada dalam penggunaan data, a.l. UU Perlindungan Data Pribadi dan lisensi/perjanjian kerahasiaan pemilik data.</p>
                   </div>
                 </li>
 
