@@ -75,12 +75,14 @@
 				</div>
 			</div>
 			<h5>Export</h5>
+			<!--<a href="{{ route('export') }}" class="btn btn-success">Export Users</a>-->
             <div class="table-responsive text-nowrap">
 				<table id="users-table" class="table table-hover w-100">
 					<thead>
 						<tr>
 							<th>no.</th>
 							<th>Name</th>
+							<th>Institution</th>
 							<th>WhatsApp</th>
 							<th>Email</th>
 							<th>Project</th>
@@ -93,11 +95,22 @@
 							<td>{{ $loop->iteration }}</td>
 							<td><strong>{{ $user->name }}</strong></td>
 							<td>
-								{{ $user->nowa }}
-								@if ($user->otp_verified_at == null)
-								<span class="badge bg-secondary me-1">Unverified</span>
+							    @if ($user->institution == null)
+							        -
+							    @else
+							        {{ $user->institution }}
+							    @endif
+							</td>
+							<td>
+								@if ($user->nowa == null)
+								-
 								@else
-								<span class="badge bg-success me-1">Verified</span>
+								    {{ str_pad($user->nowa, strlen($user->nowa) + 1, '0', STR_PAD_LEFT) }}
+    								@if ($user->otp_verified_at == null)
+    								<span class="badge bg-secondary me-1">Unverified</span>
+    								@else
+    								<span class="badge bg-success me-1">Verified</span>
+    								@endif
 								@endif
 							</td>
 							<td>
@@ -205,7 +218,7 @@
 											<td>{{ $memberRoles[$key] }}</td>
 											<td>{{ $memberDomiciles[$key] }}</td>
 											<td>{{ $memberEmail[$key] }}</td>
-											<td>{{ $memberDate_of_birth[$key] }}</td>
+											<td>{{ date('d-m-Y', strtotime($memberDate_of_birth[$key])) }}</td>
 											<td>{{ $memberProfession[$key] }}</td>
 											<td>{{ $memberGithub_url[$key] }}</td>
 											<td>{{ $memberLinkedin_url[$key] }}</td>
@@ -216,7 +229,7 @@
 						</table>
 					</div>
 					<h5>Links:</h5>
-					<div class="table-responsive">
+					<div class="table-responsive mb-5">
 						<table class="table table-bordered">
 							<thead>
 								<tr>
@@ -240,6 +253,7 @@
 							</tbody>
 						</table>
 					</div>
+					<p class="mb-0">Account registered at: {{ date('H:i:s d-m-Y', strtotime($user->created_at)) }}</p>
 				</div>
 			</div>
 			<div class="modal-footer">
@@ -300,18 +314,18 @@
 		// Custom filter for project file
         $('input[name="project-file-filter"]').on('change', function() {
             var value = $(this).val();
-            table.columns(4).search(value === 'all' ? '' : (value === 'submitted' ? '^Submitted$' : '^Not Submitted$'), true, false).draw();
+            table.columns(5).search(value === 'all' ? '' : (value === 'submitted' ? '^Submitted$' : '^Not Submitted$'), true, false).draw();
         });
 
         // Custom filter for email verification
 		$('input[name="email-verified-filter"]').on('change', function() {
 			var value = $(this).val();
 			if (value === 'all') {
-				table.columns(3).search('').draw();
+				table.columns(4).search('').draw();
 			} else if (value === 'verified') {
-				table.column(3).search('\\bVerified\\b', true, false).draw();
+				table.column(4).search('\\bVerified\\b', true, false).draw();
 			} else if (value === 'not-verified') {
-				table.column(3).search('\\bUnverified\\b', true, false).draw();
+				table.column(4).search('\\bUnverified\\b', true, false).draw();
 			}
 		});
     });
