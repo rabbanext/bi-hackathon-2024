@@ -62,8 +62,16 @@ class OtpController extends Controller
 
         // Store new OTP in the database
         $user->otp = $otp;
-        $user->otp_expiry = now()->addMinutes(10); // Set OTP expiry time
+        $user->otp_expiry = now()->addMinutes(10080); // Set OTP expiry time to 7 days
         $user->save();
+        
+        // Adjust phone number if necessary
+        $phoneNumber = $user->nowa;
+        if (substr($phoneNumber, 0, 1) === '0') {
+            $phoneNumber = '62' . substr($phoneNumber, 1);
+        } elseif (substr($phoneNumber, 0, 1) === '8') {
+            $phoneNumber = '62' . $phoneNumber;
+        }
 
         // Send OTP using cURL
         $response = Http::withHeaders([
@@ -71,11 +79,11 @@ class OtpController extends Controller
             'Qiscus-Secret-Key' => '7fb55cc85793cee7396e792e8e674241',
             'Content-Type' => 'application/json',
         ])->post('https://omnichannel.qiscus.com/whatsapp/v1/kczge-jxbshhqmilt7vym/5162/messages', [
-            'to' => $user->nowa, // Assuming nowa is the phone number field in your user model
+            'to' => $phoneNumber,
             'type' => 'template',
             'template' => [
                 'namespace' => 'e66eee30_b2bd_4b7e_a393_e17169666559',
-                'name' => 'newotp',
+                'name' => 'register_otp',
                 'language' => [
                     'policy' => 'deterministic',
                     'code' => 'en',
