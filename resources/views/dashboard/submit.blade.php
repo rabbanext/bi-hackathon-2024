@@ -13,7 +13,12 @@
             <div class="alert alert-success">
                 <p class="mb-0">{!! Session::get('success') !!}</p>
             </div>
+        @elseif ($errors->any())
+            <div class="alert alert-danger">
+                Please check the errors in the form and correct them.
+            </div>
         @endif
+
         @if (Auth::user()->otp_verified_at == null && Auth::user()->type == "user")
             <div class="section-content mb-3">
               <div class="d-flex align-items-end row">
@@ -117,9 +122,12 @@
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-floating mb-3">
-                                                                <input type="email" class="form-control" id="floatingInput" name="member_email[]"
+                                                                <input type="email" class="form-control @error('member_email.*') is-invalid @enderror" id="floatingInput" name="member_email[]"
                                                                     value="{{ $emails[$i] }}" placeholder="johndoel@gmail.com"
                                                                     aria-describedby="floatingInputLink" required />
+                                                                    @error('member_email.*')
+                                                                        <div class="invalid-feedback">Please fill with valid email address.</div>
+                                                                    @enderror
                                                                 <label for="floatingInput">Email</label>
                                                             </div>
                                                         </div>
@@ -295,34 +303,36 @@
 
 
 <script>
-    document.addEventListener("DOMContentLoaded", function confirmSubmit() {
+    function confirmSubmit() {
         var saveButton = document.querySelector('button[name="action"][value="save"]');
         var submitButton = document.querySelector('button[name="action"][value="submit"]');
         var submittedInput = document.getElementById("submittedInput");
+        var mainForm = document.getElementById("mainForm");
 
         saveButton.addEventListener("click", function(event) {
-            // Prevent form submission
-            event.preventDefault();
-
             // Set additional value for save action to null
             submittedInput.value = null;
-
-            // Submit form
-            document.getElementById("mainForm").submit();
+            if (mainForm.checkValidity()) {
+                mainForm.submit();
+            } else {
+                mainForm.reportValidity();
+            }
         });
 
         submitButton.addEventListener("click", function(event) {
-            // Prevent form submission
-            event.preventDefault();
-
             // Set additional value for submit action to 1
             submittedInput.value = 1;
-
-            // Submit form
-            document.getElementById("mainForm").submit();
+            if (mainForm.checkValidity()) {
+                mainForm.submit();
+            } else {
+                mainForm.reportValidity();
+            }
         });
-    });
+    }
+
+    document.addEventListener("DOMContentLoaded", confirmSubmit);
 </script>
+
 
 <!-- Add member JS -->
 <script>

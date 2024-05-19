@@ -64,29 +64,43 @@ class DashboardController extends Controller
 
         // Validate the form data
         $validatedData = $request->validate([
-            // Validation rules for other fields...
+            'team_name' => 'required|string|max:255',
+            'institution' => 'required|string|max:255',
+            'member_name.*' => 'nullable|string|max:255',
+            'member_role.*' => 'nullable|in:leader,member',
+            'member_domicile.*' => 'nullable|string|max:255',
+            'member_email.*' => 'nullable|email:dns|max:255',
+            'member_date_of_birth.*' => 'nullable|date',
+            'member_profession.*' => 'nullable|string|max:255',
+            'member_github_url.*' => 'nullable|string|max:255',
+            'member_linkedin_url.*' => 'nullable|string|max:255',
+            'project_link.*' => 'nullable|string|max:255',
+            'project_desc.*' => 'nullable|string|max:255',
+            'project_file' => 'nullable|file|mimes:pdf|max:2048', // Adjust max file size as needed
+            'submitted' => 'nullable', // Adjust max file size as needed
         ]);
 
-        // Update the user's data
-        $user->update($validatedData);
+        // Update the user's data based on the validated fields
+        $user->update(array_filter($validatedData));
 
+        // Handle special cases where specific fields need to be nullified if empty
         if (empty($validatedData['member_name'])) {
-            $user->update([
-                'member_name' => null,
-                'member_role' => null,
-                'member_domicile' => null,
-                'member_email' => null,
-                'member_date_of_birth' => null,
-                'member_profession' => null,
-            ]);
+            $user->member_name = null;
+            $user->member_role = null;
+            $user->member_domicile = null;
+            $user->member_email = null;
+            $user->member_date_of_birth = null;
+            $user->member_profession = null;
         }
+
         if (empty($validatedData['project_link'])) {
-            $user->update([
-                'project_link' => null,
-                'project_desc' => null,
-            ]);
+            $user->project_link = null;
+            $user->project_desc = null;
         }
+
+        // Handle file upload if a new file is provided
         if ($request->hasFile('project_file')) {
+            // Logic for handling file upload
             $file = $request->file('project_file');
             $originalFileName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
             $originalFileName = str_replace(' ', '_', $originalFileName);
@@ -95,23 +109,22 @@ class DashboardController extends Controller
             $extension = $file->getClientOriginalExtension();
             $fileName = $originalFileName . '_' . $dateTime . '.' . $extension;
             $file->move(storage_path('app/public'), $fileName);
-            Auth::user()->project_file = $fileName;
+            $user->project_file = $fileName;
 
-            $user = Auth::user();
+            // Notify user after file upload
             $user->notify(new SubmissionConfirmation());
-        }    
-
-        // Update other fields
-        Auth::user()->update($request->except('project_file')); // Exclude 'project_file' from mass assignment
-        
-        if ($request->filled('submitted')) {
-            return back()->with('success', '<strong>Form submitted!</strong> Thank you for your participation. Best of luck!');
-        } else {
-            return back()->with('success', '<strong>Form saved successfully!</strong> Feel free to edit and make any final adjustments before submission.');
         }
-        
-    }
 
+        // Save the changes
+        $user->save();
+
+        // Redirect back with success message
+        if (!$request->filled('submitted')) {
+            return back()->with('success', '<strong>Form saved successfully!</strong> Feel free to edit and make any final adjustments before submission.');
+        } else {
+            return back();
+        }
+    }
 
     //Admin
     public function projects()
