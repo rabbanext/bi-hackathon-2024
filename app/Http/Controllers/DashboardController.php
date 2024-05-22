@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Notifications\SubmissionConfirmation;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\UsersExport;
 
 class DashboardController extends Controller
 {
@@ -124,6 +126,11 @@ class DashboardController extends Controller
         } else {
             return back();
         }
+    }
+
+    public function exportUsers()
+    {
+        return Excel::download(new UsersExport, 'users.xlsx');
     }
 
     //Admin

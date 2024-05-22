@@ -63,3 +63,5 @@ Route::get('/verify-wa', [OtpController::class, 'showVerificationForm'])->name('
 Route::post('/verify-wa', [OtpController::class, 'verify'])->name('verify.submit');
 Route::post('/resend-otp', [OtpController::class, 'resendOtp'])->name('resend.otp');
 Route::get('/submit', [DashboardController::class, 'submit'])->name('submit');
+
+Route::get('/export-users', [DashboardController::class, 'exportUsers'])->name('export.users');

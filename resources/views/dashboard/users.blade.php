@@ -43,40 +43,54 @@
 				</tbody>
 			</table>
 		</div>
-		
-        <div class="section-content mb-3">
-			<h5>Filter</h5>
-			<div class="row mb-3">
-				<div class="col-6 mb-3">
-					<p style="display: inline;">Email Verification: </p>
-					<div class="btn-group" role="group" aria-label="Email Verification">
-						<input type="radio" class="btn-check" name="email-verified-filter" value="all" id="verified0" autocomplete="off" checked>
-						<label class="btn btn-outline-info btn-sm" for="verified0">All</label>
+		<div class="row">
+			<div class="col-6">
+				<div class="section-content h-100 mb-3">
+					<h5>Filter</h5>
+					<div class="row">
+						<div class="col-6 mb-1">
+							<p style="display: inline;">Email Verification: </p>
+							<div class="btn-group" role="group" aria-label="Email Verification">
+								<input type="radio" class="btn-check" name="email-verified-filter" value="all" id="verified0" autocomplete="off" checked>
+								<label class="btn btn-outline-info btn-sm" for="verified0">All</label>
 
-						<input type="radio" class="btn-check" name="email-verified-filter" value="verified" id="verified1" autocomplete="off">
-						<label class="btn btn-outline-info btn-sm" for="verified1">Verified</label>
+								<input type="radio" class="btn-check" name="email-verified-filter" value="verified" id="verified1" autocomplete="off">
+								<label class="btn btn-outline-info btn-sm" for="verified1">Verified</label>
 
-						<input type="radio" class="btn-check" name="email-verified-filter" value="not-verified" id="verified2" autocomplete="off">
-						<label class="btn btn-outline-info btn-sm" for="verified2">Not Verified</label>
-					</div>
-				</div>
-				<div class="col-6 mb-3 text-end">
-					<p style="display: inline;">Project Status: </p>
-					<div class="btn-group" role="group" aria-label="Project Status">
-						<input type="radio" class="btn-check" name="project-file-filter" value="all" id="submitted0" autocomplete="off" checked>
-						<label class="btn btn-outline-info btn-sm" for="submitted0">All</label>
+								<input type="radio" class="btn-check" name="email-verified-filter" value="not-verified" id="verified2" autocomplete="off">
+								<label class="btn btn-outline-info btn-sm" for="verified2">Not Verified</label>
+							</div>
+						</div>
+						<div class="col-6 mb-1">
+							<p style="display: inline;">Project Status: </p>
+							<div class="btn-group" role="group" aria-label="Project Status">
+								<input type="radio" class="btn-check" name="project-file-filter" value="all" id="submitted0" autocomplete="off" checked>
+								<label class="btn btn-outline-info btn-sm" for="submitted0">All</label>
 
-						<input type="radio" class="btn-check" name="project-file-filter" value="submitted" id="submitted1" autocomplete="off">
-						<label class="btn btn-outline-info btn-sm" for="submitted1">Submitted</label>
+								<input type="radio" class="btn-check" name="project-file-filter" value="submitted" id="submitted1" autocomplete="off">
+								<label class="btn btn-outline-info btn-sm" for="submitted1">Submitted</label>
 
-						<input type="radio" class="btn-check" name="project-file-filter" value="not-submitted" id="submitted2" autocomplete="off">
-						<label class="btn btn-outline-info btn-sm" for="submitted2">Not Submitted</label>
+								<input type="radio" class="btn-check" name="project-file-filter" value="not-submitted" id="submitted2" autocomplete="off">
+								<label class="btn btn-outline-info btn-sm" for="submitted2">Not Submitted</label>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<h5>Export</h5>
-			<!--<a href="{{ route('export') }}" class="btn btn-success">Export Users</a>-->
-            <div class="table-responsive text-nowrap">
+			<div class="col-6">
+				<div class="section-content h-100 mb-3">
+					<h5>Export</h5>
+					<div class="row">
+						<div class="col">
+							<p class="mb-0">Export to excel:</p>
+							<a href="{{ route('export.users') }}" class="btn btn-sm btn-info mb-1">Export Users</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section-content mb-3">
+			<div class="table-responsive text-nowrap">
 				<table id="users-table" class="table table-hover w-100">
 					<thead>
 						<tr>
@@ -95,22 +109,22 @@
 							<td>{{ $loop->iteration }}</td>
 							<td><strong>{{ $user->name }}</strong></td>
 							<td>
-							    @if ($user->institution == null)
-							        -
-							    @else
-							        {{ $user->institution }}
-							    @endif
+								@if ($user->institution == null)
+									-
+								@else
+									{{ $user->institution }}
+								@endif
 							</td>
 							<td>
 								@if ($user->nowa == null)
 								-
 								@else
-								    {{ str_pad($user->nowa, strlen($user->nowa) + 1, '0', STR_PAD_LEFT) }}
-    								@if ($user->otp_verified_at == null)
-    								<span class="badge bg-secondary me-1">Unverified</span>
-    								@else
-    								<span class="badge bg-success me-1">Verified</span>
-    								@endif
+									{{ str_pad($user->nowa, strlen($user->nowa) + 1, '0', STR_PAD_LEFT) }}
+									@if ($user->otp_verified_at == null)
+									<span class="badge bg-secondary me-1">Unverified</span>
+									@else
+									<span class="badge bg-success me-1">Verified</span>
+									@endif
 								@endif
 							</td>
 							<td>
@@ -137,8 +151,8 @@
 						@endforeach
 					</tbody>
 				</table>
-        	</div>
-    	</div>
+			</div>
+		</div>
     </div>
     <!-- / Content -->
 </div>
@@ -273,42 +287,9 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
-<script src="https://cdn.datatables.net/buttons/3.0.2/js/dataTables.buttons.js"></script>
-<script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.html5.min.js"></script>
-<!-- Export to excel -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-<!-- Export to pdf -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
 <script>
     $(document).ready(function() {
 		var table = $('#users-table').DataTable({
-            layout: {
-                topStart: {
-                    buttons: [
-                        {
-                            extend: 'excel',
-                            text: 'Export to Excel',
-                            className: 'bg-info',
-                            filename: 'users_registered',
-                            title: 'Hackathon Bank Indonesia 2024 - Users Registered',
-                            exportOptions: {
-                                    columns: [0, 1, 2, 3, 4]
-                            },
-                        },
-                        {
-                            extend: 'pdf',
-                            text: 'Export to PDF',
-                            className: 'bg-info',
-                            filename: 'users_registered',
-                            title: 'Hackathon Bank Indonesia 2024 - Users Registered',
-                            exportOptions: {
-                                    columns: [0, 1, 2, 3, 4]
-                            },
-                        },
-                    ]
-                }
-            }
         });
 
 		// Custom filter for project file
