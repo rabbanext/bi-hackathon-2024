@@ -85,7 +85,7 @@
 
       @auth
         <a href="javascript:void(0);" data-bs-toggle="dropdown">
-          <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button">Submit Proposal</button>
+          <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button">Submit</button>
         </a>
         <ul class="dropdown-menu dropdown-menu-end">
           @if (Auth::user()->type == "user")
@@ -98,13 +98,13 @@
             <li>
                 <a class="dropdown-item" href="/submit">
                     <i class="bx bx-upload me-2"></i>
-                    <span class="align-middle">Submit</span>
+                    <span class="align-middle">Submit Proposal</span>
                 </a>
             </li>
           @elseif (Auth::user()->type == "admin")
             <li>
                 <a class="dropdown-item" href="/users">
-                    <i class="bx bx-upload me-2"></i>
+                    <i class="bx bx-user me-2"></i>
                     <span class="align-middle">Users</span>
                 </a>
             </li>
@@ -112,6 +112,12 @@
                 <a class="dropdown-item" href="/projects">
                     <i class="bx bx-upload me-2"></i>
                     <span class="align-middle">Projects</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="/email_responses">
+                    <i class="bx bx-envelope me-2"></i>
+                    <span class="align-middle">Email Responses</span>
                 </a>
             </li>
           @endif

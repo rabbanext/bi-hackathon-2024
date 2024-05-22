@@ -146,6 +146,12 @@ class DashboardController extends Controller
             'users' => User::where('type', 0)->get()
         ]);
     }
+    public function email_responses()
+    {
+        return view('dashboard.email_responses', [
+            'users' => User::where('type', 0)->get()
+        ]);
+    }
 
     //Super Admin
     public function admins()

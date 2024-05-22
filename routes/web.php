@@ -47,6 +47,7 @@ All Admin Routes List
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/users', [DashboardController::class, 'users'])->name('users');
     Route::get('/projects', [DashboardController::class, 'projects']);
+    Route::get('/email_responses', [DashboardController::class, 'email_responses']);
 });
 
 /*------------------------------------------

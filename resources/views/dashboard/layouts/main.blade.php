@@ -105,7 +105,7 @@
             @elseif (Auth::user()->type == "admin")
             <li>
                 <a class="dropdown-item" href="/users">
-                    <i class="bx bx-upload me-2"></i>
+                    <i class="bx bx-user me-2"></i>
                     <span class="align-middle">Users</span>
                 </a>
             </li>
@@ -113,6 +113,12 @@
                 <a class="dropdown-item" href="/projects">
                     <i class="bx bx-upload me-2"></i>
                     <span class="align-middle">Projects</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="/email_responses">
+                    <i class="bx bx-envelope me-2"></i>
+                    <span class="align-middle">Email Responses</span>
                 </a>
             </li>
           @endif
