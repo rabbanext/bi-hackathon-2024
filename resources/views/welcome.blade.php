@@ -40,20 +40,15 @@
 
   <!-- Google Fonts -->
   <link
-    href="https://fonts.googleapis.com/css?family=Exo:300,300i,400,400i,600,600i,700,700i|family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    href="https://fonts.googleapis.com/css?family=Exo:300,400,600,700|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="/vendor/aos/aos.css" rel="stylesheet">
   <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="/css/css.css" rel="stylesheet">
+  <link href="/css/style.min.css" rel="stylesheet">
 
 </head>
 
@@ -76,12 +71,12 @@
           <li><a class="nav-link scrollto" href="#prizes">Prizes</a></li>
           <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
+        <i class="bx bx-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
       @auth
         <a href="javascript:void(0);" data-bs-toggle="dropdown">
-          <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button">Submit Proposal</button>
+          <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button">Submit</button>
         </a>
         <ul class="dropdown-menu dropdown-menu-end">
           @if (Auth::user()->type == "user")
@@ -94,7 +89,7 @@
             <li>
                 <a class="dropdown-item" href="/submit">
                     <i class="bx bx-upload me-2"></i>
-                    <span class="align-middle">Submit</span>
+                    <span class="align-middle">Submit Proposal</span>
                 </a>
             </li>
           @elseif (Auth::user()->type == "admin")
@@ -138,20 +133,17 @@
 
       <div class="row justify-content-center">
         <div class="col-12 col-lg-6">
-          <img src="/img/hero/bi_hackathon.svg" class="img-fluid mb-3" alt="" data-aos="zoom-in" data-aos-delay="100">
-          <h5 data-aos="fade-up" data-aos-delay="100">
+          <img src="/img/hero/bi_hackathon.webp" class="img-fluid mb-3" alt="">
+          <h5>
             Artificial Intelligence & Machine Learning<br />for Digital Economy and Finance in Indonesia
           </h5>
-          <!-- <h5 data-aos="fade-up" data-aos-delay="100">
-            Artificial Intelligence & Machine Learning<br>for Digital Economy and Finance in Indonesia
-          </h5> -->
-          <div class="hero-vr d-flex align-items-center justify-content-center" data-aos="fade-up" data-aos-delay="800">
-            <img src="/img/hero/component/bg.png" width="400" class="img-fluid hero-vr-bg" alt="">
-            <img src="/img/hero/hero-vr.png" width="500" class="img-fluid hero-vr" alt="">
-            <img src="/img/hero/component/1.png" width="70" class="img-fluid hero-component" alt="">
-            <img src="/img/hero/component/2.png" width="70" class="img-fluid hero-component2" alt="">
-            <img src="/img/hero/component/3.png" width="100" class="img-fluid hero-component3" alt="">
-            <img src="/img/hero/component/4.png" width="70" class="img-fluid hero-component4" alt="">
+          <div class="hero-vr d-flex align-items-center justify-content-center">
+            <img src="/img/hero/component/bg.webp" width="400" class="img-fluid hero-vr-bg" alt="">
+            <img src="/img/hero/hero-vr.webp" width="500" class="img-fluid hero-vr" alt="">
+            <img src="/img/hero/component/1.webp" width="70" class="img-fluid hero-component" alt="">
+            <img src="/img/hero/component/2.webp" width="70" class="img-fluid hero-component2" alt="">
+            <img src="/img/hero/component/3.webp" width="100" class="img-fluid hero-component3" alt="">
+            <img src="/img/hero/component/4.webp" width="70" class="img-fluid hero-component4" alt="">
           </div>
         </div>
       </div>
@@ -162,14 +154,14 @@
 
     <!-- ======= Announcement Section ======= -->
     <section id="announcement" class="announcement">
-      <div class="container" data-aos="fade-up">
+      <div class="container" >
         <div class="section-title pb-2 ms-2">
           <h2>Announcements</h2>
           <p>Announcements</p>
         </div>
         <div class="row">
           <div class="col-md-6">
-            <div class="announcement-poster" data-aos="fade-right" data-aos-delay="100">
+            <div class="announcement-poster">
               <a href="/img/announcement/2.jpeg" data-glightbox="announcement-gallery" data-title="Hackathon Bank Indonesia 2024">
                 <img src="/img/announcement/2.jpeg" class="img-fluid" alt="Hackathon Bank Indonesia 2024">
               </a>
@@ -186,53 +178,15 @@
       </div>
     </section> 
     <!-- End Announcement Section -->
-    
-    <!-- ======= Quotes Section ======= -->
-    <!-- <section id="quotes" class="quotes">
-      <div class="container" data-aos="fade-up">
-        <div data-aos="fade-right" data-aos-delay="100">
-          <div class="row">
-            <div class="col-12 col-lg-4">
-              <img src="/img/quotes/1.png" width="100" class="img-fluid mb-3" alt="" data-aos="zoom-in" data-aos-delay="100">
-              <div class="content section-content">
-                <h4>Gubernur Bank Indonesia</h4>
-                <p>
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem inventore assumenda illum perferendis? Repellendus, id ipsum accusamus."
-                </p>
-              </div>
-            </div>
-            <div class="col-12 col-lg-4">
-              <img src="/img/quotes/1.png" width="100" class="img-fluid mb-3" alt="" data-aos="zoom-in" data-aos-delay="100">
-              <div class="content section-content">
-                <h4>Dewan Gubernur Bank Indonesia</h4>
-                <p>
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem inventore assumenda illum perferendis? Repellendus, id ipsum accusamus."
-                </p>
-              </div>
-            </div>
-            <div class="col-12 col-lg-4">
-              <img src="/img/quotes/1.png" width="100" class="img-fluid mb-3" alt="" data-aos="zoom-in" data-aos-delay="100">
-              <div class="content section-content">
-                <h4>Kepala Departemen Kebijakan Sistem Pembayaran</h4>
-                <p>
-                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem inventore assumenda illum perferendis? Repellendus, id ipsum accusamus."
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!-- End Quotes Section -->
-    
+
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
+      <div class="container" >
         <div class="row">
-          <div class="col-lg-4" data-aos="fade-left" data-aos-delay="100">
+          <div class="col-lg-4">
             
           </div>
-          <div class="col-lg-8" data-aos="fade-right" data-aos-delay="100">
+          <div class="col-lg-8" >
             <div class="content section-content">
               <h3 class="fst-italic">
                 Selamat datang para inovator, pengembang, dan pemikir kreatif!
@@ -266,7 +220,7 @@
 
     <!-- ======= Problem Statements Section ======= -->
     <section id="problem-statements" class="problem-statements">
-      <div class="container" data-aos="zoom-in">
+      <div class="container" >
         <div class="section-title">
           <h2>Problem Statements</h2>
           <p>Problem Statements</p>
@@ -293,8 +247,8 @@
               <div data-bs-toggle="collapse" href="#ps1" class="collapsed">
                 <h5 class="mb-1">
                   Scope of work:
-                  <i class="bi bi-chevron-down icon-show"></i>
-                  <i class="bi bi-chevron-up icon-close"></i>
+                  <i class="bx bx-chevron-down icon-show"></i>
+                  <i class="bx bx-chevron-up icon-close"></i>
                 </h5>
               </div>
               <div id="ps1" class="collapse">
@@ -342,8 +296,8 @@
               <div data-bs-toggle="collapse" href="#ps2" class="collapsed">
                 <h5 class="mb-1">
                   Scope of work:
-                  <i class="bi bi-chevron-down icon-show"></i>
-                  <i class="bi bi-chevron-up icon-close"></i>
+                  <i class="bx bx-chevron-down icon-show"></i>
+                  <i class="bx bx-chevron-up icon-close"></i>
                 </h5>
               </div>
               <div id="ps2" class="collapse">
@@ -382,8 +336,8 @@
               <div data-bs-toggle="collapse" href="#ps3" class="collapsed">
                 <h5 class="mb-1">
                   Scope of work:
-                  <i class="bi bi-chevron-down icon-show"></i>
-                  <i class="bi bi-chevron-up icon-close"></i>
+                  <i class="bx bx-chevron-down icon-show"></i>
+                  <i class="bx bx-chevron-up icon-close"></i>
                 </h5>
               </div>
               <div id="ps3" class="collapse">
@@ -494,31 +448,31 @@
 
     <!-- ======= Prizes Section ======= -->
     <section id="prizes" class="prizes d-flex flex-column align-items-center justify-content-center">
-      <div class="container" data-aos="zoom-in">
-        <div class="" data-aos="fade-left" data-aos-delay="100">
+      <div class="container" >
+        <div class="">
           <div class="section-title text-center pb-1">
             <p>HADIAH</p>
           </div>
           <div class="row mb-4">
-            <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-12 col-md-6 col-lg-3" >
               <div class="prize">
                 <img src="/img/prizes/juara1.png" width="300" class="img-prize mb-3" alt="">
                 <h3>Rp.200.000.000</h3>
               </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-12 col-md-6 col-lg-3" >
               <div class="prize">
                 <img src="/img/prizes/juara2.png" width="300" class="img-prize mb-3" alt="">
                 <h3>Rp.100.000.000</h3>
               </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-12 col-md-6 col-lg-3" >
               <div class="prize">
                 <img src="/img/prizes/juara3.png" width="300" class="img-prize mb-3" alt="">
                 <h3>Rp.50.000.000</h3>
               </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-12 col-md-6 col-lg-3" >
               <div class="prize">
                 <img src="/img/prizes/juara4.png" width="300" class="img-prize mb-3" alt="">
                 <h3>Rp.15.000.000</h3>
@@ -538,11 +492,11 @@
 
     <!-- ======= Media Partners Section ======= -->
     <section id="media-partners" class="media-partners">
-      <div class="container" data-aos="zoom-in">
+      <div class="container" >
         <div class="section-title text-center">
           <p>Media Partners</p>
         </div>
-        <div class="section-content" data-aos="fade-left" data-aos-delay="100">
+        <div class="section-content">
           <div class="media-partners-wrapper d-flex justify-content-center flex-wrap"><!-- Updated: Removed row and column classes -->
             <div class="media-partner-img-container">
               <img src="/img/media-partners/korika.png" class="img-media-partner mb-3" alt="">
@@ -560,7 +514,7 @@
 
     <!-- ======= Frequently Asked Questions Section ======= -->
     <section id="faq" class="faq section-bg">
-      <div class="container" data-aos="fade-up">
+      <div class="container" >
 
         <div class="section-content">
           <div class="section-title">
@@ -574,8 +528,8 @@
                 <li>
                   <div data-bs-toggle="collapse" class="question" href="#faq1" aria-expanded="true">
                     Apa sajakah syarat & ketentuan pendaftaran?
-                    <i class="bi bi-chevron-down icon-show"></i>
-                    <i class="bi bi-chevron-up icon-close"></i>
+                    <i class="bx bx-chevron-down icon-show"></i>
+                    <i class="bx bx-chevron-up icon-close"></i>
                   </div>
                   <div id="faq1" class="collapse show" data-bs-parent=".faq-list">
                     <p>a. Calon peserta merupakan Warga Negara Indonesia.</p>
@@ -589,8 +543,8 @@
                 <li>
                   <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">
                     Apa yang diserahkan pada saat Pendaftaran?
-                    <i class="bi bi-chevron-down icon-show"></i>
-                    <i class="bi bi-chevron-up icon-close"></i>
+                    <i class="bx bx-chevron-down icon-show"></i>
+                    <i class="bx bx-chevron-up icon-close"></i>
                   </div>
                   <div id="faq2" class="collapse" data-bs-parent=".faq-list">
                     <p>1. Tim akan diminta untuk memberikan Ide Inovasi dalam bentuk Mockup, PoC, Prototype atau Pilot yang dapat berupa Dokumen, URL, atau Aplikasi.</p>
@@ -601,8 +555,8 @@
                 <li>
                   <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">
                     Apakah acara Hackathon 2024 ini dikenakan biaya?
-                    <i class="bi bi-chevron-down icon-show"></i>
-                    <i class="bi bi-chevron-up icon-close"></i>
+                    <i class="bx bx-chevron-down icon-show"></i>
+                    <i class="bx bx-chevron-up icon-close"></i>
                   </div>
                   <div id="faq3" class="collapse" data-bs-parent=".faq-list">
                     <p>Peserta tidak akan dikenakan biaya dalam bentuk apapun.</p>
@@ -612,8 +566,8 @@
                 <li>
                   <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">
                     Apa yang peserta akan dapatkan selama kegiatan Hacakathon?
-                    <i class="bi bi-chevron-down icon-show"></i>
-                    <i class="bi bi-chevron-up icon-close"></i>
+                    <i class="bx bx-chevron-down icon-show"></i>
+                    <i class="bx bx-chevron-up icon-close"></i>
                   </div>
                   <div id="faq4" class="collapse" data-bs-parent=".faq-list">
                     <p>1. Para Finalis akan mendapatkan fasilitas Akomodasi Transportasi & Penginapan selama masa karantina berlangsung.</p>
@@ -624,8 +578,8 @@
                 <li>
                   <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">
                     Apakah peserta dapat memilih 2 atau lebih problem statement untuk dijadikan 1 proposal invoasi gabungan?
-                    <i class="bi bi-chevron-down icon-show"></i>
-                    <i class="bi bi-chevron-up icon-close"></i>
+                    <i class="bx bx-chevron-down icon-show"></i>
+                    <i class="bx bx-chevron-up icon-close"></i>
                   </div>
                   <div id="faq5" class="collapse" data-bs-parent=".faq-list">
                     <p>Peserta dapat memilih lebih dari satu problem statement, namun tetap dihitung sesuai dengan relevansi masalah dan solusi yang dihasilkan.</p>
@@ -633,34 +587,34 @@
                 </li>
                 
                 <li>
-                  <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">
+                  <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">
                     Bagaimana dataset yang digunakan untuk proses submisi proposal?
-                    <i class="bi bi-chevron-down icon-show"></i>
-                    <i class="bi bi-chevron-up icon-close"></i>
+                    <i class="bx bx-chevron-down icon-show"></i>
+                    <i class="bx bx-chevron-up icon-close"></i>
                   </div>
-                  <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+                  <div id="faq6" class="collapse" data-bs-parent=".faq-list">
                     <p>Tidak ada pengaturan penggunaan dataset pada tahap awal (pembuatan proposal), dan peserta dapat memanfaatkan berbagai sumber data sepanjang relevan dengan use case yang diangkat (e.g., open data dan data instansi/Lembaga). Namun, peserta diharapkan agar memperhatikan etika dan ketentuan yang ada dalam penggunaan data, a.l. UU Perlindungan Data Pribadi dan lisensi/perjanjian kerahasiaan pemilik data.</p>
                   </div>
                 </li>
 
                 <li>
-                  <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">
+                  <div data-bs-toggle="collapse" href="#faq7" class="collapsed question">
                     Apakah tim dapat beranggotakan peserta yang berasal dari institusi yang berbeda?
-                    <i class="bi bi-chevron-down icon-show"></i>
-                    <i class="bi bi-chevron-up icon-close"></i>
+                    <i class="bx bx-chevron-down icon-show"></i>
+                    <i class="bx bx-chevron-up icon-close"></i>
                   </div>
-                  <div id="faq6" class="collapse" data-bs-parent=".faq-list">
+                  <div id="faq7" class="collapse" data-bs-parent=".faq-list">
                     <p>Satu tim diperbolehkan terdiri dari anggota yang berasal dari institusi yang berbeda.</p>
                   </div>
                 </li>
 
                 <li>
-                  <div data-bs-toggle="collapse" href="#faq7" class="collapsed question">
+                  <div data-bs-toggle="collapse" href="#faq8" class="collapsed question">
                     Apakah peserta boleh terdaftar pada lebih dari satu tim?
-                    <i class="bi bi-chevron-down icon-show"></i>
-                    <i class="bi bi-chevron-up icon-close"></i>
+                    <i class="bx bx-chevron-down icon-show"></i>
+                    <i class="bx bx-chevron-up icon-close"></i>
                   </div>
-                  <div id="faq7" class="collapse" data-bs-parent=".faq-list">
+                  <div id="faq8" class="collapse" data-bs-parent=".faq-list">
                     <p>Peserta tidak diperkenankan untuk mendaftar pada lebih dari satu tim.</p>
                   </div>
                 </li>
@@ -673,49 +627,6 @@
       </div>
     </section>
     <!-- End Frequently Asked Questions Section -->
-
-    <!-- ======= Register Section ======= -->
-    <!-- <section id="register" class="register">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Register</h2>
-          <p>Register Now</p>
-        </div>
-        <div class="row">
-          <div class="col-lg-4">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3761719349955!2d106.80611507559756!3d-6.214019993773874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f6adbd77af01%3A0x23abed373d7987d2!2sJakarta%20Convention%20Center!5e0!3m2!1sen!2sid!4v1711261255306!5m2!1sen!2sid"
-              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-          <div class="col-lg-8 mt-5 mt-lg-0">
-            <form action="" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="link" id="link" placeholder="Link" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Register</button></div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section> --><!-- End Register Section -->
-
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -763,25 +674,14 @@
     </div>
   </footer><!-- End Footer -->
 
-  <div id="preloader">
-    <!-- <img src="https://cdn.dribbble.com/users/507150/screenshots/5380757/black_sphere_processing.gif" alt="Loading..." /> -->
-    <img
-      src="https://cdn.dribbble.com/users/126066/screenshots/6605444/__-organic-artificial-intelligence-design-by-gleb-kuznetsov_-for-milkinside7_1-__.gif"
-      alt="Loading..." />
-    <h5>Loading</h5>
-  </div>
-
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+      class="bx bx-chevron-up"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="/vendor/popper/popper.min.js"></script>
-  <script src="/vendor/aos/aos.js"></script>
   <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Main JS File -->
   <script src="/js/main.js"></script>
