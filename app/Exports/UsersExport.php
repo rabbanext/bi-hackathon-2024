@@ -16,7 +16,7 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithStyl
      */
     public function collection()
     {
-        return User::select('name', 'email', 'institution', 'nowa', 'project_file')->get();
+        return User::select()->get();
     }
 
     /**
@@ -26,10 +26,13 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithStyl
     {
         return [
             'Name',
-            'Email',
             'Institution',
+            'Email',
+            'Email Verified',
             'WhatsApp',
-            'Project File'
+            'WhatsApp Verified',
+            'Project File',
+            'Project Name'
         ];
     }
 
@@ -40,12 +43,21 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithStyl
      */
     public function map($user): array
     {
+        $phoneNumber = $user->nowa;
+        if (substr($phoneNumber, 0, 1) === '0') {
+            $phoneNumber = '0' . substr($phoneNumber, 1);
+        } elseif (substr($phoneNumber, 0, 1) === '8') {
+            $phoneNumber = '0' . $phoneNumber;
+        }
         return [
             $user->name,
-            $user->email,
             $user->institution,
-            $user->nowa ? '0' . $user->nowa : '-',
-            $user->project_file ? 'Submitted' : 'Not Submitted'
+            $user->email,
+            $user->email_verified_at ? 'Verified' : 'Not Verified',
+            $user->nowa ? $phoneNumber : '-',
+            $user->otp_verified_at ? 'Verified' : 'Not Verified',
+            $user->project_file ? 'Submitted' : 'Not Submitted',
+            $user->project_file
         ];
     }
 
@@ -57,7 +69,6 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithStyl
     public function styles(Worksheet $sheet)
     {
         return [
-            // Style the first row as bold text.
             1    => ['font' => ['bold' => true]],
         ];
     }

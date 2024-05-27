@@ -44,24 +44,37 @@
 			</table>
 		</div>
 		<div class="row">
-			<div class="col-6">
+			<div class="col-8">
 				<div class="section-content h-100 mb-3">
 					<h5>Filter</h5>
 					<div class="row">
-						<div class="col-6 mb-1">
-							<p style="display: inline;">Email Verification: </p>
-							<div class="btn-group" role="group" aria-label="Email Verification">
-								<input type="radio" class="btn-check" name="email-verified-filter" value="all" id="verified0" autocomplete="off" checked>
-								<label class="btn btn-outline-info btn-sm" for="verified0">All</label>
+						<div class="col-4 mb-1">
+							<p style="display: inline;">WhatsApp Verification: </p>
+							<div class="btn-group" role="group" aria-label="WhatsApp Verification">
+								<input type="radio" class="btn-check" name="otp-verified-filter" value="all" id="waVerified0" autocomplete="off" checked>
+								<label class="btn btn-outline-info btn-sm" for="waVerified0">All</label>
 
-								<input type="radio" class="btn-check" name="email-verified-filter" value="verified" id="verified1" autocomplete="off">
-								<label class="btn btn-outline-info btn-sm" for="verified1">Verified</label>
+								<input type="radio" class="btn-check" name="otp-verified-filter" value="verified" id="waVerified1" autocomplete="off">
+								<label class="btn btn-outline-info btn-sm" for="waVerified1">Verified</label>
 
-								<input type="radio" class="btn-check" name="email-verified-filter" value="not-verified" id="verified2" autocomplete="off">
-								<label class="btn btn-outline-info btn-sm" for="verified2">Not Verified</label>
+								<input type="radio" class="btn-check" name="otp-verified-filter" value="not-verified" id="waVerified2" autocomplete="off">
+								<label class="btn btn-outline-info btn-sm" for="waVerified2">Not Verified</label>
 							</div>
 						</div>
-						<div class="col-6 mb-1">
+						<div class="col-4 mb-1">
+							<p style="display: inline;">Email Verification: </p>
+							<div class="btn-group" role="group" aria-label="Email Verification">
+								<input type="radio" class="btn-check" name="email-verified-filter" value="all" id="emailVerified0" autocomplete="off" checked>
+								<label class="btn btn-outline-info btn-sm" for="emailVerified0">All</label>
+
+								<input type="radio" class="btn-check" name="email-verified-filter" value="verified" id="emailVerified1" autocomplete="off">
+								<label class="btn btn-outline-info btn-sm" for="emailVerified1">Verified</label>
+
+								<input type="radio" class="btn-check" name="email-verified-filter" value="not-verified" id="emailVerified2" autocomplete="off">
+								<label class="btn btn-outline-info btn-sm" for="emailVerified2">Not Verified</label>
+							</div>
+						</div>
+						<div class="col-4 mb-1">
 							<p style="display: inline;">Project Status: </p>
 							<div class="btn-group" role="group" aria-label="Project Status">
 								<input type="radio" class="btn-check" name="project-file-filter" value="all" id="submitted0" autocomplete="off" checked>
@@ -77,7 +90,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-6">
+			<div class="col-4">
 				<div class="section-content h-100 mb-3">
 					<h5>Export</h5>
 					<div class="row">
@@ -91,14 +104,16 @@
 		</div>
 		<div class="section-content mb-3">
 			<div class="table-responsive text-nowrap">
-				<table id="users-table" class="table table-hover w-100">
+				<table id="users-table" class="table table-hover nowrap w-100">
 					<thead>
 						<tr>
 							<th>no.</th>
 							<th>Name</th>
 							<th>Institution</th>
 							<th>WhatsApp</th>
+							<th>WA Verified</th>
 							<th>Email</th>
+							<th>Email Verified</th>
 							<th>Project</th>
 							<th>Details</th>
 						</tr>
@@ -120,19 +135,23 @@
 								-
 								@else
 									{{ str_pad($user->nowa, strlen($user->nowa) + 1, '0', STR_PAD_LEFT) }}
-									@if ($user->otp_verified_at == null)
+								@endif
+							</td>
+							<td>
+								@if ($user->otp_verified_at == null)
 									<span class="badge bg-secondary me-1">Unverified</span>
-									@else
+								@else
 									<span class="badge bg-success me-1">Verified</span>
-									@endif
 								@endif
 							</td>
 							<td>
 								{{ $user->email }}
+							</td>
+							<td>
 								@if ($user->email_verified_at == null)
-								<span class="badge bg-secondary me-1">Unverified</span>
+									<span class="badge bg-secondary me-1">Unverified</span>
 								@else
-								<span class="badge bg-success me-1">Verified</span>
+									<span class="badge bg-success me-1">Verified</span>
 								@endif
 							</td>
 							<td>
@@ -290,16 +309,29 @@
 <script>
     $(document).ready(function() {
 		var table = $('#users-table').DataTable({
+			scrollX: true
         });
 
 		// Custom filter for project file
         $('input[name="project-file-filter"]').on('change', function() {
             var value = $(this).val();
-            table.columns(5).search(value === 'all' ? '' : (value === 'submitted' ? '^Submitted$' : '^Not Submitted$'), true, false).draw();
+            table.columns(7).search(value === 'all' ? '' : (value === 'submitted' ? '^Submitted$' : '^Not Submitted$'), true, false).draw();
         });
 
         // Custom filter for email verification
 		$('input[name="email-verified-filter"]').on('change', function() {
+			var value = $(this).val();
+			if (value === 'all') {
+				table.columns(6).search('').draw();
+			} else if (value === 'verified') {
+				table.column(6).search('\\bVerified\\b', true, false).draw();
+			} else if (value === 'not-verified') {
+				table.column(6).search('\\bUnverified\\b', true, false).draw();
+			}
+		});
+
+        // Custom filter for whatsapp verification
+		$('input[name="otp-verified-filter"]').on('change', function() {
 			var value = $(this).val();
 			if (value === 'all') {
 				table.columns(4).search('').draw();
