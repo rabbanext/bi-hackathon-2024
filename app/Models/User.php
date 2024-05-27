@@ -38,6 +38,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'project_desc',
         'project_file',
         'submitted',
+        'email_response',
+        'email_response_timestamp',
     ];
   
     /**
@@ -71,4 +73,10 @@ class User extends Authenticatable implements MustVerifyEmail
             get: fn ($value) =>  ["user", "admin", "super-admin"][$value],
         );
     }
+
+    public function members()
+    {
+        return $this->hasMany(User::class);
+    }
+
 }

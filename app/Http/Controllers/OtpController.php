@@ -65,7 +65,6 @@ class OtpController extends Controller
         $user->otp_expiry = now()->addMinutes(10080); // Set OTP expiry time to 7 days
         $user->save();
         
-        // Adjust phone number if necessary
         $phoneNumber = $user->nowa;
         if (substr($phoneNumber, 0, 1) === '0') {
             $phoneNumber = '62' . substr($phoneNumber, 1);

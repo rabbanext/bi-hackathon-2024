@@ -75,11 +75,11 @@
       </nav><!-- .navbar -->
 
       @auth
-        <a href="javascript:void(0);" data-bs-toggle="dropdown">
-          <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button">Submit</button>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end">
           @if (Auth::user()->type == "user")
+          <a href="javascript:void(0);" data-bs-toggle="dropdown">
+            <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button">Submit</button>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
             <li>
                 <a class="dropdown-item" href="/profile">
                     <i class="bx bx-user me-2"></i>
@@ -93,6 +93,10 @@
                 </a>
             </li>
           @elseif (Auth::user()->type == "admin")
+          <a href="javascript:void(0);" data-bs-toggle="dropdown">
+            <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button">Menu</button>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
             <li>
                 <a class="dropdown-item" href="/users">
                     <i class="bx bx-user me-2"></i>

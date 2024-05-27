@@ -411,7 +411,7 @@
 <!-- Add member JS -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        var maxMembers = 3;
+        var maxMembers = 4;
         var currentMembers = {{ $countMember }};
         var addMemberBtn = document.getElementById('add-member-btn');
 

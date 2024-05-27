@@ -68,7 +68,7 @@ class LoginController extends Controller
             } elseif ($user->type == 'admin') {
                 return redirect()->route('users');
             } else {
-                return redirect()->route('home');
+                return redirect()->route('submit');
             }
         } else {
             return redirect()->route('login')

@@ -17,9 +17,17 @@
             {{ session('success') }} <strong>{{ Auth::user()->nowa }}</strong>
         </div>
     @endif
+    <?php
+        $phoneNumber = Auth::user()->nowa;
+        if (substr($phoneNumber, 0, 1) === '0') {
+            $phoneNumber = '0' . substr($phoneNumber, 1);
+        } elseif (substr($phoneNumber, 0, 1) === '8') {
+            $phoneNumber = '0' . $phoneNumber;
+        }
+    ?>
     <form action="{{ route('verify.submit') }}" method="post">
         @csrf
-        <label for="otp">Enter OTP sent to {{ Auth::user()->nowa }}:</label>
+        <label for="otp">Enter OTP sent to {{ $phoneNumber }}:</label>
         <input type="text" id="nowa" name="nowa" value="{{ Auth::user()->nowa }}" hidden>
 
         <div class="form-floating mb-3">

@@ -45,16 +45,14 @@
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="/vendor/aos/aos.css" rel="stylesheet">
   <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="/css/css.css" rel="stylesheet">
+  <link href="/css/main_style.css" rel="stylesheet">
   <link href="/css/register.css" rel="stylesheet">
 
 </head>
@@ -84,11 +82,11 @@
       </nav><!-- .navbar -->
 
       @auth
-        <a href="javascript:void(0);" data-bs-toggle="dropdown">
-          <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button">Submit</button>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end">
           @if (Auth::user()->type == "user")
+          <a href="javascript:void(0);" data-bs-toggle="dropdown">
+            <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button">Submit</button>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
             <li>
                 <a class="dropdown-item" href="/profile">
                     <i class="bx bx-user me-2"></i>
@@ -102,6 +100,10 @@
                 </a>
             </li>
           @elseif (Auth::user()->type == "admin")
+          <a href="javascript:void(0);" data-bs-toggle="dropdown">
+            <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button">Menu</button>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
             <li>
                 <a class="dropdown-item" href="/users">
                     <i class="bx bx-user me-2"></i>
@@ -146,7 +148,7 @@
 
     <!-- ======= Register Section ======= -->
     <section id="register" class="register">
-      	<div class="container" data-aos="zoom-in">
+      	<div class="container">
 			@yield('form')
       	</div>
     </section>
@@ -199,19 +201,10 @@
       </div>
     </footer><!-- End Footer -->
 
-  <div id="preloader">
-    <!-- <img src="https://cdn.dribbble.com/users/507150/screenshots/5380757/black_sphere_processing.gif" alt="Loading..." /> -->
-    <img
-      src="https://cdn.dribbble.com/users/126066/screenshots/6605444/__-organic-artificial-intelligence-design-by-gleb-kuznetsov_-for-milkinside7_1-__.gif"
-      alt="Loading..." />
-    <h5>Loading</h5>
-  </div>
-
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="/vendor/aos/aos.js"></script>
   <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
@@ -219,239 +212,6 @@
 
   <!-- Main JS File -->
   <script src="/js/main.js"></script>
-
-  <!-- Add member JS -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-    var maxMembers = 4;
-    var currentMembers = 0;
-    var addMemberBtn = document.getElementById('add-member-btn');
-
-    function toggleAddMemberButton() {
-      if (currentMembers >= maxMembers) {
-        addMemberBtn.style.display = 'none';
-      } else {
-        addMemberBtn.style.display = 'block';
-      }
-    }
-
-    toggleAddMemberButton();
-
-    addMemberBtn.addEventListener('click', function () {
-      if (currentMembers < maxMembers) {
-        var teamMembersContainer = document.getElementById('team-members');
-        var newMemberDiv = document.createElement('div');
-        newMemberDiv.innerHTML = `
-          <div class="mb-3 section-content p-2">
-            <div class="row">
-              <div class="col-12 col-lg-6">
-                <div class="form-floating mb-2">
-                  <input type="text" class="form-control" id="name" placeholder="Rabbani" required>
-                  <label for="name">Name</label>
-                </div>
-                <div class="form-floating mb-2">
-                  <input type="text" class="form-control" id="domicile" placeholder="Jakarta" required>
-                  <label for="domicile">Domicile</label>
-                </div>
-                <div class="form-floating mb-2">
-                  <input type="date" class="form-control" id="date-birth" required>
-                  <label for="date-birth">Date of Birth</label>
-                </div>
-                <div class="form-floating mb-2">
-                  <input type="url" class="form-control" id="linkedin-member-url" placeholder="Software Engineer" required>
-                  <label for="linkedin-member-url">LinkedIn URL</label>
-                </div>
-              </div>
-              <div class="col-12 col-lg-6">
-                <div class="form-floating mb-2">
-                  <select class="form-select" id="role" aria-label="Select Role" name="member_role[]" required>
-                    <option selected>Select Role</option>
-                    <option value="leader">Group Leader</option>
-                    <option value="member">Member</option>
-                  </select>
-                  <label for="role">Role</label>
-                </div>
-                <div class="form-floating mb-2">
-                  <input type="email" class="form-control" id="email" placeholder="081264046414" required>
-                  <label for="email">Email</label>
-                </div>
-                <div class="form-floating mb-2">
-                  <input type="text" class="form-control" id="job" placeholder="Software Engineer" required>
-                  <label for="job">Profession</label>
-                </div>
-                <div class="form-floating mb-2">
-                  <input type="url" class="form-control" id="github-member-url" placeholder="Software Engineer" required>
-                  <label for="github-member-url">GitHub URL</label>
-                </div>
-                </div>
-                <div class="form-group">
-                  <label for="cv">
-                    CV
-                  </label>
-                  <input type="file" class="form-control" name="cv" id="cv" accept=".pdf" required>
-                </div>
-            </div>
-            <div class="col-md-12 text-center mt-2">
-              <button type="button" class="btn btn-danger remove-member-btn">Remove Member</button>
-            </div>
-          </div>
-        `;
-        teamMembersContainer.appendChild(newMemberDiv);
-        currentMembers++;
-        toggleAddMemberButton();
-      }
-    });
-
-    document.getElementById('team-members').addEventListener('click', function (e) {
-      if (e.target.classList.contains('remove-member-btn')) {
-        e.target.parentElement.parentElement.remove();
-        currentMembers--;
-        toggleAddMemberButton();
-      }
-    });
-  });
-  </script>
-
-  <!-- Add link JS -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var maxLinks = 9;
-      var currentLinks = 0;
-
-      document.getElementById('add-link-btn').addEventListener('click', function () {
-        if (currentLinks < maxLinks) {
-          var teamLinksContainer = document.getElementById('links');
-          var newLinkDiv = document.createElement('div');
-          newLinkDiv.innerHTML = `
-            <div class="mb-3 section-content p-2">
-              <div class="row">
-                <div class="col-12 col-lg-4">
-                  <div class="form-floating">
-                    <input type="text" class="form-control" id="title" placeholder="The H">
-                    <label for="title">Proposal Name</label>
-                  </div>
-                </div>
-                <div class="col-12 col-lg-4">
-                  <div class="form-floating">
-                    <input type="url" class="form-control" id="github" placeholder="Password">
-                    <label for="github">Link (Github/Website/Drive/Other Link)</label>
-                  </div>
-                </div>
-                <div class="col-12 col-lg-4">
-                  <div class="form-group mt-1">
-                    <input type="file" class="form-control form-control-lg" name="cv" id="cv" accept=".pdf" required>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-12 text-center mt-2">
-                <button type="button" class="btn btn-danger remove-link-btn">Remove Item</button>
-              </div>
-            </div>
-          `;
-          teamLinksContainer.appendChild(newLinkDiv);
-          currentLinks++;
-        }
-      });
-
-      document.getElementById('links').addEventListener('click', function (e) {
-        if (e.target.classList.contains('remove-link-btn')) {
-          e.target.parentElement.parentElement.remove();
-          currentLinks--;
-        }
-      });
-    });
-  </script>
-
-  <!-- Upload File JS -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var dropZone = document.querySelector('.drop-zone');
-      var fileInput = document.getElementById('file-input');
-      var filePreview = document.querySelector('.file-preview');
-
-      dropZone.addEventListener('dragover', function (e) {
-        e.preventDefault();
-        dropZone.classList.add('drop-zone--over');
-      });
-
-      dropZone.addEventListener('dragleave', function () {
-        dropZone.classList.remove('drop-zone--over');
-      });
-
-      dropZone.addEventListener('drop', function (e) {
-        e.preventDefault();
-        dropZone.classList.remove('drop-zone--over');
-
-        var files = e.dataTransfer.files;
-        handleFiles(files);
-      });
-
-      fileInput.addEventListener('change', function () {
-        var files = this.files;
-        handleFiles(files);
-      });
-
-      filePreview.addEventListener('click', function (e) {
-        if (e.target.classList.contains('remove-file')) {
-          e.target.parentElement.remove();
-        }
-      });
-
-      function handleFiles(files) {
-        // Check if more than one file is selected
-        if (files.length > 1) {
-          alert('Please select only one file.');
-          fileInput.value = '';
-          return;
-        }
-
-        // Clear existing file preview items
-        filePreview.innerHTML = '';
-
-        // Handle the selected file
-        var file = files[0];
-
-        var fileItem = document.createElement('div');
-        fileItem.classList.add('file-preview__item');
-        fileItem.innerHTML = `
-          <span>Selected Mockup File: ${file.name}</span>
-          <span>${formatBytes(file.size)}</span>
-          <span class="remove-file">x</span>
-        `;
-        filePreview.appendChild(fileItem);
-
-        // Update file input value to reflect selected file
-        fileInput.files = files;
-      }
-
-      function formatBytes(bytes, decimals = 2) {
-        if (bytes === 0) return '0 Bytes';
-        const k = 1024;
-        const dm = decimals < 0 ? 0 : decimals;
-        const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
-        const i = Math.floor(Math.log(bytes) / Math.log(k));
-        return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
-      }
-    });
-  </script>
-  
-  <script>
-    function enableRegisterButton() {
-      document.getElementById('register-btn').removeAttribute('disabled');
-    }
-
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate());
-    tomorrow.setHours(10, 0, 0, 0);
-    const now = new Date();
-    const timeRemaining = tomorrow.getTime() - now.getTime();
-
-    if (timeRemaining > 0) {
-      setTimeout(enableRegisterButton, timeRemaining);
-    } else {
-      enableRegisterButton();
-    }
-  </script>
 
 </body>
 

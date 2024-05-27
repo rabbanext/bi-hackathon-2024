@@ -63,7 +63,7 @@ class DashboardController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
-
+    
         // Validate the form data
         $validatedData = $request->validate([
             'team_name' => 'required|string|max:255',
@@ -71,20 +71,20 @@ class DashboardController extends Controller
             'member_name.*' => 'nullable|string|max:255',
             'member_role.*' => 'nullable|in:leader,member',
             'member_domicile.*' => 'nullable|string|max:255',
-            'member_email.*' => 'nullable|email:dns|max:255',
+            'member_email.*' => 'nullable|email|max:255',
             'member_date_of_birth.*' => 'nullable|date',
             'member_profession.*' => 'nullable|string|max:255',
             'member_github_url.*' => 'nullable|string|max:255',
             'member_linkedin_url.*' => 'nullable|string|max:255',
             'project_link.*' => 'nullable|string|max:255',
             'project_desc.*' => 'nullable|string|max:255',
-            'project_file' => 'nullable|file|mimes:pdf|max:2048', // Adjust max file size as needed
-            'submitted' => 'nullable', // Adjust max file size as needed
+            'project_file' => 'nullable|file|mimes:pdf',
+            'submitted' => 'nullable',
         ]);
-
+    
         // Update the user's data based on the validated fields
         $user->update(array_filter($validatedData));
-
+    
         // Handle special cases where specific fields need to be nullified if empty
         if (empty($validatedData['member_name'])) {
             $user->member_name = null;
@@ -94,12 +94,12 @@ class DashboardController extends Controller
             $user->member_date_of_birth = null;
             $user->member_profession = null;
         }
-
+    
         if (empty($validatedData['project_link'])) {
             $user->project_link = null;
             $user->project_desc = null;
         }
-
+    
         // Handle file upload if a new file is provided
         if ($request->hasFile('project_file')) {
             // Logic for handling file upload
@@ -112,14 +112,14 @@ class DashboardController extends Controller
             $fileName = $originalFileName . '_' . $dateTime . '.' . $extension;
             $file->move(storage_path('app/public'), $fileName);
             $user->project_file = $fileName;
-
+    
             // Notify user after file upload
             $user->notify(new SubmissionConfirmation());
         }
-
+    
         // Save the changes
         $user->save();
-
+    
         // Redirect back with success message
         if (!$request->filled('submitted')) {
             return back()->with('success', '<strong>Form saved successfully!</strong> Feel free to edit and make any final adjustments before submission.');
@@ -127,7 +127,7 @@ class DashboardController extends Controller
             return back();
         }
     }
-
+    
     public function exportUsers()
     {
         return Excel::download(new UsersExport, 'users.xlsx');

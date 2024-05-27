@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\OtpController;
+use App\Http\Controllers\ExportController;
+use App\Http\Controllers\EmailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,4 +67,25 @@ Route::post('/verify-wa', [OtpController::class, 'verify'])->name('verify.submit
 Route::post('/resend-otp', [OtpController::class, 'resendOtp'])->name('resend.otp');
 Route::get('/submit', [DashboardController::class, 'submit'])->name('submit');
 
+// Route::get('/export', [ExportController::class, 'export'])->name('export');
+// Route::get('/export', 'ExportController@export')->name('export');
 Route::get('/export-users', [DashboardController::class, 'exportUsers'])->name('export.users');
+
+// Route::get('/thanks', function () {
+//     return view('thanks');
+// });
+
+// Send emails to all registered users
+Route::get('/send-emails', function () {
+    $emailController = new EmailController();
+    $emailController->sendEmails();
+    
+    return 'Emails have been sent successfully!';
+});
+
+Route::get('/thanks', function () {
+    return view('thanks');
+})->name('thanks');
+
+Route::post('/handle-response', [EmailController::class, 'handleResponse'])->name('handle-response');
+Route::get('/handle-response', [EmailController::class, 'handleResponse'])->name('handle-response');
