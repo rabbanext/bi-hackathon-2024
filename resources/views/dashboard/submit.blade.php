@@ -51,7 +51,15 @@
               </div>
             </div>
         @endif
-        
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         @if (Auth::user()->submitted == null)
             <form action="{{ route('posts.update',Auth::user()->id) }}" method="POST" id="mainForm"  enctype="multipart/form-data">
                 <div class="section-content mb-4">
