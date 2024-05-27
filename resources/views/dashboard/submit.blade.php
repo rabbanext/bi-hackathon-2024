@@ -14,9 +14,11 @@
                 <p class="mb-0">{!! Session::get('success') !!}</p>
             </div>
         @elseif ($errors->any())
-            <div class="alert alert-danger">
-                Please check the errors in the form and correct them.
-            </div>
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger">
+                    {{ $error }}
+                </div>
+            @endforeach
         @endif
 
         <div class="row">
@@ -49,15 +51,6 @@
                     </div>
                 </div>
               </div>
-            </div>
-        @endif
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
             </div>
         @endif
         @if (Auth::user()->submitted == null)
@@ -317,10 +310,15 @@
                         <div class="row">
                             <div class="col-12">
                                 <hr class="my-3">
-                                <h5>Proposal (PDF)</h5>
+                                <h5>Proposal (PDF max. 50mb)</h5>
                                 @if (Auth::user()->project_file != null)
                                     <div class="mb-3">
-                                        <p class="mb-0">Uploaded Proposal File: <a href="{{ asset('/storage/' . Auth::user()->project_file) }}" target="_blank">{{ Auth::user()->project_file }}</a></p>
+                                        <p class="mb-0">
+                                            Uploaded Proposal File: 
+                                            <a class="text-white" href="{{ asset('/storage/' . Auth::user()->project_file) }}" target="_blank">
+                                                <u><strong>{{ Auth::user()->project_file }}</strong></u>
+                                            </a>
+                                        </p>
                                         <label>
                                             <input type="radio" name="change_file" value="no" checked> Keep current file
                                         </label>

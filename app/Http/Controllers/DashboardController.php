@@ -64,23 +64,25 @@ class DashboardController extends Controller
     {
         $user = User::findOrFail($id);
     
-        // Validate the form data
+        $messages = [
+            'project_file.max' => 'The project file must not be greater than 50MB.',
+        ];
         $validatedData = $request->validate([
             'team_name' => 'required|string|max:255',
             'institution' => 'required|string|max:255',
-            'member_name.*' => 'nullable|string|max:255',
-            'member_role.*' => 'nullable|in:leader,member',
-            'member_domicile.*' => 'nullable|string|max:255',
-            'member_email.*' => 'nullable|email|max:255',
-            'member_date_of_birth.*' => 'nullable|date',
-            'member_profession.*' => 'nullable|string|max:255',
+            'member_name.*' => 'required|string|max:255',
+            'member_role.*' => 'required|in:leader,member',
+            'member_domicile.*' => 'required|string|max:255',
+            'member_email.*' => 'required|email|max:255',
+            'member_date_of_birth.*' => 'required|date',
+            'member_profession.*' => 'required|string|max:255',
             'member_github_url.*' => 'nullable|string|max:255',
             'member_linkedin_url.*' => 'nullable|string|max:255',
             'project_link.*' => 'nullable|string|max:255',
             'project_desc.*' => 'nullable|string|max:255',
-            'project_file' => 'nullable|file|mimes:pdf',
+            'project_file' => 'nullable|file|mimes:pdf|max:51200', // 50 MB
             'submitted' => 'nullable',
-        ]);
+        ], $messages);
     
         // Update the user's data based on the validated fields
         $user->update(array_filter($validatedData));
