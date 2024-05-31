@@ -130,11 +130,10 @@ class DashboardController extends Controller
         // Save the changes
         $user->save();
     
-        // Redirect back with success message
-        if (!$request->filled('submitted')) {
-            return back()->with('success', '<strong>Form saved successfully!</strong> Feel free to edit and make any final adjustments before submission.');
-        } else {
+        if ($request->has('submitted') && $request->input('submitted') == 1) {
             return back();
+        } else {
+            return redirect()->back()->with('success', '<strong>Form saved successfully!</strong> Feel free to edit and make any final adjustments before submission.');
         }
     }
     
