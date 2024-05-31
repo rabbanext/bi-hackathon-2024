@@ -442,11 +442,11 @@
         });
 
         saveButton.addEventListener('click', function () {
-            saveForm(null); // Save with null submitted value
+            saveForm(null);
         });
 
         confirmSubmitButton.addEventListener('click', function () {
-            saveForm(1); // Save with submitted value of 1
+            saveForm(1);
         });
 
         function saveForm(isSubmit) {
@@ -460,7 +460,6 @@
                 isSubmitInput.setAttribute('value', isSubmit);
                 form.appendChild(isSubmitInput);
 
-                // Submit the form
                 mainForm.submit();
             } else {
                 confirmModal.hide();
