@@ -18,6 +18,7 @@
                             <th>no.</th>
                             <th>Team Name</th>
                             <th>File Name</th>
+                            <th>Submission</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -29,6 +30,13 @@
                                 <strong>{{ $project->team_name }}</strong>
                             </td>
                             <td>{{ $project->project_file }}</td>
+							<td>
+								@if ($project->submitted == null)
+								Not Submitted
+								@else
+								Submitted
+								@endif
+							</td>
                             <td>
                                 <a href="{{ asset('/storage/' . $project->project_file) }}" target="_blank" class="btn btn-sm btn-info hide-arrow">
                                     <i class="bx bx-link"></i> Open File

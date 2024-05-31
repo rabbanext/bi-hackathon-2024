@@ -33,12 +33,16 @@
 						<td>{{ $users->whereNull('email_verified_at')->count() }}</td>
 					</tr>
 					<tr>
-						<td>User with Project Submitted</td>
+						<td>User with Project Uploaded</td>
 						<td>{{ $users->whereNotNull('project_file')->count() }}</td>
 					</tr>
 					<tr>
-						<td>User with Project Not Submitted</td>
+						<td>User with Project Not Uploaded</td>
 						<td>{{ $users->whereNull('project_file')->count() }}</td>
+					</tr>
+					<tr>
+						<td>User Submitted</td>
+						<td>{{ $users->whereNotNull('submitted')->count() }}</td>
 					</tr>
 				</tbody>
 			</table>
@@ -115,6 +119,7 @@
 							<th>Email</th>
 							<th>Email Verified</th>
 							<th>Project</th>
+							<th>Submission</th>
 							<th>Details</th>
 						</tr>
 					</thead>
@@ -156,6 +161,13 @@
 							</td>
 							<td>
 								@if ($user->project_file == null)
+								Not Uploaded
+								@else
+								Uploaded
+								@endif
+							</td>
+							<td>
+								@if ($user->submitted == null)
 								Not Submitted
 								@else
 								Submitted
