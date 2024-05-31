@@ -46,9 +46,38 @@
   <!-- Vendor CSS Files -->
   <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
   <!-- Template Main CSS File -->
   <link href="/css/style.min.css" rel="stylesheet">
+
+  <style>
+    .swiper {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 600px;
+      height: 300px;
+      max-width: 100%;
+      max-height: 100%;
+      margin-bottom: 120px;
+    }
+
+    .swiper-slide iframe {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .swiper-button-next:after, .swiper-button-prev:after{
+      color: #FFF;
+    }
+    </style>
 
 </head>
 
@@ -135,7 +164,7 @@
       @endauth
       
     </div>
-</header><!-- End Header -->
+  </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center justify-content-center">
@@ -188,6 +217,40 @@
       </div>
     </section> 
     <!-- End Announcement Section -->
+
+    <section id="announcement" class="announcement">
+      <div class="container" >
+      <div class="section-title text-center pb-1">
+          <p>Video Hackathon</p>
+        </div>
+        <div class="pb-2 ms-2">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide text-center">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wZNEcVOppH0"></iframe>
+                  <h5 class="mb-0">Kick Off & Seminar Bank Indonesia Hackaton 2024</h5>
+                  <p class="mb-0">Materi Seminar:</p>
+                  <h5><a class="btn btn-sm btn-info" href="https://drive.google.com/file/d/1fxMK9OSCDuSsnEKC_r_FDCIRCc5dH6XF/view?usp=share_link" target="#">Building an AI Product at The Current Dizzying Speed of Development - William Tjhi</a></h5>
+                  <h5><a class="btn btn-sm btn-info" href="https://drive.google.com/file/d/1NF7UikrpN-0K6CbC5k2gTpXfwU2BgSqm/view?usp=share_link" target="#">Tren AI Indonesia - Ayu Purwarianti</a></h5>
+              </div>
+              <div class="swiper-slide text-center">
+                <iframe width="100%" height="100%" src="https://drive.google.com/file/d/1uY2Zgf8nz92aZbv8x9mvW9TxOoYH-6H6/preview"></iframe>
+                  <h5>Tektok Podcast Volume 1</h5>
+                  <h5>Bank Indonesia Hackathon 2024</h5>
+              </div>
+              <div class="swiper-slide text-center">
+                <iframe width="100%" height="100%" src="https://drive.google.com/file/d/1tKxoQcb9HeOHIVX5K2oqz8jKbqnksAbn/preview"></iframe>
+                  <h5>Tektok Podcast Volume 2</h5>
+                  <h5>Bank Indonesia Hackathon 2024</h5>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
@@ -692,6 +755,30 @@
   <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+      var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+      });
+  </script>
 
   <!-- Main JS File -->
   <script src="/js/main.js"></script>
