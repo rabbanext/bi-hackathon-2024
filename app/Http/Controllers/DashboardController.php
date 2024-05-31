@@ -65,6 +65,14 @@ class DashboardController extends Controller
         $user = User::findOrFail($id);
     
         $messages = [
+            'member_name.*' => 'The Member Name field is required.',
+            'member_role.*' => 'The Member Role field is required.',
+            'member_domicile.*' => 'The Member Domicile field is required.',
+            'member_email.*' => 'The Member Email field is required.',
+            'member_date_of_birth.*' => 'The Member Date of Birth field is required.',
+            'member_profession.*' => 'The Member Profession field is required.',
+            'project_link.*' => 'The Project Link field is required.',
+            'project_desc.*' => 'The Project Desc field is required.',
             'project_file.max' => 'The project file must not be greater than 50MB.',
         ];
         $validatedData = $request->validate([

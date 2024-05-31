@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="content-wrapper">
-    <!-- Content -->
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="section-title pb-2 my-5">
           <h2>Submission</h2>
@@ -38,381 +37,477 @@
             </div>
         </div>
         
-        @if (Auth::user()->otp_verified_at == null && Auth::user()->type == "user")
-            <div class="section-content mb-3">
-              <div class="d-flex align-items-end row">
-                <div class="col-sm-8">
-                    <h5 class="card-title">Verify Your WhatsApp Number</h5>
-                    <div class="card-body">
-                        <p class="mb-4">
-                          Please Verify Your WhatsApp Number (<strong>0{{ Auth::user()->nowa }}</strong>)
-                        </p>
-                        <a href="/verify-wa" class="btn btn-sm btn-info">Verify Your WhatsApp Number</a>
-                    </div>
-                </div>
-              </div>
-            </div>
-        @endif
-        @if (Auth::user()->submitted == null)
-            <form action="{{ route('posts.update',Auth::user()->id) }}" method="POST" id="mainForm"  enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-12 col-md-6">
                 <div class="section-content mb-4">
-                    <div class="card-body">
-                        @csrf
-                        @method('PUT')
-
-                        <div class="row">
-                            <div class="col-12 col-md-6">
-                                <!-- Team Name -->
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" name="team_name" value="{{ Auth::user()->team_name }}" placeholder="Team Name" aria-describedby="floatingInputLink" required />
-                                    <label for="team_name">Team Name</label>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <!-- Institution -->
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" name="institution" value="{{ Auth::user()->institution }}" placeholder="Institution/Organization/Community" aria-describedby="floatingInputLink" required />
-                                    <label for="institution">Institution/Organization/Community</label>
-                                </div>
+                    @if (Auth::user()->email_verified_at == null && Auth::user()->type == "user")
+                        <h5 class="card-title">Email Status:  <strong class="badge bg-danger">Not Verified</strong></h5>
+                        <div class="card-body">
+                            <p class="mb-0">{{ Auth::user()->email }} <a href="#" class="text-info">(Click here to verify)</a></p>
+                        </div>
+                    @else
+                        <h5 class="card-title">Email Status:  <strong class="badge bg-success">Verified</strong></h5>
+                        <div class="card-body">
+                            <p class="mb-0">{{ Auth::user()->email }}</p>
+                        </div>
+                    @endif
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="section-content mb-4">
+                    @if (Auth::user()->otp_verified_at == null && Auth::user()->type == "user")
+                        <h5 class="card-title">WhatsApp Status:  <strong class="badge bg-danger">Not Verified</strong></h5>
+                        <div class="card-body">
+                            <p class="mb-0">{{ Auth::user()->nowa }} <a href="/verify-wa" class="text-info">(Click here to verify)</a></p>
+                        </div>
+                    @else
+                        <h5 class="card-title">WhatsApp Status:  <strong class="badge bg-success">Verified</strong></h5>
+                        <div class="card-body">
+                            <p class="mb-0">{{ Auth::user()->nowa }}</p>
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </div>
+        @if (Auth::user()->submitted == null)
+        <form action="{{ route('posts.update',Auth::user()->id) }}" method="POST" id="mainForm" enctype="multipart/form-data">
+            <div class="section-content mb-4">
+                <div class="card-body">
+                    @csrf
+                    @method('PUT')
+                    
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="team_name" name="team_name" value="{{ Auth::user()->team_name }}" placeholder="Team Name" required />
+                                <label for="team_name">Team Name</label>
+                                <div class="invalid-feedback"></div>
                             </div>
                         </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="institution" name="institution" value="{{ Auth::user()->institution }}" placeholder="Institution/Organization/Community" required />
+                                <label for="institution">Institution/Organization/Community</label>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                        </div>
+                    </div>
 
-                        <div class="row">
-                            <div class="col-12">
-                                <hr class="my-3">
-                                <h5>Team Members (max. 4)</h5>
-                                <div id="team-members">
-                                    @if (Auth::user()->member_name == null)
+                    <div class="row">
+                        <div class="col-12">
+                            <hr class="my-3">
+                            <h5>Team Members (max. 4)</h5>
+                            <div id="team-members">
+                                @if (Auth::user()->member_name == null)
+                                    <div class="mb-3 section-content p-2">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control" id="floatingInput" name="member_name[]"
+                                                        placeholder="Member Name" required />
+                                                    <label for="floatingInput">Name</label>
+                                                    <div class="invalid-feedback"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating mb-3">
+                                                    <select class="form-select role-select" name="member_role[]" placeholder="Member Role" required>
+                                                        <option value="">Select Role</option>
+                                                        <option value="leader">Group Leader</option>
+                                                        <option value="member">Member</option>
+                                                    </select>
+                                                    <label for="role">Role</label>
+                                                    <div class="invalid-feedback"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control" id="floatingInput" name="member_domicile[]"
+                                                        placeholder="Member Domicile" required />
+                                                    <label for="floatingInput">Domicile</label>
+                                                    <div class="invalid-feedback"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating mb-3">
+                                                    <input type="email" class="form-control" id="floatingInput" name="member_email[]"
+                                                        placeholder="Member Email" required />
+                                                    <label for="floatingInput">Email</label>
+                                                    <div class="invalid-feedback"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating mb-3">
+                                                    <input type="date" class="form-control" id="floatingInput" name="member_date_of_birth[]"
+                                                        placeholder="Member Date of Birth" required />
+                                                    <label for="floatingInput">Date of Birth</label>
+                                                    <div class="invalid-feedback"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control" id="floatingInput" name="member_profession[]"
+                                                        placeholder="Member Profession" required />
+                                                    <label for="floatingInput">Profession</label>
+                                                    <div class="invalid-feedback"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-lg-6">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control" id="floatingInput" name="member_github_url[]"
+                                                        placeholder="Github Link" />
+                                                    <label for="floatingInput">Github Link</label>
+                                                    <div id="floatingInputLink" class="form-text">
+                                                        https://github.com/username
+                                                    </div>
+                                                    <div class="invalid-feedback"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-lg-6">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control" id="floatingInput" name="member_linkedin_url[]"
+                                                        placeholder="CV Document or LinkedIn Link" />
+                                                    <label for="floatingInput">CV Document or LinkedIn Link</label>
+                                                    <div id="floatingInputLink" class="form-text">
+                                                        https://linkedin.com/in/username
+                                                    </div>
+                                                    <div class="invalid-feedback"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                                @foreach($members as $member)
+                                    @php
+                                        $names = json_decode($member->member_name);
+                                        $roles = json_decode($member->member_role);
+                                        $domiciles = json_decode($member->member_domicile);
+                                        $emails = json_decode($member->member_email);
+                                        $date_of_births = json_decode($member->member_date_of_birth);
+                                        $professions = json_decode($member->member_profession);
+                                        $github_urls = json_decode($member->member_github_url);
+                                        $linkedin_urls = json_decode($member->member_linkedin_url);
+                                    @endphp
+
+                                    @for ($i = 0; $i < count($names ?? []); $i++)
                                         <div class="mb-3 section-content p-2">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3">
                                                         <input type="text" class="form-control" id="floatingInput" name="member_name[]"
-                                                            placeholder="John Doel"
-                                                            aria-describedby="floatingInputLink" required />
-                                                        <label for="floatingInput"><Map></Map>Name</label>
+                                                            value="{{ isset($names[$i]) ? $names[$i] : '' }}" placeholder="Member Name" required />
+                                                        <label for="floatingInput">Name</label>
+                                                        <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3">
-                                                        <select class="form-select role-select" aria-label="Select Role" name="member_role[]" required>
+                                                        <select class="form-select role-select" name="member_role[]" placeholder="Member Role" required>
                                                             <option value="">Select Role</option>
-                                                            <option value="leader">Group Leader</option>
-                                                            <option value="member">Member</option>
+                                                            <option value="leader" {{ $roles[$i] == 'leader' ? 'selected' : '' }}>Group Leader</option>
+                                                            <option value="member" {{ $roles[$i] == 'member' ? 'selected' : '' }}>Member</option>
                                                         </select>
                                                         <label for="role">Role</label>
+                                                        <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3">
                                                         <input type="text" class="form-control" id="floatingInput" name="member_domicile[]"
-                                                            placeholder="Jakarta"
-                                                            aria-describedby="floatingInputLink" required />
+                                                            value="{{ $domiciles[$i] }}" placeholder="Member Domicile" required />
                                                         <label for="floatingInput">Domicile</label>
+                                                        <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3">
-                                                        <input type="email" class="form-control" id="floatingInput" name="member_email[]"
-                                                            placeholder="johndoel@gmail.com"
-                                                            aria-describedby="floatingInputLink" required />
+                                                        <input type="email" class="form-control @error('member_email.*') is-invalid @enderror" id="floatingInput" name="member_email[]"
+                                                            value="{{ $emails[$i] }}" placeholder="Member Email" required />
+                                                            @error('member_email.*')
+                                                                <div class="invalid-feedback">Please fill with valid email address.</div>
+                                                            @enderror
                                                         <label for="floatingInput">Email</label>
+                                                        <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3">
                                                         <input type="date" class="form-control" id="floatingInput" name="member_date_of_birth[]"
-                                                            placeholder="Date of Birth"
-                                                            aria-describedby="floatingInputLink" required />
+                                                            value="{{ $date_of_births[$i] }}" placeholder="Member Date of Birth" required />
                                                         <label for="floatingInput">Date of Birth</label>
+                                                        <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3">
                                                         <input type="text" class="form-control" id="floatingInput" name="member_profession[]"
-                                                            placeholder="Engineer"
-                                                            aria-describedby="floatingInputLink" required />
+                                                            value="{{ $professions[$i] }}" placeholder="Member Profession" required />
                                                         <label for="floatingInput">Profession</label>
+                                                        <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6">
                                                     <div class="form-floating mb-3">
                                                         <input type="text" class="form-control" id="floatingInput" name="member_github_url[]"
-                                                            placeholder="https://"
-                                                            aria-describedby="floatingInputLink" />
+                                                            value="{{ $github_urls[$i] }}" placeholder="Github Link" />
                                                         <label for="floatingInput">Github Link</label>
                                                         <div id="floatingInputLink" class="form-text">
                                                             https://github.com/username
                                                         </div>
+                                                        <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6">
                                                     <div class="form-floating mb-3">
                                                         <input type="text" class="form-control" id="floatingInput" name="member_linkedin_url[]"
-                                                            placeholder="https://"
-                                                            aria-describedby="floatingInputLink" />
+                                                            value="{{ $linkedin_urls[$i] }}" placeholder="CV Document or LinkedIn Link" />
                                                         <label for="floatingInput">CV Document or LinkedIn Link</label>
                                                         <div id="floatingInputLink" class="form-text">
                                                             https://linkedin.com/in/username
                                                         </div>
+                                                        <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
+                                                <!-- <div class="text-center">
+                                                    <button type="button" class="btn btn-danger remove-member-btn">Remove Member</button>
+                                                </div> -->
                                             </div>
                                         </div>
-                                    @endif
-                                    @foreach($members as $member)
-                                        @php
-                                            $names = json_decode($member->member_name);
-                                            $roles = json_decode($member->member_role);
-                                            $domiciles = json_decode($member->member_domicile);
-                                            $emails = json_decode($member->member_email);
-                                            $date_of_births = json_decode($member->member_date_of_birth);
-                                            $professions = json_decode($member->member_profession);
-                                            $github_urls = json_decode($member->member_github_url);
-                                            $linkedin_urls = json_decode($member->member_linkedin_url);
-                                        @endphp
-
-                                        @for ($i = 0; $i < count($names ?? []); $i++)
-                                            <div class="mb-3 section-content p-2">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control" id="floatingInput" name="member_name[]"
-                                                                value="{{ isset($names[$i]) ? $names[$i] : '' }}" placeholder="John Doel"
-                                                                aria-describedby="floatingInputLink" required />
-                                                            <label for="floatingInput"><Map></Map>Name</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-floating mb-3">
-                                                            <select class="form-select role-select" aria-label="Select Role" name="member_role[]" required>
-                                                                <option value="">Select Role</option>
-                                                                <option value="leader" {{ $roles[$i] == 'leader' ? 'selected' : '' }}>Group Leader</option>
-                                                                <option value="member" {{ $roles[$i] == 'member' ? 'selected' : '' }}>Member</option>
-                                                            </select>
-                                                            <label for="role">Role</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control" id="floatingInput" name="member_domicile[]"
-                                                                value="{{ $domiciles[$i] }}" placeholder="Jakarta"
-                                                                aria-describedby="floatingInputLink" required />
-                                                            <label for="floatingInput">Domicile</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-floating mb-3">
-                                                            <input type="email" class="form-control @error('member_email.*') is-invalid @enderror" id="floatingInput" name="member_email[]"
-                                                                value="{{ $emails[$i] }}" placeholder="johndoel@gmail.com"
-                                                                aria-describedby="floatingInputLink" required />
-                                                                @error('member_email.*')
-                                                                    <div class="invalid-feedback">Please fill with valid email address.</div>
-                                                                @enderror
-                                                            <label for="floatingInput">Email</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-floating mb-3">
-                                                            <input type="date" class="form-control" id="floatingInput" name="member_date_of_birth[]"
-                                                                value="{{ $date_of_births[$i] }}" placeholder="Date of Birth"
-                                                                aria-describedby="floatingInputLink" required />
-                                                            <label for="floatingInput">Date of Birth</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control" id="floatingInput" name="member_profession[]"
-                                                                value="{{ $professions[$i] }}" placeholder="Engineer"
-                                                                aria-describedby="floatingInputLink" required />
-                                                            <label for="floatingInput">Profession</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 col-lg-6">
-                                                        <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control" id="floatingInput" name="member_github_url[]"
-                                                                value="{{ $github_urls[$i] }}" placeholder="https://"
-                                                                aria-describedby="floatingInputLink" />
-                                                            <label for="floatingInput">Github Link</label>
-                                                            <div id="floatingInputLink" class="form-text">
-                                                                https://github.com/username
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 col-lg-6">
-                                                        <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control" id="floatingInput" name="member_linkedin_url[]"
-                                                                value="{{ $linkedin_urls[$i] }}" placeholder="https://"
-                                                                aria-describedby="floatingInputLink" />
-                                                            <label for="floatingInput">CV Document or LinkedIn Link</label>
-                                                            <div id="floatingInputLink" class="form-text">
-                                                                https://linkedin.com/in/username
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endfor
-                                    @endforeach
-                                    <!-- Team members will be dynamically added here -->
-                                </div>
-                                <div class="text-center">
-                                    <button class="btn btn-success" type="button" id="add-member-btn">Add Team Member</button>
-                                </div>
+                                    @endfor
+                                @endforeach
+                                <!-- Team members will be dynamically added here -->
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-12">
-                                <hr class="my-3">
-                                <h5>Additional Information</h5>
-                                <div id="links">
-                                    @foreach($members as $member)
-                                        @php
-                                            $project_links = json_decode($member->project_link);
-                                            $project_descs = json_decode($member->project_desc);
-                                        @endphp
-
-                                        @for ($i = 0; $i < count($project_links ?? []); $i++)
-                                            <div class="mb-3 section-content p-2">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control" id="floatingInput" name="project_link[]"
-                                                                value="{{ isset($project_links[$i]) ? $project_links[$i] : '' }}" placeholder="John Doel"
-                                                                aria-describedby="floatingInputLink" required />
-                                                            <label for="floatingInput"><Map></Map>Link (Github/Website/Drive/Other Link)</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control" id="floatingInput" name="project_desc[]"
-                                                                value="{{ $project_descs[$i] }}" placeholder="Jakarta"
-                                                                aria-describedby="floatingInputLink" required />
-                                                            <label for="floatingInput">project_desc</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="text-center">
-                                                    <button type="button" class="btn btn-danger remove-link-btn">Remove Link</button>
-                                                </div>
-                                            </div>
-                                        @endfor
-                                    @endforeach
-                                    <!-- Team links will be dynamically added here -->
-                                </div>
-                                <div class="text-center">
-                                    <button class="btn btn-success" type="button" id="add-link-btn">Add Link</button>
-                                </div>
+                            <div class="text-center">
+                                <button class="btn btn-success" type="button" id="add-member-btn">Add Team Member</button>
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-12">
-                                <hr class="my-3">
-                                <h5>Proposal (PDF max. 50mb)</h5>
-                                @if (Auth::user()->project_file != null)
-                                    <div class="mb-3">
-                                        <p class="mb-0">
-                                            Uploaded Proposal File: 
-                                            <a class="text-white" href="{{ asset('/storage/' . Auth::user()->project_file) }}" target="_blank">
-                                                <u><strong>{{ Auth::user()->project_file }}</strong></u>
-                                            </a>
-                                        </p>
-                                        <label>
-                                            <input type="radio" name="change_file" value="no" checked> Keep current file
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="change_file" value="yes"> Upload new file
-                                        </label>
-                                        <div id="new-file-upload" style="display: none;">
-                                            <label for="project_file" class="drop-zone">
-                                                <span class="drop-zone__prompt">Drag & Drop or click here to choose new .pdf file</span>
-                                                <input type="file" name="project_file" id="project_file" class="drop-zone__input" accept=".pdf" style="display: none;">
-                                            </label>
-                                            <div class="file-preview"></div>
-                                        </div>
-                                    </div>
-                                @else
-                                    <label for="project_file" class="drop-zone">
-                                        <span class="drop-zone__prompt">Drag & Drop or click here to choose .pdf file</span>
-                                        <input type="file" name="project_file" id="project_file" class="drop-zone__input" accept=".pdf" style="display: none;">
-                                    </label>
-                                    <div class="file-preview"></div>
-                                @endif
-                            </div>
-                        </div>
-                        <input type="hidden" name="submitted" id="submittedInput" value="">
-                        <div class="text-center mt-5">
-                            <button type="submit" class="btn btn-success" name="action" value="save">Save Form</button>
                         </div>
                     </div>
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <hr class="my-3">
+                            <h5>Additional Information</h5>
+                            <div id="links">
+                                @foreach($members as $member)
+                                    @php
+                                        $project_links = json_decode($member->project_link);
+                                        $project_descs = json_decode($member->project_desc);
+                                    @endphp
+
+                                    @for ($i = 0; $i < count($project_links ?? []); $i++)
+                                        <div class="mb-3 section-content p-2">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="floatingInput" name="project_link[]"
+                                                            value="{{ isset($project_links[$i]) ? $project_links[$i] : '' }}" placeholder="John Doel"
+                                                            aria-describedby="floatingInputLink" required />
+                                                        <label for="floatingInput"><Map></Map>Link (Github/Website/Drive/Other Link)</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="floatingInput" name="project_desc[]"
+                                                            value="{{ $project_descs[$i] }}" placeholder="Jakarta"
+                                                            aria-describedby="floatingInputLink" required />
+                                                        <label for="floatingInput">project_desc</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="button" class="btn btn-danger remove-link-btn">Remove Link</button>
+                                            </div>
+                                        </div>
+                                    @endfor
+                                @endforeach
+                                <!-- Team links will be dynamically added here -->
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-success" type="button" id="add-link-btn">Add Link</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <hr class="my-3">
+                            <h5>Proposal (PDF max. 50mb)</h5>
+                            @if (Auth::user()->project_file != null)
+                                <div class="mb-3">
+                                    <p class="mb-0">
+                                        Uploaded Proposal File: 
+                                        <a class="text-white" href="{{ asset('/storage/' . Auth::user()->project_file) }}" target="_blank">
+                                            <u><strong>{{ Auth::user()->project_file }}</strong></u>
+                                        </a>
+                                    </p>
+                                    <label>
+                                        <input type="radio" name="change_file" value="no" checked> Keep current file
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="change_file" value="yes"> Upload new file
+                                    </label>
+                                    <div id="new-file-upload" style="display: none;">
+                                        <label for="project_file" class="drop-zone">
+                                            <span class="drop-zone__prompt">Drag & Drop or click here to choose new .pdf file</span>
+                                            <input type="file" name="project_file" id="project_file" class="drop-zone__input" accept=".pdf" style="display: none;">
+                                        </label>
+                                        <div class="file-preview"></div>
+                                        <div class="invalid-feedback">Project file is required</div>
+                                    </div>
+                                </div>
+                            @else
+                                <label for="project_file" class="drop-zone">
+                                    <span class="drop-zone__prompt">Drag & Drop or click here to choose .pdf file</span>
+                                    <input type="file" name="project_file" id="project_file" class="drop-zone__input" accept=".pdf" style="display: none;">
+                                </label>
+                                <div class="file-preview"></div>
+                            @endif
+                        </div>
+                    </div>
+                    
+                    <input type="hidden" name="submitted" id="submittedInput" value="" placeholder="Team Name">
+                    <div class="text-center mt-5">
+                        <button class="btn btn-success" name="action" value="save" id="saveButton">Save Form</button>
+                    </div>
                 </div>
-                <div class="text-center">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmationModal">Submit</button>
-                </div>
-            </form>
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-primary" id="submitButton" data-bs-toggle="modal" data-bs-target="@if (Auth::user()->otp_verified_at == null) #verifyModal @else #confirmModal @endif">Submit</button>
+            </div>
+        </form>
         @else
             <div class="alert alert-success">
                 <strong>Your form is submitted.</strong> Thank you for your participation. Best of luck!
             </div>
         @endif
     </div>
-    <!-- / Content -->
-
     <div class="content-backdrop fade"></div>
 </div>
 @endsection
-<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+
+<!-- Verify Modal -->
+<div class="modal fade" id="verifyModal" tabindex="-1" aria-labelledby="verifyModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header text-black">
-                <h5 class="modal-title" id="confirmationModalLabel">Confirm Submission</h5>
+        <div class="modal-content text-black">
+            <div class="modal-header">
+                <h5 class="modal-title" id="verifyModalLabel">Verify Your WhatsApp Number</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body text-black">
+            <div class="modal-body">
+                <p class="mb-0">
+                    Please Verify Your WhatsApp Number (<strong>0{{ Auth::user()->nowa }}</strong>)
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <a href="/verify-wa" class="btn btn-info">Verify Your WhatsApp Number</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Confirm Modal -->
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content text-black">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmModalLabel">Confirm Submission</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
                 <p>Are you absolutely certain you want to submit?</p>    
                 <p>If unsure, please use the "<b>Save Form</b>" button instead to retain your data.</p>
                 <p class="mb-0">Once submitted, changes cannot be reversed. Please review and double-check your form carefully before proceeding.</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-info" name="action" value="submit" onclick="confirmSubmit()">Submit</button>
+                <button type="button" class="btn btn-info" id="confirmSubmitButton">Yes, Submit</button>
             </div>
         </div>
     </div>
 </div>
 
-
+<!-- Validation and Submit JS -->
 <script>
-    function confirmSubmit() {
-        var saveButton = document.querySelector('button[name="action"][value="save"]');
-        var submitButton = document.querySelector('button[name="action"][value="submit"]');
-        var submittedInput = document.getElementById("submittedInput");
-        var mainForm = document.getElementById("mainForm");
+    document.addEventListener('DOMContentLoaded', function () {
+        var form = document.getElementById('mainForm');
+        var saveButton = document.getElementById('saveButton');
+        var confirmSubmitButton = document.getElementById('confirmSubmitButton');
+        var confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
 
-        saveButton.addEventListener("click", function(event) {
-            submittedInput.value = null;
-            if (mainForm.checkValidity()) {
-                mainForm.submit();
-            } else {
-                mainForm.reportValidity();
-            }
+        // Validate on blur
+        form.querySelectorAll('input[required]').forEach(function (input) {
+            input.addEventListener('blur', function () {
+                validateField(input);
+            });
         });
 
-        submitButton.addEventListener("click", function(event) {
-            submittedInput.value = 1;
-            if (mainForm.checkValidity()) {
+        saveButton.addEventListener('click', function () {
+            saveForm(null); // Save with null submitted value
+        });
+
+        confirmSubmitButton.addEventListener('click', function () {
+            saveForm(1); // Save with submitted value of 1
+        });
+
+        function saveForm(isSubmit) {
+            var isValid = validateForm();
+
+            if (isValid) {
+                // Add submitted input to the form
+                var isSubmitInput = document.createElement('input');
+                isSubmitInput.setAttribute('type', 'hidden');
+                isSubmitInput.setAttribute('name', 'submitted');
+                isSubmitInput.setAttribute('value', isSubmit);
+                form.appendChild(isSubmitInput);
+
+                // Submit the form
                 mainForm.submit();
             } else {
-                mainForm.reportValidity();
+                confirmModal.hide();
+                setTimeout(function() {
+                    var firstInvalidField = form.querySelector('.is-invalid');
+                    if (firstInvalidField) {
+                        firstInvalidField.focus();
+                    }
+                }, 500);
             }
-        });
-    }
+        }
 
-    document.addEventListener("DOMContentLoaded", confirmSubmit);
+        function validateForm() {
+            var isValid = true;
+
+            form.querySelectorAll('input[required]').forEach(function (input) {
+                if (!validateField(input)) {
+                    isValid = false;
+                }
+            });
+
+            return isValid;
+        }
+
+        function validateField(input) {
+            if (input.value.trim() === '') {
+                displayError(input, input.getAttribute('placeholder') + ' is required');
+                return false;
+            } else {
+                removeError(input);
+                return true;
+            }
+        }
+
+        function displayError(input, message) {
+            var errorElement = input.parentNode.querySelector('.invalid-feedback'); // Get the invalid-feedback element in the same form-group
+            errorElement.textContent = message;
+            input.classList.add('is-invalid');
+        }
+
+        function removeError(input) {
+            var errorElement = input.parentNode.querySelector('.invalid-feedback'); // Get the invalid-feedback element in the same form-group
+            errorElement.textContent = '';
+            input.classList.remove('is-invalid');
+        }
+    });
 </script>
-
 
 <!-- Add member JS -->
 <script>
@@ -436,78 +531,86 @@
                 var teamMembersContainer = document.getElementById('team-members');
                 var newMemberDiv = document.createElement('div');
                 newMemberDiv.innerHTML = `
-                <div class="mb-3 section-content p-2">
+                    <div class="mb-3 section-content p-2">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="floatingInput" name="member_name[]"
-                                        placeholder="John Doel"
-                                        aria-describedby="floatingInputLink" required />
-                                    <label for="floatingInput"><Map></Map>Name</label>
+                                        placeholder="Member Name"
+                                        required />
+                                    <label for="floatingInput">Name</label>
+                                    <div class="invalid-feedback"></div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating mb-3">
-                                    <select class="form-select role-select" aria-label="Select Role" name="member_role[]" required>
+                                    <select class="form-select role-select" name="member_role[]" placeholder="Member Role" required>
                                         <option value="">Select Role</option>
                                         <option value="leader">Group Leader</option>
                                         <option value="member">Member</option>
                                     </select>
                                     <label for="role">Role</label>
+                                    <div class="invalid-feedback"></div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="floatingInput" name="member_domicile[]"
-                                        placeholder="Jakarta"
-                                        aria-describedby="floatingInputLink" required />
+                                        placeholder="Member Domicile"
+                                        required />
                                     <label for="floatingInput">Domicile</label>
+                                    <div class="invalid-feedback"></div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating mb-3">
                                     <input type="email" class="form-control" id="floatingInput" name="member_email[]"
-                                        placeholder="johndoel@gmail.com"
-                                        aria-describedby="floatingInputLink" required />
+                                        placeholder="Member Email"
+                                        required />
                                     <label for="floatingInput">Email</label>
+                                    <div class="invalid-feedback"></div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating mb-3">
                                     <input type="date" class="form-control" id="floatingInput" name="member_date_of_birth[]"
-                                        placeholder="Date of Birth"
-                                        aria-describedby="floatingInputLink" required />
+                                        placeholder="Member Date of Birth"
+                                        required />
                                     <label for="floatingInput">Date of Birth</label>
+                                    <div class="invalid-feedback"></div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="floatingInput" name="member_profession[]"
-                                        placeholder="Engineer"
-                                        aria-describedby="floatingInputLink" required />
+                                        placeholder="Member Profession"
+                                        required />
                                     <label for="floatingInput">Profession</label>
+                                    <div class="invalid-feedback"></div>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="floatingInput" name="member_github_url[]"
-                                        placeholder="https://"
-                                        aria-describedby="floatingInputLink" />
+                                        placeholder="Github Link"
+                                        />
                                     <label for="floatingInput">Github Link</label>
                                     <div id="floatingInputLink" class="form-text">
                                         https://github.com/username
                                     </div>
+                                    <div class="invalid-feedback"></div>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="floatingInput" name="member_linkedin_url[]"
-                                        placeholder="https://"
-                                        aria-describedby="floatingInputLink" />
+                                        placeholder="CV Document or LinkedIn Link"
+                                        />
                                     <label for="floatingInput">CV Document or LinkedIn Link</label>
                                     <div id="floatingInputLink" class="form-text">
                                         https://linkedin.com/in/username
                                     </div>
+                                    <div class="invalid-feedback"></div>
                                 </div>
                             </div>
                         </div>
@@ -587,7 +690,7 @@
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="floatingInput" name="project_link[]"
                                         value="" placeholder="https://"
-                                        aria-describedby="floatingInputLink" required />
+                                        required />
                                     <label for="floatingInput">Link (Github/Website/Drive/Other Link)</label>
                                     <div id="floatingInputLink" class="form-text">
                                         https://github.com/username/repository
@@ -598,7 +701,7 @@
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="floatingInput" name="project_desc[]"
                                         value="" placeholder="This project is about.."
-                                        aria-describedby="floatingInputLink" required />
+                                        required />
                                     <label for="floatingInput">Description</label>
                                 </div>
                             </div>
@@ -708,7 +811,6 @@
       }
     });
 </script>
-
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var changeFileRadios = document.querySelectorAll('input[name="change_file"]');
