@@ -336,7 +336,7 @@
                                 <div class="mb-3">
                                     <p class="mb-0">
                                         Uploaded Proposal File: 
-                                        <a class="text-white" href="{{ asset('/storage/' . Auth::user()->project_file) }}" target="_blank">
+                                        <a class="text-white" href="{{ asset('/storage/save/' . Auth::user()->project_file) }}" target="_blank">
                                             <u><strong>{{ Auth::user()->project_file }}</strong></u>
                                         </a>
                                     </p>
@@ -352,13 +352,13 @@
                                             <input type="file" name="project_file" id="project_file" class="drop-zone__input" accept=".pdf" style="display: none;">
                                         </label>
                                         <div class="file-preview"></div>
-                                        <div class="invalid-feedback">Project file is required</div>
                                     </div>
                                 </div>
                             @else
                                 <label for="project_file" class="drop-zone">
                                     <span class="drop-zone__prompt">Drag & Drop or click here to choose .pdf file</span>
-                                    <input type="file" name="project_file" id="project_file" class="drop-zone__input" accept=".pdf" style="display: none;">
+                                    <input type="file" name="project_file" id="project_file" class="drop-zone__input" accept=".pdf" style="display: none;" placeholder="File Project" required>
+                                    <div class="invalid-feedback">Project file is required</div>
                                 </label>
                                 <div class="file-preview"></div>
                             @endif
