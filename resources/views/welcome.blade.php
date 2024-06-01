@@ -218,39 +218,38 @@
     </section> 
     <!-- End Announcement Section -->
 
-    <section id="announcement" class="announcement">
-      <div class="container" >
+    <!-- ======= Video Section ======= -->
+    <section id="video-section" class="video-section">
       <div class="section-title text-center pb-1">
-          <p>Video Hackathon</p>
-        </div>
-        <div class="pb-2 ms-2">
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide text-center">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wZNEcVOppH0"></iframe>
-                  <h5 class="mb-0">Kick Off & Seminar Bank Indonesia Hackaton 2024</h5>
-                  <p class="mb-0">Materi Seminar:</p>
-                  <h5><a class="btn btn-sm btn-info" href="https://drive.google.com/file/d/1fxMK9OSCDuSsnEKC_r_FDCIRCc5dH6XF/view?usp=share_link" target="#">Building an AI Product at The Current Dizzying Speed of Development - William Tjhi</a></h5>
-                  <h5><a class="btn btn-sm btn-info" href="https://drive.google.com/file/d/1NF7UikrpN-0K6CbC5k2gTpXfwU2BgSqm/view?usp=share_link" target="#">Tren AI Indonesia - Ayu Purwarianti</a></h5>
-              </div>
-              <div class="swiper-slide text-center">
-                <iframe width="100%" height="100%" src="https://drive.google.com/file/d/1uY2Zgf8nz92aZbv8x9mvW9TxOoYH-6H6/preview"></iframe>
-                  <h5>Tektok Podcast Volume 1</h5>
-                  <h5>Bank Indonesia Hackathon 2024</h5>
-              </div>
-              <div class="swiper-slide text-center">
-                <iframe width="100%" height="100%" src="https://drive.google.com/file/d/1tKxoQcb9HeOHIVX5K2oqz8jKbqnksAbn/preview"></iframe>
-                  <h5>Tektok Podcast Volume 2</h5>
-                  <h5>Bank Indonesia Hackathon 2024</h5>
-              </div>
+        <p>Video Hackathon</p>
+      </div>
+      <div class="pb-2 ms-2">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide text-center">
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wZNEcVOppH0"></iframe>
+                <h5 class="mb-0">Kick Off & Seminar Bank Indonesia Hackaton 2024</h5>
+                <p class="mb-0">Materi Seminar:</p>
+                <h5><a class="btn btn-sm btn-info" href="https://drive.google.com/file/d/1fxMK9OSCDuSsnEKC_r_FDCIRCc5dH6XF/view?usp=share_link" target="#">Building an AI Product at The Current Dizzying Speed of Development - William Tjhi</a></h5>
+                <h5><a class="btn btn-sm btn-info" href="https://drive.google.com/file/d/1NF7UikrpN-0K6CbC5k2gTpXfwU2BgSqm/view?usp=share_link" target="#">Tren AI Indonesia - Ayu Purwarianti</a></h5>
             </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="swiper-slide text-center">
+              <iframe width="100%" height="100%" src="https://drive.google.com/file/d/1uY2Zgf8nz92aZbv8x9mvW9TxOoYH-6H6/preview"></iframe>
+                <h5>Tektok Podcast Volume 1</h5>
+                <h5>Bank Indonesia Hackathon 2024</h5>
+            </div>
+            <div class="swiper-slide text-center">
+              <iframe width="100%" height="100%" src="https://drive.google.com/file/d/1tKxoQcb9HeOHIVX5K2oqz8jKbqnksAbn/preview"></iframe>
+                <h5>Tektok Podcast Volume 2</h5>
+                <h5>Bank Indonesia Hackathon 2024</h5>
+            </div>
           </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
         </div>
       </div>
-    </section><!-- End About Section -->
+    </section><!-- End Video Section -->
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
