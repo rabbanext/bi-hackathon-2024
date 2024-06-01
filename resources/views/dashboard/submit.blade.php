@@ -741,73 +741,88 @@
 <!-- Upload File JS -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-      var dropZone = document.querySelector('.drop-zone');
-      var fileInput = document.getElementById('project_file');
-      var filePreview = document.querySelector('.file-preview');
+        var dropZone = document.querySelector('.drop-zone');
+        var fileInput = document.getElementById('project_file');
+        var filePreview = document.querySelector('.file-preview');
 
-      dropZone.addEventListener('dragover', function (e) {
-        e.preventDefault();
-        dropZone.classList.add('drop-zone--over');
-      });
+        dropZone.addEventListener('dragover', function (e) {
+            e.preventDefault();
+            dropZone.classList.add('drop-zone--over');
+        });
 
-      dropZone.addEventListener('dragleave', function () {
-        dropZone.classList.remove('drop-zone--over');
-      });
+        dropZone.addEventListener('dragleave', function () {
+            dropZone.classList.remove('drop-zone--over');
+        });
 
-      dropZone.addEventListener('drop', function (e) {
-        e.preventDefault();
-        dropZone.classList.remove('drop-zone--over');
+        dropZone.addEventListener('drop', function (e) {
+            e.preventDefault();
+            dropZone.classList.remove('drop-zone--over');
 
-        var files = e.dataTransfer.files;
-        handleFiles(files);
-      });
+            var files = e.dataTransfer.files;
+            handleFiles(files);
+        });
 
-      fileInput.addEventListener('change', function () {
-        var files = this.files;
-        handleFiles(files);
-      });
+        fileInput.addEventListener('change', function () {
+            var files = this.files;
+            handleFiles(files);
+        });
 
-      filePreview.addEventListener('click', function (e) {
-        if (e.target.classList.contains('remove-file')) {
-          e.target.parentElement.remove();
+        filePreview.addEventListener('click', function (e) {
+            if (e.target.classList.contains('remove-file')) {
+            e.target.parentElement.remove();
+            }
+        });
+
+        function handleFiles(files) {
+            // Check if more than one file is selected
+            if (files.length > 1) {
+            alert('Please select only one file.');
+            fileInput.value = '';
+            return;
+            }
+
+            // Clear existing file preview items
+            filePreview.innerHTML = '';
+
+            // Handle the selected file
+            var file = files[0];
+
+            var fileItem = document.createElement('div');
+            fileItem.classList.add('file-preview__item');
+            fileItem.innerHTML = `
+            <span>Selected Proposal File: ${file.name}</span>
+            <span>${formatBytes(file.size)}</span>
+            <span class="remove-file">x</span>
+            `;
+            filePreview.appendChild(fileItem);
+
+            // Update file input value to reflect selected file
+            fileInput.files = files;
         }
-      });
 
-      function handleFiles(files) {
-        // Check if more than one file is selected
-        if (files.length > 1) {
-          alert('Please select only one file.');
-          fileInput.value = '';
-          return;
+        // Reset file input value
+        filePreview.addEventListener('click', function (e) {
+            if (e.target.classList.contains('remove-file')) {
+                fileInput.value = '';
+                fileSelected = false;
+            }
+        });
+
+        // // Update file input value to null if no file has been selected
+        // fileInput.addEventListener('change', function () {
+        //     if (!fileSelected) {
+        //         fileInput.value = '';
+        //     }
+        // });
+
+        function formatBytes(bytes, decimals = 2) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const dm = decimals < 0 ? 0 : decimals;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
         }
-
-        // Clear existing file preview items
-        filePreview.innerHTML = '';
-
-        // Handle the selected file
-        var file = files[0];
-
-        var fileItem = document.createElement('div');
-        fileItem.classList.add('file-preview__item');
-        fileItem.innerHTML = `
-          <span>Selected Proposal File: ${file.name}</span>
-          <span>${formatBytes(file.size)}</span>
-          <span class="remove-file">x</span>
-        `;
-        filePreview.appendChild(fileItem);
-
-        // Update file input value to reflect selected file
-        fileInput.files = files;
-      }
-
-      function formatBytes(bytes, decimals = 2) {
-        if (bytes === 0) return '0 Bytes';
-        const k = 1024;
-        const dm = decimals < 0 ? 0 : decimals;
-        const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
-        const i = Math.floor(Math.log(bytes) / Math.log(k));
-        return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
-      }
     });
 </script>
 <script>
