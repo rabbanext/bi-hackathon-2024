@@ -357,7 +357,7 @@
                             @else
                                 <label for="project_file" class="drop-zone">
                                     <span class="drop-zone__prompt">Drag & Drop or click here to choose .pdf file</span>
-                                    <input type="file" name="project_file" id="project_file" class="drop-zone__input" accept=".pdf" style="display: none;" placeholder="File Project" required>
+                                    <input type="file" name="project_file" id="project_file" class="drop-zone__input" accept=".pdf" style="display: none;" placeholder="File Project">
                                     <div class="invalid-feedback">Project file is required</div>
                                 </label>
                                 <div class="file-preview"></div>
@@ -442,12 +442,17 @@
         });
 
         saveButton.addEventListener('click', function () {
+            document.getElementById('project_file').removeAttribute('required');
             saveForm(null);
         });
 
         confirmSubmitButton.addEventListener('click', function () {
+            if (!{!! json_encode(Auth::user()->project_file) !!}) {
+                document.getElementById('project_file').setAttribute('required', '');
+            }
             saveForm(1);
         });
+
 
         function saveForm(isSubmit) {
             var isValid = validateForm();
@@ -776,9 +781,9 @@
         function handleFiles(files) {
             // Check if more than one file is selected
             if (files.length > 1) {
-            alert('Please select only one file.');
-            fileInput.value = '';
-            return;
+                alert('Please select only one file.');
+                fileInput.value = '';
+                return;
             }
 
             // Clear existing file preview items
