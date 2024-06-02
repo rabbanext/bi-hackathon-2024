@@ -42,7 +42,7 @@
 					</tr>
 					<tr>
 						<td>User Submitted</td>
-						<td>{{ $users->whereNotNull('submitted')->count() }}</td>
+						<td>{{ $users->where('submitted', '1')->count() }}</td>
 					</tr>
 				</tbody>
 			</table>
@@ -79,16 +79,29 @@
 							</div>
 						</div>
 						<div class="col-4 mb-1">
-							<p style="display: inline;">Project Status: </p>
+							<p style="display: inline;">Submission: </p>
 							<div class="btn-group" role="group" aria-label="Project Status">
-								<input type="radio" class="btn-check" name="project-file-filter" value="all" id="submitted0" autocomplete="off" checked>
+								<input type="radio" class="btn-check" name="submission-filter" value="all" id="submitted0" autocomplete="off" checked>
 								<label class="btn btn-outline-info btn-sm" for="submitted0">All</label>
 
-								<input type="radio" class="btn-check" name="project-file-filter" value="submitted" id="submitted1" autocomplete="off">
+								<input type="radio" class="btn-check" name="submission-filter" value="submitted" id="submitted1" autocomplete="off">
 								<label class="btn btn-outline-info btn-sm" for="submitted1">Submitted</label>
 
-								<input type="radio" class="btn-check" name="project-file-filter" value="not-submitted" id="submitted2" autocomplete="off">
+								<input type="radio" class="btn-check" name="submission-filter" value="not-submitted" id="submitted2" autocomplete="off">
 								<label class="btn btn-outline-info btn-sm" for="submitted2">Not Submitted</label>
+							</div>
+						</div>
+						<div class="col-4 mb-1">
+							<p style="display: inline;">Project Status: </p>
+							<div class="btn-group" role="group" aria-label="Project Status">
+								<input type="radio" class="btn-check" name="project-file-filter" value="all" id="uploaded0" autocomplete="off" checked>
+								<label class="btn btn-outline-info btn-sm" for="uploaded0">All</label>
+
+								<input type="radio" class="btn-check" name="project-file-filter" value="uploaded" id="uploaded1" autocomplete="off">
+								<label class="btn btn-outline-info btn-sm" for="uploaded1">Uploaded</label>
+
+								<input type="radio" class="btn-check" name="project-file-filter" value="not-uploaded" id="uploaded2" autocomplete="off">
+								<label class="btn btn-outline-info btn-sm" for="uploaded2">Not Uploaded</label>
 							</div>
 						</div>
 					</div>
@@ -120,6 +133,7 @@
 							<th>Email Verified</th>
 							<th>Project</th>
 							<th>Submission</th>
+							<th>Submission Time</th>
 							<th>Details</th>
 						</tr>
 					</thead>
@@ -161,16 +175,23 @@
 							</td>
 							<td>
 								@if ($user->project_file == null)
-								Not Uploaded
+									Not Uploaded
 								@else
-								Uploaded
+									Uploaded
 								@endif
 							</td>
 							<td>
 								@if ($user->submitted == null)
-								Not Submitted
+									Not Submitted
 								@else
-								Submitted
+									Submitted
+								@endif
+							</td>
+							<td>
+								@if ($user->submitted == null)
+									-
+								@else
+									{{ date('d-m-Y H:i:s', strtotime($user->updated_at)) }}
 								@endif
 							</td>
 							<td>
@@ -325,9 +346,14 @@
         });
 
 		// Custom filter for project file
+        $('input[name="submission-filter"]').on('change', function() {
+            var value = $(this).val();
+            table.columns(8).search(value === 'all' ? '' : (value === 'submitted' ? '^Submitted$' : '^Not Submitted$'), true, false).draw();
+        });
+		
         $('input[name="project-file-filter"]').on('change', function() {
             var value = $(this).val();
-            table.columns(7).search(value === 'all' ? '' : (value === 'submitted' ? '^Submitted$' : '^Not Submitted$'), true, false).draw();
+            table.columns(7).search(value === 'all' ? '' : (value === 'uploaded' ? '^Uploaded$' : '^Not Uploaded$'), true, false).draw();
         });
 
         // Custom filter for email verification
