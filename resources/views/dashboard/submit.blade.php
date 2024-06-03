@@ -301,16 +301,18 @@
                                                     <div class="form-floating mb-3">
                                                         <input type="text" class="form-control" id="floatingInput" name="project_link[]"
                                                             value="{{ isset($project_links[$i]) ? $project_links[$i] : '' }}" placeholder="Link"
-                                                            aria-describedby="floatingInputLink" required />
-                                                        <label for="floatingInput"><Map></Map>Link (Github/Website/Drive/Other Link)</label>
+                                                            aria-describedby="floatingInputLink" />
+                                                            <label for="floatingInput">Link (Github/Website/Drive/Other Link)</label>
+                                                            <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3">
                                                         <input type="text" class="form-control" id="floatingInput" name="project_desc[]"
                                                             value="{{ $project_descs[$i] }}" placeholder="Description"
-                                                            aria-describedby="floatingInputLink" required />
-                                                        <label for="floatingInput">Project Desc</label>
+                                                            aria-describedby="floatingInputLink" />
+                                                            <label for="floatingInput">Description</label>
+                                                            <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -693,8 +695,7 @@
                             <div class="col-12 col-lg-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="floatingInput" name="project_link[]"
-                                        value="" placeholder="Link"
-                                        required />
+                                        value="" placeholder="Link" />
                                     <label for="floatingInput">Link (Github/Website/Drive/Other Link)</label>
                                     <div id="floatingInputLink" class="form-text">
                                         https://github.com/username/repository
@@ -704,8 +705,7 @@
                             <div class="col-12 col-lg-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="floatingInput" name="project_desc[]"
-                                        value="" placeholder="Description"
-                                        required />
+                                        value="" placeholder="Description" />
                                     <label for="floatingInput">Description</label>
                                 </div>
                             </div>
