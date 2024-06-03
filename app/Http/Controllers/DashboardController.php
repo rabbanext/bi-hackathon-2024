@@ -59,11 +59,11 @@ class DashboardController extends Controller
         return view('dashboard.submit', compact('post', 'members', 'countMember', 'countLink'));
     }
 
-    // Submit project link.
+    // Submit
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
-    
+
         $messages = [
             'member_name.*' => 'The Member Name field is required.',
             'member_role.*' => 'The Member Role field is required.',
@@ -75,6 +75,7 @@ class DashboardController extends Controller
             'project_desc.*' => 'The Project Desc field is required.',
             'project_file.max' => 'The project file must not be greater than 50MB.',
         ];
+        
         $validatedData = $request->validate([
             'team_name' => 'required|string|max:255',
             'institution' => 'required|string|max:255',
@@ -91,10 +92,10 @@ class DashboardController extends Controller
             'project_file' => 'nullable|file|mimes:pdf|max:51200', // 50 MB
             'submitted' => 'nullable',
         ], $messages);
-    
+
         // Update the user's data based on the validated fields
         $user->update(array_filter($validatedData));
-    
+
         // Handle special cases where specific fields need to be nullified if empty
         if (empty($validatedData['member_name'])) {
             $user->member_name = null;
@@ -104,15 +105,14 @@ class DashboardController extends Controller
             $user->member_date_of_birth = null;
             $user->member_profession = null;
         }
-    
+
         if (empty($validatedData['project_link'])) {
             $user->project_link = null;
             $user->project_desc = null;
         }
-    
+
         // Handle file upload if a new file is provided
         if ($request->hasFile('project_file')) {
-            // Logic for handling file upload
             $file = $request->file('project_file');
             $originalFileName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
             $originalFileName = str_replace(' ', '_', $originalFileName);
@@ -120,16 +120,29 @@ class DashboardController extends Controller
             $dateTime = date('Ymd_His');
             $extension = $file->getClientOriginalExtension();
             $fileName = $originalFileName . '_' . $dateTime . '.' . $extension;
-            $file->move(storage_path('app/public'), $fileName);
+
+            $storagePath = ($request->input('submitted') == 1) ? 'submitted' : 'save';
+            $file->move(storage_path('app/public/' . $storagePath), $fileName);
+
             $user->project_file = $fileName;
-    
+
             // Notify user after file upload
             $user->notify(new SubmissionConfirmation());
         }
-    
+
+        // Move the existing file from 'save' to 'submitted' if submitted is true and project_file is not empty
+        if ($request->has('submitted') && $request->input('submitted') == 1 && !empty($user->project_file)) {
+            $oldPath = storage_path('app/public/save/' . $user->project_file);
+            $newPath = storage_path('app/public/submitted/' . $user->project_file);
+            if (file_exists($oldPath)) {
+                rename($oldPath, $newPath);
+                $user->project_file = $user->project_file;
+            }
+        }
+
         // Save the changes
         $user->save();
-    
+
         if ($request->has('submitted') && $request->input('submitted') == 1) {
             return back();
         } else {
