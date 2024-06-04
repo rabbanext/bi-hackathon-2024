@@ -50,6 +50,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/users', [DashboardController::class, 'users'])->name('users');
     Route::get('/projects', [DashboardController::class, 'projects']);
     Route::get('/email_responses', [DashboardController::class, 'email_responses']);
+    Route::get('/wa_responses', [DashboardController::class, 'wa_responses']);
 });
 
 /*------------------------------------------
@@ -88,4 +89,4 @@ Route::get('/thanks', function () {
 })->name('thanks');
 
 Route::post('/handle-response', [EmailController::class, 'handleResponse'])->name('handle-response');
-Route::get('/handle-response', [EmailController::class, 'handleResponse'])->name('handle-response');
+Route::get('/handle-response/{response}/{email}', [EmailController::class, 'handleResponse'])->name('handle-response');

@@ -10,18 +10,32 @@ use App\Mail\EmailWithButtons;
 
 class EmailController extends Controller
 {
-    public function handleResponse(Request $request) {
-        $email = $request->input('email');
-        $response = $request->input('response');
+    // // handle email response
+    // public function handleResponse(Request $request) {
+    //     $email = $request->input('email');
+    //     $response = $request->input('response');
     
+    //     $user = User::where('email', $email)->first();
+    
+    //     if ($user) {
+    //         $user->email_response = $response;
+    //         $user->email_response_timestamp = Carbon::now();
+    //         $user->save();
+    //     }
+    
+    //     return redirect()->route('thanks');
+    // }
+
+    // handle whatsapp response
+    public function handleResponse(Request $request, $response, $email) {
         $user = User::where('email', $email)->first();
     
         if ($user) {
-            $user->email_response = $response;
-            $user->email_response_timestamp = Carbon::now();
+            $user->wa_response = $response;
+            $user->wa_response_timestamp = Carbon::now();
             $user->save();
         }
-    
+
         return redirect()->route('thanks');
     }
 
