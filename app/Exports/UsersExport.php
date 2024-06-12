@@ -3,6 +3,7 @@
 namespace App\Exports;
 
 use App\Models\User;
+use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
@@ -11,12 +12,57 @@ use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 
 class UsersExport implements FromCollection, WithHeadings, WithMapping, WithStyles
 {
+    protected $filter;
+
+    public function __construct($params)
+    {
+        $this->filter = $params;
+    }
+
     /**
      * @return \Illuminate\Support\Collection
      */
     public function collection()
     {
-        return User::all();
+        $query = User::query();
+
+        if (isset($this->filter['submission-filter'])) {
+            if ($this->filter['submission-filter'] === "submitted") {
+                $query->whereNotNull('submitted');
+            } elseif ($this->filter['submission-filter'] === "not-submitted") {
+                $query->whereNull('submitted');
+            }
+        }
+
+        if (isset($this->filter['submission-time'])) {
+            $query->orderBy('updated_at', $this->filter['submission-time']);
+        }
+
+        if (isset($this->filter['project-file-filter'])) {
+            if ($this->filter['project-file-filter'] === "uploaded") {
+                $query->whereNotNull('project_file');
+            } elseif ($this->filter['project-file-filter'] === "not-uploaded") {
+                $query->whereNull('project_file');
+            }
+        }
+
+        if (isset($this->filter['email-verified-filter'])) {
+            if ($this->filter['email-verified-filter'] === "verified") {
+                $query->whereNotNull('email_verified_at');
+            } elseif ($this->filter['email-verified-filter'] === "not-verified") {
+                $query->whereNull('email_verified_at');
+            }
+        }
+
+        if (isset($this->filter['otp-verified-filter'])) {
+            if ($this->filter['otp-verified-filter'] === "verified") {
+                $query->whereNotNull('otp_verified_at');
+            } elseif ($this->filter['otp-verified-filter'] === "not-verified") {
+                $query->whereNull('otp_verified_at');
+            }
+        }
+
+        return $query->get();
     }
 
     /**
