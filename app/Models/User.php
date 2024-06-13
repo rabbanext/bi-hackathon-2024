@@ -59,6 +59,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'video_submitted_at' => 'datetime',
     ];
  
     /**

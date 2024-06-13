@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\OtpController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\VideoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,7 +79,7 @@ Route::get('/export-users', [DashboardController::class, 'exportUsers'])->name('
 
 // Send emails to all registered users
 Route::get('/send-emails', function () {
-    $emailController = new EmailController();
+    $emailController = new EmailController();    
     $emailController->sendEmails();
     
     return 'Emails have been sent successfully!';
@@ -90,3 +91,8 @@ Route::get('/thanks', function () {
 
 Route::post('/handle-response', [EmailController::class, 'handleResponse'])->name('handle-response');
 Route::get('/handle-response/{response}/{email}', [EmailController::class, 'handleResponse'])->name('handle-response');
+
+Route::get('/submit-video', function () {
+    return view('dashboard/submit_video');
+})->name('submitVideoForm');
+Route::post('/submit-video', [VideoController::class, 'submitVideo'])->name('submitVideo');
