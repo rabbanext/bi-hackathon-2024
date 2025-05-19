@@ -2,7 +2,6 @@
 
 @section('form')
 <div class="section-title mt-5">
-    <h2>Register</h2>
     <p>Verification</p>
 </div>
 @if (session('resent'))

@@ -4,7 +4,6 @@
 <div class="content-wrapper">
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="section-title pb-2 my-5">
-          <h2>Submission</h2>
           <p>Submit Proposal</p>
         </div>
 
@@ -21,14 +20,14 @@
         @endif
 
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12">
                 <div class="section-content mb-4">
                     <h5>Guideline</h5>
                     <p class="mb-0">Silakan cek syarat dan ketentuan registrasi pada link berikut:</p>
                     <a class="text-info mb-0" href="https://drive.google.com/file/d/1z0F7rhKOMln5YM4239JRbqaU1fYJnXRW/view?usp=sharing">Guideline</a>
                 </div>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12">
                 <div class="section-content mb-4">
                     <h5>Panduan Proposal</h5>
                     <p class="mb-0">Pastikan format submisi proposal kamu sesuai dengan format berikut:</p>
@@ -41,12 +40,12 @@
             <div class="col-12 col-md-6">
                 <div class="section-content mb-4">
                     @if (Auth::user()->email_verified_at == null && Auth::user()->type == "user")
-                        <h5 class="card-title">Email Status:  <strong class="badge bg-danger">Not Verified</strong></h5>
+                        <h5 class="card-title">Email:  <strong class="badge bg-danger">Not Verified</strong></h5>
                         <div class="card-body">
                             <p class="mb-0">{{ Auth::user()->email }} <a href="#" class="text-info">(Click here to verify)</a></p>
                         </div>
                     @else
-                        <h5 class="card-title">Email Status:  <strong class="badge bg-success">Verified</strong></h5>
+                        <h5 class="card-title">Email:  <strong class="badge bg-success">Verified</strong></h5>
                         <div class="card-body">
                             <p class="mb-0">{{ Auth::user()->email }}</p>
                         </div>
@@ -56,12 +55,12 @@
             <div class="col-12 col-md-6">
                 <div class="section-content mb-4">
                     @if (Auth::user()->otp_verified_at == null && Auth::user()->type == "user")
-                        <h5 class="card-title">WhatsApp Status:  <strong class="badge bg-danger">Not Verified</strong></h5>
+                        <h5 class="card-title">WhatsApp:  <strong class="badge bg-danger">Not Verified</strong></h5>
                         <div class="card-body">
                             <p class="mb-0">{{ Auth::user()->nowa }} <a href="/verify-wa" class="text-info">(Click here to verify)</a></p>
                         </div>
                     @else
-                        <h5 class="card-title">WhatsApp Status:  <strong class="badge bg-success">Verified</strong></h5>
+                        <h5 class="card-title">WhatsApp:  <strong class="badge bg-success">Verified</strong></h5>
                         <div class="card-body">
                             <p class="mb-0">{{ Auth::user()->nowa }}</p>
                         </div>
@@ -153,7 +152,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-12 col-lg-6">
-                                                <div class="form-floating mb-3">
+                                                <div class="form-floating">
                                                     <input type="text" class="form-control" id="floatingInput" name="member_github_url[]"
                                                         placeholder="Github Link" />
                                                     <label for="floatingInput">Github Link</label>
@@ -164,7 +163,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-12 col-lg-6">
-                                                <div class="form-floating mb-3">
+                                                <div class="form-floating">
                                                     <input type="text" class="form-control" id="floatingInput" name="member_linkedin_url[]"
                                                         placeholder="CV Document or LinkedIn Link" />
                                                     <label for="floatingInput">CV Document or LinkedIn Link</label>
@@ -247,7 +246,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6">
-                                                    <div class="form-floating mb-3">
+                                                    <div class="form-floating">
                                                         <input type="text" class="form-control" id="floatingInput" name="member_github_url[]"
                                                             value="{{ $github_urls[$i] }}" placeholder="Github Link" />
                                                         <label for="floatingInput">Github Link</label>
@@ -258,7 +257,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-lg-6">
-                                                    <div class="form-floating mb-3">
+                                                    <div class="form-floating">
                                                         <input type="text" class="form-control" id="floatingInput" name="member_linkedin_url[]"
                                                             value="{{ $linkedin_urls[$i] }}" placeholder="CV Document or LinkedIn Link" />
                                                         <label for="floatingInput">CV Document or LinkedIn Link</label>
@@ -596,7 +595,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6">
-                                <div class="form-floating mb-3">
+                                <div class="form-floating">
                                     <input type="text" class="form-control" id="floatingInput" name="member_github_url[]"
                                         placeholder="Github Link"
                                         />
@@ -608,7 +607,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6">
-                                <div class="form-floating mb-3">
+                                <div class="form-floating">
                                     <input type="text" class="form-control" id="floatingInput" name="member_linkedin_url[]"
                                         placeholder="CV Document or LinkedIn Link"
                                         />

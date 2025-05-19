@@ -5,7 +5,6 @@
 
 @section('form')
 <div class="section-title mt-5">
-    <h2>Register</h2>
     <p>Register</p>
 </div>
 <div class="section-content">

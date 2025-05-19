@@ -7,7 +7,6 @@
     <!-- Content -->
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="section-title pb-2 my-5">
-            <h2>Projects</h2>
             <p>Projects</p>
         </div>
         <div class="section-content mb-3">

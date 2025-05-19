@@ -1,3 +1,106 @@
+/*--------------------------------------------------------------
+  # Register
+  --------------------------------------------------------------*/
+#register {
+	background: 
+		linear-gradient(to bottom,
+			#08143c 0%,
+			rgba(21, 58, 180, 0) 25%,
+			rgba(21, 58, 180, 0) 65%,
+			#08143c 100%
+		),
+		url('../img/bg/hero-bg-flip.jpg') center center / cover no-repeat scroll;
+  min-height: 100vh;
+}
+
+#register .container {
+  max-width: 800px;
+}
+
+.register .php-email-form {
+  width: 100%;
+  background: #FFFFFF;
+}
+
+.register .php-email-form .form-group {
+  padding-bottom: 8px;
+}
+
+.register .php-email-form .error-message {
+  display: none;
+  color: #FFFFFF;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.register .php-email-form .error-message br+br {
+  margin-top: 25px;
+}
+
+.register .php-email-form .sent-message {
+  display: none;
+  color: #FFFFFF;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.register .php-email-form .loading {
+  display: none;
+  background: #FFFFFF;
+  text-align: center;
+  padding: 15px;
+}
+
+.register .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  animation: animate-circle 1s linear infinite;
+}
+
+.register .php-email-form input,
+.register .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.register .php-email-form input:focus,
+.register .php-email-form textarea:focus {
+  border-color: #A755FF;
+}
+
+.register .php-email-form input {
+  height: 44px;
+}
+
+.register .php-email-form textarea {
+  padding: 10px 12px;
+}
+
+.register .php-email-form button[type=submit] {
+  background: #A755FF;
+  border: 0;
+  padding: 10px 24px;
+  color: #151515;
+  transition: .4s;
+  border-radius: 4px;
+}
+
+.register .php-email-form button[type=submit]:hover {
+  background: #ffcd6b;
+}
+
 .drop-zone {
   border: 2px dashed #ccc;
   padding: 20px;
@@ -48,6 +151,6 @@
   color: #000;
 }
 
-.form-floating > label {
+.form-floating>label {
   color: #727272;
 }

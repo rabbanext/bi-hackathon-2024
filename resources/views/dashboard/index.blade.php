@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="section-title pb-2 my-5">
-  <h2>Dashboard</h2>
   <p>Dashboard</p>
 </div>
 <div class="content-wrapper">

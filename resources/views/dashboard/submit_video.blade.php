@@ -4,7 +4,6 @@
 <div class="content-wrapper">
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="section-title pb-2 my-5">
-          <h2>Submission</h2>
           <p>Submit Proposal</p>
         </div>
 
@@ -41,12 +40,12 @@
             <div class="col-12 col-md-6">
                 <div class="section-content mb-4">
                     @if (Auth::user()->email_verified_at == null && Auth::user()->type == "user")
-                        <h5 class="card-title">Email Status:  <strong class="badge bg-danger">Not Verified</strong></h5>
+                        <h5 class="card-title">Email:  <strong class="badge bg-danger">Not Verified</strong></h5>
                         <div class="card-body">
                             <p class="mb-0">{{ Auth::user()->email }} <a href="#" class="text-info">(Click here to verify)</a></p>
                         </div>
                     @else
-                        <h5 class="card-title">Email Status:  <strong class="badge bg-success">Verified</strong></h5>
+                        <h5 class="card-title">Email:  <strong class="badge bg-success">Verified</strong></h5>
                         <div class="card-body">
                             <p class="mb-0">{{ Auth::user()->email }}</p>
                         </div>
@@ -56,12 +55,12 @@
             <div class="col-12 col-md-6">
                 <div class="section-content mb-4">
                     @if (Auth::user()->otp_verified_at == null && Auth::user()->type == "user")
-                        <h5 class="card-title">WhatsApp Status:  <strong class="badge bg-danger">Not Verified</strong></h5>
+                        <h5 class="card-title">WhatsApp:  <strong class="badge bg-danger">Not Verified</strong></h5>
                         <div class="card-body">
                             <p class="mb-0">{{ Auth::user()->nowa }} <a href="/verify-wa" class="text-info">(Click here to verify)</a></p>
                         </div>
                     @else
-                        <h5 class="card-title">WhatsApp Status:  <strong class="badge bg-success">Verified</strong></h5>
+                        <h5 class="card-title">WhatsApp:  <strong class="badge bg-success">Verified</strong></h5>
                         <div class="card-body">
                             <p class="mb-0">{{ Auth::user()->nowa }}</p>
                         </div>
