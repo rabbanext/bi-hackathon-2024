@@ -47,7 +47,7 @@
                 <table id="email_responses-table" class="table table-hover w-100">
 					<thead>
 						<tr>
-							<th>no.</th>
+							<th>No.</th>
 							<th>Name</th>
 							<th>Team Name</th>
 							<th>Email</th>
@@ -96,7 +96,7 @@
                             text: 'Export to Excel',
                             className: 'bg-info',
                             filename: 'users_email_responses',
-                            title: 'Hackathon Bank Indonesia 2024 - User\'s Email Responses',
+                            title: 'Hackathon Bank Indonesia 2025 - User\'s Email Responses',
                             exportOptions: {
                                     columns: [0, 1, 2]
                             },
@@ -106,7 +106,7 @@
                             text: 'Export to PDF',
                             className: 'bg-info',
                             filename: 'users_email_responses',
-                            title: 'Hackathon Bank Indonesia 2024 - User\'s Email Responses',
+                            title: 'Hackathon Bank Indonesia 2025 - User\'s Email Responses',
                             exportOptions: {
                                     columns: [0, 1, 2]
                             },

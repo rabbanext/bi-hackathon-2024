@@ -11,7 +11,7 @@
 				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th>no.</th>
+							<th>No.</th>
 							<th>Name</th>
 							<th>Email</th>
 							<!-- <th>Actions</th> -->

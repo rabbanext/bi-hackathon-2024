@@ -12,7 +12,7 @@ class ExportController extends Controller
     public function export()
     {
         // Generate the file name based on the current date
-        $fileName = 'Hackathon_BI_2024_Users_' . Carbon::now()->format('d_m_Y') . '.xlsx';
+        $fileName = 'Hackathon_BI_2025_Users_' . Carbon::now()->format('d_m_Y') . '.xlsx';
 
         // Download the export with the specified file name
         return Excel::download(new UsersExport, $fileName);

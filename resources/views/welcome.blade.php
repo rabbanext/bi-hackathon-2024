@@ -20,10 +20,10 @@
 	<meta name="theme-color" content="#001341">
 
 	<meta name="author" content="rabbanext" />
-	<meta name="description" content="Bank Indonesia Hackathon 2024" />
+	<meta name="description" content="Bank Indonesia Hackathon 2025" />
 
-	<meta property="og:site_name" content="Bank Indonesia Hackathon 2024" />
-	<meta property="og:title" content="Bank Indonesia Hackathon 2024" />
+	<meta property="og:site_name" content="Bank Indonesia Hackathon 2025" />
+	<meta property="og:title" content="Bank Indonesia Hackathon 2025" />
 	<meta property="og:description" content="Artificial Intelligence & Machine Learning for Digital Economy and Finance in Indonesia" />
 	<meta property="og:url" content="https://hackathon.fekdi.co.id" />
 	<meta property="og:image" content="/img/hero/hero-hackathon.png" />
@@ -32,7 +32,7 @@
 	<meta property="og:image:width" content="660" />
 	<meta property="og:image:height" content="176" />
 	<meta property="og:image:alt" content="Rabbanext" />
-	<title>Bank Indonesia Hackathon 2024</title>
+	<title>Bank Indonesia Hackathon 2025</title>
 
 	<!-- Favicons -->
 	<link href="/img/favicon.png" rel="icon">
@@ -66,7 +66,7 @@
 					<li><a class="nav-link scrollto" href="#timeline">Timeline</a></li>
 					<li><a class="nav-link scrollto" href="#problem-statements">Problem Statements</a></li>
 					<li><a class="nav-link scrollto" href="#prizes">Prizes</a></li>
-					<li><a class="nav-link scrollto" href="/register">Register</a></li>
+					<li><a class="nav-link scrollto" href="/register">Registrasi</a></li>
 					<li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
 					<li><a class="nav-link scrollto" href="#hackathon2024">2024</a></li>
 					<li><a class="nav-link scrollto" href="#podcast">Podcast</a></li>
@@ -75,6 +75,7 @@
 				<i class="bx bx-list mobile-nav-toggle"></i>
 			</nav><!-- .navbar -->
 
+			
 			@auth
 			@if (Auth::user()->type == "user")
 				<a href="javascript:void(0);" data-bs-toggle="dropdown">
@@ -93,7 +94,6 @@
 							<span class="align-middle">Submit Proposal</span>
 						</a>
 					</li>
-				</ul>
 			@elseif (Auth::user()->type == "admin")
 				<a href="javascript:void(0);" data-bs-toggle="dropdown">
 					<button id="register-btn" class="btn btn-primary btn-header-primary ms-4"
@@ -118,9 +118,9 @@
 							<span class="align-middle">Email Responses</span>
 						</a>
 					</li>
-					@endif
+			@endif
 					<li>
-						<a class="dropdown-item" href="{{ route('logout') }}"
+						<a class="dropdown-item" href="{{ route('logout') }}" id="logout-btn"
 							onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
 							<i class="bx bx-power-off me-2 text-danger"></i>
 							<span class="align-middle">{{ __('Logout') }}</span>
@@ -721,7 +721,7 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="copyright">
-					&copy; Copyright 2024 <strong><span>Bank Indonesia</span></strong>
+					&copy; Copyright 2025 <strong><span>Bank Indonesia</span></strong>
 				</div>
 				<div class="credits">
 					All Rights Reserved

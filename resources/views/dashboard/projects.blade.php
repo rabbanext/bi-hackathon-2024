@@ -14,7 +14,7 @@
                 <table id="projects-table" class="table table-hover w-100">
                     <thead>
                         <tr>
-                            <th>no.</th>
+                            <th>No.</th>
                             <th>Team Name</th>
                             <th>File Name</th>
                             <th>Submission</th>
@@ -37,7 +37,7 @@
 								@endif
 							</td>
                             <td>
-                                <a href="{{ asset('/storage/' . $project->project_file) }}" target="_blank" class="btn btn-sm btn-info hide-arrow">
+                                <a href="{{ asset('/storage' . ($project->submitted === 1 ? '/submitted/' : '/save/') . $project->project_file) }}" target="_blank" class="btn btn-sm btn-info hide-arrow">
                                     <i class="bx bx-link"></i> Open File
                                 </a>
                             </td>
@@ -73,7 +73,7 @@
                             text: 'Export to Excel',
                             className: 'bg-info',
                             filename: 'users_projects',
-                            title: 'Hackathon Bank Indonesia 2024 - User\'s Projects',
+                            title: 'Hackathon Bank Indonesia 2025 - User\'s Projects',
                             exportOptions: {
                                     columns: [0, 1, 2]
                             },
@@ -83,7 +83,7 @@
                             text: 'Export to PDF',
                             className: 'bg-info',
                             filename: 'users_projects',
-                            title: 'Hackathon Bank Indonesia 2024 - User\'s Projects',
+                            title: 'Hackathon Bank Indonesia 2025 - User\'s Projects',
                             exportOptions: {
                                     columns: [0, 1, 2]
                             },

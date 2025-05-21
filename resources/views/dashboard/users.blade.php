@@ -11,7 +11,7 @@
         </div>
 
 		<div class="section-content mb-3">
-			<table class="table">
+			<table class="table mb-0">
 				<thead>
 					<tr>
 						<th>Statistic</th>
@@ -46,12 +46,12 @@
 				</tbody>
 			</table>
 		</div>
-		<div class="row">
+		<div class="row mb-3">
 			<div class="col-8">
 				<div class="section-content h-100 mb-3">
 					<h5>Filter</h5>
 					<div class="row">
-						<div class="col-4 mb-1">
+						<div class="col-12 mb-1">
 							<p style="display: inline;">WhatsApp Verification: </p>
 							<div class="btn-group" role="group" aria-label="WhatsApp Verification">
 								<input type="radio" class="btn-check" name="otp-verified-filter" value="all" id="waVerified0" autocomplete="off" checked>
@@ -64,7 +64,7 @@
 								<label class="btn btn-outline-info btn-sm" for="waVerified2">Not Verified</label>
 							</div>
 						</div>
-						<div class="col-4 mb-1">
+						<div class="col-12 mb-1">
 							<p style="display: inline;">Email Verification: </p>
 							<div class="btn-group" role="group" aria-label="Email Verification">
 								<input type="radio" class="btn-check" name="email-verified-filter" value="all" id="emailVerified0" autocomplete="off" checked>
@@ -77,7 +77,7 @@
 								<label class="btn btn-outline-info btn-sm" for="emailVerified2">Not Verified</label>
 							</div>
 						</div>
-						<div class="col-4 mb-1">
+						<div class="col-12 mb-1">
 							<p style="display: inline;">Submission: </p>
 							<div class="btn-group" role="group" aria-label="Project Status">
 								<input type="radio" class="btn-check" name="submission-filter" value="all" id="submitted0" autocomplete="off" checked>
@@ -90,7 +90,7 @@
 								<label class="btn btn-outline-info btn-sm" for="submitted2">Not Submitted</label>
 							</div>
 						</div>
-						<div class="col-4 mb-1">
+						<div class="col-12 mb-1">
 							<p style="display: inline;">Project Status: </p>
 							<div class="btn-group" role="group" aria-label="Project Status">
 								<input type="radio" class="btn-check" name="project-file-filter" value="all" id="uploaded0" autocomplete="off" checked>
@@ -123,7 +123,7 @@
 				<table id="users-table" class="table table-hover nowrap w-100">
 					<thead>
 						<tr>
-							<th>no.</th>
+							<th>No.</th>
 							<th>Name</th>
 							<th>Institution</th>
 							<th>WhatsApp</th>
@@ -243,7 +243,8 @@
 							<tr>
 								<th>Project File</th>
 								<td>
-								    <a href="{{ asset('/storage/' . $user->project_file) }}">
+
+								    <a href="{{ asset('/storage' . ($user->submitted === 1 ? '/submitted/' : '/save/') . $user->project_file) }}" target="_blank">
                                         {{ $user->project_file }}
                                     </a>
                                 </td>
@@ -328,12 +329,6 @@
 	</div>
 </div>
 @endforeach
-
-<script>
-    $(document).ready(function() {
-        
-    });
-</script>
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

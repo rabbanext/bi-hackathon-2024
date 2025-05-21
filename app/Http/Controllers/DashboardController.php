@@ -152,7 +152,7 @@ class DashboardController extends Controller
     
     public function exportUsers()
     {
-        return Excel::download(new UsersExport, 'users.xlsx');
+        return Excel::download(new UsersExport(), 'users.xlsx');
     }
 
     //Admin

@@ -5,7 +5,7 @@
 				<span class="app-brand-logo demo">
 					<img src="/img/favicon.png" alt="" height="40" style="filter: invert(var(--value, 25%))">
 				</span>
-				{{-- <span class="app-brand-text demo text-body fw-bolder">Bank Indonesia Hackathon 2024</span> --}}
+				{{-- <span class="app-brand-text demo text-body fw-bolder">Bank Indonesia Hackathon 2025</span> --}}
 			</a>
 		</div>
 
