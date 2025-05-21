@@ -150,9 +150,30 @@ class DashboardController extends Controller
         }
     }
     
-    public function exportUsers()
+    public function exportUsers(Request $request)
     {
-        return Excel::download(new UsersExport(), 'users.xlsx');
+        $filters = $request->only([
+            'project_file',
+            'submitted',
+            'email_verified',
+            'otp_verified'
+        ]);
+
+        // mapping the filters to match with query
+        $mappedFilters = [];
+        if ($filters['project_file']) {
+            $mappedFilters['project-file-filter'] = $filters['project_file'];
+        }
+        if ($filters['submitted']) {
+            $mappedFilters['submitted-filter'] = $filters['submitted'];
+        }
+        if ($filters['email_verified']) {
+            $mappedFilters['email-verified-filter'] = $filters['email_verified'];
+        }
+        if ($filters['otp_verified']) {
+            $mappedFilters['otp-verified-filter'] = $filters['otp_verified'];
+        }
+        return Excel::download(new UsersExport($mappedFilters), 'users.xlsx');
     }
 
     //Admin

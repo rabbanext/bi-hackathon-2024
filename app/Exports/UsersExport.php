@@ -14,7 +14,7 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithStyl
 {
     protected $filter;
 
-    public function __construct($params)
+    public function __construct($params = [])
     {
         $this->filter = $params;
     }
@@ -24,7 +24,8 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithStyl
      */
     public function collection()
     {
-        $query = User::query();
+        $query = User::query()->where('type', '=', '0');
+        logger($this->filter);
 
         if (isset($this->filter['submission-filter'])) {
             if ($this->filter['submission-filter'] === "submitted") {

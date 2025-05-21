@@ -112,7 +112,14 @@
 					<div class="row">
 						<div class="col">
 							<p class="mb-0">Export to excel:</p>
-							<a href="{{ route('export.users') }}" class="btn btn-sm btn-info mb-1">Export Users</a>
+							<form id="export-form" action="{{ route('export.users') }}" method="GET" style="display: none;">
+								<input type="hidden" name="otp_verified">
+								<input type="hidden" name="email_verified">
+								<input type="hidden" name="submitted">
+								<input type="hidden" name="project_file">
+							</form>
+							<button type="button" id="export-btn" class="btn btn-sm btn-info mb-1">Export Users</button>
+							<!-- <a href="{{ route('export.users') }}" class="btn btn-sm btn-info mb-1">Export Users</a> -->
 						</div>
 					</div>
 				</div>
@@ -333,6 +340,22 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const exportBtn = document.getElementById("export-btn");
+		const exportForm = document.getElementById("export-form");
+
+		if (exportBtn && exportForm) {
+			exportBtn.addEventListener("click", function () {
+				exportForm.querySelector("input[name='otp_verified']").value = document.querySelector("input[name='otp-verified-filter']:checked").value;
+				exportForm.querySelector("input[name='email_verified']").value = document.querySelector("input[name='email-verified-filter']:checked").value;
+				exportForm.querySelector("input[name='submitted']").value = document.querySelector("input[name='submission-filter']:checked").value;
+				exportForm.querySelector("input[name='project_file']").value = document.querySelector("input[name='project-file-filter']:checked").value;
+				exportForm.submit();
+			});
+		}
+	});
+</script>
 <script>
     $(document).ready(function() {
 		var table = $('#users-table').DataTable({
