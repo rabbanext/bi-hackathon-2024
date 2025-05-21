@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\OtpLog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Auth;
@@ -110,6 +111,15 @@ class OtpController extends Controller
                     ],
                 ],
             ],
+        ]);
+
+        // Log the OTP response
+        OtpLog::create([
+            'user_id' => $user->id,
+            'otp' => $otp,
+            'phone_number' => $phoneNumber,
+            'status' => $response->status(),
+            'response' => $response->body(),
         ]);
 
         // Redirect back or wherever you want
