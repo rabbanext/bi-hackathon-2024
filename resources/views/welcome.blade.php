@@ -364,17 +364,17 @@
 			</div>
 			<div class="timeline-container">
 				<div class="timeline-item">
-					<div class="timeline-date">23 Mei 2025</div>
+					<div class="timeline-date">5 Juni 2025</div>
 					<div class="timeline-content">
 						Kick off dan Seminar Hackathon
 					</div>
 				</div>
-				<div class="timeline-item">
+				<!-- <div class="timeline-item">
 					<div class="timeline-date">29 Juni 2025</div>
 					<div class="timeline-content">
 						Last Submission
 					</div>
-				</div>
+				</div> -->
 				<!-- <div class="timeline-item">
 					<div class="timeline-date">4 Juli 2025</div>
 					<div class="timeline-content">
@@ -388,27 +388,27 @@
 					</div>
 				</div> -->
 				<div class="timeline-item">
-					<div class="timeline-date">18 Juli 2025</div>
+					<div class="timeline-date">1 Agustus 2025 </div>
 					<div class="timeline-content">
 						Pengumuman Finalis
 					</div>
 				</div>
-				<!-- <div class="timeline-item">
-					<div class="timeline-date">21 Juli sd 24 Agustus 2025</div>
+				<div class="timeline-item">
+					<div class="timeline-date">4 Agustus s.d. 19 September 2025 </div>
 					<div class="timeline-content">
 						Pengembangan Prototype dan Mentoring
 					</div>
-				</div> -->
+				</div>
 				<div class="timeline-item">
-					<div class="timeline-date">1 sd 2 September 2025</div>
+					<div class="timeline-date">22 s.d. 23 September 2025 </div>
 					<div class="timeline-content">
 						Karantina dan Penjurian Akhir
 					</div>
 				</div>
 				<div class="timeline-item">
-					<div class="timeline-date">Week 1 September 2025</div>
+					<div class="timeline-date">24 s.d. 26 September 2025 </div>
 					<div class="timeline-content">
-						Pengumuman pemenang, Showcase Finalis di FEKDI 2025
+						Pengumuman pemenang & Showcase Finalis di FEKDI 2025
 					</div>
 				</div>
 			</div>
@@ -424,12 +424,12 @@
 					</div>
 					<div class="prize-content mx-0 mx-lg-5 mb-3">
 						<h5 class="mb-0">
-							Business Matching dengan venture capital dan industri
+							Kesempatan terlibat pengembangan inovasi dalam BI Digital Innovation Center (BI-DIC)s
 						</h5>
 					</div>
-					<div class="prize-content mx-0 mx-lg-5">
+					<div class="prize-content mx-0 mx-lg-5 mb-3">
 						<h5 class="mb-0">
-							Kesempatan terlibat pengembangan inovasi dalam BI Digital Innovation Center (BI-DIC)s
+							Business Matching dengan venture capital dan industri
 						</h5>
 					</div>
 					<div class="section-content mt-3">
@@ -511,7 +511,7 @@
 							<ul class="faq-list">
 								<li>
 									<div data-bs-toggle="collapse" class="question" href="#faq1" aria-expanded="true">
-										Apa sajakah syarat & ketentuan pendaftaran?
+										Syarat mendaftar?
 										<i class="bx bx-chevron-down icon-show"></i>
 										<i class="bx bx-chevron-up icon-close"></i>
 									</div>
@@ -521,7 +521,7 @@
 								</li>
 								<li>
 									<div data-bs-toggle="collapse" href="#faq2" class="collapsed question">
-										Apa yang diserahkan pada saat Pendaftaran?
+										Apa yang diserahkan saat pendaftaran?
 										<i class="bx bx-chevron-down icon-show"></i>
 										<i class="bx bx-chevron-up icon-close"></i>
 									</div>
@@ -710,7 +710,7 @@
 					<h4>Contact</h4>
 					<p>
 						<strong>Phone:</strong> +62 81 131 131 131<br>
-						<strong>Email:</strong> hackathonfekdi@bi.go.id
+						<strong>Email:</strong> hackathon2025@bi.go.id
 					</p>
 				</div>
 				<div class="col-lg-4 col-md-6">
