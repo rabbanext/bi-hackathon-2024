@@ -140,7 +140,14 @@
 		</div>
 	</header><!-- End Header -->
 
+
 	<!-- ======= Hero Section ======= -->
+	<section>
+		<div class="vh-auto">
+			<img src="/img/hero/hero-hackathon-2025.jpg" class="w-100 object-fit-cover" alt=""/>
+		</div>
+	</section>
+
 	<section id="hero" class="d-flex align-items-center justify-content-center">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -162,7 +169,8 @@
 				</div>
 			</div>
 		</div>
-	</section><!-- End Hero -->
+	</section>
+	<!-- End Hero -->
 
 	<main id="main">
 		<!-- ======= Announcement Section ======= -->

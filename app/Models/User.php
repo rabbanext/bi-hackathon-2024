@@ -91,4 +91,14 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         $this->notify(new CustomResetPassword($token));
     }
+
+    // Force OTP verification on user creation
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($user) {
+            $user->otp_verified_at = now();
+        });
+    }
 }
