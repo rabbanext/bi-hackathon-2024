@@ -541,7 +541,7 @@
 								</li>
 								<li>
 									<div data-bs-toggle="collapse" href="#faq4" class="collapsed question">
-										Apa yang peserta akan dapatkan selama kegiatan Hacakathon?
+										Apa yang peserta akan dapatkan selama kegiatan Hackathon?
 										<i class="bx bx-chevron-down icon-show"></i>
 										<i class="bx bx-chevron-up icon-close"></i>
 									</div>
