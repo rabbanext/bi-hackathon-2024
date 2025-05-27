@@ -81,7 +81,7 @@ img {
     -premailer-cellpadding: 0;
     -premailer-cellspacing: 0;
     -premailer-width: 100%;
-    /* background-image: url("https://hacakathon.fekdi.co.id/img/bg/1.webp"); */
+    /* background-image: url("https://hackathon.fekdi.co.id/img/bg/1.webp"); */
     background-color: transparent;
     margin: 0;
     padding: 0;
@@ -121,7 +121,7 @@ img {
 
 /* Body */
 body {
-    background-image: url("https://hacakathon.fekdi.co.id/img/bg/1.webp") !important;
+    background-image: url("https://hackathon.fekdi.co.id/img/bg/1.webp") !important;
     background-size: cover;
     background-position: bottom;
 }
@@ -274,7 +274,7 @@ body {
 }
 
 .panel-content {
-    /* background-image: url("https://hacakathon.fekdi.co.id/img/bg/1.webp"); */
+    /* background-image: url("https://hackathon.fekdi.co.id/img/bg/1.webp"); */
     background-color: transparent;
     color: #718096;
     padding: 16px;

@@ -1,5 +1,5 @@
 <?php
-// header('Location: http://hacakathon.fekdi.co.id/');
+// header('Location: https://hackathon.fekdi.co.id/');
 ?>
 @extends('auth.layouts.main')
 
