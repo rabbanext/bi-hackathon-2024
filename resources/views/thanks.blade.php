@@ -176,7 +176,7 @@
           <h4>Contact</h4>
           <p>
             <strong>Phone:</strong> +62 81 131 131 131<br>
-            <strong>Email:</strong> hackathonfekdi@bi.go.id
+            <strong>Email:</strong> hackathon2025@bi.go.id
           </p>
         </div>
         <div class="col-lg-4 col-md-6">
