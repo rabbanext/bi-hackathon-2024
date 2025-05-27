@@ -148,7 +148,7 @@
 		</div>
 	</section>
 
-	<section id="hero" class="d-flex align-items-center justify-content-center">
+	<!-- <section id="hero" class="d-flex align-items-center justify-content-center">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-12 col-lg-6">
@@ -169,7 +169,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!-- End Hero -->
 
 	<main id="main">
