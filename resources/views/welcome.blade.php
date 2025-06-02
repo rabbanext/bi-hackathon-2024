@@ -56,8 +56,8 @@
 		<div class="container d-flex align-items-center justify-content-lg-between">
 			<!-- Logo -->
 			<div class="nav-logo flex-grow-1">
-				<a href="#" class="logo me-1 me-lg-3"><img src="/img/logo-bi.png" alt="" class="img-fluid logo-img"></a>
-				<a href="#" class="logo me-lg-0"><img src="/img/logo.png" alt="" class="img-fluid logo-img fekdi"></a>
+				<a href="/" class="logo me-1 me-lg-3"><img src="/img/logo-bi.png" alt="" class="img-fluid logo-img"></a>
+				<a href="/" class="logo me-lg-0"><img src="/img/logo.png" alt="" class="img-fluid logo-img fekdi"></a>
 			</div>
 
 			<nav id="navbar" class="navbar order-last order-lg-0 ms-auto">
@@ -142,34 +142,33 @@
 
 
 	<!-- ======= Hero Section ======= -->
-	<section>
+	<!-- <section>
 		<div class="vh-auto">
 			<img src="/img/hero/hero-hackathon-2025.jpg" class="w-100 object-fit-cover" alt=""/>
 		</div>
-	</section>
+	</section> -->
 
-	<!-- <section id="hero" class="d-flex align-items-center justify-content-center">
+	<section id="hero" class="d-flex align-items-center justify-content-center">
 		<div class="container">
-			<div class="row justify-content-center">
+			<div class="row justify-content-center d-flex align-items-center">
 				<div class="col-12 col-lg-6">
 					<img src="/img/hero/bi-hackathon-2025.png" class="img-fluid mb-3" alt="">
-					<h5>
-						Empowering the Future: Innovating Digital Services and Financial Solutions for Inclusive Growth
-						and
-						Resilient Economy
-					</h5>
+					<img src="/img/hero/bi-hackathon-2025-wording.png" class="img-fluid mb-3" alt="">
+				</div>
+				<div class="col-12 col-lg-2"></div>
+				<div class="col-12 col-lg-4">
 					<div class="hero-vr d-flex align-items-center justify-content-center">
-						<img src="/img/hero/component/bg.webp" width="400" class="img-fluid hero-vr-bg" alt="">
-						<img src="/img/hero/hero-vr.webp" width="500" class="img-fluid hero-vr" alt="">
-						<img src="/img/hero/component/1.webp" width="70" class="img-fluid hero-component" alt="">
-						<img src="/img/hero/component/2.webp" width="70" class="img-fluid hero-component2" alt="">
-						<img src="/img/hero/component/3.webp" width="100" class="img-fluid hero-component3" alt="">
-						<img src="/img/hero/component/4.webp" width="70" class="img-fluid hero-component4" alt="">
+						<img src="/img/hero/component/bg.png" width="400" class="img-fluid hero-vr-bg" alt="">
+						<img src="/img/hero/character.png" width="500" class="img-fluid hero-vr" alt="">
+						<img src="/img/hero/component/1.png" width="70" class="img-fluid hero-component" alt="">
+						<img src="/img/hero/component/2.png" width="70" class="img-fluid hero-component2" alt="">
+						<img src="/img/hero/component/3.png" width="100" class="img-fluid hero-component3" alt="">
+						<img src="/img/hero/component/4.png" width="70" class="img-fluid hero-component4" alt="">
 					</div>
 				</div>
 			</div>
 		</div>
-	</section> -->
+	</section>
 	<!-- End Hero -->
 
 	<main id="main">
@@ -208,10 +207,7 @@
 						Selamat datang para inovator, pengembang, dan pemikir kreatif!
 					</h3>
 					<p>
-						Dengan semangat yang berkobar, Bank Indonesia mengundang Anda untuk menjadi bagian dari [Nama Lomba Hackathon]
-					</p>
-
-					<p>
+						Dengan semangat yang berkobar, Bank Indonesia dan Otoritas Jasa Keuangan mengundang Anda untuk menjadi bagian dari BI - OJK Hackathon  2025 
 						Sebuah ajang pertarungan intelektual yang dirancang untuk menggali potensi terbaik dari setiap individu dalam memecahkan masalah menggunakan teknologi. Lomba ini bukan sekadar kompetisi; ini adalah perjalanan untuk mengeksplorasi batas-batas kemampuan Anda, untuk berkolaborasi dengan pikiran-pikiran hebat lainnya, dan untuk memberikan solusi inovatif yang dapat membuat perbedaan di dunia kita.
 					</p>
 
@@ -220,7 +216,7 @@
 					</p>
 
 					<p>
-						[Nama Lomba Hackathon] merupakan kesempatan emas untuk menunjukkan kemampuan Anda dalam coding, pemecahan masalah, dan kerjasama tim. Selain itu, ini adalah kesempatan untuk belajar, bertumbuh, dan membangun jaringan dengan sesama pengembang dan profesional industri dari berbagai latar belakang.
+						BI - OJK Hackathon  2025  merupakan kesempatan emas untuk menunjukkan kemampuan Anda dalam coding, pemecahan masalah, dan kerjasama tim. Selain itu, ini adalah kesempatan untuk belajar, bertumbuh, dan membangun jaringan dengan sesama pengembang dan profesional industri dari berbagai latar belakang.
 					</p>
 
 					<p>
@@ -269,53 +265,9 @@
 								</div>
 								<h5>Sub Tema</h5>
 								<div class="section-content p-1">Personalized Training</div>
-								<div class="section-content p-1">Multi Language Visual Autheriziaod</div>
+								<div class="section-content p-1">Multi Language Virtual Assistance</div>
 								<div class="section-content p-1">Cross Border Settlement</div>
 							</div>
-							<!-- <div data-bs-toggle="collapse" href="#ps1" class="collapsed">
-								<h5 class="mb-1">
-									Scope of work:
-									<i class="bx bx-chevron-down icon-show"></i>
-									<i class="bx bx-chevron-up icon-close"></i>
-								</h5>
-							</div>
-							<div id="ps1" class="collapse">
-								<div class="scope-of-work section-content">
-									<p class="mb-2"></p>
-									<p class="mb-0">Use Case:</p>
-									<span class="badge badge-pill badge-light">Modelling</span>
-									<span class="badge badge-pill badge-light">Forecasting</span>
-									<span class="badge badge-pill badge-light">Nowcasting</span>
-									<span class="badge badge-pill badge-light">Sentiment Analysis</span>
-									<span class="badge badge-pill badge-light">Leader's Opinion</span>
-									<span class="badge badge-pill badge-light">Prediksi pencapaian Key Performance
-										Indicator (KPI)</span>
-									<span class="badge badge-pill badge-light">Prescriptive recommendation</span>
-									</li>
-								</div>
-								<div class="scope-of-work section-content">
-									<p class="mb-2">2. Bagaimana AI/ML dapat mendukung pengelolaan sumber daya manusia?
-									</p>
-									<p class="mb-0">Use Case:</p>
-									<span class="badge badge-pill badge-light">Rekrutmen</span>
-									<span class="badge badge-pill badge-light">Training & development</span>
-									<span class="badge badge-pill badge-light">Manajemen karier</span>
-									<span class="badge badge-pill badge-light">Alokasi SDM</span>
-									</li>
-								</div>
-								<div class="scope-of-work section-content">
-									<p class="mb-2">3. Bagaimana AI/ML dapat meningkatkan efisiensi pengelolaan asset
-										institusi/perusahaan?</p>
-									<p class="mb-0">Use Case:</p>
-									<span class="badge badge-pill badge-light">Pengadaan strategis barang dan
-										jasa</span>
-									<span class="badge badge-pill badge-light">Pengelolaan dan distribusi aset</span>
-									<span class="badge badge-pill badge-light">Optimalisasi alokasi aset</span>
-									<span class="badge badge-pill badge-light">Analisis prediktif kebutuhan dan
-										distribusi aset</span>
-									</li>
-								</div>
-							</div> -->
 						</div>
 					</div>
 					<div class="col-12 col-lg-4 px-2 mb-3">
@@ -329,9 +281,9 @@
 									Bagaimana AI/LM dapat memperluas literasi, inklusi keuangan digital termasuk menghasilkan produk/layanan baru yang inovatif serta mendukung layanan publik
 								</div>
 								<h5>Sub Tema</h5>
-								<div class="section-content p-1">Financial Literacy Improvement MSME Business and Financial Solution</div>
-								<div class="section-content p-1">Public Services Optimization, ex: Bansos</div>
-								<div class="section-content p-1">Fraud Detection System</div>
+								<div class="section-content p-1">Financial Literacy Improvement</div>
+								<div class="section-content p-1">MSME Business and Financial Solution</div>
+								<div class="section-content p-1">Public Services Optimization, i.e: Bansos</div>
 							</div>
 						</div>
 					</div>
@@ -340,15 +292,18 @@
 							<div class="h-100" style="min-height: 260px;">
 								<h4>Risk Management & Consumer Protection</h4>
 								<p class="paragraph mb-auto">
-									Solusi dalam rangka memitigasi risiko fraud transaksi dan kebocoran data pada sektor pemerintah maupun swasta serta aktivitas judi online
+									Solusi dalam rangka memitigasi risiko fraud transaksi, kebocoran data pada ekosistem blockchain maupun non-blockchain. Solusi tersebut dapat bermanfaat pada sektor pemerintah maupun swasta serta pemberantasan aktivitas judi online
 								</p>
 								<div class="section-content py-2 px-4 text-center">
-									Bagaimana AI/ML dapat mendukung deteksi anomali transaksi keuangan/pembayaran yang mengarah kepada fraud maupun kegiatan ilegal
+									Bagaimana Solusi dapat mendukung deteksi anomali transaksi keuangan/pembayaran yang mengarah kepada fraud/kegiatan illegal, validasi smart contract dan/ atau transparansi asset digital dalam jaringan blockchain
 								</div>
 								<h5>Sub Tema</h5>
-								<div class="section-content p-1">Fraud Protection</div>
-								<div class="section-content p-1">AI Compliance</div>
-								<div class="section-content p-1">Capidal Outflow Detection</div>
+								<div class="section-content p-1">Real-time Fraud Detection System</div>
+								<div class="section-content p-1">Fraud Prevention</div>
+								<div class="section-content p-1">AML/CFT Compliance</div>
+								<div class="section-content p-1">Capital Outflow Detection</div>
+								<div class="section-content p-1">Smart Contract Audit</div>
+								<div class="section-content p-1">On-Chain Analysis</div>
 							</div>
 						</div>
 					</div>
@@ -439,25 +394,29 @@
 						<div class="row mb-4">
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
-									<img src="/img/prizes/juara1.png" width="300" class="img-prize" alt="">
+									<!-- <img src="/img/prizes/juara1.png" width="300" class="img-prize" alt=""> -->
+									<h3>Juara 1</h3>
 									<h3>Rp.200.000.000</h3>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
-									<img src="/img/prizes/juara2.png" width="300" class="img-prize" alt="">
+									<!-- <img src="/img/prizes/juara2.png" width="300" class="img-prize" alt=""> -->
+									<h3>Juara 2</h3>
 									<h3>Rp.100.000.000</h3>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
-									<img src="/img/prizes/juara3.png" width="300" class="img-prize" alt="">
+									<!-- <img src="/img/prizes/juara3.png" width="300" class="img-prize" alt=""> -->
+									<h3>Juara 3</h3>
 									<h3>Rp.50.000.000</h3>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
-									<img src="/img/prizes/juara4.png" width="300" class="img-prize" alt="">
+									<!-- <img src="/img/prizes/juara4.png" width="300" class="img-prize" alt=""> -->
+									<h3>Juara 4 - 5</h3>
 									<h3>Rp.15.000.000</h3>
 								</div>
 							</div>
@@ -470,26 +429,43 @@
 						<div class="row mb-4">
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
-									<img src="/img/prizes/juara1.png" width="300" class="img-prize" alt="">
+									<!-- <img src="/img/prizes/juara1.png" width="300" class="img-prize" alt=""> -->
+									<h3>Juara 1</h3>
 									<h3>Rp.100.000.000</h3>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
-									<img src="/img/prizes/juara2.png" width="300" class="img-prize" alt="">
+									<!-- <img src="/img/prizes/juara2.png" width="300" class="img-prize" alt=""> -->
+									<h3>Juara 2</h3>
 									<h3>Rp.50.000.000</h3>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
-									<img src="/img/prizes/juara3.png" width="300" class="img-prize" alt="">
+									<!-- <img src="/img/prizes/juara3.png" width="300" class="img-prize" alt=""> -->
+									<h3>Juara 3</h3>
 									<h3>Rp.20.000.000</h3>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
-									<img src="/img/prizes/juara4.png" width="300" class="img-prize" alt="">
+									<!-- <img src="/img/prizes/juara4.png" width="300" class="img-prize" alt=""> -->
+									<h3>Juara 4 - 5</h3>
 									<h3>Rp.10.000.000</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="section-content mt-3">
+						<div class="text-center pt-5 pb-1">
+							<h2>Tim Favorit</h2>
+						</div>
+						<div class="row mb-4">
+							<div class="col-12 col-md-12 col-lg-12">
+								<div class="prize">
+									<h3>Total</h3>
+									<h3>Rp.30.000.000</h3>
 								</div>
 							</div>
 						</div>
@@ -517,6 +493,8 @@
 									</div>
 									<div id="faq1" class="collapse show" data-bs-parent=".faq-list">
 										<p>WNI, 1 tim maksimal 4 peserta minimal 1 peserta. atas nama perorangan atau perusahaan/universitas/institusi/komunitas</p>
+										<p>Kategori Mahasiswa: Seluruh anggota tim merupakan mahasiswa aktif program diploma atau S1 & S2 dari perguruan tinggi di Indonesia maupun luar negeri, dibuktikan dengan kartu tanda mahasiswa (KTM) atau surat keterangan aktif kuliah.</p>
+										<p>Kategori Profesional: Terbuka bagi tim yang terdiri dari pelaku industri, startup, dosen, peneliti, ASN, freelancer maupun pekerja profesional lainnya.</p>
 									</div>
 								</li>
 								<li>
@@ -531,17 +509,17 @@
 								</li>
 								<li>
 									<div data-bs-toggle="collapse" href="#faq3" class="collapsed question">
-										Apakah acara Bank Indonesia Hackathon 2025 ini dikenakan biaya?
+										Apakah acara ini ditarik biaya?
 										<i class="bx bx-chevron-down icon-show"></i>
 										<i class="bx bx-chevron-up icon-close"></i>
 									</div>
 									<div id="faq3" class="collapse" data-bs-parent=".faq-list">
-										<p>Tidak ada biaya pendaftaran atau biaya apapun yang diminta kepada peserta.</p>
+										<p>Tidak ada biaya pendaftaran atau biaya apapun yang diminta kepada peserta</p>
 									</div>
 								</li>
 								<li>
 									<div data-bs-toggle="collapse" href="#faq4" class="collapsed question">
-										Apa yang peserta akan dapatkan selama kegiatan Hackathon?
+										Apa yang peserta akan dapatkan selama kegiatan Hacakathon?
 										<i class="bx bx-chevron-down icon-show"></i>
 										<i class="bx bx-chevron-up icon-close"></i>
 									</div>
@@ -549,8 +527,8 @@
 										<p>Finalis: Akomodasi transportasi & Penginapan selama masa karantina</p>
 										<p>
 											Pemenang: <br />
-											-Hadiah dengan total 600 Juta<br />
-											-Eksposur ke business matching, scouting innovator,dan in-depth piloting pada inisiatif digital Bank Indonesia
+											- Hadiah dengan total 600 Juta<br />
+											- Eksposur ke business matching, scouting innovator,dan in-depth piloting pada inisiatif digital Bank Indonesia
 										</p>
 									</div>
 								</li>
@@ -561,7 +539,7 @@
 										<i class="bx bx-chevron-up icon-close"></i>
 									</div>
 									<div id="faq5" class="collapse" data-bs-parent=".faq-list">
-										<p>Peserta dapat memilih lebih dari satu problem statement, namun tetap dihitung sesuai dengan relevansi masalah dan solusi yang dihasilkan.</p>
+										<p>Peserta dapat memilih lebih dari satu problem statement, namun tetap dihitung sesuai dengan relevansi masalah dan solusi yang dihasilkan</p>
 									</div>
 								</li>
 								<li>
@@ -571,37 +549,33 @@
 										<i class="bx bx-chevron-up icon-close"></i>
 									</div>
 									<div id="faq7" class="collapse" data-bs-parent=".faq-list">
-										<p>Satu tim diperbolehkan terdiri dari anggota yang berasal dari institusi yang berbeda.</p>
+										<p>Satu tim diperbolehkan terdiri dari anggota yang berasal dari institusi yang berbeda</p>
 									</div>
 								</li>
-								<!-- <li>
+								<li>
 									<div data-bs-toggle="collapse" href="#faq6" class="collapsed question">
-										Bagaimana dataset yang digunakan untuk proses submisi proposal?
+										Kapan waktu terakhir pengumpulan ide/pendaftaran?
 										<i class="bx bx-chevron-down icon-show"></i>
 										<i class="bx bx-chevron-up icon-close"></i>
 									</div>
 									<div id="faq6" class="collapse" data-bs-parent=".faq-list">
-										<p>Tidak ada pengaturan penggunaan dataset pada tahap awal (pembuatan proposal),
-											dan peserta dapat
-											memanfaatkan berbagai sumber data sepanjang relevan dengan use case yang
-											diangkat (e.g., open data
-											dan data instansi/Lembaga). Namun, peserta diharapkan agar memperhatikan
-											etika dan ketentuan yang
-											ada dalam penggunaan data, a.l. UU Perlindungan Data Pribadi dan
-											lisensi/perjanjian kerahasiaan
-											pemilik data.</p>
+										<p>6 Juli 2025 23.59 WIB</p>
 									</div>
-								</li> -->
-								<!-- <li>
+								</li>
+								<li>
 									<div data-bs-toggle="collapse" href="#faq8" class="collapsed question">
-										Apakah peserta boleh terdaftar pada lebih dari satu tim?
+										Bagaimana timeline acara hackathon BI-OJK 2025
 										<i class="bx bx-chevron-down icon-show"></i>
 										<i class="bx bx-chevron-up icon-close"></i>
 									</div>
 									<div id="faq8" class="collapse" data-bs-parent=".faq-list">
-										<p>Peserta tidak diperkenankan untuk mendaftar pada lebih dari satu tim.</p>
+										<p>Kick off dan Seminar Hackathon 5 Juni 2025</p>
+										<p>Last Submission 11 Juli 2025</p>
+										<p>Pengumuman Finalis 1 Agustus 2025</p>
+										<p>Karantina dan Penjurian Akhir 22 sd 23 September 2025</p>
+										<p>Pengumuman pemenang di H1, Showcase Finalis di FEKDI 2025 di H3 (24-26 September 2025)</p>
 									</div>
-								</li> -->
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -638,10 +612,41 @@
 				</div>
 			</div>
 		</section>
+
+		<section id="podcast" class="podcast">
+			<div class="section-title text-center pb-1">
+				<p>Winner dan Finalis</p>
+			</div>
+			<div class="pb-2 ms-2">
+				<div class="swiper mySwiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide d-flex flex-column align-items-center justify-content-center">
+							<iframe width="100%" height="100%" src="https://www.youtube.com/embed/wZNEcVOppH0?si=MJy0bxScDjoZqEHG"></iframe>
+							<h5>Kick Off & Seminar</h5>
+						</div>
+						<div class="swiper-slide d-flex flex-column align-items-center justify-content-center">
+							<iframe width="100%" height="100%" src="https://www.youtube.com/embed/Z35zJgAgy_4?si=NMAe2UPEV_tCcn9J"></iframe>
+							<h5>PodcastMenginkubasi Inovasi</h5>
+						</div>
+						<div class="swiper-slide d-flex flex-column align-items-center justify-content-center">
+							<iframe width="100%" height="100%" src="https://www.youtube.com/embed/w7Xs3z787fs?si=fZkPLje8kwHwmtUq"></iframe>
+							<h5>Nyalakan Aksi Nyata, Inovasi Tercipta!</h5>
+						</div>
+						<div class="swiper-slide d-flex flex-column align-items-center justify-content-center">
+							<iframe width="100%" height="100%" src="https://www.youtube.com/embed/xJ9BRwJrq8o?si=0IgdjmpwqhSYNUIu"></iframe>
+							<h5>Mengolah Data Jadi Solusi Nyata</h5>
+						</div>
+					</div>
+					<div class="swiper-pagination"></div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
+			</div>
+		</section>
 		<!-- End Video Section -->
 
 		<!-- ======= 2024 Section ======= -->
-		<section id="hackathon2024" class="hackathon2024">
+		<!-- <section id="hackathon2024" class="hackathon2024">
 			<div class="section-title text-center pb-4">
 				<p>2024</p>
 			</div>
@@ -689,8 +694,127 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 		<!-- End 2024 Section -->
+
+		<section id="hackathon2024" class="hackathon2024">
+			<div class="section-title text-center pb-4">
+				<p>2024 Juara</p>
+			</div>
+			<div class="container">
+				<div class="row g-3">
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/juara/image-1-1.jpg" data-glightbox="gallery2024">
+							<img src="/img/juara/image-1-1.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/juara/image-1-2.jpg" data-glightbox="gallery2024">
+							<img src="/img/juara/image-1-2.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/juara/image-1-3.jpg" data-glightbox="gallery2024">
+							<img src="/img/juara/image-1-3.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/juara/image-1-4.jpg" data-glightbox="gallery2024">
+							<img src="/img/juara/image-1-4.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/juara/image-2-1.jpg" data-glightbox="gallery2024">
+							<img src="/img/juara/image-2-1.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/juara/image-2-2.jpg" data-glightbox="gallery2024">
+							<img src="/img/juara/image-2-2.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/juara/image-2-3.jpg" data-glightbox="gallery2024">
+							<img src="/img/juara/image-2-3.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/juara/image-2-4.jpg" data-glightbox="gallery2024">
+							<img src="/img/juara/image-2-4.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/juara/image-3-1.jpg" data-glightbox="gallery2024">
+							<img src="/img/juara/image-3-1.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/juara/image-3-2.jpg" data-glightbox="gallery2024">
+							<img src="/img/juara/image-3-2.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/juara/image-3-3.jpg" data-glightbox="gallery2024">
+							<img src="/img/juara/image-3-3.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/juara/image-3-4.jpg" data-glightbox="gallery2024">
+							<img src="/img/juara/image-3-4.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="hackathon2024" class="hackathon2024">
+			<div class="section-title text-center pb-4">
+				<p>2024 Finalis</p>
+			</div>
+			<div class="container">
+				<div class="row g-3">
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/finalis/image-1.jpg" data-glightbox="gallery2024">
+							<img src="/img/finalis/image-1.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/finalis/image-2.jpg" data-glightbox="gallery2024">
+							<img src="/img/finalis/image-2.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/finalis/image-3.jpg" data-glightbox="gallery2024">
+							<img src="/img/finalis/image-3.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/finalis/image-4.jpg" data-glightbox="gallery2024">
+							<img src="/img/finalis/image-4.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+				</div>
+				<div class="row g-3 justify-content-center pt-3">
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/finalis/image-5.jpg" data-glightbox="gallery2024">
+							<img src="/img/finalis/image-5.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/finalis/image-6.jpg" data-glightbox="gallery2024">
+							<img src="/img/finalis/image-6.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/finalis/image-7.jpg" data-glightbox="gallery2024">
+							<img src="/img/finalis/image-7.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
 	</main><!-- End #main -->
 
 	<!-- ======= Footer ======= -->

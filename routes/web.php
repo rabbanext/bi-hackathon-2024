@@ -96,3 +96,7 @@ Route::get('/submit-video', function () {
     return view('dashboard/submit_video');
 })->name('submitVideoForm');
 Route::post('/submit-video', [VideoController::class, 'submitVideo'])->name('submitVideo');
+
+Route::get('/terms', function () {
+    return view('terms');
+})->name('terms');

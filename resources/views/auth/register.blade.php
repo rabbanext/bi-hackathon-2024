@@ -78,6 +78,18 @@
             @enderror
         </div>
 
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" name="terms" id="terms" required>
+            <label class="form-check-label" for="terms">
+                Saya setuju dengan <a href="/terms" target="_blank">syarat dan ketentuan</a>
+            </label>
+            @error('terms')
+            <span class="invalid-feedback d-block" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
+
         <button type="submit" class="w-100 btn btn-lg btn-primary">
             {{ __('Register') }}
         </button>

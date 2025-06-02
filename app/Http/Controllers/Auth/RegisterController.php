@@ -54,6 +54,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email:dns', 'max:255', 'unique:users'],
             'nowa' => ['required', 'string', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'terms' => ['required', 'accepted'],
         ]);
     }
 

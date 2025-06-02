@@ -426,17 +426,26 @@ h1, h2, h3, h4, h5, h6 {
 	width: 100%;
 	min-height: 100vh;
 	position: relative;
-	background: linear-gradient(rgba(21, 58, 180, 0.3), #0a1336),
-		url('../img/bg/hero-bg.png') center center / cover no-repeat scroll;
-	background: 
+	/* background: linear-gradient(rgba(21, 58, 180, 0.3), #0a1336),
+		url('../img/bg/base-bg.png') center center / cover no-repeat scroll; */
+	/* background: 
 		linear-gradient(to bottom,
 			#08143c 0%,
 			rgba(21, 58, 180, 0) 25%,
 			rgba(21, 58, 180, 0) 65%,
 			#0a1336 100%
 		),
-		url('../img/bg/hero-bg.png') center center / cover no-repeat scroll;
+		url('../img/bg/hero-bg-2025.png') center center / cover no-repeat scroll; */
+	background: url('../img/bg/hero-bg-2025.png') no-repeat center center / cover;
 	text-align: center;
+	padding-top: 74px;
+	color: #e0e6ff;
+}
+
+#hero-terms {
+	width: 100%;
+	min-height: 100vh;
+	position: relative;
 	padding-top: 74px;
 	color: #e0e6ff;
 }
@@ -474,15 +483,14 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero .hero-component {
 	position: absolute;
-	top: 140px;
-	left: 140px;
+	left: -20px;
 	animation: animate-topdown 5s alternate linear infinite;
 }
 
 #hero .hero-component2 {
 	position: absolute;
-	top: 40px;
-	left: 100px;
+	top: 10px;
+  	left: 40px;
 	animation: animate-topdown 2s alternate linear infinite;
 }
 
