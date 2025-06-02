@@ -217,7 +217,9 @@
 
   <script>
     function enableRegisterButton() {
-      document.getElementById('register-btn').removeAttribute('disabled');
+      if (document.getElementById('register-btn')) {
+        document.getElementById('register-btn').removeAttribute('disabled');
+      }
     }
 
     const tomorrow = new Date();

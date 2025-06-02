@@ -14,8 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->timestamp('otp_expiry')->nullable()->after('otp_verified_at');
-            $table->string('otp')->nullable()->after('otp_verified_at');
+            $table->string('submit_for')->nullable()->after('submitted');
         });
     }
 
@@ -27,8 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('otp');
-            $table->dropColumn('otp_expiry');
+            $table->dropColumn('submit_for');
         });
     }
 };

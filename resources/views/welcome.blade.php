@@ -1,146 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EPG8DF2B75"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-
-		gtag('config', 'G-EPG8DF2B75');
-	</script>
-
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-	<meta property="og:locale" content="id_ID" />
-	<meta http-equiv="Cache-control" content="public">
-
-	<meta name="theme-color" content="#001341">
-
-	<meta name="author" content="rabbanext" />
-	<meta name="description" content="Bank Indonesia Hackathon 2025" />
-
-	<meta property="og:site_name" content="Bank Indonesia Hackathon 2025" />
-	<meta property="og:title" content="Bank Indonesia Hackathon 2025" />
-	<meta property="og:description" content="Artificial Intelligence & Machine Learning for Digital Economy and Finance in Indonesia" />
-	<meta property="og:url" content="https://hackathon.fekdi.co.id" />
-	<meta property="og:image" content="/img/hero/hero-hackathon.png" />
-	<meta property="og:image:secure_url" content="/img/hero/hero-hackathon.png" />
-	<meta property="og:image:type" content="image/png" />
-	<meta property="og:image:width" content="660" />
-	<meta property="og:image:height" content="176" />
-	<meta property="og:image:alt" content="Rabbanext" />
-	<title>Bank Indonesia Hackathon 2025</title>
-
-	<!-- Favicons -->
-	<link href="/img/favicon.png" rel="icon">
-	<link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-
-	<!-- Vendor CSS Files -->
-	<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-	<link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-
-	<!-- Template Main CSS File -->
-	<link href="/css/css.css" rel="stylesheet">
-</head>
+@include('auth.layouts.header')
 
 <body>
-	<header id="header" class="fixed-top">
-		<div class="container d-flex align-items-center justify-content-lg-between">
-			<!-- Logo -->
-			<div class="nav-logo flex-grow-1">
-				<a href="/" class="logo me-1 me-lg-3"><img src="/img/logo-bi.png" alt="" class="img-fluid logo-img"></a>
-				<a href="/" class="logo me-lg-0"><img src="/img/logo.png" alt="" class="img-fluid logo-img fekdi"></a>
-			</div>
-
-			<nav id="navbar" class="navbar order-last order-lg-0 ms-auto">
-				<ul>
-					<!-- <li><a class="nav-link scrollto" href="#about">About</a></li> -->
-					<li><a class="nav-link scrollto" href="#timeline">Timeline</a></li>
-					<li><a class="nav-link scrollto" href="#problem-statements">Problem Statements</a></li>
-					<li><a class="nav-link scrollto" href="#prizes">Prizes</a></li>
-					<li><a class="nav-link scrollto" href="/register">Registrasi</a></li>
-					<li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
-					<li><a class="nav-link scrollto" href="#hackathon2024">2024</a></li>
-					<li><a class="nav-link scrollto" href="#podcast">Podcast</a></li>
-					<li><a class="nav-link scrollto" href="#about">About</a></li>
-				</ul>
-				<i class="bx bx-list mobile-nav-toggle"></i>
-			</nav><!-- .navbar -->
-
-			
-			@auth
-			@if (Auth::user()->type == "user")
-				<a href="javascript:void(0);" data-bs-toggle="dropdown">
-					<button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button">Submit</button>
-				</a>
-				<ul class="dropdown-menu dropdown-menu-end">
-					<li>
-						<a class="dropdown-item" href="/profile">
-							<i class="bx bx-user me-2"></i>
-							<span class="align-middle">My Profile</span>
-						</a>
-					</li>
-					<li>
-						<a class="dropdown-item" href="/submit">
-							<i class="bx bx-upload me-2"></i>
-							<span class="align-middle">Submit Proposal</span>
-						</a>
-					</li>
-			@elseif (Auth::user()->type == "admin")
-				<a href="javascript:void(0);" data-bs-toggle="dropdown">
-					<button id="register-btn" class="btn btn-primary btn-header-primary ms-4"
-						type="button">Menu</button>
-				</a>
-				<ul class="dropdown-menu dropdown-menu-end">
-					<li>
-						<a class="dropdown-item" href="/users">
-							<i class="bx bx-user me-2"></i>
-							<span class="align-middle">Users</span>
-						</a>
-					</li>
-					<li>
-						<a class="dropdown-item" href="/projects">
-							<i class="bx bx-upload me-2"></i>
-							<span class="align-middle">Projects</span>
-						</a>
-					</li>
-					<li>
-						<a class="dropdown-item" href="/email_responses">
-							<i class="bx bx-envelope me-2"></i>
-							<span class="align-middle">Email Responses</span>
-						</a>
-					</li>
-			@endif
-					<li>
-						<a class="dropdown-item" href="{{ route('logout') }}" id="logout-btn"
-							onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-							<i class="bx bx-power-off me-2 text-danger"></i>
-							<span class="align-middle">{{ __('Logout') }}</span>
-						</a>
-
-						<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-							@csrf
-						</form>
-					</li>
-				</ul>
-			@else
-				<!-- <a href="/register">
-					<button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button">Register</button>
-				</a> -->
-			@endauth
-
-		</div>
-	</header><!-- End Header -->
-
-
 	<!-- ======= Hero Section ======= -->
 	<!-- <section>
 		<div class="vh-auto">
@@ -148,27 +11,41 @@
 		</div>
 	</section> -->
 
-	<section id="hero" class="d-flex align-items-center justify-content-center">
-		<div class="container">
-			<div class="row justify-content-center d-flex align-items-center">
-				<div class="col-12 col-lg-6">
-					<img src="/img/hero/bi-hackathon-2025.png" class="img-fluid mb-3" alt="">
-					<img src="/img/hero/bi-hackathon-2025-wording.png" class="img-fluid mb-3" alt="">
+	<div id="hero-bg">
+		<section id="hero" class="d-flex">
+			<div class="container">
+				<div class="row justify-content-center d-flex align-items-center" style="padding-top:40px;">
+					<div class="col-3 col-lg-2">
+						<img src="/img/hero/component/logo-bi.png" class="img-fluid mb-3" alt="" style="max-height:50px; width:auto;">
+					</div>
+					<div class="col-3 col-lg-2">
+						<img src="/img/hero/component/logo-ojk.png" class="img-fluid mb-3" alt="" style="max-height:50px; width:auto;">
+					</div>
+					<div class="col-3 col-lg-6"></div>
+					<div class="col-3 col-lg-2">
+						<img src="/img/hero/component/logo-fekdi.png" class="img-fluid mb-3" alt="" style="max-height:50px; width:auto;">
+					</div>
 				</div>
-				<div class="col-12 col-lg-2"></div>
-				<div class="col-12 col-lg-4">
-					<div class="hero-vr d-flex align-items-center justify-content-center">
-						<img src="/img/hero/component/bg.png" width="400" class="img-fluid hero-vr-bg" alt="">
-						<img src="/img/hero/character.png" width="500" class="img-fluid hero-vr" alt="">
-						<img src="/img/hero/component/1.png" width="70" class="img-fluid hero-component" alt="">
-						<img src="/img/hero/component/2.png" width="70" class="img-fluid hero-component2" alt="">
-						<img src="/img/hero/component/3.png" width="100" class="img-fluid hero-component3" alt="">
-						<img src="/img/hero/component/4.png" width="70" class="img-fluid hero-component4" alt="">
+				<div class="row justify-content-center d-flex align-items-center" style="padding-top:34px;">
+					<div class="col-12 col-lg-6">
+						<img src="/img/hero/bi-hackathon-2025.png" class="img-fluid mb-3" alt="">
+						<img src="/img/hero/bi-hackathon-2025-wording.png" class="img-fluid mb-3" alt="">
+					</div>
+					<div class="col-12 col-lg-2"></div>
+					<div class="col-12 col-lg-4">
+						<div class="hero-vr d-flex align-items-center justify-content-center">
+							<img src="/img/hero/component/bg.png" width="400" class="img-fluid hero-vr-bg" alt="">
+							<img src="/img/hero/character.png" width="500" class="img-fluid hero-vr" alt="">
+							<img src="/img/hero/component/1.png" width="70" class="img-fluid hero-component" alt="">
+							<img src="/img/hero/component/2.png" width="70" class="img-fluid hero-component2" alt="">
+							<img src="/img/hero/component/3.png" width="100" class="img-fluid hero-component3" alt="">
+							<img src="/img/hero/component/4.png" width="70" class="img-fluid hero-component4" alt="">
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+	</div>
 	<!-- End Hero -->
 
 	<main id="main">
@@ -324,24 +201,6 @@
 						Kick off dan Seminar Hackathon
 					</div>
 				</div>
-				<!-- <div class="timeline-item">
-					<div class="timeline-date">29 Juni 2025</div>
-					<div class="timeline-content">
-						Last Submission
-					</div>
-				</div> -->
-				<!-- <div class="timeline-item">
-					<div class="timeline-date">4 Juli 2025</div>
-					<div class="timeline-content">
-						Pengumuman Semi Finalis
-					</div>
-				</div> -->
-				<!-- <div class="timeline-item">
-					<div class="timeline-date">11 Juli 2025</div>
-					<div class="timeline-content">
-						Submission video
-					</div>
-				</div> -->
 				<div class="timeline-item">
 					<div class="timeline-date">1 Agustus 2025 </div>
 					<div class="timeline-content">
@@ -394,29 +253,29 @@
 						<div class="row mb-4">
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
-									<!-- <img src="/img/prizes/juara1.png" width="300" class="img-prize" alt=""> -->
-									<h3>Juara 1</h3>
+									<img src="/img/prizes/juara1.png" width="300" class="img-prize" alt="">
+									<!-- <h3>Juara 1</h3> -->
 									<h3>Rp.200.000.000</h3>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
-									<!-- <img src="/img/prizes/juara2.png" width="300" class="img-prize" alt=""> -->
-									<h3>Juara 2</h3>
+									<img src="/img/prizes/juara2.png" width="300" class="img-prize" alt="">
+									<!-- <h3>Juara 2</h3> -->
 									<h3>Rp.100.000.000</h3>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
-									<!-- <img src="/img/prizes/juara3.png" width="300" class="img-prize" alt=""> -->
-									<h3>Juara 3</h3>
+									<img src="/img/prizes/juara3.png" width="300" class="img-prize" alt="">
+									<!-- <h3>Juara 3</h3> -->
 									<h3>Rp.50.000.000</h3>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
-									<!-- <img src="/img/prizes/juara4.png" width="300" class="img-prize" alt=""> -->
-									<h3>Juara 4 - 5</h3>
+									<img src="/img/prizes/juara4.png" width="300" class="img-prize" alt="">
+									<!-- <h3>Juara 4 - 5</h3> -->
 									<h3>Rp.15.000.000</h3>
 								</div>
 							</div>
@@ -429,29 +288,29 @@
 						<div class="row mb-4">
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
-									<!-- <img src="/img/prizes/juara1.png" width="300" class="img-prize" alt=""> -->
-									<h3>Juara 1</h3>
+									<img src="/img/prizes/juara1.png" width="300" class="img-prize" alt="">
+									<!-- <h3>Juara 1</h3> -->
 									<h3>Rp.100.000.000</h3>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
-									<!-- <img src="/img/prizes/juara2.png" width="300" class="img-prize" alt=""> -->
-									<h3>Juara 2</h3>
+									<img src="/img/prizes/juara2.png" width="300" class="img-prize" alt="">
+									<!-- <h3>Juara 2</h3> -->
 									<h3>Rp.50.000.000</h3>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
-									<!-- <img src="/img/prizes/juara3.png" width="300" class="img-prize" alt=""> -->
-									<h3>Juara 3</h3>
+									<img src="/img/prizes/juara3.png" width="300" class="img-prize" alt="">
+									<!-- <h3>Juara 3</h3> -->
 									<h3>Rp.20.000.000</h3>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
-									<!-- <img src="/img/prizes/juara4.png" width="300" class="img-prize" alt=""> -->
-									<h3>Juara 4 - 5</h3>
+									<img src="/img/prizes/juara4.png" width="300" class="img-prize" alt="">
+									<!-- <h3>Juara 4 - 5</h3> -->
 									<h3>Rp.10.000.000</h3>
 								</div>
 							</div>
@@ -818,117 +677,9 @@
 	</main><!-- End #main -->
 
 	<!-- ======= Footer ======= -->
-	<footer id="footer">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-lg-4 col-md-6">
-					<img src="/img/hero/logo-bi.png" width="150" class="img-fluid mb-3" alt="">
-					<p>
-						<strong>Address:</strong>
-						Jalan M.H. Thamrin No. 2, <br>
-						Jakarta Pusat, DKI Jakarta 10350
-					</p>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<h4>Contact</h4>
-					<p>
-						<strong>Phone:</strong> +62 81 131 131 131<br>
-						<strong>Email:</strong> hackathon2025@bi.go.id
-					</p>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<h4>Social Media</h4>
-					<div class="social-links">
-						<a href="https://www.instagram.com/bank_indonesia/"><i class="bx bxl-instagram"></i></a>
-						<a href="https://www.instagram.com/fekdi_indonesia/"><i class="bx bxl-instagram"></i></a>
-						<a href="https://www.youtube.com/@BankIndonesiaChannel/"><i class="bx bxl-youtube"></i></a>
-						<a href="https://www.facebook.com/BankIndonesiaOfficial/"><i class="bx bxl-facebook"></i></a>
-						<a href="https://www.tiktok.com/@bank_indonesia/"><i class="bx bxl-tiktok"></i></a>
-					</div>
-				</div>
-
-			</div>
-		</div>
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="copyright">
-					&copy; Copyright 2025 <strong><span>Bank Indonesia</span></strong>
-				</div>
-				<div class="credits">
-					All Rights Reserved
-				</div>
-			</div>
-		</div>
-	</footer><!-- End Footer -->
-
-	<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-			class="bx bx-chevron-up"></i></a>
-
-	<!-- Vendor JS Files -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="/vendor/glightbox/js/glightbox.min.js"></script>
-	<script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
-	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-	<script>
-		var swiper = new Swiper(".mySwiper", {
-			effect: "coverflow",
-			grabCursor: true,
-			centeredSlides: true,
-			slidesPerView: "auto",
-			coverflowEffect: {
-				rotate: 50,
-				stretch: 0,
-				depth: 100,
-				modifier: 1,
-				slideShadows: true,
-			},
-			pagination: {
-				el: ".swiper-pagination",
-			},
-			navigation: {
-				nextEl: '.swiper-button-next',
-				prevEl: '.swiper-button-prev',
-			},
-		});
-	</script>
-
-	<!-- Main JS File -->
-	<script src="/js/main.js"></script>
-
-	<script>
-		/* ---- tooltips config ---- */
-		$(document).ready(function () {
-			$('[data-bs-toggle="tooltip"]').tooltip();
-		});
-	</script>
-
-	<script>
-		function enableRegisterButton() {
-			document.getElementById('register-btn').removeAttribute('disabled');
-		}
-
-		const tomorrow = new Date();
-		tomorrow.setDate(tomorrow.getDate());
-		tomorrow.setHours(10, 0, 0, 0);
-		const now = new Date();
-		const timeRemaining = tomorrow.getTime() - now.getTime();
-
-		if (timeRemaining > 0) {
-			setTimeout(enableRegisterButton, timeRemaining);
-		} else {
-			enableRegisterButton();
-		}
-	</script>
-	<script src="/vendor/glightbox/js/glightbox.min.js"></script>
-<script>
-  const lightbox = GLightbox({
-    selector: 'a[data-glightbox="gallery2024"]'
-  });
-</script>
-
+	<!-- End Footer -->
 </body>
+
+@include('auth.layouts.footer')
 
 </html>

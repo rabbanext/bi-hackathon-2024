@@ -46,6 +46,7 @@
   <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="/vendor/remixicon/remixicon.css" rel="stylesheet">
 

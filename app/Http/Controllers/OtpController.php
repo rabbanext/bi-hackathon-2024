@@ -74,19 +74,26 @@ class OtpController extends Controller
         }
 
         // Send OTP using cURL
+        $appId = env('QISCUS_APP_ID');
+        $secretKey = env('QISCUS_SECRET_KEY');
+        $channelId = env('QISCUS_CHANNEL_ID');
+        $baseUrl = env('QISCUS_APP_URL');
+        $endpoint = $baseUrl . '/' . $appId . '/' . $channelId . '/messages';
+
         $response = Http::withHeaders([
-            'Qiscus-App-Id' => 'kczge-jxbshhqmilt7vym',
-            'Qiscus-Secret-Key' => '7fb55cc85793cee7396e792e8e674241',
+            'Qiscus-App-Id' => $appId,
+            'Qiscus-Secret-Key' => $secretKey,
             'Content-Type' => 'application/json',
-        ])->post('https://omnichannel.qiscus.com/whatsapp/v1/kczge-jxbshhqmilt7vym/5162/messages', [
+        ])->post(
+            $endpoint, [
             'to' => $phoneNumber,
             'type' => 'template',
             'template' => [
-                'namespace' => 'e66eee30_b2bd_4b7e_a393_e17169666559',
-                'name' => 'register_otp',
+                'namespace' => '1c5393d5_8a56_4677_8faa_a8fd957377cc',
+                'name' => 'hackathon_otp',
                 'language' => [
                     'policy' => 'deterministic',
-                    'code' => 'en',
+                    'code' => 'id',
                 ],
                 'components' => [
                     [
@@ -105,7 +112,7 @@ class OtpController extends Controller
                         'parameters' => [
                             [
                                 'type' => 'text',
-                                'text' => $otp,
+                                'text' => 'https://hackathon.fekdi.co.id',
                             ],
                         ],
                     ],
