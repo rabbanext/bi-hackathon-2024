@@ -233,24 +233,6 @@
       $('[data-bs-toggle="tooltip"]').tooltip();
     });
   </script>
-
-  <script>
-    function enableRegisterButton() {
-      document.getElementById('register-btn').removeAttribute('disabled');
-    }
-
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate());
-    tomorrow.setHours(10, 0, 0, 0);
-    const now = new Date();
-    const timeRemaining = tomorrow.getTime() - now.getTime();
-
-    if (timeRemaining > 0) {
-      setTimeout(enableRegisterButton, timeRemaining);
-    } else {
-      enableRegisterButton();
-    }
-  </script>
 </body>
 
 </html>
