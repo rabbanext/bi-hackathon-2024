@@ -132,6 +132,7 @@
 						<tr>
 							<th>No.</th>
 							<th>Name</th>
+							<th>Categories</th>
 							<th>Institution</th>
 							<th>WhatsApp</th>
 							<th>WA Verified</th>
@@ -148,6 +149,13 @@
 						<tr>
 							<td>{{ $loop->iteration }}</td>
 							<td><strong>{{ $user->name }}</strong></td>
+							<td>
+								@if ($user->submit_for == null)
+									-
+								@else
+									{{ $user->submit_for }}
+								@endif
+							</td>
 							<td>
 								@if ($user->institution == null)
 									-

@@ -78,6 +78,7 @@ class DashboardController extends Controller
         
         $validatedData = $request->validate([
             'team_name' => 'required|string|max:255',
+            'submit_for' => 'required|string|max:255',
             'institution' => 'required|string|max:255',
             'member_name.*' => 'required|string|max:255',
             'member_role.*' => 'required|in:leader,member',
@@ -94,6 +95,10 @@ class DashboardController extends Controller
         ], $messages);
 
         // Update the user's data based on the validated fields
+
+        // // Logs the validated data for debugging
+        // \Log::info('Validated Data: ', $validatedData);
+
         $user->update(array_filter($validatedData));
 
         // Handle special cases where specific fields need to be nullified if empty

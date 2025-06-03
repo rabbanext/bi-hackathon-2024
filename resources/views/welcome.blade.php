@@ -49,32 +49,6 @@
 	<!-- End Hero -->
 
 	<main id="main">
-		<!-- ======= Announcement Section ======= -->
-		<!-- <section id="announcement" class="announcement">
-			<div class="container" >
-				<div class="section-title pb-2 ms-2">
-					<h2>Announcements</h2>
-					<p>Announcements</p>
-				</div>
-				<div class="row">
-					<div class="col-md-6">
-						<div class="announcement-poster">
-							<a href="/img/announcement/2.jpeg" data-glightbox="announcement-gallery" data-title="Hackathon Bank Indonesia 2024">
-								<img src="/img/announcement/2.jpeg" class="img-fluid" alt="Hackathon Bank Indonesia 2024">
-							</a>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="announcement-details">
-							<h3>Registrasi Hackathon - 29 April s.d 6 Juni 2024</h3>
-							<p>Daftarkan dirimu menjadi bagian dari Hackathon Bank Indonesia 2024.</p>
-							<a href="/register" class="btn btn-primary">Register Now</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>  -->
-		<!-- End  Announcement Section -->
 
 		<!-- ======= About Section ======= -->
 		<section id="about" class="about">
@@ -117,18 +91,6 @@
 				<div class="section-title">
 					<p>Problem Statements</p>
 				</div>
-				<!-- <h4>Tema Utama:</h4>
-				<div class="section-content mb-5">
-					<h4 class="mb-0">
-						Empowering Indonesia's Digital Economy and Finance Landscape: "A Call for Data-driven Solutions
-						through
-						Implementation of AI & ML for the Integration of National Digital Economy and Finance"
-					</h4>
-				</div> -->
-				<!-- <h4>Subtema:</h4>
-				<p>
-					*Bisa mengambil lebih dari 1 problem statement.
-				</p> -->
 				<div class="row">
 					<div class="col-12 col-lg-4 px-2 mb-3">
 						<div class="section-content main">
@@ -254,29 +216,25 @@
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
 									<img src="/img/prizes/juara1.png" width="300" class="img-prize" alt="">
-									<!-- <h3>Juara 1</h3> -->
-									<h3>Rp.200.000.000</h3>
+									<h5>Rp.200.000.000</h5>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
 									<img src="/img/prizes/juara2.png" width="300" class="img-prize" alt="">
-									<!-- <h3>Juara 2</h3> -->
-									<h3>Rp.100.000.000</h3>
+									<h5>Rp.100.000.000</h5>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
 									<img src="/img/prizes/juara3.png" width="300" class="img-prize" alt="">
-									<!-- <h3>Juara 3</h3> -->
-									<h3>Rp.50.000.000</h3>
+									<h5>Rp.50.000.000</h5>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
 									<img src="/img/prizes/juara4.png" width="300" class="img-prize" alt="">
-									<!-- <h3>Juara 4 - 5</h3> -->
-									<h3>Rp.15.000.000</h3>
+									<h5>Rp.15.000.000</h5>
 								</div>
 							</div>
 						</div>
@@ -289,29 +247,25 @@
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
 									<img src="/img/prizes/juara1.png" width="300" class="img-prize" alt="">
-									<!-- <h3>Juara 1</h3> -->
-									<h3>Rp.100.000.000</h3>
+									<h5>Rp.100.000.000</h5>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
 									<img src="/img/prizes/juara2.png" width="300" class="img-prize" alt="">
-									<!-- <h3>Juara 2</h3> -->
-									<h3>Rp.50.000.000</h3>
+									<h5>Rp.50.000.000</h5>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
 									<img src="/img/prizes/juara3.png" width="300" class="img-prize" alt="">
-									<!-- <h3>Juara 3</h3> -->
-									<h3>Rp.20.000.000</h3>
+									<h5>Rp.20.000.000</h5>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="prize">
 									<img src="/img/prizes/juara4.png" width="300" class="img-prize" alt="">
-									<!-- <h3>Juara 4 - 5</h3> -->
-									<h3>Rp.10.000.000</h3>
+									<h5>Rp.10.000.000</h5>
 								</div>
 							</div>
 						</div>
@@ -323,8 +277,8 @@
 						<div class="row mb-4">
 							<div class="col-12 col-md-12 col-lg-12">
 								<div class="prize">
-									<h3>Total</h3>
-									<h3>Rp.30.000.000</h3>
+									<img src="/img/prizes/total.png" width="300" class="img-prize" alt="" style="max-height: 50px; aspect-ratio: 1; width: auto;">
+									<h5>Rp.30.000.000</h5>
 								</div>
 							</div>
 						</div>
@@ -445,7 +399,7 @@
 		<!-- End  Frequently Asked Questions Section -->
 
 		<!-- ======= Video Section ======= -->
-		<section id="podcast" class="podcast">
+		<!-- <section id="podcast" class="podcast">
 			<div class="section-title text-center pb-1">
 				<p>Podcast</p>
 			</div>
@@ -470,11 +424,11 @@
 					<div class="swiper-button-prev"></div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 
 		<section id="podcast" class="podcast">
 			<div class="section-title text-center pb-1">
-				<p>Winner dan Finalis</p>
+				<p>Podcast</p>
 			</div>
 			<div class="pb-2 ms-2">
 				<div class="swiper mySwiper">
@@ -505,122 +459,171 @@
 		<!-- End Video Section -->
 
 		<!-- ======= 2024 Section ======= -->
-		<!-- <section id="hackathon2024" class="hackathon2024">
+		<section id="hackathon2024" class="hackathon2024">
+			<div class="section-title text-center pb-4">
+				<p>Winner dan Finalis</p>
+			</div>
+			<div class="container">
+				<div class="pt-4 pb-4"></div>
+				<h4 class="text-center">Winner</h4>
+
+				<div class="row g-3">
+					<div class="col-12 col-md-4 col-lg-4 text-center">
+						<div class="section-content gold-gradient">
+							<a class="p-4" href="/img/juara/image-1-1.jpg" data-glightbox="TarikTambang">
+								<h3 style="margin-bottom:0px; text-shadow:0 0 8px rgb(24, 13, 56) !important;">Tarik Tambang Team</h3>
+							</a>
+						</div>
+					</div>
+					<div class="col-12 col-md-4 col-lg-4 text-center">
+						<div class="section-content silver-gradient">
+							<a class="p-4" href="/img/juara/image-2-1.jpg" data-glightbox="FortuneAvenue">
+								<h3 style="margin-bottom:0px; text-shadow:0 0 8px rgb(24, 13, 56) !important;">FORTUNE AVENUE</h3>
+							</a>
+						</div>
+					</div>
+					<div class="col-12 col-md-4 col-lg-4 text-center">
+						<div class="section-content bronze-gradient">
+							<a class="p-4" href="/img/juara/image-3-1.jpg" data-glightbox="AI4Indonesia">
+								<h3 style="margin-bottom:0px; text-shadow:0 0 8px rgb(24, 13, 56) !important;">AI4Indonesia</h3>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				
+				<div class="pt-4 pb-4"></div>
+				<h4 class="text-center">Finalis</h4>
+
+				<div class="row g-3 pt-3">
+					<div class="col-6 col-md-4 col-lg-3 text-center">
+						<div class="section-content">
+							<a href="/img/finalis/image-1.jpg" data-glightbox="ArtaJasaTech">
+								<h5 style="margin-bottom:0px;">ARTAJASA</h5>
+							</a>
+						</div>
+					</div>
+					<div class="col-6 col-md-4 col-lg-3 text-center">
+						<div class="section-content">
+							<a href="/img/finalis/image-2.jpg" data-glightbox="BravoSix">
+								<h5 style="margin-bottom:0px;">Bravo Six</h5>
+							</a>
+						</div>
+					</div>
+					<div class="col-6 col-md-4 col-lg-3 text-center">
+						<div class="section-content">
+							<a href="/img/finalis/image-3.jpg" data-glightbox="BeaSmart">
+								<h5 style="margin-bottom:0px;">BeaSmart</h5>
+							</a>
+						</div>
+					</div>
+					<div class="col-6 col-md-4 col-lg-3 text-center">
+						<div class="section-content">
+							<a href="/img/finalis/image-4.jpg" data-glightbox="BRISIC">
+								<h5 style="margin-bottom:0px;">BRISIC</h5>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="row g-3 justify-content-center pt-3">
+					<div class="col-6 col-md-4 col-lg-3 text-center">
+						<div class="section-content">
+							<a href="/img/finalis/image-5.jpg" data-glightbox="FraudRanger">
+								<h5 style="margin-bottom:0px;">Fraud Ranger</h5>
+							</a>
+						</div>
+					</div>
+					<div class="col-6 col-md-4 col-lg-3 text-center">
+						<div class="section-content">
+							<a href="/img/finalis/image-6.jpg" data-glightbox="Micromotion">
+								<h5 style="margin-bottom:0px;">Micromotion</h5>
+							</a>
+						</div>
+					</div>
+					<div class="col-6 col-md-4 col-lg-3 text-center">
+						<div class="section-content">
+							<a href="/img/finalis/image-7.jpg" data-glightbox="TuringTeam">
+								<h5 style="margin-bottom:0px;">Turing Team</h5>
+							</a>
+						</div>
+					</div>
+
+					<!-- <div class="col-6 col-md-4 col-lg-3">
+						<a href="/img/hero/bi-hackathon-2025.png" data-glightbox="gallery2024">
+							<img src="/img/hero/bi-hackathon-2025.png" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+					<div class="col-6 col-md-4 col-lg-3">
+						<a href="/img/hero/bi-hackathon-2025.png" data-glightbox="gallery2024">
+						<img src="/img/hero/bi-hackathon-2025.png" class="img-fluid rounded shadow-sm" alt="Gallery Image 2">
+						</a>
+					</div>
+					<div class="col-6 col-md-4 col-lg-3">
+						<a href="/img/hero/bi-hackathon-2025.png" data-glightbox="gallery2024">
+						<img src="/img/hero/bi-hackathon-2025.png" class="img-fluid rounded shadow-sm" alt="Gallery Image 3">
+						</a>
+					</div>
+					<div class="col-6 col-md-4 col-lg-3">
+						<a href="/img/hero/bi-hackathon-2025.png" data-glightbox="gallery2024">
+						<img src="/img/hero/bi-hackathon-2025.png" class="img-fluid rounded shadow-sm" alt="Gallery Image 4">
+						</a>
+					</div> -->
+				</div>
+			</div>
+		</section>
+		<!-- End 2024 Section -->
+
+		<section class="hackathon2024 d-none">
 			<div class="section-title text-center pb-4">
 				<p>2024</p>
 			</div>
 			<div class="container">
 				<div class="row g-3">
-					<div class="col-6 col-md-4 col-lg-3">
-						<a href="/img/hero/bi-hackathon-2025.png" data-glightbox="gallery2024">
-						<img src="/img/hero/bi-hackathon-2025.png" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
-						</a>
-					</div>
-					<div class="col-6 col-md-4 col-lg-3">
-						<a href="/img/hero/bi-hackathon-2025.png" data-glightbox="gallery2024">
-						<img src="/img/hero/bi-hackathon-2025.png" class="img-fluid rounded shadow-sm" alt="Gallery Image 2">
-						</a>
-					</div>
-					<div class="col-6 col-md-4 col-lg-3">
-						<a href="/img/hero/bi-hackathon-2025.png" data-glightbox="gallery2024">
-						<img src="/img/hero/bi-hackathon-2025.png" class="img-fluid rounded shadow-sm" alt="Gallery Image 3">
-						</a>
-					</div>
-					<div class="col-6 col-md-4 col-lg-3">
-						<a href="/img/hero/bi-hackathon-2025.png" data-glightbox="gallery2024">
-						<img src="/img/hero/bi-hackathon-2025.png" class="img-fluid rounded shadow-sm" alt="Gallery Image 4">
-						</a>
-					</div>
-					<div class="col-6 col-md-4 col-lg-3">
-						<a href="/img/hero/bi-hackathon-2025.png" data-glightbox="gallery2024">
-						<img src="/img/hero/bi-hackathon-2025.png" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
-						</a>
-					</div>
-					<div class="col-6 col-md-4 col-lg-3">
-						<a href="/img/hero/bi-hackathon-2025.png" data-glightbox="gallery2024">
-						<img src="/img/hero/bi-hackathon-2025.png" class="img-fluid rounded shadow-sm" alt="Gallery Image 2">
-						</a>
-					</div>
-					<div class="col-6 col-md-4 col-lg-3">
-						<a href="/img/hero/bi-hackathon-2025.png" data-glightbox="gallery2024">
-						<img src="/img/hero/bi-hackathon-2025.png" class="img-fluid rounded shadow-sm" alt="Gallery Image 3">
-						</a>
-					</div>
-					<div class="col-6 col-md-4 col-lg-3">
-						<a href="/img/hero/bi-hackathon-2025.png" data-glightbox="gallery2024">
-						<img src="/img/hero/bi-hackathon-2025.png" class="img-fluid rounded shadow-sm" alt="Gallery Image 4">
-						</a>
-					</div>
-				</div>
-			</div>
-		</section> -->
-		<!-- End 2024 Section -->
-
-		<section id="hackathon2024" class="hackathon2024">
-			<div class="section-title text-center pb-4">
-				<p>2024 Juara</p>
-			</div>
-			<div class="container">
-				<div class="row g-3">
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-1-1.jpg" data-glightbox="gallery2024">
-							<img src="/img/juara/image-1-1.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
-						</a>
-					</div>
-					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-1-2.jpg" data-glightbox="gallery2024">
+						<a href="/img/juara/image-1-2.jpg" data-glightbox="TarikTambang">
 							<img src="/img/juara/image-1-2.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-1-3.jpg" data-glightbox="gallery2024">
+						<a href="/img/juara/image-1-3.jpg" data-glightbox="TarikTambang">
 							<img src="/img/juara/image-1-3.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-1-4.jpg" data-glightbox="gallery2024">
+						<a href="/img/juara/image-1-4.jpg" data-glightbox="TarikTambang">
 							<img src="/img/juara/image-1-4.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-2-1.jpg" data-glightbox="gallery2024">
-							<img src="/img/juara/image-2-1.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
-						</a>
-					</div>
-					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-2-2.jpg" data-glightbox="gallery2024">
+						<a href="/img/juara/image-2-2.jpg" data-glightbox="FortuneAvenue">
 							<img src="/img/juara/image-2-2.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-2-3.jpg" data-glightbox="gallery2024">
+						<a href="/img/juara/image-2-3.jpg" data-glightbox="FortuneAvenue">
 							<img src="/img/juara/image-2-3.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-2-4.jpg" data-glightbox="gallery2024">
+						<a href="/img/juara/image-2-4.jpg" data-glightbox="FortuneAvenue">
 							<img src="/img/juara/image-2-4.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-3-1.jpg" data-glightbox="gallery2024">
-							<img src="/img/juara/image-3-1.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
-						</a>
-					</div>
-					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-3-2.jpg" data-glightbox="gallery2024">
+						<a href="/img/juara/image-3-2.jpg" data-glightbox="AI4Indonesia">
 							<img src="/img/juara/image-3-2.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-3-3.jpg" data-glightbox="gallery2024">
+						<a href="/img/juara/image-3-3.jpg" data-glightbox="AI4Indonesia">
 							<img src="/img/juara/image-3-3.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-3-4.jpg" data-glightbox="gallery2024">
+						<a href="/img/juara/image-3-4.jpg" data-glightbox="AI4Indonesia">
 							<img src="/img/juara/image-3-4.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
@@ -628,7 +631,7 @@
 			</div>
 		</section>
 
-		<section id="hackathon2024" class="hackathon2024">
+		<section class="hackathon2024 d-none">
 			<div class="section-title text-center pb-4">
 				<p>2024 Finalis</p>
 			</div>

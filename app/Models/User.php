@@ -28,6 +28,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'nowa',
         'team_name',
         'institution',
+        'submit_for',
         'member_name',
         'member_role',
         'member_domicile',

@@ -650,6 +650,20 @@ section {
 	}
 }
 
+.gold-gradient {
+	background: linear-gradient(135deg, #FFD700, #FFC107, #FFB300) !important;
+}
+.silver-gradient {
+	background: linear-gradient(135deg, #C0C0C0, #DCDCDC, #A9A9A9) !important;
+}
+.bronze-gradient {
+	background: linear-gradient(135deg, #cd7f32, #b87333, #a97142) !important;
+}
+
+.section-seperator {
+	border-bottom: 1px solid rgba(167, 133, 253, 0.4);
+}
+
 .section-content {
 	padding: 2rem;
 	border-radius: 16px;

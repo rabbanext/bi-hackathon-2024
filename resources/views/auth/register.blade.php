@@ -40,7 +40,17 @@
         <div class="input-group mb-3">
             <span class="input-group-text">+62</span>
             <div class="form-floating flex-grow-1">
-                <input type="tel" class="form-control @error('nowa') is-invalid @enderror" id="floatingInputGroup1" name="nowa" placeholder="WhatsApp Number" value="{{ old('nowa') }}" inputmode="numeric" pattern="[0-9]*">
+                <input 
+                    type="tel" 
+                    class="form-control @error('nowa') is-invalid @enderror" 
+                    id="floatingInputGroup1" 
+                    name="nowa" 
+                    placeholder="WhatsApp Number" 
+                    value="{{ old('nowa') }}" 
+                    inputmode="numeric" 
+                    pattern="8[0-9]{7,11}" 
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/^0/, '')"
+                >
                 <label for="floatingInputGroup1">WhatsApp Number</label>
                 @error('nowa')
                 @if($message == 'The nowa has already been taken.')

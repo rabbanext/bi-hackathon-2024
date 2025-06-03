@@ -85,6 +85,17 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-floating mb-3">
+                                <select class="form-select" id="submit_for" name="submit_for" required>
+                                    <option value="" disabled {{ empty(Auth::user()->submit_for) ? 'selected' : '' }}>Pilih tipe</option>
+                                    <option value="Profesional" {{ Auth::user()->submit_for === 'Profesional' ? 'selected' : '' }}>Profesional</option>
+                                    <option value="Mahasiswa" {{ Auth::user()->submit_for === 'Mahasiswa' ? 'selected' : '' }}>Mahasiswa</option>
+                                </select>
+                                <label for="submit_for">Profesional atau Mahasiswa</label>
+                                <div class="invalid-feedback">Silakan pilih salah satu.</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="institution" name="institution" value="{{ Auth::user()->institution }}" placeholder="Institution/Organization/Community" required />
                                 <label for="institution">Institution/Organization/Community</label>
                                 <div class="invalid-feedback"></div>

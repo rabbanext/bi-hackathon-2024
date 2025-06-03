@@ -46,7 +46,6 @@
   <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="/vendor/remixicon/remixicon.css" rel="stylesheet">
 
@@ -172,7 +171,7 @@
             <h4>Contact</h4>
             <p>
               <strong>Phone:</strong> +62 81 131 131 131<br>
-              <strong>Email:</strong> hackathon2025@bi.go.id
+              <strong>Email:</strong> hackathonfekdi@bi.go.id
             </p>
           </div>
           <div class="col-lg-4 col-md-6">

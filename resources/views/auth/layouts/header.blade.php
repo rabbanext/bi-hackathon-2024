@@ -1,14 +1,18 @@
 
+<?php
+// header('Location: https://hackathon.fekdi.co.id/');
+?>
 <head>
 	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EPG8DF2B75"></script>
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-EPG8DF2B75"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
 
 		gtag('config', 'G-EPG8DF2B75');
-	</script>
+	</script> -->
+	<!-- Google tag (gtag.js) -->
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -41,35 +45,36 @@
 
 	<!-- Vendor CSS Files -->
 	<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 	<link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 	<link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/vendor/remixicon/remixicon.css" rel="stylesheet">
 
 	<!-- Template Main CSS File -->
 	<link href="/css/css.css" rel="stylesheet">
+    <link href="/css/register.css" rel="stylesheet">
 </head>
 
 <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-lg-between">
         <!-- Logo -->
-        <div class="nav-logo flex-grow-1">
+        <div class="nav-logo">
             <a href="/" class="logo me-1 me-lg-3"><img src="/img/logo-bi.png" alt="" class="img-fluid logo-img"></a>
             <a href="/" class="logo me-lg-0"><img src="/img/logo.png" alt="" class="img-fluid logo-img fekdi"></a>
         </div>
 
         <nav id="navbar" class="navbar order-last order-lg-0 ms-auto">
             <ul>
-                <!-- <li><a class="nav-link scrollto" href="#about">About</a></li> -->
                 <li><a class="nav-link scrollto" href="#timeline">Timeline</a></li>
                 <li><a class="nav-link scrollto" href="#problem-statements">Problem Statements</a></li>
                 <li><a class="nav-link scrollto" href="#prizes">Prizes</a></li>
-                <li><a class="nav-link scrollto" href="/register">Registrasi</a></li>
                 <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
                 <li><a class="nav-link scrollto" href="#hackathon2024">2024</a></li>
                 <li><a class="nav-link scrollto" href="#podcast">Podcast</a></li>
                 <li><a class="nav-link scrollto" href="#about">About</a></li>
             </ul>
-            <i class="bx bx-list mobile-nav-toggle"></i>
+            <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
 
         
@@ -129,10 +134,9 @@
                 </li>
             </ul>
         @else
-            <!-- <a href="/register">
+            <a href="/register">
                 <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button">Register</button>
-            </a> -->
+            </a>
         @endauth
-
     </div>
 </header><!-- End Header -->

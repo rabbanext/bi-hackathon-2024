@@ -121,4 +121,35 @@
 	const lightbox = GLightbox({
 		selector: 'a[data-glightbox="gallery2024"]'
 	});
+
+    const galleryTarikTambang = GLightbox({
+        selector: 'a[data-glightbox="TarikTambang"]'
+    });
+    const galleryFortuneAvenue = GLightbox({
+        selector: 'a[data-glightbox="FortuneAvenue"]'
+    });
+    const galleryAI4Indonesia = GLightbox({
+        selector: 'a[data-glightbox="AI4Indonesia"]'
+    });
+    const galleryArtaJasaTech = GLightbox({
+        selector: 'a[data-glightbox="ArtaJasaTech"]'
+    });
+    const galleryBravoSix = GLightbox({
+        selector: 'a[data-glightbox="BravoSix"]'
+    });
+    const galleryBeaSmart = GLightbox({
+        selector: 'a[data-glightbox="BeaSmart"]'
+    });
+    const galleryBRISIC = GLightbox({
+        selector: 'a[data-glightbox="BRISIC"]'
+    });
+    const galleryFraudRanger = GLightbox({
+        selector: 'a[data-glightbox="FraudRanger"]'
+    });
+    const galleryMicromotion = GLightbox({
+        selector: 'a[data-glightbox="Micromotion"]'
+    });
+    const galleryTuringTeam = GLightbox({
+        selector: 'a[data-glightbox="TuringTeam"]'
+    });
 </script>
