@@ -60,8 +60,9 @@
     <div class="container d-flex align-items-center justify-content-lg-between">
         <!-- Logo -->
         <div class="nav-logo">
-            <a href="/" class="logo me-1 me-lg-3"><img src="/img/logo-bi.png" alt="" class="img-fluid logo-img"></a>
-            <a href="/" class="logo me-lg-0"><img src="/img/logo.png" alt="" class="img-fluid logo-img fekdi"></a>
+            <a href="/" class="me-4"><img src="/img/logo-bi.png" alt="" class="img-fluid logo-img " style="max-height:30px !important; width:auto;"></a>
+            <a href="/" class="me-4"><img src="/img/hero/component/logo-ojk.png" alt="" class="img-fluid logo-img fekdi" style="max-height:30px !important; width:auto;"></a>
+            <a href="/" class=""><img src="/img/hero/component/logo-fekdi.png" alt="" class="img-fluid logo-img fekdi" style="max-height:30px !important; width:auto;"></a>
         </div>
 
         <nav id="navbar" class="navbar order-last order-lg-0 ms-auto">
@@ -73,9 +74,10 @@
                 <li><a class="nav-link scrollto" href="#hackathon2024">2024</a></li>
                 <li><a class="nav-link scrollto" href="#podcast">Podcast</a></li>
                 <li><a class="nav-link scrollto" href="#about">About</a></li>
+
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav><!-- .navbar -->
+        </nav>
 
         
         @auth
