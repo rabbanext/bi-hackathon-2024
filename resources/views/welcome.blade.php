@@ -461,11 +461,11 @@
 		<!-- ======= 2024 Section ======= -->
 		<section id="hackathon2024" class="hackathon2024">
 			<div class="section-title text-center pb-4">
-				<p>Winner dan Finalis</p>
+				<p>Winner dan Finalis 2024</p>
 			</div>
 			<div class="container">
 				<div class="pt-4 pb-4"></div>
-				<h4 class="text-center">Winner</h4>
+				<h4 class="text-center">Winner 2024</h4>
 
 				<div class="row g-3">
 					<div class="col-12 col-md-4 col-lg-4 text-center">
@@ -491,9 +491,8 @@
 					</div>
 				</div>
 
-				
 				<div class="pt-4 pb-4"></div>
-				<h4 class="text-center">Finalis</h4>
+				<h4 class="text-center">Finalis 2024</h4>
 
 				<div class="row g-3 pt-3">
 					<div class="col-6 col-md-4 col-lg-3 text-center">
