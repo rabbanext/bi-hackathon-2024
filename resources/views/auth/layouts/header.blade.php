@@ -67,13 +67,13 @@
 
         <nav id="navbar" class="navbar order-last order-lg-0 ms-auto">
             <ul>
-                <li><a class="nav-link scrollto" href="#timeline">Timeline</a></li>
-                <li><a class="nav-link scrollto" href="#problem-statements">Problem Statements</a></li>
-                <li><a class="nav-link scrollto" href="#prizes">Prizes</a></li>
-                <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
-                <li><a class="nav-link scrollto" href="#hackathon2024">2024</a></li>
-                <li><a class="nav-link scrollto" href="#podcast">Podcast</a></li>
-                <li><a class="nav-link scrollto" href="#about">About</a></li>
+                <li><a class="nav-link scrollto" href="/#timeline">Timeline</a></li>
+                <li><a class="nav-link scrollto" href="/#problem-statements">Problem Statements</a></li>
+                <li><a class="nav-link scrollto" href="/#prizes">Prizes</a></li>
+                <li><a class="nav-link scrollto" href="/#faq">FAQ</a></li>
+                <li><a class="nav-link scrollto" href="/#hackathon2024">2024</a></li>
+                <li><a class="nav-link scrollto" href="/#podcast">Podcast</a></li>
+                <li><a class="nav-link scrollto" href="/#about">About</a></li>
 
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
