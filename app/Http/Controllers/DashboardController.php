@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Notifications\SubmissionConfirmation;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\UsersExport;
+use Illuminate\Support\Facades\Log;
 
 class DashboardController extends Controller
 {
@@ -161,7 +162,8 @@ class DashboardController extends Controller
             'project_file',
             'submitted',
             'email_verified',
-            'otp_verified'
+            'otp_verified',
+            'categories'
         ]);
 
         // mapping the filters to match with query
@@ -177,6 +179,17 @@ class DashboardController extends Controller
         }
         if ($filters['otp_verified']) {
             $mappedFilters['otp-verified-filter'] = $filters['otp_verified'];
+        }
+
+        // Logging
+        
+        Log::info('Nama institusi disimpan: ' . json_encode($filters));
+        if ($filters['categories']) {
+            if ($filters['categories'] === 'all') {
+                // $mappedFilters['categories-filter'] = null; // No filter for all categories
+            } else {
+                $mappedFilters['categories-filter'] = $filters['categories'];
+            }
         }
         return Excel::download(new UsersExport($mappedFilters), 'users.xlsx');
     }

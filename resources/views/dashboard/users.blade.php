@@ -79,7 +79,7 @@
 						</div>
 						<div class="col-12 mb-1">
 							<p style="display: inline;">Submission: </p>
-							<div class="btn-group" role="group" aria-label="Project Status">
+							<div class="btn-group" role="group" aria-label="Submission Status">
 								<input type="radio" class="btn-check" name="submission-filter" value="all" id="submitted0" autocomplete="off" checked>
 								<label class="btn btn-outline-info btn-sm" for="submitted0">All</label>
 
@@ -103,6 +103,19 @@
 								<label class="btn btn-outline-info btn-sm" for="uploaded2">Not Uploaded</label>
 							</div>
 						</div>
+						<div class="col-12 mb-1">
+							<p style="display: inline;">Categories: </p>
+							<div class="btn-group" role="group" aria-label="Categories">
+								<input type="radio" class="btn-check" name="categories-filter" value="all" id="categories0" autocomplete="off" checked>
+								<label class="btn btn-outline-info btn-sm" for="categories0">All</label>
+
+								<input type="radio" class="btn-check" name="categories-filter" value="Profesional" id="categories1" autocomplete="off">
+								<label class="btn btn-outline-info btn-sm" for="categories1">Profesional</label>
+
+								<input type="radio" class="btn-check" name="categories-filter" value="Mahasiswa" id="categories2" autocomplete="off">
+								<label class="btn btn-outline-info btn-sm" for="categories2">Mahasiswa</label>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -117,6 +130,7 @@
 								<input type="hidden" name="email_verified">
 								<input type="hidden" name="submitted">
 								<input type="hidden" name="project_file">
+								<input type="hidden" name="categories">
 							</form>
 							<button type="button" id="export-btn" class="btn btn-sm btn-info mb-1">Export Users</button>
 							<!-- <a href="{{ route('export.users') }}" class="btn btn-sm btn-info mb-1">Export Users</a> -->
@@ -359,6 +373,7 @@
 				exportForm.querySelector("input[name='email_verified']").value = document.querySelector("input[name='email-verified-filter']:checked").value;
 				exportForm.querySelector("input[name='submitted']").value = document.querySelector("input[name='submission-filter']:checked").value;
 				exportForm.querySelector("input[name='project_file']").value = document.querySelector("input[name='project-file-filter']:checked").value;
+				exportForm.querySelector("input[name='categories']").value = document.querySelector("input[name='categories-filter']:checked").value;
 				exportForm.submit();
 			});
 		}
@@ -373,23 +388,23 @@
 		// Custom filter for project file
         $('input[name="submission-filter"]').on('change', function() {
             var value = $(this).val();
-            table.columns(8).search(value === 'all' ? '' : (value === 'submitted' ? '^Submitted$' : '^Not Submitted$'), true, false).draw();
+            table.columns(9).search(value === 'all' ? '' : (value === 'submitted' ? '^Submitted$' : '^Not Submitted$'), true, false).draw();
         });
 		
         $('input[name="project-file-filter"]').on('change', function() {
             var value = $(this).val();
-            table.columns(7).search(value === 'all' ? '' : (value === 'uploaded' ? '^Uploaded$' : '^Not Uploaded$'), true, false).draw();
+            table.columns(8).search(value === 'all' ? '' : (value === 'uploaded' ? '^Uploaded$' : '^Not Uploaded$'), true, false).draw();
         });
 
         // Custom filter for email verification
 		$('input[name="email-verified-filter"]').on('change', function() {
 			var value = $(this).val();
 			if (value === 'all') {
-				table.columns(6).search('').draw();
+				table.columns(7).search('').draw();
 			} else if (value === 'verified') {
-				table.column(6).search('\\bVerified\\b', true, false).draw();
+				table.column(7).search('\\bVerified\\b', true, false).draw();
 			} else if (value === 'not-verified') {
-				table.column(6).search('\\bUnverified\\b', true, false).draw();
+				table.column(7).search('\\bUnverified\\b', true, false).draw();
 			}
 		});
 
@@ -397,11 +412,23 @@
 		$('input[name="otp-verified-filter"]').on('change', function() {
 			var value = $(this).val();
 			if (value === 'all') {
-				table.columns(4).search('').draw();
+				table.columns(5).search('').draw();
 			} else if (value === 'verified') {
-				table.column(4).search('\\bVerified\\b', true, false).draw();
+				table.column(5).search('\\bVerified\\b', true, false).draw();
 			} else if (value === 'not-verified') {
-				table.column(4).search('\\bUnverified\\b', true, false).draw();
+				table.column(5).search('\\bUnverified\\b', true, false).draw();
+			}
+		});
+
+		// Custom filter for categories
+		$('input[name="categories-filter"]').on('change', function() {
+			var value = $(this).val();
+			if (value === 'all') {
+				table.columns(2).search('').draw();
+			} else if (value === 'Mahasiswa') {
+				table.column(2).search('Mahasiswa', true, false).draw();
+			} else if (value === 'Profesional') {
+				table.column(2).search('Profesional', true, false).draw();
 			}
 		});
     });

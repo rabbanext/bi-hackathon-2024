@@ -63,6 +63,10 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithStyl
             }
         }
 
+        if (isset($this->filter['categories-filter'])) {
+            $query->where('submit_for', $this->filter['categories-filter']);
+        }
+
         return $query->get();
     }
 
