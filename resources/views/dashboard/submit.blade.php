@@ -94,9 +94,27 @@
                                 <div class="invalid-feedback">Silakan pilih salah satu.</div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6">
+                        <!-- <div class="col-12 col-md-6">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="institution" name="institution" value="{{ Auth::user()->institution }}" placeholder="Institution/Organization/Community" required />
+                                <label for="institution">Institution/Organization/Community</label>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                        </div> -->
+                        <div class="col-12 col-md-6">
+                            <div class="form-floating mb-3 position-relative">
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="institution" 
+                                    name="institution" 
+                                    value="{{ Auth::user()->institution }}" 
+                                    placeholder="Institution/Organization/Community" 
+                                    required
+                                    data-bs-toggle="tooltip"
+                                    data-bs-placement="right"
+                                    title="Isi dengan nama institusi, organisasi, atau komunitas tempat Anda berasal secara lengkap. cth: Bank Rakyat Indonesia." 
+                                />
                                 <label for="institution">Institution/Organization/Community</label>
                                 <div class="invalid-feedback"></div>
                             </div>
@@ -854,5 +872,15 @@
                 }
             });
         });
+    });
+</script>
+
+<script>
+    // Inisialisasi semua tooltip di halaman
+    document.addEventListener("DOMContentLoaded", function(){
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+            new bootstrap.Tooltip(tooltipTriggerEl)
+        })
     });
 </script>
