@@ -13,7 +13,6 @@
         $openDate = Carbon::parse("2025-06-05 15:00:00");
     @endphp
 
-    <p> {{ $openDate }} --- {{ now() }}</p>
     @if (now()->greaterThanOrEqualTo($openDate))
 
     <form method="POST" action="{{ route('register') }}">
