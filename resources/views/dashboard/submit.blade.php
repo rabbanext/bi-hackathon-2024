@@ -24,14 +24,16 @@
                 <div class="section-content mb-4">
                     <h5>Guideline</h5>
                     <p class="mb-0">Silakan cek syarat dan ketentuan registrasi pada link berikut:</p>
-                    <a class="text-info mb-0" href="https://drive.google.com/file/d/1z0F7rhKOMln5YM4239JRbqaU1fYJnXRW/view?usp=sharing">Guideline</a>
+                    <!-- <a class="text-info mb-0" href="https://drive.google.com/file/d/1z0F7rhKOMln5YM4239JRbqaU1fYJnXRW/view?usp=sharing">Guideline</a> -->
+                    <a class="text-info mb-0" href="https://drive.google.com/file/d/1-fUyljC23hBpwSYU08n7HYZqBeOe0fO-/view?usp=sharing">Guideline</a>
                 </div>
             </div>
             <div class="col-12">
                 <div class="section-content mb-4">
                     <h5>Panduan Proposal</h5>
                     <p class="mb-0">Pastikan format submisi proposal kamu sesuai dengan format berikut:</p>
-                    <a class="text-info mb-0" href="https://drive.google.com/file/d/1i6f29tivKJYggfPOI6WGHLhWhhJsJ5uO/view?usp=sharing">Panduan Proposal</a>
+                    <!-- <a class="text-info mb-0" href="https://drive.google.com/file/d/1i6f29tivKJYggfPOI6WGHLhWhhJsJ5uO/view?usp=sharing">Panduan Proposal</a> -->
+                    <a class="text-info mb-0" href="https://drive.google.com/file/d/1LopId1jI-iKIGl_e2QiMEOzW0_z68nI9/view?usp=sharing">Panduan Proposal</a>
                 </div>
             </div>
         </div>
