@@ -26,11 +26,18 @@
 	<div class="container">
 		<div class="row">
 
-			<div class="col-lg-4 col-md-6">
-				<img src="/img/hero/logo-bi.png" width="150" class="img-fluid mb-3" alt="">
+      <div class="col-lg-4 col-md-6">
+				<img src="/img/hero/logo-bi.png" style="max-height:30px !important; width:auto;" class="img-fluid mb-3" alt="">
 				<p>
 					<strong>Address:</strong>
 					Jalan M.H. Thamrin No. 2, <br>
+					Jakarta Pusat, DKI Jakarta 10350
+				</p>
+                <img src="/img/hero/component/logo-ojk.png" style="max-height:30px !important; width:auto;" class="img-fluid mt-3 mb-3" alt="">
+				<p>
+					<strong>Address:</strong>
+                    Gedung Soemitro Djojohadikusumo, <br> 
+                    Jalan Lapangan Banteng Timur 2-4, <br>
 					Jakarta Pusat, DKI Jakarta 10350
 				</p>
 			</div>

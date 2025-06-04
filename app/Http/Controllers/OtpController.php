@@ -7,6 +7,7 @@ use App\Models\OtpLog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class OtpController extends Controller
 {
@@ -79,6 +80,10 @@ class OtpController extends Controller
         $channelId = env('QISCUS_CHANNEL_ID');
         $baseUrl = env('QISCUS_APP_URL');
         $endpoint = $baseUrl . '/' . $appId . '/' . $channelId . '/messages';
+        // https://omnichannel.qiscus.com/whatsapp/v1/{{APP-ID}/{{channel-id}}/messages
+
+        Log::info('endpoint: ' . $endpoint);
+
 
         $response = Http::withHeaders([
             'Qiscus-App-Id' => $appId,
@@ -112,7 +117,7 @@ class OtpController extends Controller
                         'parameters' => [
                             [
                                 'type' => 'text',
-                                'text' => 'https://hackathon.fekdi.co.id',
+                                'text' => $otp,
                             ],
                         ],
                     ],

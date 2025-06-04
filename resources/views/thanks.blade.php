@@ -165,10 +165,17 @@
       <div class="row">
 
         <div class="col-lg-4 col-md-6">
-          <img src="/img/hero/logo-bi.png" width="150" class="img-fluid mb-3" alt="">
+          <img src="/img/hero/logo-bi.png" style="max-height:30px !important; width:auto;" class="img-fluid mb-3" alt="">
           <p>
             <strong>Address:</strong>
             Jalan M.H. Thamrin No. 2, <br>
+            Jakarta Pusat, DKI Jakarta 10350
+          </p>
+                  <img src="/img/hero/component/logo-ojk.png" style="max-height:30px !important; width:auto;" class="img-fluid mt-3 mb-3" alt="">
+          <p>
+            <strong>Address:</strong>
+                      Gedung Soemitro Djojohadikusumo, <br> 
+                      Jalan Lapangan Banteng Timur 2-4, <br>
             Jakarta Pusat, DKI Jakarta 10350
           </p>
         </div>
@@ -181,12 +188,18 @@
         </div>
         <div class="col-lg-4 col-md-6">
           <h4>Social Media</h4>
+          <p>Bank Indonesia</p>
           <div class="social-links">
+            <a href="https://www.bi.go.id/"><i class="bx bx-globe"></i></a>
             <a href="https://www.instagram.com/bank_indonesia/"><i class="bx bxl-instagram"></i></a>
             <a href="https://www.instagram.com/fekdi_indonesia/"><i class="bx bxl-instagram"></i></a>
             <a href="https://www.youtube.com/@BankIndonesiaChannel/"><i class="bx bxl-youtube"></i></a>
             <a href="https://www.facebook.com/BankIndonesiaOfficial/"><i class="bx bxl-facebook"></i></a>
-            <a href="https://www.tiktok.com/@bank_indonesia/"><i class="bx bxl-tiktok"></i></a>
+          </div>
+          <p class="pt-4">Otoritas Jasa Keuangan</p>
+          <div class="social-links">
+            <a href="https://www.ojk.go.id/"><i class="bx bx-globe"></i></a>
+            <a href="https://www.instagram.com/ojkindonesia/"><i class="bx bxl-instagram"></i></a>
           </div>
         </div>
 

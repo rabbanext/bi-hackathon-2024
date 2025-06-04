@@ -99,7 +99,7 @@ class User extends Authenticatable implements MustVerifyEmail
         parent::boot();
 
         static::creating(function ($user) {
-            $user->otp_verified_at = now();
+            // $user->otp_verified_at = now();
         });
     }
 }
