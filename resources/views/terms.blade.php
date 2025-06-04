@@ -9,7 +9,7 @@
 			<div class="container">
 				<div class="content section-content">
 					<h3 class="fst-italic mb-4">
-						Syarat dan Ketentuan Lomba Hackathon Bank Indonesia 2025
+						Syarat dan Ketentuan Lomba BI-OJK Hackathon 2025
 					</h3>
 					<h5 class="pt-4">I. Pendahuluan</h5>
 					<p>

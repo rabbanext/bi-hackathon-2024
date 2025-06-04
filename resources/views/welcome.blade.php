@@ -150,7 +150,7 @@
 							<div class="h-100" style="min-height: 260px;">
 								<h4>Financial Innovation & Public Services</h4>
 								<p class="paragraph mb-auto">
-									Solusi dalam memperluas literasi inkusi keuangan digital termasuk menghasilkan produk/layanan baru yang inovatif serta mendukung layanan publik
+									Solusi dalam memperluas literasi inklusi keuangan digital termasuk menghasilkan produk/layanan baru yang inovatif serta mendukung layanan publik
 								</p>
 								<div class="section-content py-2 px-4 text-center">
 									Bagaimana AI/ML dapat memperluas literasi, inklusi keuangan digital termasuk menghasilkan produk/layanan baru yang inovatif serta mendukung layanan publik?
@@ -170,7 +170,7 @@
 									Solusi dalam rangka memitigasi risiko fraud transaksi, kebocoran data pada ekosistem blockchain maupun non-blockchain. Solusi tersebut dapat bermanfaat pada sektor pemerintah maupun swasta serta pemberantasan aktivitas judi online
 								</p>
 								<div class="section-content py-2 px-4 text-center">
-									Bagaimana Solusi dapat mendukung deteksi anomali transaksi keuangan/pembayaran yang mengarah kepada fraud/kegiatan illegal, validasi smart contract dan/ atau transparansi asset digital dalam jaringan blockchain?
+									Bagaimana Solusi dapat mendukung deteksi anomali transaksi keuangan/pembayaran yang mengarah kepada fraud/kegiatan ilegal, validasi smart contract dan/ atau transparansi aset digital dalam jaringan blockchain?
 								</div>
 								<h5>Sub Tema</h5>
 								<div class="section-content p-1">Real-time Fraud Detection System</div>
