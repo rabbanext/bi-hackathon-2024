@@ -75,20 +75,19 @@
                 <li><a class="nav-link scrollto" href="/#podcast">Podcast</a></li>
                 <li><a class="nav-link scrollto" href="/#about">About</a></li>
 
-
                 @auth
                 @if (Auth::user()->type == "user")
-                    <li><h5 class="pt-4 ps-4 text-white">Submit</h5></li>
-                    <li><a class="nav-link" href="/profile">My Profile</a></li>
-                    <li><a class="nav-link" href="/submit">Submit Proposal</a></li>
+                    <li><h5 class="d-block d-sm-none pt-4 ps-4 text-white">Submit</h5></li>
+                    <li><a class="d-block d-sm-none nav-link" href="/profile">My Profile</a></li>
+                    <li><a class="d-block d-sm-none nav-link" href="/submit">Submit Proposal</a></li>
                 @elseif (Auth::user()->type == "admin")
-                    <li><h5 class="pt-4 ps-4 text-white">Menu</h5></li>
-                    <li><a class="nav-link" href="/users">Users</a></li>
-                    <li><a class="nav-link" href="/projects">Projects</a></li>
-                    <li><a class="nav-link" href="/email_responses">Email Responses</a></li>
+                    <li><h5 class="d-block d-sm-none pt-4 ps-4 text-white">Menu</h5></li>
+                    <li><a class="d-block d-sm-none nav-link" href="/users">Users</a></li>
+                    <li><a class="d-block d-sm-none nav-link" href="/projects">Projects</a></li>
+                    <li><a class="d-block d-sm-none nav-link" href="/email_responses">Email Responses</a></li>
                 @endif
                     <li>
-                        <a href="{{ route('logout') }}" id="logout-btn"
+                        <a class="d-block d-sm-none" href="{{ route('logout') }}" id="logout-btn"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <span>{{ __('Logout') }}</span>
                         </a>
@@ -98,8 +97,7 @@
                         </form>
                     </li>
                 @else
-                    <li><a class="nav-link" href="/register">Register</a></li>
-                
+                    <li><a class="nav-link d-block d-sm-none" href="/register">Register</a></li>
                 @endauth
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>

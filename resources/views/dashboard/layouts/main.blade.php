@@ -38,7 +38,7 @@
 					<strong>Address:</strong>
                     Gedung Soemitro Djojohadikusumo, <br> 
                     Jalan Lapangan Banteng Timur 2-4, <br>
-					Jakarta Pusat, DKI Jakarta 10350
+					Jakarta Pusat, DKI Jakarta 10710
 				</p>
 			</div>
 			<div class="col-lg-4 col-md-6">
