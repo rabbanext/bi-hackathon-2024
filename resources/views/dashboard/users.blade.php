@@ -242,7 +242,7 @@
 	<div class="modal-dialog modal-lg"> <!-- Adjust modal size as needed -->
 		<div class="modal-content">
 			<div class="modal-header">
-				<h1 class="modal-title fs-5" id="modal{{ $user->id }}">User Detail</h1>
+				<h1 class="modal-title fs-5 text-black" id="modal{{ $user->id }}">User Detail</h1>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
@@ -280,7 +280,7 @@
 							</tr>
 						</tbody>
 					</table>
-					<h5>Members:</h5>
+					<h5 class="text-black">Members:</h5>
 					<div class="table-responsive">
 						<table class="table table-bordered">
 							<thead>
@@ -299,6 +299,7 @@
 								@php
 									$memberNames = json_decode($user->member_name);
 									$memberRoles = json_decode($user->member_role);
+									$memberIdentities = json_decode($user->member_identity);
 									$memberDomiciles = json_decode($user->member_domicile);
 									$memberEmail = json_decode($user->member_email);
 									$memberDate_of_birth = json_decode($user->member_date_of_birth);
@@ -311,6 +312,7 @@
 										<tr>
 											<td>{{ $name }}</td>
 											<td>{{ $memberRoles[$key] }}</td>
+											<td>{{ $memberIdentities[$key] }}</td>
 											<td>{{ $memberDomiciles[$key] }}</td>
 											<td>{{ $memberEmail[$key] }}</td>
 											<td>{{ date('d-m-Y', strtotime($memberDate_of_birth[$key])) }}</td>
@@ -323,7 +325,7 @@
 							</tbody>
 						</table>
 					</div>
-					<h5>Links:</h5>
+					<h5 class="text-black">Links:</h5>
 					<div class="table-responsive mb-5">
 						<table class="table table-bordered">
 							<thead>

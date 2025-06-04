@@ -49,6 +49,42 @@
 	<!-- End Hero -->
 
 	<main id="main">
+		<section id="announcement" class="announcement">
+			<div class="container" >
+				<div class="section-title pb-2 ms-2 mb-4">
+					<h2>Bank Indonesia bersama Otoritas Jasa Keuangan dengan bangga mempersembahkan:</h2>
+				</div>
+				<div class="row gy-4 gx-lg-4">
+					<div class="col-md-6">
+						<div class="announcement-poster">
+							<img src="/img/announcement/2025-1.png" class="img-fluid" alt="Hackathon Bank Indonesia 2025">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="announcement-details">
+							<h4>📢 BI-OJK HACKATHON 2025! 🎉</h4>
+							<p>BI-OJK Hackathon 2025 merupakan sebuah kompetisi intelektual untuk menggali berbagai potensi talenta inovator dalam memecahkan masalah menggunakan teknologi dan menjadi wadah eksploratif bagi ide-ide inovatif, serta memfasilitasi sinergi dengan industri untuk mendapatkan solusi berbasis teknologi.</p>
+							<p>Untuk mengetahui lebih lanjut program tersebut, kami mengundang bapak/ibu untuk hadir dalam acara Kick-Off dan Seminar BI-OJK Hackathon 2025 pada:</p>
+							<p>
+								📅 Hari, tanggal: Kamis, 5 Juni 2025<br/>
+								🕑 Waktu: Pukul 14.00 WIB s.d selesai<br/>
+								📌 Tema: Empowering the Future: Innovating Digital Service and Financial Solution for Inclusive Growth and Resilient Economy
+							</p>
+							<p>🎦 Join via Zoom:<br/>
+								🔹 Webinar ID: 949 5252 8740<br/>
+								🔹 Passcode: 148736<br/>
+								🔸 Webinar ID: 917 4821 8264<br/>
+								🔸 Passcode: 048759
+							</p>
+							<p>Acara ini akan penuh dengan keseruan, pengalaman, dan informasi menarik mengenai hal-hal yang mendorong inovasi digital dalam menciptakan solusi keuangan yang inklusif serta memperkuat ketahanan ekonomi. </p>
+							<p>Yuk, jadi bagian dari kemajuan ekonomi dan keuangan digital di masa depan!</p>
+							<p><span class="hackathon-tag">#diSetiapMaknaIndonesia</span> <span class="hackathon-tag">#Hackathon2025</span></p>
+							<!-- <a href="/register" class="btn btn-primary">Register Now</a> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</section> 
 
 		<!-- ======= About Section ======= -->
 		<section id="about" class="about">

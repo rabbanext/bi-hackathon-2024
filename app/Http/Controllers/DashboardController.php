@@ -68,6 +68,7 @@ class DashboardController extends Controller
         $messages = [
             'member_name.*' => 'The Member Name field is required.',
             'member_role.*' => 'The Member Role field is required.',
+            'member_identity.*' => 'The Member Identity field is required.',
             'member_domicile.*' => 'The Member Domicile field is required.',
             'member_email.*' => 'The Member Email field is required.',
             'member_date_of_birth.*' => 'The Member Date of Birth field is required.',
@@ -83,6 +84,7 @@ class DashboardController extends Controller
             'institution' => 'required|string|max:255',
             'member_name.*' => 'required|string|max:255',
             'member_role.*' => 'required|in:leader,member',
+            'member_identity.*' => 'required|string|max:255',
             'member_domicile.*' => 'required|string|max:255',
             'member_email.*' => 'required|email|max:255',
             'member_date_of_birth.*' => 'required|date',
@@ -106,6 +108,7 @@ class DashboardController extends Controller
         if (empty($validatedData['member_name'])) {
             $user->member_name = null;
             $user->member_role = null;
+            $user->member_identity = null;
             $user->member_domicile = null;
             $user->member_email = null;
             $user->member_date_of_birth = null;

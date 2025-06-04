@@ -150,6 +150,15 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control" id="floatingInput" name="member_identity[]"
+                                                        placeholder="Identity No./KTP/Passport" required />
+                                                    <label for="floatingInput">Identity No./KTP/Passport</label>
+                                                    <div class="invalid-feedback"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6"></div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating mb-3">
                                                     <input type="text" class="form-control" id="floatingInput" name="member_domicile[]"
                                                         placeholder="Member Domicile" required />
                                                     <label for="floatingInput">Domicile</label>
@@ -185,7 +194,7 @@
                                                     <input type="text" class="form-control" id="floatingInput" name="member_github_url[]"
                                                         placeholder="Github Link" />
                                                     <label for="floatingInput">Github Link</label>
-                                                    <div id="floatingInputLink" class="form-text">
+                                                    <div id="floatingInputLink" class="form-text text-white">
                                                         https://github.com/username
                                                     </div>
                                                     <div class="invalid-feedback"></div>
@@ -196,7 +205,7 @@
                                                     <input type="text" class="form-control" id="floatingInput" name="member_linkedin_url[]"
                                                         placeholder="CV Document or LinkedIn Link" />
                                                     <label for="floatingInput">CV Document or LinkedIn Link</label>
-                                                    <div id="floatingInputLink" class="form-text">
+                                                    <div id="floatingInputLink" class="form-text text-white">
                                                         https://linkedin.com/in/username
                                                     </div>
                                                     <div class="invalid-feedback"></div>
@@ -208,6 +217,7 @@
                                 @foreach($members as $member)
                                     @php
                                         $names = json_decode($member->member_name);
+                                        $identities = json_decode($member->member_identity);
                                         $roles = json_decode($member->member_role);
                                         $domiciles = json_decode($member->member_domicile);
                                         $emails = json_decode($member->member_email);
@@ -239,6 +249,15 @@
                                                         <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" id="floatingInput" name="member_identity[]"
+                                                        value="{{ isset($identities[$i]) ? $identities[$i] : '' }}" placeholder="Identity No./KTP/Passport" required />
+                                                        <label for="floatingInput">Identity No./KTP/Passport</label>
+                                                        <div class="invalid-feedback"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"></div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3">
                                                         <input type="text" class="form-control" id="floatingInput" name="member_domicile[]"
@@ -279,7 +298,7 @@
                                                         <input type="text" class="form-control" id="floatingInput" name="member_github_url[]"
                                                             value="{{ $github_urls[$i] }}" placeholder="Github Link" />
                                                         <label for="floatingInput">Github Link</label>
-                                                        <div id="floatingInputLink" class="form-text">
+                                                        <div id="floatingInputLink" class="form-text text-white">
                                                             https://github.com/username
                                                         </div>
                                                         <div class="invalid-feedback"></div>
@@ -290,15 +309,15 @@
                                                         <input type="text" class="form-control" id="floatingInput" name="member_linkedin_url[]"
                                                             value="{{ $linkedin_urls[$i] }}" placeholder="CV Document or LinkedIn Link" />
                                                         <label for="floatingInput">CV Document or LinkedIn Link</label>
-                                                        <div id="floatingInputLink" class="form-text">
+                                                        <div id="floatingInputLink" class="form-text text-white">
                                                             https://linkedin.com/in/username
                                                         </div>
                                                         <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
-                                                <!-- <div class="text-center">
+                                                <div class="text-center">
                                                     <button type="button" class="btn btn-danger remove-member-btn">Remove Member</button>
-                                                </div> -->
+                                                </div>
                                             </div>
                                         </div>
                                     @endfor
@@ -440,7 +459,7 @@
     <div class="modal-dialog">
         <div class="modal-content text-black">
             <div class="modal-header">
-                <h5 class="modal-title" id="confirmModalLabel">Confirm Submission</h5>
+                <h5 class="modal-title text-black" id="confirmModalLabel">Confirm Submission</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -589,6 +608,15 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" name="member_identity[]"
+                                    placeholder="Identity No./KTP/Passport" required />
+                                    <label for="floatingInput">Identity No./KTP/Passport</label>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6"></div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="floatingInput" name="member_domicile[]"
                                         placeholder="Member Domicile"
                                         required />
@@ -629,7 +657,7 @@
                                         placeholder="Github Link"
                                         />
                                     <label for="floatingInput">Github Link</label>
-                                    <div id="floatingInputLink" class="form-text">
+                                    <div id="floatingInputLink" class="form-text text-white">
                                         https://github.com/username
                                     </div>
                                     <div class="invalid-feedback"></div>
@@ -641,7 +669,7 @@
                                         placeholder="CV Document or LinkedIn Link"
                                         />
                                     <label for="floatingInput">CV Document or LinkedIn Link</label>
-                                    <div id="floatingInputLink" class="form-text">
+                                    <div id="floatingInputLink" class="form-text text-white">
                                         https://linkedin.com/in/username
                                     </div>
                                     <div class="invalid-feedback"></div>

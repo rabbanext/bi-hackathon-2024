@@ -92,6 +92,7 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithStyl
 
             'Member Name',
             'Member Role',
+            'Member Identity',
             'Member Domicile',
             'Member Email',
             'Member Date of Birth',
@@ -122,6 +123,7 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithStyl
 
         $members = json_decode($user->member_name);
         $roles = json_decode($user->member_role);
+        $identities = json_decode($user->member_identity);
         $domiciles = json_decode($user->member_domicile);
         $emails = json_decode($user->member_email);
         $date_of_births = json_decode($user->member_date_of_birth);
@@ -161,6 +163,7 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithStyl
 
             isset($members[0]) ? $members[0] : null,
             isset($roles[0]) ? $roles[0] : null,
+            isset($identities[0]) ? $identities[0] : null,
             isset($domiciles[0]) ? $domiciles[0] : null,
             isset($emails[0]) ? $emails[0] : null,
             isset($date_of_births[0]) ? date('d-m-Y', strtotime($date_of_births[0])) : null,
@@ -183,6 +186,7 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithStyl
                     '',
                     '',
                     '',
+                    '',
 
                     '',
                     '',
@@ -191,6 +195,7 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithStyl
 
                     $members[$i],
                     isset($roles[$i]) ? $roles[$i] : null,
+                    isset($identities[$i]) ? $identities[$i] : null,
                     isset($domiciles[$i]) ? $domiciles[$i] : null,
                     isset($emails[$i]) ? $emails[$i] : null,
                     isset($date_of_births[$i]) ? date('d-m-Y', strtotime($date_of_births[$i])) : null,

@@ -31,6 +31,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'submit_for',
         'member_name',
         'member_role',
+        'member_identity',
         'member_domicile',
         'member_email',
         'member_date_of_birth',
