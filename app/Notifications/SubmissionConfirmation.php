@@ -41,7 +41,8 @@ class SubmissionConfirmation extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('Submission Confirmation')
+            ->from('noreply-hackathonfekdi@gmail.com', 'Hackathon Team')
+            ->subject('Bank Indonesia Hackathon - Submission Confirmation')
             ->line('Your submission has been received.')
             ->line('Thank you for your participation.');
     }
