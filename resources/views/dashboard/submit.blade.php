@@ -477,6 +477,21 @@
 
 <!-- Validation and Submit JS -->
 <script>
+    function allMembersAreMember() {
+        var roleSelects = document.querySelectorAll('.role-select');
+        var total = roleSelects.length;
+        var memberCount = 0;
+
+        roleSelects.forEach(function (select) {
+            if (select.value === 'member') {
+                memberCount++;
+            }
+        });
+
+        // Jika semua anggota adalah "member", kembalikan true
+        return (total > 0 && memberCount === total);
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
         var form = document.getElementById('mainForm');
         var saveButton = document.getElementById('saveButton');
@@ -507,6 +522,11 @@
             var isValid = validateForm();
 
             if (isValid) {
+                if (allMembersAreMember()) {
+                    alert('At least one team member must be a "Group Leader".');
+                    return;
+                }
+                
                 // Add submitted input to the form
                 var isSubmitInput = document.createElement('input');
                 isSubmitInput.setAttribute('type', 'hidden');
