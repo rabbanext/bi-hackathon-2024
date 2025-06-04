@@ -153,7 +153,7 @@
 									Solusi dalam memperluas literasi inkusi keuangan digital termasuk menghasilkan produk/layanan baru yang inovatif serta mendukung layanan publik
 								</p>
 								<div class="section-content py-2 px-4 text-center">
-									Bagaimana AI/LM dapat memperluas literasi, inklusi keuangan digital termasuk menghasilkan produk/layanan baru yang inovatif serta mendukung layanan publik
+									Bagaimana AI/ML dapat memperluas literasi, inklusi keuangan digital termasuk menghasilkan produk/layanan baru yang inovatif serta mendukung layanan publik?
 								</div>
 								<h5>Sub Tema</h5>
 								<div class="section-content p-1">Financial Literacy Improvement</div>
@@ -170,7 +170,7 @@
 									Solusi dalam rangka memitigasi risiko fraud transaksi, kebocoran data pada ekosistem blockchain maupun non-blockchain. Solusi tersebut dapat bermanfaat pada sektor pemerintah maupun swasta serta pemberantasan aktivitas judi online
 								</p>
 								<div class="section-content py-2 px-4 text-center">
-									Bagaimana Solusi dapat mendukung deteksi anomali transaksi keuangan/pembayaran yang mengarah kepada fraud/kegiatan illegal, validasi smart contract dan/ atau transparansi asset digital dalam jaringan blockchain
+									Bagaimana Solusi dapat mendukung deteksi anomali transaksi keuangan/pembayaran yang mengarah kepada fraud/kegiatan illegal, validasi smart contract dan/ atau transparansi asset digital dalam jaringan blockchain?
 								</div>
 								<h5>Sub Tema</h5>
 								<div class="section-content p-1">Real-time Fraud Detection System</div>
@@ -242,7 +242,7 @@
 					</div>
 					<div class="prize-content mx-0 mx-lg-5 mb-3">
 						<h5 class="mb-0">
-							Kesempatan terlibat pengembangan inovasi dalam BI Digital Innovation Center (BI-DIC)s
+							Kesempatan terlibat pengembangan inovasi dalam BI Digital Innovation Center (BIDIC)
 						</h5>
 					</div>
 					<div class="prize-content mx-0 mx-lg-5 mb-3">
