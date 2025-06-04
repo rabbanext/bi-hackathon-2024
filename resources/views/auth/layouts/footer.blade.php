@@ -123,7 +123,6 @@
 		enableRegisterButton();
 	}
 </script>
-<script src="/vendor/glightbox/js/glightbox.min.js"></script>
 <script>
 	const lightbox = GLightbox({
 		selector: 'a[data-glightbox="gallery2024"]'
