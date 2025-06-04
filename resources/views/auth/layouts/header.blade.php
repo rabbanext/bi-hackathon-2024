@@ -3,15 +3,15 @@
 // header('Location: https://hackathon.fekdi.co.id/');
 ?>
 <head>
-	<!-- Google tag (gtag.js) -->
-	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-EPG8DF2B75"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRPK83HY1G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-		gtag('config', 'G-EPG8DF2B75');
-	</script> -->
+        gtag('config', 'G-TRPK83HY1G');
+    </script>
 	<!-- Google tag (gtag.js) -->
 
 	<meta charset="utf-8" />
