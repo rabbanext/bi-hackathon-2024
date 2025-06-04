@@ -414,7 +414,7 @@
 										<i class="bx bx-chevron-up icon-close"></i>
 									</div>
 									<div id="faq6" class="collapse" data-bs-parent=".faq-list">
-										<p>6 Juli 2025 23.59 WIB</p>
+										<p>11 Juli 2025 23.59 WIB</p>
 									</div>
 								</li>
 								<li>

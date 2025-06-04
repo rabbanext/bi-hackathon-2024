@@ -8,6 +8,14 @@
     <p>Register</p>
 </div>
 <div class="section-content">
+    @php
+        use Carbon\Carbon;
+        $openDate = Carbon::parse("2025-06-05 15:00:00");
+    @endphp
+
+    <p> {{ $openDate }} --- {{ now() }}</p>
+    @if (now()->greaterThanOrEqualTo($openDate))
+
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -106,6 +114,11 @@
 
     </form>
 
+    @else
+    <div class="alert alert-warning mt-4 text-center">
+        <strong>Pendaftaran belum dibuka.</strong> Silakan cek kembali nanti.
+    </div>
+    @endif
 </div>
 <p class="text-center mt-4">
     Already have an account? <a href="login" class="text-info">Log in</a>
