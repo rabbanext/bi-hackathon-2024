@@ -16,30 +16,30 @@
 			<div class="container">
 				<div class="row justify-content-center d-flex align-items-center" style="padding-top:40px;">
 					<div class="col-3 col-lg-2">
-						<img src="/img/hero/component/logo-bi.png" class="img-fluid mb-3" alt="" style="max-height:50px; width:auto;">
+						<img src="/img/hero/component/logo-bi.webp" class="img-fluid mb-3" alt="" style="max-height:50px; width:auto;">
 					</div>
 					<div class="col-3 col-lg-2">
-						<img src="/img/hero/component/logo-ojk.png" class="img-fluid mb-3" alt="" style="max-height:50px; width:auto;">
+						<img src="/img/hero/component/logo-ojk.webp" class="img-fluid mb-3" alt="" style="max-height:50px; width:auto;">
 					</div>
 					<div class="col-3 col-lg-6"></div>
 					<div class="col-3 col-lg-2">
-						<img src="/img/hero/component/logo-fekdi.png" class="img-fluid mb-3" alt="" style="max-height:50px; width:auto;">
+						<img src="/img/hero/component/logo-fekdi.webp" class="img-fluid mb-3" alt="" style="max-height:50px; width:auto;">
 					</div>
 				</div>
 				<div class="row justify-content-center d-flex align-items-center" style="padding-top:34px;">
 					<div class="col-12 col-lg-6">
-						<img src="/img/hero/bi-hackathon-2025.png" class="img-fluid mb-3" alt="">
-						<img src="/img/hero/bi-hackathon-2025-wording.png" class="img-fluid mb-3" alt="">
+						<img src="/img/hero/bi-hackathon-2025.webp" class="img-fluid mb-3" alt="">
+						<img src="/img/hero/bi-hackathon-2025-wording.webp" class="img-fluid mb-3" alt="">
 					</div>
 					<div class="col-12 col-lg-2"></div>
 					<div class="col-12 col-lg-4">
 						<div class="hero-vr d-flex align-items-center justify-content-center">
-							<img src="/img/hero/component/bg.png" width="400" class="img-fluid hero-vr-bg" alt="">
-							<img src="/img/hero/character.png" width="500" class="img-fluid hero-vr" alt="">
-							<img src="/img/hero/component/1.png" width="70" class="img-fluid hero-component" alt="">
-							<img src="/img/hero/component/2.png" width="70" class="img-fluid hero-component2" alt="">
-							<img src="/img/hero/component/3.png" width="100" class="img-fluid hero-component3" alt="">
-							<img src="/img/hero/component/4.png" width="70" class="img-fluid hero-component4" alt="">
+							<img src="/img/hero/component/bg.webp" width="400" class="img-fluid hero-vr-bg" alt="">
+							<img src="/img/hero/character.webp" width="500" class="img-fluid hero-vr" alt="">
+							<img src="/img/hero/component/1.webp" width="70" class="img-fluid hero-component" alt="">
+							<img src="/img/hero/component/2.webp" width="70" class="img-fluid hero-component2" alt="">
+							<img src="/img/hero/component/3.webp" width="100" class="img-fluid hero-component3" alt="">
+							<img src="/img/hero/component/4.webp" width="70" class="img-fluid hero-component4" alt="">
 						</div>
 					</div>
 				</div>
@@ -57,7 +57,7 @@
 				<div class="row gy-4 gx-lg-4">
 					<div class="col-md-6">
 						<div class="announcement-poster">
-							<img src="/img/announcement/2025-1.png" class="img-fluid" alt="Hackathon Bank Indonesia 2025">
+							<img src="/img/announcement/2025-1.webp" class="img-fluid" alt="Hackathon Bank Indonesia 2025">
 						</div>
 					</div>
 					<div class="col-md-6">

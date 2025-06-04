@@ -423,7 +423,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hero */
 #hero-bg {
-	background: url('../img/bg/hero-hackathon-bg-2025.png') no-repeat center center / cover;
+	background: url('../img/bg/hero-hackathon-bg-2025.webp') no-repeat center center / cover;
 }
 #hero {
 	width: 100%;
@@ -439,7 +439,7 @@ h1, h2, h3, h4, h5, h6 {
 			#0a1336 100%
 		),
 		url('../img/bg/hero-bg-2025.png') center center / cover no-repeat scroll; */
-	background: url('../img/bg/hero-bg-2025.png') no-repeat center center / cover;
+	background: url('../img/bg/hero-bg-2025.webp') no-repeat center center / cover;
 	text-align: center;
 	/* padding-top: 74px; */
 	color: #e0e6ff;
