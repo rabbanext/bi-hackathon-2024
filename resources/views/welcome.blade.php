@@ -506,21 +506,21 @@
 				<div class="row g-3">
 					<div class="col-12 col-md-4 col-lg-4 text-center">
 						<div class="section-content gold-gradient">
-							<a class="p-4" href="/img/juara/image-1-1.jpg" data-glightbox="TarikTambang">
+							<a class="p-4" href="/img/juara/image-1-1.webp" data-glightbox="TarikTambang">
 								<h3 style="margin-bottom:0px; text-shadow:0 0 8px rgb(24, 13, 56) !important;">Tarik Tambang Team</h3>
 							</a>
 						</div>
 					</div>
 					<div class="col-12 col-md-4 col-lg-4 text-center">
 						<div class="section-content silver-gradient">
-							<a class="p-4" href="/img/juara/image-2-1.jpg" data-glightbox="FortuneAvenue">
+							<a class="p-4" href="/img/juara/image-2-1.webp" data-glightbox="FortuneAvenue">
 								<h3 style="margin-bottom:0px; text-shadow:0 0 8px rgb(24, 13, 56) !important;">FORTUNE AVENUE</h3>
 							</a>
 						</div>
 					</div>
 					<div class="col-12 col-md-4 col-lg-4 text-center">
 						<div class="section-content bronze-gradient">
-							<a class="p-4" href="/img/juara/image-3-1.jpg" data-glightbox="AI4Indonesia">
+							<a class="p-4" href="/img/juara/image-3-1.webp" data-glightbox="AI4Indonesia">
 								<h3 style="margin-bottom:0px; text-shadow:0 0 8px rgb(24, 13, 56) !important;">AI4Indonesia</h3>
 							</a>
 						</div>
@@ -533,28 +533,28 @@
 				<div class="row g-3 pt-3">
 					<div class="col-6 col-md-4 col-lg-3 text-center">
 						<div class="section-content">
-							<a href="/img/finalis/image-1.jpg" data-glightbox="ArtaJasaTech">
+							<a href="/img/finalis/image-1.webp" data-glightbox="ArtaJasaTech">
 								<h5 style="margin-bottom:0px;">ARTAJASA</h5>
 							</a>
 						</div>
 					</div>
 					<div class="col-6 col-md-4 col-lg-3 text-center">
 						<div class="section-content">
-							<a href="/img/finalis/image-2.jpg" data-glightbox="BravoSix">
+							<a href="/img/finalis/image-2.webp" data-glightbox="BravoSix">
 								<h5 style="margin-bottom:0px;">Bravo Six</h5>
 							</a>
 						</div>
 					</div>
 					<div class="col-6 col-md-4 col-lg-3 text-center">
 						<div class="section-content">
-							<a href="/img/finalis/image-3.jpg" data-glightbox="BeaSmart">
+							<a href="/img/finalis/image-3.webp" data-glightbox="BeaSmart">
 								<h5 style="margin-bottom:0px;">BeaSmart</h5>
 							</a>
 						</div>
 					</div>
 					<div class="col-6 col-md-4 col-lg-3 text-center">
 						<div class="section-content">
-							<a href="/img/finalis/image-4.jpg" data-glightbox="BRISIC">
+							<a href="/img/finalis/image-4.webp" data-glightbox="BRISIC">
 								<h5 style="margin-bottom:0px;">BRISIC</h5>
 							</a>
 						</div>
@@ -564,21 +564,21 @@
 				<div class="row g-3 justify-content-center pt-3">
 					<div class="col-6 col-md-4 col-lg-3 text-center">
 						<div class="section-content">
-							<a href="/img/finalis/image-5.jpg" data-glightbox="FraudRanger">
+							<a href="/img/finalis/image-5.webp" data-glightbox="FraudRanger">
 								<h5 style="margin-bottom:0px;">Fraud Ranger</h5>
 							</a>
 						</div>
 					</div>
 					<div class="col-6 col-md-4 col-lg-3 text-center">
 						<div class="section-content">
-							<a href="/img/finalis/image-6.jpg" data-glightbox="Micromotion">
+							<a href="/img/finalis/image-6.webp" data-glightbox="Micromotion">
 								<h5 style="margin-bottom:0px;">Micromotion</h5>
 							</a>
 						</div>
 					</div>
 					<div class="col-6 col-md-4 col-lg-3 text-center">
 						<div class="section-content">
-							<a href="/img/finalis/image-7.jpg" data-glightbox="TuringTeam">
+							<a href="/img/finalis/image-7.webp" data-glightbox="TuringTeam">
 								<h5 style="margin-bottom:0px;">Turing Team</h5>
 							</a>
 						</div>
@@ -616,50 +616,50 @@
 			<div class="container">
 				<div class="row g-3">
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-1-2.jpg" data-glightbox="TarikTambang">
-							<img src="/img/juara/image-1-2.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						<a href="/img/juara/image-1-2.webp" data-glightbox="TarikTambang">
+							<img src="/img/juara/image-1-2.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-1-3.jpg" data-glightbox="TarikTambang">
-							<img src="/img/juara/image-1-3.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						<a href="/img/juara/image-1-3.webp" data-glightbox="TarikTambang">
+							<img src="/img/juara/image-1-3.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-1-4.jpg" data-glightbox="TarikTambang">
-							<img src="/img/juara/image-1-4.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
-						</a>
-					</div>
-
-					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-2-2.jpg" data-glightbox="FortuneAvenue">
-							<img src="/img/juara/image-2-2.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
-						</a>
-					</div>
-					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-2-3.jpg" data-glightbox="FortuneAvenue">
-							<img src="/img/juara/image-2-3.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
-						</a>
-					</div>
-					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-2-4.jpg" data-glightbox="FortuneAvenue">
-							<img src="/img/juara/image-2-4.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						<a href="/img/juara/image-1-4.webp" data-glightbox="TarikTambang">
+							<img src="/img/juara/image-1-4.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-3-2.jpg" data-glightbox="AI4Indonesia">
-							<img src="/img/juara/image-3-2.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						<a href="/img/juara/image-2-2.webp" data-glightbox="FortuneAvenue">
+							<img src="/img/juara/image-2-2.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-3-3.jpg" data-glightbox="AI4Indonesia">
-							<img src="/img/juara/image-3-3.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						<a href="/img/juara/image-2-3.webp" data-glightbox="FortuneAvenue">
+							<img src="/img/juara/image-2-3.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/juara/image-3-4.jpg" data-glightbox="AI4Indonesia">
-							<img src="/img/juara/image-3-4.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						<a href="/img/juara/image-2-4.webp" data-glightbox="FortuneAvenue">
+							<img src="/img/juara/image-2-4.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/juara/image-3-2.webp" data-glightbox="AI4Indonesia">
+							<img src="/img/juara/image-3-2.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/juara/image-3-3.webp" data-glightbox="AI4Indonesia">
+							<img src="/img/juara/image-3-3.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						</a>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<a href="/img/juara/image-3-4.webp" data-glightbox="AI4Indonesia">
+							<img src="/img/juara/image-3-4.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 				</div>
@@ -673,40 +673,40 @@
 			<div class="container">
 				<div class="row g-3">
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/finalis/image-1.jpg" data-glightbox="gallery2024">
-							<img src="/img/finalis/image-1.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						<a href="/img/finalis/image-1.webp" data-glightbox="gallery2024">
+							<img src="/img/finalis/image-1.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/finalis/image-2.jpg" data-glightbox="gallery2024">
-							<img src="/img/finalis/image-2.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						<a href="/img/finalis/image-2.webp" data-glightbox="gallery2024">
+							<img src="/img/finalis/image-2.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/finalis/image-3.jpg" data-glightbox="gallery2024">
-							<img src="/img/finalis/image-3.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						<a href="/img/finalis/image-3.webp" data-glightbox="gallery2024">
+							<img src="/img/finalis/image-3.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/finalis/image-4.jpg" data-glightbox="gallery2024">
-							<img src="/img/finalis/image-4.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						<a href="/img/finalis/image-4.webp" data-glightbox="gallery2024">
+							<img src="/img/finalis/image-4.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 				</div>
 				<div class="row g-3 justify-content-center pt-3">
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/finalis/image-5.jpg" data-glightbox="gallery2024">
-							<img src="/img/finalis/image-5.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						<a href="/img/finalis/image-5.webp" data-glightbox="gallery2024">
+							<img src="/img/finalis/image-5.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/finalis/image-6.jpg" data-glightbox="gallery2024">
-							<img src="/img/finalis/image-6.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						<a href="/img/finalis/image-6.webp" data-glightbox="gallery2024">
+							<img src="/img/finalis/image-6.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 					<div class="col-12 col-md-6 col-lg-3">
-						<a href="/img/finalis/image-7.jpg" data-glightbox="gallery2024">
-							<img src="/img/finalis/image-7.jpg" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+						<a href="/img/finalis/image-7.webp" data-glightbox="gallery2024">
+							<img src="/img/finalis/image-7.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
 						</a>
 					</div>
 				</div>
