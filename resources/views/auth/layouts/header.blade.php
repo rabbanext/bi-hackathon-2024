@@ -60,9 +60,9 @@
     <div class="container d-flex align-items-center justify-content-lg-between">
         <!-- Logo -->
         <div class="nav-logo">
-            <a href="/" class="me-4"><img src="/img/logo-bi.png" alt="" class="img-fluid logo-img " style="max-height:30px !important; width:auto;"></a>
-            <a href="/" class="me-4"><img src="/img/hero/component/logo-ojk.png" alt="" class="img-fluid logo-img fekdi" style="max-height:30px !important; width:auto;"></a>
-            <a href="/" class=""><img src="/img/hero/component/logo-fekdi.png" alt="" class="img-fluid logo-img fekdi" style="max-height:30px !important; width:auto;"></a>
+            <a href="/" class="me-2 me-lg-4"><img src="/img/logo-bi.png" alt="" class="img-fluid logo-img " style="max-height:30px !important; width:auto;"></a>
+            <a href="/" class="me-2 me-lg-4"><img src="/img/hero/component/logo-ojk.png" alt="" class="img-fluid logo-img fekdi" style="max-height:30px !important; width:auto;"></a>
+            <a href="/" class="me-2 me-lg-4"><img src="/img/hero/component/logo-fekdi.png" alt="" class="img-fluid logo-img fekdi" style="max-height:30px !important; width:auto;"></a>
         </div>
 
         <nav id="navbar" class="navbar order-last order-lg-0 ms-auto">
@@ -75,6 +75,32 @@
                 <li><a class="nav-link scrollto" href="/#podcast">Podcast</a></li>
                 <li><a class="nav-link scrollto" href="/#about">About</a></li>
 
+
+                @auth
+                @if (Auth::user()->type == "user")
+                    <li><h5 class="pt-4 ps-4 text-white">Submit</h5></li>
+                    <li><a class="nav-link" href="/profile">My Profile</a></li>
+                    <li><a class="nav-link" href="/submit">Submit Proposal</a></li>
+                @elseif (Auth::user()->type == "admin")
+                    <li><h5 class="pt-4 ps-4 text-white">Menu</h5></li>
+                    <li><a class="nav-link" href="/users">Users</a></li>
+                    <li><a class="nav-link" href="/projects">Projects</a></li>
+                    <li><a class="nav-link" href="/email_responses">Email Responses</a></li>
+                @endif
+                    <li>
+                        <a href="{{ route('logout') }}" id="logout-btn"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <span>{{ __('Logout') }}</span>
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
+                @else
+                    <li><a class="nav-link" href="/register">Register</a></li>
+                
+                @endauth
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
@@ -83,7 +109,7 @@
         @auth
         @if (Auth::user()->type == "user")
             <a href="javascript:void(0);" data-bs-toggle="dropdown">
-                <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button">Submit</button>
+                <button id="register-btn" class="d-none d-sm-block btn btn-primary btn-header-primary ms-1 ms-lg-4" type="button">Submit</button>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
                 <li>
@@ -100,7 +126,7 @@
                 </li>
         @elseif (Auth::user()->type == "admin")
             <a href="javascript:void(0);" data-bs-toggle="dropdown">
-                <button id="register-btn" class="btn btn-primary btn-header-primary ms-4"
+                <button id="register-btn" class="d-none d-sm-block btn btn-primary btn-header-primary ms-1 ms-lg-4"
                     type="button">Menu</button>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
@@ -137,7 +163,7 @@
             </ul>
         @else
             <a href="/register">
-                <button id="register-btn" class="btn btn-primary btn-header-primary ms-4" type="button">Register</button>
+                <button id="register-btn" class="d-none d-sm-block btn btn-primary btn-header-primary ms-1 ms-lg-4" type="button">Register</button>
             </a>
         @endauth
     </div>
