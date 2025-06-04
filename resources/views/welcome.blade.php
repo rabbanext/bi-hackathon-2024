@@ -200,17 +200,23 @@
 					</div>
 				</div>
 				<div class="timeline-item">
+					<div class="timeline-date">11 Juli 2025</div>
+					<div class="timeline-content">
+						Last Submission
+					</div>
+				</div>
+				<div class="timeline-item">
 					<div class="timeline-date">1 Agustus 2025 </div>
 					<div class="timeline-content">
 						Pengumuman Finalis
 					</div>
 				</div>
-				<div class="timeline-item">
+				<!-- <div class="timeline-item">
 					<div class="timeline-date">4 Agustus s.d. 19 September 2025 </div>
 					<div class="timeline-content">
 						Pengembangan Prototype dan Mentoring
 					</div>
-				</div>
+				</div> -->
 				<div class="timeline-item">
 					<div class="timeline-date">22 s.d. 23 September 2025 </div>
 					<div class="timeline-content">
@@ -220,7 +226,7 @@
 				<div class="timeline-item">
 					<div class="timeline-date">24 s.d. 26 September 2025 </div>
 					<div class="timeline-content">
-						Pengumuman pemenang & Showcase Finalis di FEKDI 2025
+						Pengumuman pemenang dan Showcase Finalis di FEKDI 2025
 					</div>
 				</div>
 			</div>
@@ -421,8 +427,8 @@
 										<p>Kick off dan Seminar Hackathon 5 Juni 2025</p>
 										<p>Last Submission 11 Juli 2025</p>
 										<p>Pengumuman Finalis 1 Agustus 2025</p>
-										<p>Karantina dan Penjurian Akhir 22 sd 23 September 2025</p>
-										<p>Pengumuman pemenang di H1, Showcase Finalis di FEKDI 2025 di H3 (24-26 September 2025)</p>
+										<p>Karantina dan Penjurian Akhir 22 s.d. 23 September 2025</p>
+										<p>Pengumuman pemenang di H1, Showcase Finalis di FEKDI 2025 di H3 (24 s.d. 26 September 2025)</p>
 									</div>
 								</li>
 							</ul>
