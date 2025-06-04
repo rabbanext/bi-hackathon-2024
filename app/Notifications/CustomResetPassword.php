@@ -11,7 +11,7 @@ class CustomResetPassword extends ResetPasswordNotification
     {
         return (new MailMessage)
             ->from('noreply-hackathonfekdi@gmail.com', 'Hackathon Team')
-            ->subject('Bank Indonesia Hackathon - Reset Password Anda')
+            ->subject('BI - OJK Hackathon 2025 - Reset Password Anda')
             ->view('emails.reset', [
                 'url' => url(route('password.reset', [
                     'token' => $this->token,

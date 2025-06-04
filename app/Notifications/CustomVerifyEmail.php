@@ -15,7 +15,7 @@ class CustomVerifyEmail extends BaseVerifyEmail
 
         return (new MailMessage)
             ->from('noreply-hackathonfekdi@gmail.com', 'Hackathon Team')
-            ->subject('Bank Indonesia Hackathon - Verifikasi Email Anda')
+            ->subject('BI - OJK Hackathon 2025 - Verifikasi Email Anda')
             ->view('emails.verify', [
                 'url' => $verificationUrl,
                 'user' => $notifiable,

@@ -42,7 +42,7 @@ class SubmissionConfirmation extends Notification
     {
         return (new MailMessage)
             ->from('noreply-hackathonfekdi@gmail.com', 'Hackathon Team')
-            ->subject('Bank Indonesia Hackathon - Submission Confirmation')
+            ->subject('BI - OJK Hackathon 2025 - Submission Confirmation')
             ->line('Your submission has been received.')
             ->line('Thank you for your participation.');
     }

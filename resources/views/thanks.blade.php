@@ -32,7 +32,7 @@
   <meta property="og:image:width" content="660" />
   <meta property="og:image:height" content="176" />
   <meta property="og:image:alt" content="Rabbanext" />
-  <title>Thanks | Bank Indonesia Hackathon 2025</title>
+  <title>BI - OJK Hackathon 2025</title>
 
   <!-- Favicons -->
   <link href="/img/favicon.png" rel="icon">
