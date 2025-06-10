@@ -22,7 +22,7 @@
 				<h4>Contact</h4>
 				<p>Contact Center BI :</p>
 				<p>
-					<strong>Email:</strong> hackathon2025@bi.go.id<br/>
+					<strong>Email:</strong> hackathonfekdi@bi.go.id<br/>
 					<strong>Telp:</strong> (131) 1500131<br/>
 					<strong>Whatsapp (24 Jam):</strong> +62 81 131 131 131<br/>
 					<strong>Line (24 jam):</strong> @bank_indonesia
