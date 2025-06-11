@@ -157,7 +157,7 @@
 								</div>
 								<h5>Sub Tema</h5>
 								<div class="section-content p-1">Financial Literacy Improvement</div>
-								<div class="section-content p-1">MSME Business and Financial Solution</div>
+								<div class="section-content p-1">MSME Business, Credit Rating, And Financial Solution.</div>
 								<div class="section-content p-1">Public Services Optimization, i.e: Bansos</div>
 							</div>
 						</div>
