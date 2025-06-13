@@ -94,7 +94,7 @@ class OtpController extends Controller
             'to' => $phoneNumber,
             'type' => 'template',
             'template' => [
-                'namespace' => '1c5393d5_8a56_4677_8faa_a8fd957377cc',
+                'namespace' => '2bd879c5_b17c_48b6_8611_aa2a6595d39c',
                 'name' => 'hackathon_otp',
                 'language' => [
                     'policy' => 'deterministic',
