@@ -58,7 +58,8 @@
 					<div class="col-md-6">
 						<div class="announcement-poster">
 							<!-- <img src="/img/announcement/2025-1.webp" class="img-fluid" alt="Hackathon Bank Indonesia 2025"> -->
-							<img src="/img/announcement/2025-2.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025">
+							<!-- <img src="/img/announcement/2025-2.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025"> -->
+							<img src="/img/announcement/2025-3.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025">
 						</div>
 					</div>
 					<div class="col-md-6">
