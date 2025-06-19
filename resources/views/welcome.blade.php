@@ -57,11 +57,12 @@
 				<div class="row gy-4 gx-lg-4">
 					<div class="col-md-6">
 						<div class="announcement-poster">
-							<img src="/img/announcement/2025-1.webp" class="img-fluid" alt="Hackathon Bank Indonesia 2025">
+							<!-- <img src="/img/announcement/2025-1.webp" class="img-fluid" alt="Hackathon Bank Indonesia 2025"> -->
+							<img src="/img/announcement/2025-2.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025">
 						</div>
 					</div>
 					<div class="col-md-6">
-						<div class="announcement-details">
+						<!-- <div class="announcement-details">
 							<h4>📢 BI-OJK HACKATHON 2025! 🎉</h4>
 							<p>BI-OJK Hackathon 2025 merupakan sebuah kompetisi intelektual untuk menggali berbagai potensi talenta inovator dalam memecahkan masalah menggunakan teknologi dan menjadi wadah eksploratif bagi ide-ide inovatif, serta memfasilitasi sinergi dengan industri untuk mendapatkan solusi berbasis teknologi.</p>
 							<p>Untuk mengetahui lebih lanjut program tersebut, kami mengundang bapak/ibu untuk hadir dalam acara Kick-Off dan Seminar BI-OJK Hackathon 2025 pada:</p>
@@ -78,9 +79,34 @@
 							</p>
 							<p>Acara ini akan penuh dengan keseruan, pengalaman, dan informasi menarik mengenai hal-hal yang mendorong inovasi digital dalam menciptakan solusi keuangan yang inklusif serta memperkuat ketahanan ekonomi. </p>
 							<p>Yuk, jadi bagian dari kemajuan ekonomi dan keuangan digital di masa depan!</p>
+
 							<p><span class="hackathon-tag">#diSetiapMaknaIndonesia</span> <span class="hackathon-tag">#Hackathon2025</span></p>
-							<!-- <a href="/register" class="btn btn-primary">Register Now</a> -->
+						</div> -->
+
+						<div class="announcement-details">
+							<h4>Tektok Podcast Hackathon 2025</h4>
+							<p style="line-height:2;">
+								➡️ Memecahkan masalah dgn teknologi<br/>
+								➡️ berkompetisi & kontribusi utk negeri<br/>
+								➡️ Memajukan ekonomi keuangan digital<br/>
+								☑️ Inilah semangat BI & @ojkindonesia yang diusung dalam BI-OJK Hackathon 2025 — ajang kompetisi bagi talenta inovator untuk memecahkan tantangan lewat solusi teknologi, sekaligus wadah eksplorasi ide-ide kreatif dan kolaborasi dengan industri.
+							</p>
+							<p>Simak informasi selengkapnya pada:</p>
+							<br/>
+							<h4>🎙TEKTOK Podcast #1</h4>
+							<p>(Teknologi, Transformasi dan Kolaborasi)</p>
+							<p style="line-height:2;">Yuk, <span class="hackathon-tag">#SobatRupiah</span>, <span class="hackathon-tag">#BeriMakna</span> dengan menyimak informasi seputar <span class="hackathon-tag">#Hackathon2025</span> dari Ekonom Yunior Departemen Kebijakan Sistem Pembayaran Bank Indonesia!</p>
+
+							<p style="line-height:2;">
+								🗓 20 Juni 2025<br/>
+								🕰 19.00 WIB<br/>
+								🎦 Join via Zoom:<br/>
+								🔸 Meeting ID: 942 7120 5959<br/>
+								🔸 Passcode: 569836
+							</p>
+							<p>Ditunggu kehadirannya, ya!</p>
 						</div>
+						
 					</div>
 				</div>
 			</div>
