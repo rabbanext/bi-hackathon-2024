@@ -19,19 +19,19 @@
 
   <meta name="theme-color" content="#2A73AC">
 
-  <meta name="author" content="rabbanext" />
+  <meta name="author" content="Bank Indonesia" />
   <meta name="description" content="Bank Indonesia Hackathon 2025" />
 
   <meta property="og:site_name" content="Bank Indonesia Hackathon 2025" />
   <meta property="og:title" content="Bank Indonesia Hackathon 2025" />
-  <meta property="og:description" content="Artificial Intelligence & Machine Learning for Digital Economy and Finance in Indonesia" />
+  <meta property="og:description" content="EMPOWERING THE FUTURE: Innovating Digital Service and Financial Solutions for Inclusive Growth and Resilient Economy" />
   <meta property="og:url" content="https://hackathon.fekdi.co.id" />
-  <meta property="og:image" content="/img/hero/hero-hackathon.png" />
-  <meta property="og:image:secure_url" content="/img/hero/hero-hackathon.png" />
+  <meta property="og:image" content="/img/hero/bi-hackathon-2025.png" />
+  <meta property="og:image:secure_url" content="/img/hero/bi-hackathon-2025.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="660" />
   <meta property="og:image:height" content="176" />
-  <meta property="og:image:alt" content="Rabbanext" />
+  <meta property="og:image:alt" content="Bank Indonesia" />
   <title>BI - OJK Hackathon 2025</title>
 
   <!-- Favicons -->
