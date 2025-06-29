@@ -317,9 +317,11 @@
                                                         <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
+                                                @if ($i != 0)
                                                 <div class="text-center">
                                                     <button type="button" class="btn btn-danger remove-member-btn">Remove Member</button>
                                                 </div>
+                                                @endif
                                             </div>
                                         </div>
                                     @endfor
@@ -592,7 +594,7 @@
         var addMemberBtn = document.getElementById('add-member-btn');
 
         function toggleAddMemberButton() {
-            if (currentMembers >= maxMembers) {
+            if (currentMembers > maxMembers) {
                 addMemberBtn.style.display = 'none';
             } else {
                 addMemberBtn.style.display = 'block';
@@ -602,7 +604,7 @@
         toggleAddMemberButton();
 
         addMemberBtn.addEventListener('click', function () {
-            if (currentMembers < maxMembers) {
+            if (currentMembers <= maxMembers) {
                 var teamMembersContainer = document.getElementById('team-members');
                 var newMemberDiv = document.createElement('div');
                 newMemberDiv.innerHTML = `
@@ -727,7 +729,7 @@
 
         document.getElementById('team-members').addEventListener('click', function (e) {
             if (e.target.classList.contains('remove-member-btn')) {
-                e.target.parentElement.parentElement.remove();
+                e.target.parentElement.parentElement.parentElement.remove();
                 currentMembers--;
                 toggleAddMemberButton();
             }
