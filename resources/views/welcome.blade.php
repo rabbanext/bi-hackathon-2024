@@ -386,7 +386,7 @@
 										<i class="bx bx-chevron-up icon-close"></i>
 									</div>
 									<div id="faq2" class="collapse" data-bs-parent=".faq-list">
-										<p>Tim dapat menyerahkan Ide dari Inovasi dalam bentuk Mockup, PoC, Prototype atau Pilot</p>
+										<p>Calon peserta cukup melakukan registrasi dengan mengisi data diri dan data tim, lalu melakukan submit proposal dalam bentuk deck.</p>
 									</div>
 								</li>
 								<li>
