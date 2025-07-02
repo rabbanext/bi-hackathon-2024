@@ -59,7 +59,8 @@
 						<div class="announcement-poster">
 							<!-- <img src="/img/announcement/2025-1.webp" class="img-fluid" alt="Hackathon Bank Indonesia 2025"> -->
 							<!-- <img src="/img/announcement/2025-2.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025"> -->
-							<img src="/img/announcement/2025-3.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025">
+							<!-- <img src="/img/announcement/2025-3.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025"> -->
+							<img src="/img/announcement/2025-4.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025">
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -84,7 +85,7 @@
 							<p><span class="hackathon-tag">#diSetiapMaknaIndonesia</span> <span class="hackathon-tag">#Hackathon2025</span></p>
 						</div> -->
 
-						<div class="announcement-details">
+						<!-- <div class="announcement-details">
 							<h4>Tektok Podcast Hackathon 2025</h4>
 							<p style="line-height:2;">
 								➡️ Memecahkan masalah dgn teknologi<br/>
@@ -106,8 +107,35 @@
 								🔸 Passcode: 569836
 							</p>
 							<p>Ditunggu kehadirannya, ya!</p>
-						</div>
+						</div> -->
 						
+
+						<div class="announcement-details">
+							<h4>Tektok Podcast Hackathon 2025</h4>
+							<p style="line-height:2;">
+								➡️ Memecahkan masalah dgn teknologi<br/>
+								➡️ Berkompetisi & kontribusi utk negeri<br/>
+								➡️ Memajukan ekonomi keuangan digital<br/>
+								☑️ Inilah semangat BI & @ojkindonesia yang diusung dalam BI-OJK Hackathon 2025 — ajang kompetisi bagi talenta inovator untuk memecahkan tantangan lewat solusi teknologi, sekaligus wadah eksplorasi ide-ide kreatif dan kolaborasi dengan industri.
+							</p>
+							<p>Simak informasi selengkapnya pada:</p>
+							<br/>
+							<h4>🎙TEKTOK Podcast #3</h4>
+							<p>(Teknologi, Transformasi dan Kolaborasi)</p>
+
+							<p style="line-height:2;">
+								🗓 3 Juli 2025<br/>
+								🕰 16.00 WIB<br/>
+								🎦 Join via Zoom:<br/>
+								🔸 Meeting ID: 951 9404 4372<br/>
+								🔸 Passcode: 301629
+							</p>
+							<p>🚀 Jadilah bagian dari solusi ekonomi keuangan digital masa depan di BI-OJK Hackathon 2025! 🚀</p>
+							<p>Ditunggu kehadirannya ya! 😉</p>
+							
+
+							<p style="line-height:2;"><span class="hackathon-tag">#Hackathon2025</span> <span class="hackathon-tag">#FEKDIxIFSE2025</span> <span class="hackathon-tag">#InovasiUntukNegeri</span> <span class="hackathon-tag">#diSetiapMaknaIndonesia</span></p>
+						</div>
 					</div>
 				</div>
 			</div>
