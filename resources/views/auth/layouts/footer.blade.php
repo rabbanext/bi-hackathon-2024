@@ -38,7 +38,7 @@
 					<a href="https://www.bi.go.id/"><i class="bx bx-globe"></i></a>
 					<a href="https://www.instagram.com/bank_indonesia/"><i class="bx bxl-instagram"></i></a>
 					<a href="https://www.instagram.com/fekdi_official/"><i class="bx bxl-instagram"></i></a>
-					<a href="https://www.youtube.com/@BankIndonesiaChannel/"><i class="bx bxl-youtube"></i></a>
+					<a href="https://www.youtube.com/@KanalBankIndonesia/"><i class="bx bxl-youtube"></i></a>
 					<a href="https://www.facebook.com/BankIndonesiaOfficial/"><i class="bx bxl-facebook"></i></a>
 				</div>
 				<p class="pt-4">Otoritas Jasa Keuangan</p>
