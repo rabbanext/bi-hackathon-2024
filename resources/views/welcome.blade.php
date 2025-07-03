@@ -49,14 +49,11 @@
 	<!-- End Hero -->
 
 	<main id="main">
-		<section>
+		<!-- <section>
 			<div class="container">
 				<div class="section-content">
-					<!-- <div class="section-title" style="padding-right: 5rem; padding-left: 5rem;"> -->
 						<h3>Salam hangat untuk para inovator digital tanah air,</h3>
-					<!-- </div> -->
 					<div class="row justify-content-center">
-						<!-- <div class="col-xl-10"> -->
 							<p>Bank Indonesia dan Otoritas Jasa Keuangan mengajak Anda untuk berpartisipasi dalam BI-OJK Hackathon 2025 , ajang inovasi untuk menjawab tantangan layanan keuangan digital masa depan.</p>
 
 							<p>🌍 Tema:</p>
@@ -77,13 +74,11 @@
 								🔗 Submit proposalmu sekarang:<br/>
 								<a href="https://hackathon.fekdifse.co.id">👉 https://hackathon.fekdifse.co.id</a>
 							</p>
-
-						<!-- </div> -->
 					</div>
 				</div>
 
 			</div>
-		</section>
+		</section> -->
 
 		<section id="announcement" class="announcement">
 			<div class="container" >
