@@ -168,7 +168,7 @@
 							<p>
 								Di talk series dengan tema "How AI Reshaping Indonesia's Payment Ecosystem", kalian akan dibawa lebih dalam bagaimana AI menjadi peranan kunci dalam transformasi sistem pembayaran yang canggih bersama dengan speaker ahli dibidangnya ✨️
 							</p>
-							
+
 							<p style="line-height:2; margin-bottom:0;">
 								🗣 Speaker:
 							</p>
@@ -188,7 +188,7 @@
 							<p style="line-height:2;">
 								⛓️‍💥 RSVP: <a href="https://s.id/TS1-AIPayment" target="_blank">s.id/TS1-AIPayment</a><br/>
 							</p>
-							<p>Jangan lewatkan kesempatan untuk mendapatkan insight yang berharga dari praktisi dibidangnya ✨️🚀</p>
+							<p>Jangan lewatkan kesempatan untuk mendapatkan insight yang berharga dari praktisi dibidangnya, beserta penjelasan rinci mengenai BI-OJK Hackathon 2025. ✨️🚀</p>
 						</div>
 					</div>
 				</div>
