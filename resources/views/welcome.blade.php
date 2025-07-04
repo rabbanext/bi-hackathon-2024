@@ -84,7 +84,7 @@
 			<div class="container" >
 				<div class="section-title pb-2 ms-2 mb-4">
 					<!-- <h2>Bank Indonesia bersama Otoritas Jasa Keuangan dengan bangga mempersembahkan:</h2> -->
-					<h2>Saksikan juga bincang inspiratif seputar Hackathon 2025 di:</h2>
+					<h2>BI-OJK Hackathon 2025 x Google Developer Group on Campus Indonesia 2025</h2>
 				</div>
 				<div class="row gy-4 gx-lg-4">
 					<div class="col-md-6">
@@ -92,7 +92,8 @@
 							<!-- <img src="/img/announcement/2025-1.webp" class="img-fluid" alt="Hackathon Bank Indonesia 2025"> -->
 							<!-- <img src="/img/announcement/2025-2.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025"> -->
 							<!-- <img src="/img/announcement/2025-3.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025"> -->
-							<img src="/img/announcement/2025-4.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025">
+							<!-- <img src="/img/announcement/2025-4.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025"> -->
+							<img src="/img/announcement/2025-5.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025">
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -142,7 +143,7 @@
 						</div> -->
 						
 
-						<div class="announcement-details">
+						<!-- <div class="announcement-details">
 							<h4>🎙TEKTOK Podcast #3</h4>
 							<p>Teknologi, Transformasi dan Kolaborasi</p>
 							<p style="line-height:2;">
@@ -158,6 +159,36 @@
 							<p>🚀 Jadilah bagian dari solusi ekonomi keuangan digital masa depan di BI-OJK Hackathon 2025! 🚀</p>
 							<p>Ditunggu kehadirannya ya! 😉</p>
 							<p style="line-height:2;"><span class="hackathon-tag">#Hackathon2025</span> <span class="hackathon-tag">#FEKDIxIFSE2025</span> <span class="hackathon-tag">#InovasiUntukNegeri</span> <span class="hackathon-tag">#diSetiapMaknaIndonesia</span></p>
+						</div> -->
+
+						<div class="announcement-details">
+							<p>
+								Seiring berjalannya waktu sistem pembayaran di Indonesia semakin canggih dan beragam. Tapi, pernah nggak sih kepikiran bagaimana teknologi AI menjadi komponen pendukung untuk membuat metode transaksi di masa sekarang semakin mudah, efisien, dan terjamin keamanannya? 🤔
+							</p>
+							<p>
+								Di talk series dengan tema "How AI Reshaping Indonesia's Payment Ecosystem", kalian akan dibawa lebih dalam bagaimana AI menjadi peranan kunci dalam transformasi sistem pembayaran yang canggih bersama dengan speaker ahli dibidangnya ✨️
+							</p>
+							
+							<p style="line-height:2; margin-bottom:0;">
+								🗣 Speaker:
+							</p>
+							<h6 style="margin-bottom:5px;">
+								FX Tyas Prasaja
+							</h6>
+							<p>
+								Economist, Payment System Specialist at Bank Indonesia
+							</p>
+
+							<p style="line-height:2;">
+								📆 Tanggal: 05 Juli 2025<br/>
+								🕑 Waktu: 14.00 WIB<br/>
+								💻 Platform: Google Meet<br/>
+							<p>
+								
+							<p style="line-height:2;">
+								⛓️‍💥 RSVP: <a href="https://s.id/TS1-AIPayment" target="_blank">s.id/TS1-AIPayment</a><br/>
+							</p>
+							<p>Jangan lewatkan kesempatan untuk mendapatkan insight yang berharga dari praktisi dibidangnya ✨️🚀</p>
 						</div>
 					</div>
 				</div>
