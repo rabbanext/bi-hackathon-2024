@@ -70,6 +70,7 @@
                 </div>
             </div>
         </div>
+
         @if (Auth::user()->submitted == null)
 
         @else
@@ -432,7 +433,13 @@
                 </div>
             </div>
             <div class="text-center">
-                <button type="button" class="btn btn-primary" id="submitButton" data-bs-toggle="modal" data-bs-target="@if (Auth::user()->otp_verified_at == null) #verifyModal @else #confirmModal @endif">Submit</button>
+
+                @if (Auth::user()->submitted == null)
+                    <button type="button" class="btn btn-primary" id="submitButton" data-bs-toggle="modal" data-bs-target="@if (Auth::user()->otp_verified_at == null) #verifyModal @else #confirmModal @endif">Submit</button>
+                @else
+                    <button type="button" class="btn btn-primary" id="submitButton" data-bs-toggle="modal" data-bs-target="@if (Auth::user()->otp_verified_at == null) #verifyModal @else #confirmModal @endif">Re-submit</button>
+                @endif
+                
             </div>
         </form>
     </div>
