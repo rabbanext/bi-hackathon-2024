@@ -71,6 +71,13 @@
             </div>
         </div>
         @if (Auth::user()->submitted == null)
+
+        @else
+            <div class="alert alert-success">
+                <strong>Your form has been submitted.</strong> Thank you for your participation, and best of luck!<br/>You may still resubmit the form if needed.
+            </div>
+        @endif
+
         <form action="{{ route('posts.update',Auth::user()->id) }}" method="POST" id="mainForm" enctype="multipart/form-data">
             <div class="section-content mb-4">
                 <div class="card-body">
@@ -428,11 +435,6 @@
                 <button type="button" class="btn btn-primary" id="submitButton" data-bs-toggle="modal" data-bs-target="@if (Auth::user()->otp_verified_at == null) #verifyModal @else #confirmModal @endif">Submit</button>
             </div>
         </form>
-        @else
-            <div class="alert alert-success">
-                <strong>Your form is submitted.</strong> Thank you for your participation. Best of luck!
-            </div>
-        @endif
     </div>
     <div class="content-backdrop fade"></div>
 </div>
