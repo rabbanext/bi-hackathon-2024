@@ -242,7 +242,6 @@
 								🚀 Jadilah bagian dari solusi ekonomi keuangan digital masa depan di BI-OJK Hackathon 2025!<br/>
 								🚀 Ditunggu kehadirannya ya! 😉
 							<p>
-							<p style="line-height:2;"><span class="hackathon-tag">#Hackathon2025</span> <span class="hackathon-tag">#FEKDIxIFSE2025</span> <span class="hackathon-tag">#InovasiUntukNegeri</span> <span class="hackathon-tag">#diSetiapMaknaIndonesia</span></p>
 						</div>
 					</div>
 				</div>
