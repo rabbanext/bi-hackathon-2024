@@ -84,7 +84,8 @@
 			<div class="container" >
 				<div class="section-title pb-2 ms-2 mb-4">
 					<!-- <h2>Bank Indonesia bersama Otoritas Jasa Keuangan dengan bangga mempersembahkan:</h2> -->
-					<h2>BI-OJK Hackathon 2025 x Google Developer Group on Campus Indonesia 2025</h2>
+					<!-- <h2>BI-OJK Hackathon 2025 x Google Developer Group on Campus Indonesia 2025</h2> -->
+					<h2>Attention Innovators and Digital Enthusiasts!</h2>
 				</div>
 				<div class="row gy-4 gx-lg-4">
 					<div class="col-md-6">
@@ -93,7 +94,8 @@
 							<!-- <img src="/img/announcement/2025-2.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025"> -->
 							<!-- <img src="/img/announcement/2025-3.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025"> -->
 							<!-- <img src="/img/announcement/2025-4.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025"> -->
-							<img src="/img/announcement/2025-5.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025">
+							<!-- <img src="/img/announcement/2025-5.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025"> -->
+							<img src="/img/announcement/2025-6.webp" class="img-fluid card border-0" style="border-radius:10px;" alt="Hackathon Bank Indonesia 2025">
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -161,7 +163,7 @@
 							<p style="line-height:2;"><span class="hackathon-tag">#Hackathon2025</span> <span class="hackathon-tag">#FEKDIxIFSE2025</span> <span class="hackathon-tag">#InovasiUntukNegeri</span> <span class="hackathon-tag">#diSetiapMaknaIndonesia</span></p>
 						</div> -->
 
-						<div class="announcement-details">
+						<!-- <div class="announcement-details">
 							<p>
 								Seiring berjalannya waktu sistem pembayaran di Indonesia semakin canggih dan beragam. Tapi, pernah nggak sih kepikiran bagaimana teknologi AI menjadi komponen pendukung untuk membuat metode transaksi di masa sekarang semakin mudah, efisien, dan terjamin keamanannya? 🤔
 							</p>
@@ -189,6 +191,19 @@
 								⛓️‍💥 RSVP: <a href="https://s.id/TS1-AIPayment" target="_blank">s.id/TS1-AIPayment</a><br/>
 							</p>
 							<p>Jangan lewatkan kesempatan untuk mendapatkan insight yang berharga dari praktisi dibidangnya, beserta penjelasan rinci mengenai BI-OJK Hackathon 2025. ✨️🚀</p>
+						</div> -->
+
+						<div class="announcement-details">
+							<p>
+								Melihat antusiasme dan permintaan yang luar biasa, kami dengan senang hati mengumumkan bahwa batas waktu submisi proposal BI-OJK Hackathon 2025 telah diperpanjang hingga 26 Juli 2025! 🎉
+							</p>
+							<p>
+								Ini adalah kesempatan emas bagi kalian untuk menyempurnakan ide-ide, berkolaborasi dengan tim, dan mengembangkan kreativitas ke level yang lebih tinggi. Kami memahami bahwa inovasi memerlukan waktu, dan kami ingin memastikan kalian memiliki ruang untuk menciptakan solusi berdampak yang akan membentuk masa depan digitalisasi keuangan Indonesia.
+							</p>
+							<p>
+								Jadi, tunggu apa lagi? Ayo ambil tantangan Hackathon ini, kirimkan proposal kalian, dan bergabunglah dengan komunitas digitalis dan inovator yang memiliki semangat untuk memberikan perubahan nyata di ekosistem keuangan.
+							</p>
+							<p>Mark you calendar! Yuk kirimkan proposal kalian dan mari kita terus bangun masa depan digital yang lebih kuat dan inklusif!</p>
 						</div>
 					</div>
 				</div>
@@ -309,7 +324,7 @@
 					</div>
 				</div>
 				<div class="timeline-item">
-					<div class="timeline-date">11 Juli 2025</div>
+					<div class="timeline-date">26 Juli 2025</div>
 					<div class="timeline-content">
 						Last Submission
 					</div>
@@ -523,7 +538,7 @@
 										<i class="bx bx-chevron-up icon-close"></i>
 									</div>
 									<div id="faq6" class="collapse" data-bs-parent=".faq-list">
-										<p>11 Juli 2025 23.59 WIB</p>
+										<p>26 Juli 2025 23.59 WIB</p>
 									</div>
 								</li>
 								<li>
@@ -534,7 +549,7 @@
 									</div>
 									<div id="faq8" class="collapse" data-bs-parent=".faq-list">
 										<p>Kick off dan Seminar Hackathon 5 Juni 2025</p>
-										<p>Last Submission 11 Juli 2025</p>
+										<p>Last Submission 26 Juli 2025</p>
 										<p>Pengumuman Finalis 1 Agustus 2025</p>
 										<p>Karantina dan Penjurian Akhir 22 s.d. 23 September 2025</p>
 										<p>Pengumuman pemenang di H1, Showcase Finalis di FEKDI 2025 di H3 (24 s.d. 26 September 2025)</p>
