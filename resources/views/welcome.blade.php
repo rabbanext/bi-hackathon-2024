@@ -208,6 +208,57 @@
 					</div>
 				</div>
 			</div>
+		</section>
+
+		<section id="announcement" class="announcement">
+			<div class="container" >
+				<div class="section-title pb-2 ms-2 mb-4">
+					<h2>Halo para innovator muda berkarya!</h2>
+				</div>
+				<div class="row gy-4 gx-lg-4">
+					<div class="col-md-6">
+						<div class="announcement-poster">
+							<img src="/img/announcement/2025-7.webp" class="img-fluid card border-0" style="border-radius:10px;" alt="Hackathon Bank Indonesia 2025">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="announcement-details">
+							<p>
+								Bank Indonesia dan Otoritas Jasa Keuangan mengajak Anda untuk berpartisipasi dalam BI-OJK Hackathon 2025 , ajang inovasi untuk menjawab tantangan layanan keuangan digital masa depan.
+							</p>
+							<p>
+								🌍 Tema: Empowering the Future Innovating Digital Service and Financial Solutions for Inclusive Growth and Resilient Economy<br/>
+								📅 Periode Pendaftaran: 5 Juni – 26 Juli 2025<br/>
+								🎯 Kesempatan yang Bisa Kamu Raih:<br/>
+								✅ Mengembangkan ide brilianmu menjadi solusi nyata<br/>
+								✅ Business matching langsung dengan pelaku industri <br/>
+								✅ Hadiah menarik <br/>
+								✅ Mentoring eksklusif bersama para ahli dan profesional<br/>
+								🔗 Submit proposalmu sekarang: 👉 <a href="https://hackathon.fekdifse.co.id">https://hackathon.fekdifse.co.id</a>
+							</p>
+
+							<p>
+								Saksikan juga bincang inspiratif seputar Hackathon 2025 di:<br/>
+								🎙 TEKTOK Podcast #4 Teknologi, Transformasi dan Kolaborasi<br/>
+								🗓 11 Juli 2025<br/>
+								🕰 16.00 WIB<br/>
+								📍 Live via Zoom<br/>
+								🔸 Meeting ID: 951 9404 4372<br/>
+								🔸 Password: 301629
+								🔗 Link Zoom: <a href="https://bit.ly/TektokHackathon2025-4">https://bit.ly/TektokHackathon2025-4</a><br/>
+								🎤 Speaker: Faizal Kurniawan – Ekonom Senior Departemen Kebijakan Sistem Pembayaran BI<br/>
+								🎙 Moderator: Abhirama Budiawan – Ekonom Yunior Departemen Kebijakan Sistem Pembayaran BI<br/>
+							</p>
+
+							<p>
+								🚀 Jadilah bagian dari solusi ekonomi keuangan digital masa depan di BI-OJK Hackathon 2025!<br/>
+								🚀 Ditunggu kehadirannya ya! 😉
+							<p>
+							<p style="line-height:2;"><span class="hackathon-tag">#Hackathon2025</span> <span class="hackathon-tag">#FEKDIxIFSE2025</span> <span class="hackathon-tag">#InovasiUntukNegeri</span> <span class="hackathon-tag">#diSetiapMaknaIndonesia</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</section> 
 
 		<!-- ======= About Section ======= -->
