@@ -25,7 +25,8 @@
                     <h5>Guideline</h5>
                     <p class="mb-0">Silakan cek syarat dan ketentuan registrasi pada link berikut:</p>
                     <!-- <a class="text-info mb-0" href="https://drive.google.com/file/d/1z0F7rhKOMln5YM4239JRbqaU1fYJnXRW/view?usp=sharing">Guideline</a> -->
-                    <a class="text-info mb-0" href="https://drive.google.com/file/d/1-fUyljC23hBpwSYU08n7HYZqBeOe0fO-/view?usp=sharing">Guideline</a>
+                    <!-- <a class="text-info mb-0" href="https://drive.google.com/file/d/1-fUyljC23hBpwSYU08n7HYZqBeOe0fO-/view?usp=sharing">Guideline</a> -->
+                    <a class="text-info mb-0" href="https://drive.google.com/file/d/1vAjtk_oGRmDIha_6lrUl6Kde6uhRvyR6/view?usp-sharing">Guideline</a>
                 </div>
             </div>
             <div class="col-12">

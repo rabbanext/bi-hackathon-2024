@@ -330,7 +330,7 @@
 					</div>
 				</div>
 				<div class="timeline-item">
-					<div class="timeline-date">1 Agustus 2025 </div>
+					<div class="timeline-date">6 September 2025 </div>
 					<div class="timeline-content">
 						Pengumuman Finalis
 					</div>
@@ -342,13 +342,13 @@
 					</div>
 				</div> -->
 				<div class="timeline-item">
-					<div class="timeline-date">22 s.d. 23 September 2025 </div>
+					<div class="timeline-date">28 s.d. 29 September 2025 </div>
 					<div class="timeline-content">
 						Karantina dan Penjurian Akhir
 					</div>
 				</div>
 				<div class="timeline-item">
-					<div class="timeline-date">24 s.d. 26 September 2025 </div>
+					<div class="timeline-date">30 Oktober s.d. 1 November 2025 </div>
 					<div class="timeline-content">
 						Pengumuman pemenang dan Showcase Finalis di FEKDI 2025
 					</div>
@@ -443,7 +443,7 @@
 						<div class="row mb-4">
 							<div class="col-12 col-md-12 col-lg-12">
 								<div class="prize">
-									<img src="/img/prizes/total.png" width="300" class="img-prize" alt="" style="max-height: 50px; aspect-ratio: 1; width: auto;">
+									<img src="/img/prizes/total.png" width="300" class="img-prize" alt="" style="height: 55px; aspect-ratio: 1; width: 170px;">
 									<h5>Rp.30.000.000</h5>
 								</div>
 							</div>
@@ -550,9 +550,9 @@
 									<div id="faq8" class="collapse" data-bs-parent=".faq-list">
 										<p>Kick off dan Seminar Hackathon 5 Juni 2025</p>
 										<p>Last Submission 26 Juli 2025</p>
-										<p>Pengumuman Finalis 1 Agustus 2025</p>
-										<p>Karantina dan Penjurian Akhir 22 s.d. 23 September 2025</p>
-										<p>Pengumuman pemenang di H1, Showcase Finalis di FEKDI 2025 di H3 (24 s.d. 26 September 2025)</p>
+										<p>Pengumuman Finalis 6 September 2025</p>
+										<p>Karantina dan Penjurian Akhir 28 s.d. 29 September 2025</p>
+										<p>Pengumuman pemenang di H1, Showcase Finalis di FEKDI 2025 di H3 (30 Oktober s.d. 1 November 2025)</p>
 									</div>
 								</li>
 							</ul>
