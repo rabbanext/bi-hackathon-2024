@@ -224,21 +224,9 @@
 					<div class="col-md-6">
 						<div class="announcement-details">
 							<p>
-								Bank Indonesia dan Otoritas Jasa Keuangan mengajak Anda untuk berpartisipasi dalam BI-OJK Hackathon 2025 , ajang inovasi untuk menjawab tantangan layanan keuangan digital masa depan.
+								Saksikan bincang inspiratif seputar BI-OJK Hackathon 2025 di:
 							</p>
 							<p>
-								🌍 Tema: Empowering the Future Innovating Digital Service and Financial Solutions for Inclusive Growth and Resilient Economy<br/>
-								📅 Periode Pendaftaran: 5 Juni – 26 Juli 2025<br/>
-								🎯 Kesempatan yang Bisa Kamu Raih:<br/>
-								✅ Mengembangkan ide brilianmu menjadi solusi nyata<br/>
-								✅ Business matching langsung dengan pelaku industri <br/>
-								✅ Hadiah menarik <br/>
-								✅ Mentoring eksklusif bersama para ahli dan profesional<br/>
-								🔗 Submit proposalmu sekarang: 👉 <a href="https://hackathon.fekdifse.co.id">https://hackathon.fekdifse.co.id</a>
-							</p>
-
-							<p>
-								Saksikan juga bincang inspiratif seputar Hackathon 2025 di:<br/>
 								🎙 TEKTOK Podcast #4 Teknologi, Transformasi dan Kolaborasi<br/>
 								🗓 11 Juli 2025<br/>
 								🕰 16.00 WIB<br/>
@@ -246,8 +234,8 @@
 								🔸 Meeting ID: 951 9404 4372<br/>
 								🔸 Password: 301629
 								🔗 Link Zoom: <a href="https://bit.ly/TektokHackathon2025-4">https://bit.ly/TektokHackathon2025-4</a><br/>
-								🎤 Speaker: Faizal Kurniawan – Ekonom Senior Departemen Kebijakan Sistem Pembayaran BI<br/>
-								🎙 Moderator: Abhirama Budiawan – Ekonom Yunior Departemen Kebijakan Sistem Pembayaran BI<br/>
+								🎤 Speaker: Faizal Kurniawan – Departemen Kebijakan Sistem Pembayaran BI<br/>
+								🎙 Moderator: Abhirama Budiawan – Departemen Kebijakan Sistem Pembayaran BI<br/>
 							</p>
 
 							<p>
