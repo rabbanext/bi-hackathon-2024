@@ -569,6 +569,58 @@
 										<p>Satu tim diperbolehkan terdiri dari anggota yang berasal dari institusi yang berbeda</p>
 									</div>
 								</li>
+
+								<li>
+									<div data-bs-toggle="collapse" href="#faq9" class="collapsed question">
+										Apakah diperbolehkan bagi satu perusahaan, organisasi, atau universitas untuk mengirimkan lebih dari satu tim, terutama untuk tema lomba yang berbeda?
+										<i class="bx bx-chevron-down icon-show"></i>
+										<i class="bx bx-chevron-up icon-close"></i>
+									</div>
+									<div id="faq9" class="collapse" data-bs-parent=".faq-list">
+										<p>Satu perusahaan, organisasi, atau universitas diperbolehkan mengirimkan lebih dari satu tim, asalkan setiap peserta hanya dapat berada di satu tim dan memenuhi persyaratan peserta.</p>
+									</div>
+								</li>
+								<li>
+									<div data-bs-toggle="collapse" href="#faq10" class="collapsed question">
+										Apakah diperbolehkan bagi satu tim untuk mengajukan lebih dari satu ide atau mengumpulkan lebih dari satu deck/submission?
+										<i class="bx bx-chevron-down icon-show"></i>
+										<i class="bx bx-chevron-up icon-close"></i>
+									</div>
+									<div id="faq10" class="collapse" data-bs-parent=".faq-list">
+										<p>Setiap peserta hanya diperbolehkan mengirimkan 1 deck/proposal. Jika terdapat beberapa ide atau tema, dapat dipilih salah satu atau digabungkan dalam 1 deck/proposal.</p>
+									</div>
+								</li>
+								<li>
+									<div data-bs-toggle="collapse" href="#faq11" class="collapsed question">
+										Apakah semua anggota tim harus berasal dari institusi yang sama saat pendaftaran?
+										<i class="bx bx-chevron-down icon-show"></i>
+										<i class="bx bx-chevron-up icon-close"></i>
+									</div>
+									<div id="faq11" class="collapse" data-bs-parent=".faq-list">
+										<p>Anggota tim dapat berasal dari institusi, komunitas, atau organisasi yang berbeda. Dalam hal ini, Anda bisa memilih salah satu instansi untuk dituliskan saat pendaftaran, atau bisa juga mencantumkan 'umum'.</p>
+									</div>
+								</li>
+								<li>
+									<div data-bs-toggle="collapse" href="#faq12" class="collapsed question">
+										Pada tahapan submission, bentuk proposal seperti apa yang harus disampaikan?
+										<i class="bx bx-chevron-down icon-show"></i>
+										<i class="bx bx-chevron-up icon-close"></i>
+									</div>
+									<div id="faq12" class="collapse" data-bs-parent=".faq-list">
+										<p>Panduan proposal dapat dilihat setelah melakukan registrasi. Proposal berupa pitchdeck dengan desain bebas asalkan sesuai dengan substansi panduan.</p>
+									</div>
+								</li>
+								<li>
+									<div data-bs-toggle="collapse" href="#faq13" class="collapsed question">
+										Apakah seluruh anggota tim diwajibkan hadir secara fisik/luring selama kegiatan hackathon berlangsung?
+										<i class="bx bx-chevron-down icon-show"></i>
+										<i class="bx bx-chevron-up icon-close"></i>
+									</div>
+									<div id="faq13" class="collapse" data-bs-parent=".faq-list">
+										<p>Kehadiran tim dapat diwakili minimal 1 orang yang hadir pada kegiatan fisik/luring seperti karantina atau penjurian. Kami juga memfasilitasi perjalanan dan akomodasi untuk peserta dalam negeri, sementara untuk perjalanan dari luar negeri menjadi tanggung jawab peserta.</p>
+									</div>
+								</li>
+								
 								<li>
 									<div data-bs-toggle="collapse" href="#faq6" class="collapsed question">
 										Kapan waktu terakhir pengumpulan ide/pendaftaran?
