@@ -380,7 +380,7 @@
 					</div>
 				</div> -->
 				<div class="timeline-item">
-					<div class="timeline-date">28 s.d. 29 September 2025 </div>
+					<div class="timeline-date">28 s.d. 29 Oktober 2025 </div>
 					<div class="timeline-content">
 						Karantina dan Penjurian Akhir
 					</div>
@@ -641,7 +641,7 @@
 										<p>Kick off dan Seminar Hackathon 5 Juni 2025</p>
 										<p>Last Submission 26 Juli 2025</p>
 										<p>Pengumuman Finalis 6 September 2025</p>
-										<p>Karantina dan Penjurian Akhir 28 s.d. 29 September 2025</p>
+										<p>Karantina dan Penjurian Akhir 28 s.d. 29 Oktober 2025</p>
 										<p>Pengumuman pemenang di H1, Showcase Finalis di FEKDI 2025 di H3 (30 Oktober s.d. 1 November 2025)</p>
 									</div>
 								</li>
