@@ -218,30 +218,31 @@
 				<div class="row gy-4 gx-lg-4">
 					<div class="col-md-6">
 						<div class="announcement-poster">
-							<img src="/img/announcement/2025-7.webp" class="img-fluid card border-0" style="border-radius:10px;" alt="Hackathon Bank Indonesia 2025">
+							<img src="/img/announcement/2025-8.webp" class="img-fluid card border-0" style="border-radius:10px;" alt="Hackathon Bank Indonesia 2025">
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="announcement-details">
 							<p>
-								Saksikan bincang inspiratif seputar BI-OJK Hackathon 2025 di:
+								Masih bingung seputar Hackathon padahal deadline udah mepet? Yuk saksikan ngobrol-ngobrol asik dan inspiratif seputar Hackathon 2025 di:
 							</p>
 							<p>
-								🎙 TEKTOK Podcast #4 Teknologi, Transformasi dan Kolaborasi<br/>
-								🗓 11 Juli 2025<br/>
+								🎙 TEKTOK Podcast #5 Teknologi, Transformasi dan Kolaborasi <br/>
+								🗓 18 Juli 2025<br/>
 								🕰 16.00 WIB<br/>
 								📍 Live via Zoom<br/>
-								🔸 Meeting ID: 951 9404 4372<br/>
-								🔸 Password: 301629
-								🔗 Link Zoom: <a href="https://bit.ly/TektokHackathon2025-4">https://bit.ly/TektokHackathon2025-4</a><br/>
-								🎤 Speaker: Faizal Kurniawan – Departemen Kebijakan Sistem Pembayaran BI<br/>
-								🎙 Moderator: Abhirama Budiawan – Departemen Kebijakan Sistem Pembayaran BI<br/>
+								🔸 Meeting ID: 997 2345 2639<br/>
+								🔸 Password: 133342
+								🔗 Link Zoom: <a href="https://bit.ly/TektokHackathon2025-5">https://bit.ly/TektokHackathon2025-5</a><br/>
+								🎤 Speaker: Najibullah Ulul Albab - Bank Indonesia<br/>
+								🎙 Moderator: Fikri Faizan - Bank Indonesia<br/>
 							</p>
 
 							<p>
 								🚀 Jadilah bagian dari solusi ekonomi keuangan digital masa depan di BI-OJK Hackathon 2025!<br/>
 								🚀 Ditunggu kehadirannya ya! 😉
 							<p>
+							<p style="line-height:2;"><span class="hackathon-tag">#Hackathon2025</span> <span class="hackathon-tag">#FEKDIxIFSE2025</span> <span class="hackathon-tag">#InovasiUntukNegeri</span> <span class="hackathon-tag">#diSetiapMaknaIndonesia</span></p>
 						</div>
 					</div>
 				</div>
