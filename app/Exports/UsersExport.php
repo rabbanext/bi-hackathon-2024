@@ -137,9 +137,10 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithStyl
         // Project file link
         $projectFileLink = null;
         if (!empty($user->project_file)) {
+            $baseUrl = request()->getSchemeAndHttpHost();
             $projectFileLink = $user->submitted == 1
-                ? 'http://www.hackathon.fekdi.co.id/submitted/' . $user->project_file
-                : 'http://www.hackathon.fekdi.co.id/saved/' . $user->project_file;
+                ? $baseUrl . '/storage/submitted/' . $user->project_file
+                : $baseUrl . '/storage/save/' . $user->project_file;
         }
 
         // Format Submit Date Time
