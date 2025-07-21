@@ -218,24 +218,24 @@
 				<div class="row gy-4 gx-lg-4">
 					<div class="col-md-6">
 						<div class="announcement-poster">
-							<img src="/img/announcement/2025-8.webp" class="img-fluid card border-0" style="border-radius:10px;" alt="Hackathon Bank Indonesia 2025">
+							<img src="/img/announcement/2025-9.webp" class="img-fluid card border-0" style="border-radius:10px;" alt="Hackathon Bank Indonesia 2025">
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="announcement-details">
 							<p>
-								Masih bingung seputar Hackathon padahal deadline udah mepet? Yuk saksikan ngobrol-ngobrol asik dan inspiratif seputar Hackathon 2025 di:
+								Deadline makin mepet, tapi banyak pertanyaan? Yuk tonton ngobrol-ngobrol asik dan inspiratif seputar Hackathon 2025 di:
 							</p>
 							<p>
-								🎙 TEKTOK Podcast #5 Teknologi, Transformasi dan Kolaborasi <br/>
-								🗓 18 Juli 2025<br/>
+								🎙 TEKTOK Podcast #6 Teknologi, Transformasi dan Kolaborasi <br/>
+								🗓 Rabu, 23 Juli 2025 <br/>
 								🕰 16.00 WIB<br/>
 								📍 Live via Zoom<br/>
-								🔸 Meeting ID: 997 2345 2639<br/>
-								🔸 Password: 133342
-								🔗 Link Zoom: <a href="https://bit.ly/TektokHackathon2025-5">https://bit.ly/TektokHackathon2025-5</a><br/>
-								🎤 Speaker: Najibullah Ulul Albab - Bank Indonesia<br/>
-								🎙 Moderator: Fikri Faizan - Bank Indonesia<br/>
+								🔸 Meeting ID: 994 3927 3643<br/>
+								🔸 Password: 288475 <br/>
+								🔗 Link Zoom: <a href="https://bit.ly/TektokHackathon2025-6">https://bit.ly/TektokHackathon2025-6</a><br/>
+								🎤 Speaker: Yudha Wastu Prawira - Bank Indonesia<br/>
+								🎙 Moderator: Sekar Wulan Ramadhani- Bank Indonesia<br/>
 							</p>
 
 							<p>
