@@ -398,8 +398,7 @@
                                 <div class="mb-3">
                                     <p class="mb-0">
                                         Uploaded Proposal File: 
-                                        
-                                        <a class="text-white" href="{{ asset('/storage' . ($project->submitted === 1 ? '/submitted/' : '/save/') . Auth::user()->project_file) }}" target="_blank">
+                                        <a class="text-white" href="{{ asset('/storage/save/' . Auth::user()->project_file) }}" target="_blank">
                                             <u><strong>{{ Auth::user()->project_file }}</strong></u>
                                         </a>
                                     </p>
