@@ -74,7 +74,7 @@ class DashboardController extends Controller
             'member_date_of_birth.*' => 'The Member Date of Birth field is required.',
             'member_profession.*' => 'The Member Profession field is required.',
             'project_link.*' => 'The Project Link field is required.',
-            'project_desc.*' => 'The Project Desc field is required and must not exceed 255 characters.',
+            'project_desc.*' => 'The Project Desc field is required and must not exceed 1000 characters.',
             'project_file.max' => 'The project file must not be greater than 50MB.',
         ];
         
@@ -92,7 +92,7 @@ class DashboardController extends Controller
             'member_github_url.*' => 'nullable|string|max:255',
             'member_linkedin_url.*' => 'nullable|string|max:255',
             'project_link.*' => 'nullable|string|max:255',
-            'project_desc.*' => 'nullable|string|max:255',
+            'project_desc.*' => 'nullable|string|max:1000',
             'project_file' => 'nullable|file|mimes:pdf|max:51200', // 50 MB
             'submitted' => 'nullable',
         ], $messages);
