@@ -136,7 +136,7 @@ class DashboardController extends Controller
             $user->project_file = $fileName;
 
             // Notify user after file upload
-            $user->notify(new SubmissionConfirmation());
+            // $user->notify(new SubmissionConfirmation());
         }
 
         // Move the existing file from 'save' to 'submitted' if submitted is true and project_file is not empty

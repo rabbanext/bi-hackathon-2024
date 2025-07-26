@@ -49,202 +49,25 @@
 	<!-- End Hero -->
 
 	<main id="main">
-		<!-- <section>
-			<div class="container">
-				<div class="section-content">
-						<h3>Salam hangat untuk para inovator digital tanah air,</h3>
-					<div class="row justify-content-center">
-							<p>Bank Indonesia dan Otoritas Jasa Keuangan mengajak Anda untuk berpartisipasi dalam BI-OJK Hackathon 2025 , ajang inovasi untuk menjawab tantangan layanan keuangan digital masa depan.</p>
-
-							<p>🌍 Tema:</p>
-							<h5 style="margin-bottom: 5px;">Empowering the Future</h5>
-							<p>Innovating Digital Service and Financial Solutions for Inclusive Growth and Resilient Economy</p>
-
-							<p>📅 Periode Pendaftaran: 5 Juni – 11 Juli 2025</p>
-
-							<p>
-								🎯 Kesempatan yang Bisa Kamu Raih:<br/>
-								✅ Mengembangkan ide brilianmu menjadi solusi nyata<br/>
-								✅ Business matching langsung dengan pelaku industri<br/>
-								✅ Hadiah menarik<br/>
-								✅ Mentoring eksklusif bersama para ahli dan profesional
-							</p>
-
-							<p>
-								🔗 Submit proposalmu sekarang:<br/>
-								<a href="https://hackathon.fekdifse.co.id">👉 https://hackathon.fekdifse.co.id</a>
-							</p>
-					</div>
-				</div>
-
-			</div>
-		</section> -->
 
 		<section id="announcement" class="announcement">
 			<div class="container" >
-				<div class="section-title pb-2 ms-2 mb-4">
-					<!-- <h2>Bank Indonesia bersama Otoritas Jasa Keuangan dengan bangga mempersembahkan:</h2> -->
-					<!-- <h2>BI-OJK Hackathon 2025 x Google Developer Group on Campus Indonesia 2025</h2> -->
-					<h2>Attention Innovators and Digital Enthusiasts!</h2>
-				</div>
-				<div class="row gy-4 gx-lg-4">
-					<div class="col-md-6">
-						<div class="announcement-poster">
-							<!-- <img src="/img/announcement/2025-1.webp" class="img-fluid" alt="Hackathon Bank Indonesia 2025"> -->
-							<!-- <img src="/img/announcement/2025-2.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025"> -->
-							<!-- <img src="/img/announcement/2025-3.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025"> -->
-							<!-- <img src="/img/announcement/2025-4.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025"> -->
-							<!-- <img src="/img/announcement/2025-5.webp" class="img-fluid card border-0" alt="Hackathon Bank Indonesia 2025"> -->
-							<img src="/img/announcement/2025-6.webp" class="img-fluid card border-0" style="border-radius:10px;" alt="Hackathon Bank Indonesia 2025">
-						</div>
-					</div>
-					<div class="col-md-6">
-						<!-- <div class="announcement-details">
-							<h4>📢 BI-OJK HACKATHON 2025! 🎉</h4>
-							<p>BI-OJK Hackathon 2025 merupakan sebuah kompetisi intelektual untuk menggali berbagai potensi talenta inovator dalam memecahkan masalah menggunakan teknologi dan menjadi wadah eksploratif bagi ide-ide inovatif, serta memfasilitasi sinergi dengan industri untuk mendapatkan solusi berbasis teknologi.</p>
-							<p>Untuk mengetahui lebih lanjut program tersebut, kami mengundang bapak/ibu untuk hadir dalam acara Kick-Off dan Seminar BI-OJK Hackathon 2025 pada:</p>
-							<p>
-								📅 Hari, tanggal: Kamis, 5 Juni 2025<br/>
-								🕑 Waktu: Pukul 14.00 WIB s.d selesai<br/>
-								📌 Tema: Empowering the Future: Innovating Digital Service and Financial Solution for Inclusive Growth and Resilient Economy
-							</p>
-							<p>🎦 Join via Zoom:<br/>
-								🔹 Webinar ID: 949 5252 8740<br/>
-								🔹 Passcode: 148736<br/>
-								🔸 Webinar ID: 917 4821 8264<br/>
-								🔸 Passcode: 048759
-							</p>
-							<p>Acara ini akan penuh dengan keseruan, pengalaman, dan informasi menarik mengenai hal-hal yang mendorong inovasi digital dalam menciptakan solusi keuangan yang inklusif serta memperkuat ketahanan ekonomi. </p>
-							<p>Yuk, jadi bagian dari kemajuan ekonomi dan keuangan digital di masa depan!</p>
+				<div class="content section-content">
+					<h3 class="fst-italic">
+						Selamat malam/Pagi Innovators
+					</h3>
+					<p>
+						Mohon maaf atas kejadian yang tidak diinginkan, akibat tingginya minat Innovators dalam submisi, saat ini platform kami mengalami kendala.
+					</p>
+					<p>Oleh karena itu kami telah:<br/>1.⁠ ⁠Mengidentifikasi masalah submisi, baik email dan whatsapp<br/>2.⁠ ⁠⁠Meningkatkan layanan cloud agak bisa scaleup</p>
 
-							<p><span class="hackathon-tag">#diSetiapMaknaIndonesia</span> <span class="hackathon-tag">#Hackathon2025</span></p>
-						</div> -->
+					<p></p>
+					<p>Sebagai kompensasi agar fairness tetap terjaga<br/>1.⁠ ⁠Submisi diperpanjang hingga jam 09.00, 27 Juli 2025, <b>bagi tim yang mengalami kendala</b><br/>2.⁠ ⁠⁠Penutupan fitur resubmisi</p>
+					<p>Demikian jawaban sementara kami, semangat kalian berinovasi akan menjadi bekal kami untuk terus meningkatkan layanan.</p>
 
-						<!-- <div class="announcement-details">
-							<h4>Tektok Podcast Hackathon 2025</h4>
-							<p style="line-height:2;">
-								➡️ Memecahkan masalah dgn teknologi<br/>
-								➡️ berkompetisi & kontribusi utk negeri<br/>
-								➡️ Memajukan ekonomi keuangan digital<br/>
-								☑️ Inilah semangat BI & @ojkindonesia yang diusung dalam BI-OJK Hackathon 2025 — ajang kompetisi bagi talenta inovator untuk memecahkan tantangan lewat solusi teknologi, sekaligus wadah eksplorasi ide-ide kreatif dan kolaborasi dengan industri.
-							</p>
-							<p>Simak informasi selengkapnya pada:</p>
-							<br/>
-							<h4>🎙TEKTOK Podcast #1</h4>
-							<p>(Teknologi, Transformasi dan Kolaborasi)</p>
-							<p style="line-height:2;">Yuk, <span class="hackathon-tag">#SobatRupiah</span>, <span class="hackathon-tag">#BeriMakna</span> dengan menyimak informasi seputar <span class="hackathon-tag">#Hackathon2025</span> dari Ekonom Yunior Departemen Kebijakan Sistem Pembayaran Bank Indonesia!</p>
-
-							<p style="line-height:2;">
-								🗓 20 Juni 2025<br/>
-								🕰 19.00 WIB<br/>
-								🎦 Join via Zoom:<br/>
-								🔸 Meeting ID: 942 7120 5959<br/>
-								🔸 Passcode: 569836
-							</p>
-							<p>Ditunggu kehadirannya, ya!</p>
-						</div> -->
-						
-
-						<!-- <div class="announcement-details">
-							<h4>🎙TEKTOK Podcast #3</h4>
-							<p>Teknologi, Transformasi dan Kolaborasi</p>
-							<p style="line-height:2;">
-								🗓 3 Juli 2025<br/>
-								🕰 16.00 WIB<br/>
-								🎦 Join via Zoom:<br/>
-								🔸 Meeting ID: 951 9404 4372<br/>
-								🔸 Passcode: 301629<br/>
-								🔗 Link Zoom: <a href="https://bit.ly/TektokHackathon2025-3" target="_blank">bit.ly/TektokHackathon2025-3</a><br/>
-								🎤 Speaker: <br/>FX Tyas Prasaja – Ekonom Departemen Kebijakan Sistem Pembayaran BI<br/>
-								🎙 Moderator: <br/>Rifatus Zakiyah – Ekonom Yunior Departemen Kebijakan Sistem Pembayaran BI
-							</p>
-							<p>🚀 Jadilah bagian dari solusi ekonomi keuangan digital masa depan di BI-OJK Hackathon 2025! 🚀</p>
-							<p>Ditunggu kehadirannya ya! 😉</p>
-							<p style="line-height:2;"><span class="hackathon-tag">#Hackathon2025</span> <span class="hackathon-tag">#FEKDIxIFSE2025</span> <span class="hackathon-tag">#InovasiUntukNegeri</span> <span class="hackathon-tag">#diSetiapMaknaIndonesia</span></p>
-						</div> -->
-
-						<!-- <div class="announcement-details">
-							<p>
-								Seiring berjalannya waktu sistem pembayaran di Indonesia semakin canggih dan beragam. Tapi, pernah nggak sih kepikiran bagaimana teknologi AI menjadi komponen pendukung untuk membuat metode transaksi di masa sekarang semakin mudah, efisien, dan terjamin keamanannya? 🤔
-							</p>
-							<p>
-								Di talk series dengan tema "How AI Reshaping Indonesia's Payment Ecosystem", kalian akan dibawa lebih dalam bagaimana AI menjadi peranan kunci dalam transformasi sistem pembayaran yang canggih bersama dengan speaker ahli dibidangnya ✨️
-							</p>
-
-							<p style="line-height:2; margin-bottom:0;">
-								🗣 Speaker:
-							</p>
-							<h6 style="margin-bottom:5px;">
-								FX Tyas Prasaja
-							</h6>
-							<p>
-								Economist, Payment System Specialist at Bank Indonesia
-							</p>
-
-							<p style="line-height:2;">
-								📆 Tanggal: 05 Juli 2025<br/>
-								🕑 Waktu: 14.00 WIB<br/>
-								💻 Platform: Google Meet<br/>
-							<p>
-								
-							<p style="line-height:2;">
-								⛓️‍💥 RSVP: <a href="https://s.id/TS1-AIPayment" target="_blank">s.id/TS1-AIPayment</a><br/>
-							</p>
-							<p>Jangan lewatkan kesempatan untuk mendapatkan insight yang berharga dari praktisi dibidangnya, beserta penjelasan rinci mengenai BI-OJK Hackathon 2025. ✨️🚀</p>
-						</div> -->
-
-						<div class="announcement-details">
-							<p>
-								Melihat antusiasme dan permintaan yang luar biasa, kami dengan senang hati mengumumkan bahwa batas waktu submisi proposal BI-OJK Hackathon 2025 telah diperpanjang hingga 26 Juli 2025! 🎉
-							</p>
-							<p>
-								Ini adalah kesempatan emas bagi kalian untuk menyempurnakan ide-ide, berkolaborasi dengan tim, dan mengembangkan kreativitas ke level yang lebih tinggi. Kami memahami bahwa inovasi memerlukan waktu, dan kami ingin memastikan kalian memiliki ruang untuk menciptakan solusi berdampak yang akan membentuk masa depan digitalisasi keuangan Indonesia.
-							</p>
-							<p>
-								Jadi, tunggu apa lagi? Ayo ambil tantangan Hackathon ini, kirimkan proposal kalian, dan bergabunglah dengan komunitas digitalis dan inovator yang memiliki semangat untuk memberikan perubahan nyata di ekosistem keuangan.
-							</p>
-							<p>Mark you calendar! Yuk kirimkan proposal kalian dan mari kita terus bangun masa depan digital yang lebih kuat dan inklusif!</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section id="announcement" class="announcement">
-			<div class="container" >
-				<div class="section-title pb-2 ms-2 mb-4">
-					<h2>Halo para innovator muda berkarya!</h2>
-				</div>
-				<div class="row gy-4 gx-lg-4">
-					<div class="col-md-6">
-						<div class="announcement-poster">
-							<img src="/img/announcement/2025-9.webp" class="img-fluid card border-0" style="border-radius:10px;" alt="Hackathon Bank Indonesia 2025">
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="announcement-details">
-							<p>
-								Deadline makin mepet, tapi banyak pertanyaan? Yuk tonton ngobrol-ngobrol asik dan inspiratif seputar Hackathon 2025 di:
-							</p>
-							<p>
-								🎙 TEKTOK Podcast #6 Teknologi, Transformasi dan Kolaborasi <br/>
-								🗓 Rabu, 23 Juli 2025 <br/>
-								🕰 16.00 WIB<br/>
-								📍 Live via Zoom<br/>
-								🔸 Meeting ID: 994 3927 3643<br/>
-								🔸 Password: 288475 <br/>
-								🔗 Link Zoom: <a href="https://bit.ly/TektokHackathon2025-6">https://bit.ly/TektokHackathon2025-6</a><br/>
-								🎤 Speaker: Yudha Wastu Prawira - Bank Indonesia<br/>
-								🎙 Moderator: Sekar Wulan Ramadhani- Bank Indonesia<br/>
-							</p>
-
-							<p>
-								🚀 Jadilah bagian dari solusi ekonomi keuangan digital masa depan di BI-OJK Hackathon 2025!<br/>
-								🚀 Ditunggu kehadirannya ya! 😉
-							<p>
-							<p style="line-height:2;"><span class="hackathon-tag">#Hackathon2025</span> <span class="hackathon-tag">#FEKDIxIFSE2025</span> <span class="hackathon-tag">#InovasiUntukNegeri</span> <span class="hackathon-tag">#diSetiapMaknaIndonesia</span></p>
-						</div>
-					</div>
+					<p>
+						<strong>Salam</strong>
+					</p>
 				</div>
 			</div>
 		</section> 
