@@ -50,7 +50,7 @@
 
 	<main id="main">
 
-		<section id="announcement" class="announcement">
+		<!-- <section id="announcement" class="announcement">
 			<div class="container" >
 				<div class="content section-content">
 					<h3 class="fst-italic">
@@ -70,7 +70,7 @@
 					</p>
 				</div>
 			</div>
-		</section> 
+		</section>  -->
 
 		<!-- ======= About Section ======= -->
 		<section id="about" class="about">
