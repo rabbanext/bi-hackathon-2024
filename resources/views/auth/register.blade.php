@@ -10,10 +10,11 @@
 <div class="section-content">
     @php
         use Carbon\Carbon;
-        $openDate = Carbon::parse("2025-06-05 15:00:00");
+        $openDate = Carbon::parse("2026-06-05 15:00:00");
     @endphp
 
     @if (now()->greaterThanOrEqualTo($openDate))
+
 
     <form method="POST" action="{{ route('register') }}">
         @csrf
@@ -115,7 +116,7 @@
 
     @else
     <div class="alert alert-warning mt-4 text-center">
-        <strong>Pendaftaran belum dibuka.</strong> Silakan cek kembali nanti.
+        <strong>Pendaftaran sudah berakhir.</strong> Kami menghargai setiap partisipasi yang telah diberikan. Sampai jumpa di kesempatan berikutnya!
     </div>
     @endif
 </div>
