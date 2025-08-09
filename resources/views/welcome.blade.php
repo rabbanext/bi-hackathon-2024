@@ -72,7 +72,6 @@
 			</div>
 		</section>  -->
 
-@if(Auth::check() && Auth::user()->type === 'admin')
 		<section id="prizes" class="prizes d-flex flex-column align-items-center justify-content-center">
 			<div class="container">
 				<div class="section-content">
@@ -304,7 +303,6 @@
 				</div>
 			</div>
 		</section>
-@endif
 
 		<!-- ======= About Section ======= -->
 		<section id="about" class="about">
