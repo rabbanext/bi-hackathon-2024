@@ -79,11 +79,17 @@
 					<div class="section-title text-center pb-5">
 						<p style="font-size: 32px !important;">Announcement</p>
 					</div>
+
 					<div class="prize-content mx-0 mx-lg-5 mb-3">
-						<h5 class="mb-0">
-							Selamat kepada 30 semifinalis BI-OJK Hackathon 2025
-						</h5>
+						<h5 class="mb-0">Terima kasih atas partisipasi luar biasa! <br/>Terdapat 2.336 pendaftar & 743 proposal masuk tahun ini.</h5>
 					</div>
+					<div class="prize-content mx-0 mx-lg-5 mb-3">
+						<h5 class="mb-0">Selamat kepada para Semifinalis. <br/>Daftar Semifinalis disusun berdasarkan urutan abjad.</h5>
+					</div>
+					<div class="prize-content mx-0 mx-lg-5 mb-3">
+						<h5 class="mb-0">Tahap berikutnya: submisi video – detail akan diinfokan di website.</h5>
+					</div>
+
 					<div class="section-content mt-3">
 						<div class="text-center pt-5 pb-4">
 							<h2>Kategori Professional</h2>
@@ -163,7 +169,7 @@
 							</div>
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>12. Meaningfull Intelligence</h5>
+									<h5>12. Meaningful Intelligence</h5>
 									<p class="prize-subtitle">Garda AI: Hybrid Grap & AI federatif untuk real-time fraud & anomaly detection</p>
 								</div>
 							</div>
