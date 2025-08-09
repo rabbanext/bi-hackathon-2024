@@ -77,7 +77,7 @@
 			<div class="container">
 				<div class="section-content">
 					<div class="section-title text-center pb-5">
-						<p>Announcement</p>
+						<p style="font-size: 32px !important;">Announcement</p>
 					</div>
 					<div class="prize-content mx-0 mx-lg-5 mb-3">
 						<h5 class="mb-0">
