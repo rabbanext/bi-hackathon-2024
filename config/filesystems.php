@@ -56,6 +56,23 @@ return [
             'throw' => false,
         ],
 
+        'gcs' => [
+            // Use S3-compatible driver for Google Cloud Storage with HMAC keys
+            'driver' => 's3',
+            'key'    => env('GCS_KEY_ID'),
+            'secret' => env('GCS_KEY_SECRET'),
+            // Region can be any non-empty string for S3 client; 'auto' works with Google endpoint
+            'region' => env('GCS_REGION', 'auto'),
+            'bucket' => env('GCS_BUCKET'),
+            'endpoint' => env('GCS_ENDPOINT', 'https://storage.googleapis.com'),
+            'use_path_style_endpoint' => true,
+            'throw' => false,
+            'visibility' => env('GCS_VISIBILITY', 'public'),
+            'options' => [
+                'ACL' => env('GCS_VISIBILITY', 'public') === 'public' ? 'public-read' : 'private',
+            ],
+        ],
+
     ],
 
     /*

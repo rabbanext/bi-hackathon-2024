@@ -106,7 +106,6 @@
                         <strong>First Draft Submission</strong> - 21 Agustus 2025 12:00 WIB<br/>
                         <strong>Final Submission</strong> - 27 Agustus 2025 23:59 WIB
                     </div>
-
                 @else
                     <div class="alert alert-info mt-4 text-center">
                         <strong>Mohon segera mengunggah tautan link video dari tim Anda.</strong><br/>
@@ -117,8 +116,6 @@
                         <strong>Final Submission</strong> - 27 Agustus 2025 23:59 WIB
                     </div>
                 @endif
-
-
 
                 <ul class="nav nav-tabs" id="submitVideoTab" role="tablist">
                     <li class="nav-item">
@@ -133,12 +130,11 @@
                     </li>
                 </ul>
 
-
                 <div class="tab-content section-content mt-4" id="submitVideoTabContent">
                     <div class="tab-pane fade show active" id="file" role="tabpanel" aria-labelledby="file-tab">
                         <div class="alert text-center mb-0">
                             <small>
-                                <strong>Perhatian!</strong> Pastikan file video yang dikirimkan ada file video berformat .mp4, .mpg atau .webm, dengan ukuran maksimal 300MB.
+                                <strong>Perhatian!</strong> Pastikan file video yang dikirimkan berformat .mp4, .mpg/.mpeg atau .webm, dengan ukuran maksimal 300MB.
                             </small>
                         </div>
                         <style>
