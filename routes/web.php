@@ -92,9 +92,9 @@ Route::get('/thanks', function () {
 Route::post('/handle-response', [EmailController::class, 'handleResponse'])->name('handle-response');
 Route::get('/handle-response/{response}/{email}', [EmailController::class, 'handleResponse'])->name('handle-response');
 
-Route::get('/submit-video', function () {
-    return view('dashboard/submit_video');
-})->name('submitVideoForm');
+// Route::get('/submit-video', function () {
+//     return view('dashboard/submit_video');
+// })->name('submitVideoForm');
 Route::post('/submit-video', [VideoController::class, 'submitVideo'])->name('submitVideo');
 
 Route::get('/terms', function () {

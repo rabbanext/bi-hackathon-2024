@@ -174,6 +174,8 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithStyl
 
             isset($project_link[0]) ? $project_link[0] : null,
             isset($project_desc[0]) ? $project_desc[0] : null,
+
+            $is_finalis = $user->is_finalis ? 'Yes' : 'No',
         ];
 
         // Additional rows for each member

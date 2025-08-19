@@ -44,6 +44,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'submitted',
         'email_response',
         'email_response_timestamp',
+        'is_finalis',
+        'video_link',
+        'video_submitted_at',
     ];
   
     /**

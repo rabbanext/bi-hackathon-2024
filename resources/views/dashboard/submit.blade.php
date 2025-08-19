@@ -4,7 +4,7 @@
 <div class="content-wrapper">
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="section-title pb-2 my-5">
-          <p>Submit Proposal</p>
+            <p>Submit Proposal</p>
         </div>
 
         @if (Session::has('success'))
@@ -38,7 +38,8 @@
                 </div>
             </div>
         </div>
-        
+
+
         <div class="row">
             <div class="col-12 col-md-6">
                 <div class="section-content mb-4">
@@ -72,34 +73,113 @@
             </div>
         </div>
 
-
-        @php
-            use Carbon\Carbon;
-            $openDate = Carbon::parse("2026-06-05 15:00:00");
-        @endphp
-
-        @if (now()->greaterThanOrEqualTo($openDate))
-
+        @if (Auth::user()->submitted == null)
+            <div class="alert alert-warning mt-4 text-center">
+                <strong>Pendaftaran sudah berakhir.</strong> Kami menghargai setiap partisipasi yang telah diberikan. Sampai jumpa di kesempatan berikutnya!
+            </div>
         @else
-        <div class="alert alert-warning mt-4 text-center">
-            <strong>Pendaftaran sudah berakhir.</strong> Kami menghargai setiap partisipasi yang telah diberikan. Sampai jumpa di kesempatan berikutnya!
-        </div>
+            @if (Auth::user()->is_finalis)
+                <div class="section-title pt-5 pb-2">
+                    <p>Submit Video</p>
+                </div>
+
+                
+                @if (Auth::user()->video_submitted_at)
+                    <div class="alert alert-success mt-4 text-center">
+                        <p class="mb-0">
+                            <b>Terima kasih!</b> Anda telah mengirimkan video pada {{ Auth::user()->video_submitted_at->format('d-m-Y H:i') }}.
+                        </p>
+                        <p class="mb-0">
+                            Anda masih memiliki kesempatan untuk mengirimkan video baru sebelum batas waktu berakhir.
+                        </p>
+                        <p class="mt-2 mb-0">
+                            <a href="{{ Auth::user()->video_link }}" target="_blank">Lihat Video yang Telah Dikirim</a>
+                        </p>
+                    </div>
+
+                @else
+                    <div class="alert alert-info mt-4 text-center">
+                        <strong>Mohon segera mengunggah tautan link video dari tim Anda.</strong><br/>
+                        Pastikan tautan dapat diakses dengan baik, jangan lewatkan kesempatan berharga ini untuk menampilkan karya terbaik tim Anda!
+                    </div>
+                @endif
+
+
+
+                <ul class="nav nav-tabs" id="submitVideoTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="file-tab" data-toggle="tab" href="#file" role="tab" aria-controls="file" aria-selected="true"><small>Upload File</small></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="link-tab" data-toggle="tab" href="#link" role="tab" aria-controls="link" aria-selected="false"><small>Submit Link</small></a>
+                    </li>
+                </ul>
+
+
+                <div class="tab-content section-content mt-4" id="submitVideoTabContent">
+                    <div class="tab-pane fade show active" id="file" role="tabpanel" aria-labelledby="file-tab">
+                        <div class="alert text-center mb-0">
+                            <small>
+                                <strong>Perhatian!</strong> Pastikan file video yang dikirimkan ada file video berformat .mp4, .mpg atau .webm, dengan ukuran maksimal 300MB.
+                            </small>
+                        </div>
+                        <form id="videoFileForm" action="{{ route('submitVideo') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="form-group mb-3">
+                                <label for="video_file">Video File</label>
+                                <input type="file" class="form-control" id="video_file" name="video_file">
+                            </div>
+                            <div class="form-group pb-4 text-center">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="link" role="tabpanel" aria-labelledby="link-tab">
+                        <div class="alert text-center mb-0">
+                            <small>
+                                <strong>Perhatian!</strong> Pastikan link video yang akan dikirimkan adalah link video yang dapat diakses dengan baik.
+                            </small>
+                        </div>
+                        <form id="videoLinkForm" action="{{ route('submitVideo') }}" method="POST">
+                            @csrf
+                            <div class="form-floating mb-3">
+                                <input class="form-control @error('video_link') is-invalid @enderror" type="url" name="video_link"
+                                    value="{{ old('video_link') }}" placeholder="https://youtube.com/xxxx" autocomplete="video_link" required>
+                                <label for="video_link">Video Link</label>
+                                @error('video_link')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group pb-4 text-center">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            @else 
+                <div class="alert alert-warning mt-4 text-center">
+                    <strong>Pendaftaran sudah berakhir.</strong> Kami menghargai setiap partisipasi yang telah diberikan. Sampai jumpa di kesempatan berikutnya!
+                </div>
+            @endif
         @endif
         
     </div>
-    <div class="content-backdrop fade"></div>
-</div>
-@endsection
+        <div class="content-backdrop fade"></div>
+    </div>
+    @endsection
 
-<!-- Verify Modal -->
-<div class="modal fade" id="verifyModal" tabindex="-1" aria-labelledby="verifyModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content text-black">
-            <div class="modal-header">
-                <h5 class="modal-title" id="verifyModalLabel">Verify Your WhatsApp Number</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
+    <!-- Verify Modal -->
+    <div class="modal fade" id="verifyModal" tabindex="-1" aria-labelledby="verifyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content text-black">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="verifyModalLabel">Verify Your WhatsApp Number</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
                 <p class="mb-0">
                     Please Verify Your WhatsApp Number (<strong>0{{ Auth::user()->nowa }}</strong>)
                 </p>
@@ -111,6 +191,7 @@
         </div>
     </div>
 </div>
+
 <!-- Confirm Modal -->
 <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -132,460 +213,491 @@
     </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+    var formType = 'UPLOAD_VIDEO'; // UPLOAD_VIDEO || SUBMIT_PROPOSAL
+</script>
+
 <!-- Validation and Submit JS -->
 <script>
-    function allMembersAreMember() {
-        var roleSelects = document.querySelectorAll('.role-select');
-        var total = roleSelects.length;
-        var memberCount = 0;
+    if (formType !== 'UPLOAD_VIDEO') {
+        function allMembersAreMember() {
+            var roleSelects = document.querySelectorAll('.role-select');
+            var total = roleSelects.length;
+            var memberCount = 0;
 
-        roleSelects.forEach(function (select) {
-            if (select.value === 'member') {
-                memberCount++;
-            }
-        });
-
-        // Jika semua anggota adalah "member", kembalikan true
-        return (total > 0 && memberCount === total);
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        var form = document.getElementById('mainForm');
-        var saveButton = document.getElementById('saveButton');
-        var confirmSubmitButton = document.getElementById('confirmSubmitButton');
-        var confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
-
-        // Validate on blur
-        form.querySelectorAll('input[required]').forEach(function (input) {
-            input.addEventListener('blur', function () {
-                validateField(input);
-            });
-        });
-
-        saveButton.addEventListener('click', function () {
-            document.getElementById('project_file').removeAttribute('required');
-            saveForm(null);
-        });
-
-        confirmSubmitButton.addEventListener('click', function () {
-            if (!{!! json_encode(Auth::user()->project_file) !!}) {
-                document.getElementById('project_file').setAttribute('required', '');
-            }
-            saveForm(1);
-        });
-
-
-        function saveForm(isSubmit) {
-            var isValid = validateForm();
-
-            if (isValid) {
-                if (allMembersAreMember()) {
-                    alert('At least one team member must be a "Group Leader".');
-                    return;
+            roleSelects.forEach(function (select) {
+                if (select.value === 'member') {
+                    memberCount++;
                 }
-                
-                // Add submitted input to the form
-                var isSubmitInput = document.createElement('input');
-                isSubmitInput.setAttribute('type', 'hidden');
-                isSubmitInput.setAttribute('name', 'submitted');
-                isSubmitInput.setAttribute('value', isSubmit);
-                form.appendChild(isSubmitInput);
+            });
 
-                mainForm.submit();
-            } else {
-                confirmModal.hide();
-                setTimeout(function() {
-                    var firstInvalidField = form.querySelector('.is-invalid');
-                    if (firstInvalidField) {
-                        firstInvalidField.focus();
-                    }
-                }, 500);
-            }
+            // Jika semua anggota adalah "member", kembalikan true
+            return (total > 0 && memberCount === total);
         }
 
-        function validateForm() {
-            var isValid = true;
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('mainForm');
+            var saveButton = document.getElementById('saveButton');
+            var confirmSubmitButton = document.getElementById('confirmSubmitButton');
+            var confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
 
+            // Validate on blur
             form.querySelectorAll('input[required]').forEach(function (input) {
-                if (!validateField(input)) {
-                    isValid = false;
-                }
+                input.addEventListener('blur', function () {
+                    validateField(input);
+                });
             });
 
-            return isValid;
-        }
+            saveButton.addEventListener('click', function () {
+                document.getElementById('project_file').removeAttribute('required');
+                saveForm(null);
+            });
 
-        function validateField(input) {
-            if (input.value.trim() === '') {
-                displayError(input, input.getAttribute('placeholder') + ' is required');
-                return false;
-            } else {
-                removeError(input);
-                return true;
+            confirmSubmitButton.addEventListener('click', function () {
+                if (!{!! json_encode(Auth::user()->project_file) !!}) {
+                    document.getElementById('project_file').setAttribute('required', '');
+                }
+                saveForm(1);
+            });
+
+
+            function saveForm(isSubmit) {
+                var isValid = validateForm();
+
+                if (isValid) {
+                    if (allMembersAreMember()) {
+                        alert('At least one team member must be a "Group Leader".');
+                        return;
+                    }
+                    
+                    // Add submitted input to the form
+                    var isSubmitInput = document.createElement('input');
+                    isSubmitInput.setAttribute('type', 'hidden');
+                    isSubmitInput.setAttribute('name', 'submitted');
+                    isSubmitInput.setAttribute('value', isSubmit);
+                    form.appendChild(isSubmitInput);
+
+                    mainForm.submit();
+                } else {
+                    confirmModal.hide();
+                    setTimeout(function() {
+                        var firstInvalidField = form.querySelector('.is-invalid');
+                        if (firstInvalidField) {
+                            firstInvalidField.focus();
+                        }
+                    }, 500);
+                }
             }
-        }
 
-        function displayError(input, message) {
-            var errorElement = input.parentNode.querySelector('.invalid-feedback'); // Get the invalid-feedback element in the same form-group
-            errorElement.textContent = message;
-            input.classList.add('is-invalid');
-        }
+            function validateForm() {
+                var isValid = true;
 
-        function removeError(input) {
-            var errorElement = input.parentNode.querySelector('.invalid-feedback'); // Get the invalid-feedback element in the same form-group
-            errorElement.textContent = '';
-            input.classList.remove('is-invalid');
-        }
-    });
+                form.querySelectorAll('input[required]').forEach(function (input) {
+                    if (!validateField(input)) {
+                        isValid = false;
+                    }
+                });
+
+                return isValid;
+            }
+
+            function validateField(input) {
+                if (input.value.trim() === '') {
+                    displayError(input, input.getAttribute('placeholder') + ' is required');
+                    return false;
+                } else {
+                    removeError(input);
+                    return true;
+                }
+            }
+
+            function displayError(input, message) {
+                var errorElement = input.parentNode.querySelector('.invalid-feedback'); // Get the invalid-feedback element in the same form-group
+                errorElement.textContent = message;
+                input.classList.add('is-invalid');
+            }
+
+            function removeError(input) {
+                var errorElement = input.parentNode.querySelector('.invalid-feedback'); // Get the invalid-feedback element in the same form-group
+                errorElement.textContent = '';
+                input.classList.remove('is-invalid');
+            }
+        });
+    }
 </script>
 
 <!-- Add member JS -->
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var maxMembers = 3;
-        var currentMembers = {{ $countMember }};
-        var addMemberBtn = document.getElementById('add-member-btn');
+    if (formType !== 'UPLOAD_VIDEO') {
+        document.addEventListener('DOMContentLoaded', function () {
+            var maxMembers = 3;
+            var currentMembers = {{ $countMember }};
+            var addMemberBtn = document.getElementById('add-member-btn');
 
-        function toggleAddMemberButton() {
-            if (currentMembers > maxMembers) {
-                addMemberBtn.style.display = 'none';
-            } else {
-                addMemberBtn.style.display = 'block';
-            }
-        }
-
-        toggleAddMemberButton();
-
-        addMemberBtn.addEventListener('click', function () {
-            if (currentMembers <= maxMembers) {
-                var teamMembersContainer = document.getElementById('team-members');
-                var newMemberDiv = document.createElement('div');
-                newMemberDiv.innerHTML = `
-                    <div class="mb-3 section-content p-2">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" name="member_name[]"
-                                        placeholder="Member Name"
-                                        required />
-                                    <label for="floatingInput">Name</label>
-                                    <div class="invalid-feedback"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating mb-3">
-                                    <select class="form-select role-select" name="member_role[]" placeholder="Member Role" required>
-                                        <option value="">Select Role</option>
-                                        <option value="leader">Group Leader</option>
-                                        <option value="member">Member</option>
-                                    </select>
-                                    <label for="role">Role</label>
-                                    <div class="invalid-feedback"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" name="member_identity[]"
-                                    placeholder="Identity No./KTP/Passport" required />
-                                    <label for="floatingInput">Identity No./KTP/Passport</label>
-                                    <div class="invalid-feedback"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6"></div>
-                            <div class="col-md-6">
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" name="member_domicile[]"
-                                        placeholder="Member Domicile"
-                                        required />
-                                    <label for="floatingInput">Domicile</label>
-                                    <div class="invalid-feedback"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="floatingInput" name="member_email[]"
-                                        placeholder="Member Email"
-                                        required />
-                                    <label for="floatingInput">Email</label>
-                                    <div class="invalid-feedback"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating mb-3">
-                                    <input type="date" class="form-control" id="floatingInput" name="member_date_of_birth[]"
-                                        placeholder="Member Date of Birth"
-                                        required />
-                                    <label for="floatingInput">Date of Birth</label>
-                                    <div class="invalid-feedback"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput" name="member_profession[]"
-                                        placeholder="Member Profession"
-                                        required />
-                                    <label for="floatingInput">Profession</label>
-                                    <div class="invalid-feedback"></div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="floatingInput" name="member_github_url[]"
-                                        placeholder="Github Link"
-                                        />
-                                    <label for="floatingInput">Github Link</label>
-                                    <div id="floatingInputLink" class="form-text text-white">
-                                        https://github.com/username
-                                    </div>
-                                    <div class="invalid-feedback"></div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="floatingInput" name="member_linkedin_url[]"
-                                        placeholder="CV Document or LinkedIn Link"
-                                        />
-                                    <label for="floatingInput">CV Document or LinkedIn Link</label>
-                                    <div id="floatingInputLink" class="form-text text-white">
-                                        https://linkedin.com/in/username
-                                    </div>
-                                    <div class="invalid-feedback"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <button type="button" class="btn btn-danger remove-member-btn">Remove Member</button>
-                        </div>
-                    </div>
-                `;
-                teamMembersContainer.appendChild(newMemberDiv);
-                currentMembers++;
-                toggleAddMemberButton();
-            }
-        });
-
-        document.getElementById('team-members').addEventListener('change', function (e) {
-            if (e.target.classList.contains('role-select')) {
-                var selectedRoles = document.querySelectorAll('.role-select');
-                var leaderCount = 0;
-                selectedRoles.forEach(function (select) {
-                    if (select.value === 'leader') {
-                        leaderCount++;
-                    }
-                });
-                if (leaderCount > 1) {
-                    e.target.value = 'member';
-                    alert('Only one team member can be the leader.');
+            function toggleAddMemberButton() {
+                if (currentMembers > maxMembers) {
+                    addMemberBtn.style.display = 'none';
+                } else {
+                    addMemberBtn.style.display = 'block';
                 }
             }
-        });
 
-        document.getElementById('team-members').addEventListener('click', function (e) {
-            if (e.target.classList.contains('remove-member-btn')) {
-                e.target.parentElement.parentElement.parentElement.remove();
-                currentMembers--;
-                toggleAddMemberButton();
-            }
-        });
+            toggleAddMemberButton();
 
-        document.querySelector('form').addEventListener('submit', function (e) {
-            var numberOfTeamMembers = document.querySelectorAll('[name^="member_name"]').length;
+            addMemberBtn.addEventListener('click', function () {
+                if (currentMembers <= maxMembers) {
+                    var teamMembersContainer = document.getElementById('team-members');
+                    var newMemberDiv = document.createElement('div');
+                    newMemberDiv.innerHTML = `
+                        <div class="mb-3 section-content p-2">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput" name="member_name[]"
+                                            placeholder="Member Name"
+                                            required />
+                                        <label for="floatingInput">Name</label>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select role-select" name="member_role[]" placeholder="Member Role" required>
+                                            <option value="">Select Role</option>
+                                            <option value="leader">Group Leader</option>
+                                            <option value="member">Member</option>
+                                        </select>
+                                        <label for="role">Role</label>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput" name="member_identity[]"
+                                        placeholder="Identity No./KTP/Passport" required />
+                                        <label for="floatingInput">Identity No./KTP/Passport</label>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6"></div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput" name="member_domicile[]"
+                                            placeholder="Member Domicile"
+                                            required />
+                                        <label for="floatingInput">Domicile</label>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control" id="floatingInput" name="member_email[]"
+                                            placeholder="Member Email"
+                                            required />
+                                        <label for="floatingInput">Email</label>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="date" class="form-control" id="floatingInput" name="member_date_of_birth[]"
+                                            placeholder="Member Date of Birth"
+                                            required />
+                                        <label for="floatingInput">Date of Birth</label>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput" name="member_profession[]"
+                                            placeholder="Member Profession"
+                                            required />
+                                        <label for="floatingInput">Profession</label>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="floatingInput" name="member_github_url[]"
+                                            placeholder="Github Link"
+                                            />
+                                        <label for="floatingInput">Github Link</label>
+                                        <div id="floatingInputLink" class="form-text text-white">
+                                            https://github.com/username
+                                        </div>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="floatingInput" name="member_linkedin_url[]"
+                                            placeholder="CV Document or LinkedIn Link"
+                                            />
+                                        <label for="floatingInput">CV Document or LinkedIn Link</label>
+                                        <div id="floatingInputLink" class="form-text text-white">
+                                            https://linkedin.com/in/username
+                                        </div>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="button" class="btn btn-danger remove-member-btn">Remove Member</button>
+                            </div>
+                        </div>
+                    `;
+                    teamMembersContainer.appendChild(newMemberDiv);
+                    currentMembers++;
+                    toggleAddMemberButton();
+                }
+            });
 
-            if (numberOfTeamMembers === 0) {
-                var memberFields = document.querySelectorAll('[name^="member_"]');
-                memberFields.forEach(function (field) {
-                    field.value = '';
-                });
-            }
+            document.getElementById('team-members').addEventListener('change', function (e) {
+                if (e.target.classList.contains('role-select')) {
+                    var selectedRoles = document.querySelectorAll('.role-select');
+                    var leaderCount = 0;
+                    selectedRoles.forEach(function (select) {
+                        if (select.value === 'leader') {
+                            leaderCount++;
+                        }
+                    });
+                    if (leaderCount > 1) {
+                        e.target.value = 'member';
+                        alert('Only one team member can be the leader.');
+                    }
+                }
+            });
+
+            document.getElementById('team-members').addEventListener('click', function (e) {
+                if (e.target.classList.contains('remove-member-btn')) {
+                    e.target.parentElement.parentElement.parentElement.remove();
+                    currentMembers--;
+                    toggleAddMemberButton();
+                }
+            });
+
+            document.querySelector('form').addEventListener('submit', function (e) {
+                var numberOfTeamMembers = document.querySelectorAll('[name^="member_name"]').length;
+
+                if (numberOfTeamMembers === 0) {
+                    var memberFields = document.querySelectorAll('[name^="member_"]');
+                    memberFields.forEach(function (field) {
+                        field.value = '';
+                    });
+                }
+            });
         });
-    });
+    }
 </script>
 
 <!-- Add link JS -->
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var maxLinks = 10;
-        var currentLinks = {{ $countLink }};
-        var addLinkBtn = document.getElementById('add-link-btn');
+    if (formType !== 'UPLOAD_VIDEO') {
+        document.addEventListener('DOMContentLoaded', function () {
+            var maxLinks = 10;
+            var currentLinks = {{ $countLink }};
+            var addLinkBtn = document.getElementById('add-link-btn');
 
-        function toggleAddLinkButton() {
-            if (currentLinks >= maxLinks) {
-                addLinkBtn.style.display = 'none';
-            } else {
-                addLinkBtn.style.display = 'block';
+            function toggleAddLinkButton() {
+                if (currentLinks >= maxLinks) {
+                    addLinkBtn.style.display = 'none';
+                } else {
+                    addLinkBtn.style.display = 'block';
+                }
             }
-        }
 
-        toggleAddLinkButton();
+            toggleAddLinkButton();
 
-        addLinkBtn.addEventListener('click', function () {
-            if (currentLinks < maxLinks) {
-                var linksContainer = document.getElementById('links');
-                var newLinkDiv = document.createElement('div');
-                newLinkDiv.innerHTML = `
-                    <div class="mb-3 section-content p-2">
-                        <div class="row">
-                            <div class="col-12 col-lg-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="floatingInput" name="project_link[]"
-                                        value="" placeholder="Link" />
-                                    <label for="floatingInput">Link (Github/Website/Drive/Other Link)</label>
-                                    <div id="floatingInputLink" class="form-text">
-                                        https://github.com/username/repository
+            addLinkBtn.addEventListener('click', function () {
+                if (currentLinks < maxLinks) {
+                    var linksContainer = document.getElementById('links');
+                    var newLinkDiv = document.createElement('div');
+                    newLinkDiv.innerHTML = `
+                        <div class="mb-3 section-content p-2">
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="floatingInput" name="project_link[]"
+                                            value="" placeholder="Link" />
+                                        <label for="floatingInput">Link (Github/Website/Drive/Other Link)</label>
+                                        <div id="floatingInputLink" class="form-text">
+                                            https://github.com/username/repository
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="floatingInput" name="project_desc[]"
+                                            value="" placeholder="Description" />
+                                        <label for="floatingInput">Description</label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="floatingInput" name="project_desc[]"
-                                        value="" placeholder="Description" />
-                                    <label for="floatingInput">Description</label>
-                                </div>
+                            <div class="col-md-12 text-center mb-3">
+                                <button type="button" class="btn btn-danger remove-link-btn">Remove Item</button>
                             </div>
                         </div>
-                        <div class="col-md-12 text-center mb-3">
-                            <button type="button" class="btn btn-danger remove-link-btn">Remove Item</button>
-                        </div>
-                    </div>
-                `;
-                linksContainer.appendChild(newLinkDiv);
-                currentLinks++;
-                toggleAddLinkButton();
-            }
-        });
+                    `;
+                    linksContainer.appendChild(newLinkDiv);
+                    currentLinks++;
+                    toggleAddLinkButton();
+                }
+            });
 
-        document.getElementById('links').addEventListener('click', function (e) {
-            if (e.target.classList.contains('remove-link-btn')) {
-                e.target.parentElement.parentElement.remove();
-                currentLinks--;
-                toggleAddLinkButton();
-            }
-        });
+            document.getElementById('links').addEventListener('click', function (e) {
+                if (e.target.classList.contains('remove-link-btn')) {
+                    e.target.parentElement.parentElement.remove();
+                    currentLinks--;
+                    toggleAddLinkButton();
+                }
+            });
 
-        document.querySelector('form').addEventListener('submit', function (e) {
-            // Get the number of links
-            var numberOfLinks = document.querySelectorAll('[name^="project_link"]').length;
+            document.querySelector('form').addEventListener('submit', function (e) {
+                // Get the number of links
+                var numberOfLinks = document.querySelectorAll('[name^="project_link"]').length;
 
-            if (numberOfLinks === 0) {
-                var linkFields = document.querySelectorAll('[name^="project_"]');
-                linkFields.forEach(function (field) {
-                    field.value = '';
-                });
-            }
+                if (numberOfLinks === 0) {
+                    var linkFields = document.querySelectorAll('[name^="project_"]');
+                    linkFields.forEach(function (field) {
+                        field.value = '';
+                    });
+                }
+            });
         });
-    });
+    }
 </script>
 
 <!-- Upload File JS -->
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var dropZone = document.querySelector('.drop-zone');
-        var fileInput = document.getElementById('project_file');
-        var filePreview = document.querySelector('.file-preview');
+    if (formType === 'UPLOAD_VIDEO') {
+        console.log("FORM UPLOAD SECTION");
+        // document.getElementById('videoForm').addEventListener('submit', function(event) {
+            // var videoFile = document.getElementById('video_file').value;
+            // var videoLink = document.getElementById('video_link').value;
 
-        dropZone.addEventListener('dragover', function (e) {
-            e.preventDefault();
-            dropZone.classList.add('drop-zone--over');
-        });
-
-        dropZone.addEventListener('dragleave', function () {
-            dropZone.classList.remove('drop-zone--over');
-        });
-
-        dropZone.addEventListener('drop', function (e) {
-            e.preventDefault();
-            dropZone.classList.remove('drop-zone--over');
-
-            var files = e.dataTransfer.files;
-            handleFiles(files);
-        });
-
-        fileInput.addEventListener('change', function () {
-            var files = this.files;
-            handleFiles(files);
-        });
-
-        filePreview.addEventListener('click', function (e) {
-            if (e.target.classList.contains('remove-file')) {
-            e.target.parentElement.remove();
-            }
-        });
-
-        function handleFiles(files) {
-            // Check if more than one file is selected
-            if (files.length > 1) {
-                alert('Please select only one file.');
-                fileInput.value = '';
-                return;
-            }
-
-            // Clear existing file preview items
-            filePreview.innerHTML = '';
-
-            // Handle the selected file
-            var file = files[0];
-
-            var fileItem = document.createElement('div');
-            fileItem.classList.add('file-preview__item');
-            fileItem.innerHTML = `
-            <span>Selected Proposal File: ${file.name}</span>
-            <span>${formatBytes(file.size)}</span>
-            <span class="remove-file">x</span>
-            `;
-            filePreview.appendChild(fileItem);
-
-            // Update file input value to reflect selected file
-            fileInput.files = files;
-        }
-
-        // Reset file input value
-        filePreview.addEventListener('click', function (e) {
-            if (e.target.classList.contains('remove-file')) {
-                fileInput.value = '';
-                fileSelected = false;
-            }
-        });
-
-        // // Update file input value to null if no file has been selected
-        // fileInput.addEventListener('change', function () {
-        //     if (!fileSelected) {
-        //         fileInput.value = '';
-        //     }
+            // if (!videoFile && !videoLink) {
+            //     event.preventDefault();
+            //     alert('Please provide either a video file or a video link.');
+            // }
         // });
+    } else {
+        document.addEventListener('DOMContentLoaded', function () {
+            var dropZone = document.querySelector('.drop-zone');
+            var fileInput = document.getElementById('project_file');
+            var filePreview = document.querySelector('.file-preview');
 
-        function formatBytes(bytes, decimals = 2) {
-            if (bytes === 0) return '0 Bytes';
-            const k = 1024;
-            const dm = decimals < 0 ? 0 : decimals;
-            const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
-            const i = Math.floor(Math.log(bytes) / Math.log(k));
-            return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
-        }
-    });
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var changeFileRadios = document.querySelectorAll('input[name="change_file"]');
-        var newFileUpload = document.getElementById('new-file-upload');
+            dropZone.addEventListener('dragover', function (e) {
+                e.preventDefault();
+                dropZone.classList.add('drop-zone--over');
+            });
 
-        changeFileRadios.forEach(function (radio) {
-            radio.addEventListener('change', function () {
-                if (this.value === 'yes') {
-                    newFileUpload.style.display = 'block';
-                } else {
-                    newFileUpload.style.display = 'none';
+            dropZone.addEventListener('dragleave', function () {
+                dropZone.classList.remove('drop-zone--over');
+            });
+
+            dropZone.addEventListener('drop', function (e) {
+                e.preventDefault();
+                dropZone.classList.remove('drop-zone--over');
+
+                var files = e.dataTransfer.files;
+                handleFiles(files);
+            });
+
+            fileInput.addEventListener('change', function () {
+                var files = this.files;
+                handleFiles(files);
+            });
+
+            filePreview.addEventListener('click', function (e) {
+                if (e.target.classList.contains('remove-file')) {
+                e.target.parentElement.remove();
                 }
             });
-        });
-    });
+
+            function handleFiles(files) {
+                // Check if more than one file is selected
+                if (files.length > 1) {
+                    alert('Please select only one file.');
+                    fileInput.value = '';
+                    return;
+                }
+
+                // Clear existing file preview items
+                filePreview.innerHTML = '';
+
+                // Handle the selected file
+                var file = files[0];
+
+                var fileItem = document.createElement('div');
+                fileItem.classList.add('file-preview__item');
+                fileItem.innerHTML = `
+                <span>Selected Proposal File: ${file.name}</span>
+                <span>${formatBytes(file.size)}</span>
+                <span class="remove-file">x</span>
+                `;
+                filePreview.appendChild(fileItem);
+
+                // Update file input value to reflect selected file
+                fileInput.files = files;
+            }
+
+            // Reset file input value
+            filePreview.addEventListener('click', function (e) {
+                if (e.target.classList.contains('remove-file')) {
+                    fileInput.value = '';
+                    fileSelected = false;
+                }
+            });
+
+            // // Update file input value to null if no file has been selected
+            // fileInput.addEventListener('change', function () {
+            //     if (!fileSelected) {
+            //         fileInput.value = '';
+            //     }
+            // });
+
+            function formatBytes(bytes, decimals = 2) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const dm = decimals < 0 ? 0 : decimals;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+            }
+        }); 
+    }
 </script>
 
 <script>
-    // Inisialisasi semua tooltip di halaman
-    document.addEventListener("DOMContentLoaded", function(){
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        tooltipTriggerList.forEach(function (tooltipTriggerEl) {
-            new bootstrap.Tooltip(tooltipTriggerEl)
-        })
-    });
+    if (formType !== 'UPLOAD_VIDEO') {
+        document.addEventListener('DOMContentLoaded', function () {
+            var changeFileRadios = document.querySelectorAll('input[name="change_file"]');
+            var newFileUpload = document.getElementById('new-file-upload');
+
+            changeFileRadios.forEach(function (radio) {
+                radio.addEventListener('change', function () {
+                    if (this.value === 'yes') {
+                        newFileUpload.style.display = 'block';
+                    } else {
+                        newFileUpload.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
+</script>
+
+<script>
+    if (formType !== 'UPLOAD_VIDEO') {
+        // Inisialisasi semua tooltip di halaman
+        document.addEventListener("DOMContentLoaded", function(){
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+                new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+        });
+    }
 </script>
