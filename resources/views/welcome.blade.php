@@ -72,18 +72,23 @@
 			</div>
 		</section>  -->
 
-@if(Auth::check() && Auth::user()->type === 'admin')
 		<section id="prizes" class="prizes d-flex flex-column align-items-center justify-content-center">
 			<div class="container">
 				<div class="section-content">
 					<div class="section-title text-center pb-5">
-						<p style="font-size: 32px !important;">Announcement</p>
+						<p style="font-size: 32px !important;">Announcement <br/> Semifinalis</p>
+					</div>
+
+					<div class="prize-content mx-0 mx-lg-5 mb-3">
+						<h5 class="mb-0">Terima kasih atas partisipasi luar biasa! <br/>Terdapat 2.336 pendaftar & 743 proposal masuk tahun ini.</h5>
 					</div>
 					<div class="prize-content mx-0 mx-lg-5 mb-3">
-						<h5 class="mb-0">
-							Selamat kepada 30 semifinalis BI-OJK Hackathon 2025
-						</h5>
+						<h5 class="mb-0">Selamat kepada para Semifinalis. <br/>Daftar Semifinalis disusun berdasarkan urutan abjad.</h5>
 					</div>
+					<div class="prize-content mx-0 mx-lg-5 mb-3">
+						<h5 class="mb-0">Tahap berikutnya: submisi video – detail akan diinfokan di website.</h5>
+					</div>
+
 					<div class="section-content mt-3">
 						<div class="text-center pt-5 pb-4">
 							<h2>Kategori Professional</h2>
@@ -91,60 +96,60 @@
 						<div class="row pt-lg-4 mb-lg-4">
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>1. IONIFY</h5>
-									<p class="prize-subtitle">TARA: Personalized Training</p>
+									<h5>1. ApAjGas</h5>
+									<p class="prize-subtitle">ApAjGas</p>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>2. Dewantara</h5>
-									<p class="prize-subtitle">Dewantara: ChatBot for RAG ChatBot</p>
+									<h5>2. ChainDefend</h5>
+									<p class="prize-subtitle">ChainDefend</p>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>3. SamaRata</h5>
-									<p class="prize-subtitle">SamaRata: Empowering Indonesia’s Social Aid</p>
-								</div>
-							</div>
-						</div>
-						<div class="row pt-lg-4 mb-lg-4">
-							<div class="col-12 col-md-6 col-lg-4">
-								<div class="prize">
-									<h5>4. Wani Menang!</h5>
-									<p class="prize-subtitle">#SakuNegara: Pemanfaatan AI untuk Memperluas Jangkauan Perbankan bagi Masyarakat 3T</p>
-								</div>
-							</div>
-							<div class="col-12 col-md-6 col-lg-4">
-								<div class="prize">
-									<h5>5. Logisticc</h5>
-									<p class="prize-subtitle">SMARTEXPORT.ID: AI Assistant, Invoice & Standardization Tool, And Export Simulation for UMKM</p>
-								</div>
-							</div>
-							<div class="col-12 col-md-6 col-lg-4">
-								<div class="prize">
-									<h5>6. niriksagara</h5>
-									<p class="prize-subtitle">Niriksagara: Pantau, Prioritaskan, Kelola </p>
+									<h5>3. Dewantara</h5>
+									<p class="prize-subtitle">Dewantara</p>
 								</div>
 							</div>
 						</div>
 						<div class="row pt-lg-4 mb-lg-4">
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>7. Indonesia Emas</h5>
-									<p class="prize-subtitle">Partisipro: Platform Tokenisasi dan Investasi Real World Asset (RWA)</p>
+									<h5>4. GoHansip</h5>
+									<p class="prize-subtitle">GoHansip</p>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>8. Seryu Labs</h5>
-									<p class="prize-subtitle">JudolBlocker</p>
+									<h5>5. Hackathon Hunter</h5>
+									<p class="prize-subtitle">JagaCrypto</p>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>9. GoHansip</h5>
-									<p class="prize-subtitle">GoHansip: Pusat Data Nasional berbasis AI untuk Mengungkap Aktivitas Judol</p>
+									<h5>6. Indonesia Emas</h5>
+									<p class="prize-subtitle">Partisipro</p>
+								</div>
+							</div>
+						</div>
+						<div class="row pt-lg-4 mb-lg-4">
+							<div class="col-12 col-md-6 col-lg-4">
+								<div class="prize">
+									<h5>7. IONIFY</h5>
+									<p class="prize-subtitle">TARA</p>
+								</div>
+							</div>
+							<div class="col-12 col-md-6 col-lg-4">
+								<div class="prize">
+									<h5>8. Logisticc</h5>
+									<p class="prize-subtitle">SMARTEXPORT.ID</p>
+								</div>
+							</div>
+							<div class="col-12 col-md-6 col-lg-4">
+								<div class="prize">
+									<h5>9. Meaningful Intelligence</h5>
+									<p class="prize-subtitle">Garda AI</p>
 								</div>
 							</div>
 						</div>
@@ -152,145 +157,145 @@
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
 									<h5>10. NEO NUSA</h5>
-									<p class="prize-subtitle">BI-RISE: Realtime Intelligence for Secure Ecosystem</p>
+									<p class="prize-subtitle">BI-RISE</p>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>11. Orbit</h5>
-									<p class="prize-subtitle">ChatBijak: Public Service Assistant for Fraud Prevention and AI Threat Countermeasures</p>
+									<h5>11. niriksagara</h5>
+									<p class="prize-subtitle">Niriksagara</p>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>12. Meaningfull Intelligence</h5>
-									<p class="prize-subtitle">Garda AI: Hybrid Grap & AI federatif untuk real-time fraud & anomaly detection</p>
+									<h5>12. Orbit</h5>
+									<p class="prize-subtitle">ChatBijak</p>
 								</div>
 							</div>
 						</div>
 						<div class="row pt-lg-4 mb-lg-4">
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>13. ChainDefend</h5>
-									<p class="prize-subtitle">ChainDefend: Smart Contract Auditor</p>
+									<h5>13. SamaRata</h5>
+									<p class="prize-subtitle">SamaRata</p>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>14. Hackathon Hunter</h5>
-									<p class="prize-subtitle">JagaCrypto: Crypto Forensics Inteligence Platform</p>
+									<h5>14. Seryu Labs</h5>
+									<p class="prize-subtitle">JudolBlocker</p>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>15. ApAjGas</h5>
-									<p class="prize-subtitle">Sistem Monitoring Anggaran Pemda dengan Anomaly Detection dan Clustering</p>
+									<h5>15. Wani Menang!</h5>
+									<p class="prize-subtitle">#SakuNegara</p>
 								</div>
 							</div>
 						</div>
 					</div>
+
 					<div class="section-content mt-3">
 						<div class="text-center pt-5 pb-1">
 							<h2>Kategori Mahasiswa</h2>
 						</div>
-						
 						<div class="row pt-lg-4 mb-lg-4">
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>1. Sagara</h5>
-									<p class="prize-subtitle">Sagara - Solusi AI untuk Routing & Likuiditas Crossborder</p>
+									<h5>1. BEYOND</h5>
+									<p class="prize-subtitle">JALA</p>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>2. KancaKids</h5>
-									<p class="prize-subtitle">KANCA - Platform edukasi dan literasi keuangan anak-anak</p>
+									<h5>2. Cakrawala Digital</h5>
+									<p class="prize-subtitle">VerasiData</p>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>3. Double Core Team</h5>
-									<p class="prize-subtitle">SIBISA - Sistem Intelijen BLT & Inklusi Sosial Adaptif</p>
+									<h5>3. Chain Inteligence</h5>
+									<p class="prize-subtitle">CIA</p>
 								</div>
 							</div>
 						</div>
 						<div class="row pt-lg-4 mb-lg-4">
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>4. Cakrawala Digital</h5>
-									<p class="prize-subtitle">VerasiData - TrustChain for Social Aid</p>
+									<h5>4. Dextektif</h5>
+									<p class="prize-subtitle">Dextektif</p>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>5. Geprek Zago </h5>
-									<p class="prize-subtitle">Deschain - Platform AI Pengadaan Kolektif untuk UMKM</p>
+									<h5>5. Double Core Team</h5>
+									<p class="prize-subtitle">SIBISA</p>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>6. MTAF IMPACT </h5>
-									<p class="prize-subtitle">#UMKMSIAP - Boosting MSMEs Globally with AI Insights, Smart Docs, and Targeted B2B Matching</p>
-								</div>
-							</div>
-						</div>
-						<div class="row pt-lg-4 mb-lg-4">
-							<div class="col-12 col-md-6 col-lg-4">
-								<div class="prize">
-									<h5>7. The Funatics</h5>
-									<p class="prize-subtitle">FINEVO+ - Boosting MSME Financial Literacy & Credit Scores with AI</p>
-								</div>
-							</div>
-							<div class="col-12 col-md-6 col-lg-4">
-								<div class="prize">
-									<h5>8. FAAS</h5>
-									<p class="prize-subtitle">SRIKANDI - AI Cerdas untuk Intervensi & Personalisasi Koperasi Desa Merah Putih</p>
-								</div>
-							</div>
-							<div class="col-12 col-md-6 col-lg-4">
-								<div class="prize">
-									<h5>9. Pika Pikachu</h5>
-									<p class="prize-subtitle">KIP+ - Seleksi Beasiswa Berbasis AI dengan Wawancara Cerdas & Validasi Dokumen Otomatis</p>
+									<h5>6. FAAS</h5>
+									<p class="prize-subtitle">SRIKANDI</p>
 								</div>
 							</div>
 						</div>
 						<div class="row pt-lg-4 mb-lg-4">
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>10. BEYOND</h5>
-									<p class="prize-subtitle">JALA - Ungkap Jaringan Judi Online lewat Behavioral AI & Analisis Graf</p>
+									<h5>7. Geprek Zago</h5>
+									<p class="prize-subtitle">Deschain</p>
+								</div>
+							</div>
+							<div class="col-12 col-md-6 col-lg-4">
+								<div class="prize">
+									<h5>8. KancaKids</h5>
+									<p class="prize-subtitle">KANCA</p>
+								</div>
+							</div>
+							<div class="col-12 col-md-6 col-lg-4">
+								<div class="prize">
+									<h5>9. Mataku</h5>
+									<p class="prize-subtitle">MATA GARUDA</p>
+								</div>
+							</div>
+						</div>
+						<div class="row pt-lg-4 mb-lg-4">
+							<div class="col-12 col-md-6 col-lg-4">
+								<div class="prize">
+									<h5>10. MTAF IMPACT</h5>
+									<p class="prize-subtitle">#UMKMSIAP</p>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
 									<h5>11. NLxOTI</h5>
-									<p class="prize-subtitle">ARCHANGEL - AI-Blockchain Cerdas untuk Deteksi Judi & Dana Ilegal Real-Time</p>
+									<p class="prize-subtitle">ARCHANGEL</p>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>12. Mataku</h5>
-									<p class="prize-subtitle">MATA GARUDA: Gerbang Intelijen Digital untuk Mencegah Penipuan & Aktivitas Ilegal</p>
+									<h5>12. Pika Pikachu</h5>
+									<p class="prize-subtitle">KIP+</p>
 								</div>
 							</div>
 						</div>
 						<div class="row pt-lg-4 mb-lg-4">
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>13. Chain Inteligence</h5>
-									<p class="prize-subtitle">CIA: Platform Analitik On-Chain Berbasis AI untuk Keamanan Rantai Transaksi</p>
+									<h5>13. Sagara</h5>
+									<p class="prize-subtitle">Sagara</p>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>14. Tiwas Tak Gondeli Tenanan</h5>
-									<p class="prize-subtitle">GardaChain: Audit Smart Contract End-to-End dengan Bantuan LLM yang Cepat & Ramah Lingkungan</p>
+									<h5>14. The Funatics</h5>
+									<p class="prize-subtitle">FINEVO+</p>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-4">
 								<div class="prize">
-									<h5>15. Dextektif</h5>
-									<p class="prize-subtitle">Dextektif – Kripto Aman, Transaksi Nyaman</p>
+									<h5>15. Tiwas Tak Gondeli Tenanan</h5>
+									<p class="prize-subtitle">GardaChain</p>
 								</div>
 							</div>
 						</div>
@@ -298,7 +303,6 @@
 				</div>
 			</div>
 		</section>
-@endif
 
 		<!-- ======= About Section ======= -->
 		<section id="about" class="about">
