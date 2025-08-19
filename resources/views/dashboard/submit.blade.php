@@ -92,15 +92,29 @@
                         <p class="mb-0">
                             Anda masih memiliki kesempatan untuk mengirimkan video baru sebelum batas waktu berakhir.
                         </p>
-                        <p class="mt-2 mb-0">
-                            <a href="{{ Auth::user()->video_link }}" target="_blank">Lihat Video yang Telah Dikirim</a>
-                        </p>
+                        <div class="rows flex-column mt-2">
+                            @if (Auth::user()->video_file)
+                                <a href="{{ Auth::user()->video_file }}" target="_blank" class="btn btn-success">Lihat Video</a>
+                            @endif
+
+                            @if (Auth::user()->video_link)
+                                <a href="{{ Auth::user()->video_link }}" target="_blank" class="btn btn-success">Lihat Link</a>
+                            @endif
+                        </div>
+                        
+                        <br/><b>Timeline:</b><br/>
+                        <strong>First Draft Submission</strong> - 21 Agustus 2025 12:00 WIB<br/>
+                        <strong>Final Submission</strong> - 27 Agustus 2025 23:59 WIB
                     </div>
 
                 @else
                     <div class="alert alert-info mt-4 text-center">
                         <strong>Mohon segera mengunggah tautan link video dari tim Anda.</strong><br/>
                         Pastikan tautan dapat diakses dengan baik, jangan lewatkan kesempatan berharga ini untuk menampilkan karya terbaik tim Anda!
+                        
+                        <br/><br/><b>Timeline:</b><br/>
+                        <strong>First Draft Submission</strong> - 21 Agustus 2025 12:00 WIB<br/>
+                        <strong>Final Submission</strong> - 27 Agustus 2025 23:59 WIB
                     </div>
                 @endif
 
