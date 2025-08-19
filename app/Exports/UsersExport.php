@@ -67,6 +67,14 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithStyl
             $query->where('submit_for', $this->filter['categories-filter']);
         }
 
+        if (isset($this->filter['finalis-filter'])) {
+            if ($this->filter['finalis-filter'] === "yes") {
+                $query->where('is_finalis', true);
+            } elseif ($this->filter['finalis-filter'] === "no") {
+                $query->where('is_finalis', false);
+            }
+        }
+
         return $query->get();
     }
 
@@ -102,6 +110,7 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithStyl
 
             'Additional Link',
             'Description Link',
+            'Is Finalis',
         ];
     }
 

@@ -116,6 +116,19 @@
 								<label class="btn btn-outline-info btn-sm" for="categories2">Mahasiswa</label>
 							</div>
 						</div>
+						<div class="col-12 mb-1">
+							<p style="display: inline;">Finalis: </p>
+							<div class="btn-group" role="group" aria-label="Finalis">
+								<input type="radio" class="btn-check" name="finalis-filter" value="all" id="finalis0" autocomplete="off" checked>
+								<label class="btn btn-outline-info btn-sm" for="finalis0">All</label>
+
+								<input type="radio" class="btn-check" name="finalis-filter" value="yes" id="finalis1" autocomplete="off">
+								<label class="btn btn-outline-info btn-sm" for="finalis1">Yes</label>
+
+								<input type="radio" class="btn-check" name="finalis-filter" value="no" id="finalis2" autocomplete="off">
+								<label class="btn btn-outline-info btn-sm" for="finalis2">No</label>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -131,6 +144,7 @@
 								<input type="hidden" name="submitted">
 								<input type="hidden" name="project_file">
 								<input type="hidden" name="categories">
+								<input type="hidden" name="finalis">
 							</form>
 							<button type="button" id="export-btn" class="btn btn-sm btn-info mb-1">Export Users</button>
 							<!-- <a href="{{ route('export.users') }}" class="btn btn-sm btn-info mb-1">Export Users</a> -->
@@ -155,6 +169,7 @@
 							<th>Project</th>
 							<th>Submission</th>
 							<th>Submission Time</th>
+							<th>Is Finalis</th>
 							<th>Details</th>
 						</tr>
 					</thead>
@@ -220,6 +235,13 @@
 									-
 								@else
 									{{ date('d-m-Y H:i:s', strtotime($user->updated_at)) }}
+								@endif
+							</td>
+							<td>
+								@if ($user->is_finalis)
+									<span class="badge bg-success">Yes</span>
+								@else
+									<span class="badge bg-secondary">No</span>
 								@endif
 							</td>
 							<td>
@@ -376,6 +398,8 @@
 				exportForm.querySelector("input[name='submitted']").value = document.querySelector("input[name='submission-filter']:checked").value;
 				exportForm.querySelector("input[name='project_file']").value = document.querySelector("input[name='project-file-filter']:checked").value;
 				exportForm.querySelector("input[name='categories']").value = document.querySelector("input[name='categories-filter']:checked").value;
+				console.log(exportForm.querySelector("input[name='categories']").value);
+				exportForm.querySelector("input[name='finalis']").value = document.querySelector("input[name='finalis-filter']:checked").value;
 				exportForm.submit();
 			});
 		}
@@ -431,6 +455,18 @@
 				table.column(2).search('Mahasiswa', true, false).draw();
 			} else if (value === 'Profesional') {
 				table.column(2).search('Profesional', true, false).draw();
+			}
+		});
+
+		// Custom filter for finalis
+		$('input[name="finalis-filter"]').on('change', function() {
+			var value = $(this).val();
+			if (value === 'all') {
+				table.columns(11).search('').draw();
+			} else if (value === 'yes') {
+				table.column(11).search('\\bYes\\b', true, false).draw();
+			} else if (value === 'no') {
+				table.column(11).search('\\bNo\\b', true, false).draw();
 			}
 		});
     });

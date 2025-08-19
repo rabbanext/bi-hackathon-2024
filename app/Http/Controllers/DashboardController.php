@@ -166,7 +166,8 @@ class DashboardController extends Controller
             'submitted',
             'email_verified',
             'otp_verified',
-            'categories'
+            'categories',
+            'finalis',
         ]);
 
         // mapping the filters to match with query
@@ -194,6 +195,11 @@ class DashboardController extends Controller
                 $mappedFilters['categories-filter'] = $filters['categories'];
             }
         }
+
+        if ($filters['finalis']) {
+            $mappedFilters['finalis-filter'] = $filters['finalis'];
+        }
+        Log::info('Mapped Filters: ' . json_encode($mappedFilters));
         return Excel::download(new UsersExport($mappedFilters), 'users.xlsx');
     }
 
