@@ -103,8 +103,8 @@
                         </div>
                         
                         <br/><b>Timeline:</b><br/>
-                        <strong>First Draft Submission</strong> - 21 Agustus 2025 12:00 WIB<br/>
-                        <strong>Final Submission</strong> - 27 Agustus 2025 23:59 WIB
+                        <strong>Penyerahan Draf Pertama</strong> - 21 Agustus 2025 12:00 WIB<br/>
+                        <strong>Penyerahan Draf Final</strong> - 27 Agustus 2025 23:59 WIB
                     </div>
                 @else
                     <div class="alert alert-info mt-4 text-center">
@@ -112,8 +112,8 @@
                         Pastikan tautan dapat diakses dengan baik, jangan lewatkan kesempatan berharga ini untuk menampilkan karya terbaik tim Anda!
                         
                         <br/><br/><b>Timeline:</b><br/>
-                        <strong>First Draft Submission</strong> - 21 Agustus 2025 12:00 WIB<br/>
-                        <strong>Final Submission</strong> - 27 Agustus 2025 23:59 WIB
+                        <strong>Penyerahan Draf Pertama</strong> - 21 Agustus 2025 12:00 WIB<br/>
+                        <strong>Penyerahan Draf Final</strong> - 27 Agustus 2025 23:59 WIB
                     </div>
                 @endif
 

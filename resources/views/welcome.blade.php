@@ -86,7 +86,12 @@
 						<h5 class="mb-0">Selamat kepada para Semifinalis. <br/>Daftar Semifinalis disusun berdasarkan urutan abjad.</h5>
 					</div>
 					<div class="prize-content mx-0 mx-lg-5 mb-3">
-						<h5 class="mb-0">Tahap berikutnya: submisi video – detail akan diinfokan di website.</h5>
+						<h5 class="mb-0">Submisi Video bagi semifinalis telah dibuka</h5>
+					</div>
+					<div class="prize-content mx-0 mx-lg-5 mb-3">
+						<h5 class="mb-3">Timeline:</h5>
+						<h5 class="mb-1 prize-subtitle">Penyerahan Draf Pertama: 21 Agustus 2025 12:00 WIB</h5>
+						<h5 class="mb-0 prize-subtitle">Penyerahan Draf Final: 27 Agustus 2025 23:59 WIB</h5>
 					</div>
 
 					<div class="section-content mt-3">
