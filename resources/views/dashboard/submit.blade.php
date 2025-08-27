@@ -97,8 +97,8 @@
                     </div>
                 @endif
 
-                @if (now() < $startSubmission)
-                    @if (Auth::user()->video_submitted_at)
+                @if ((now() >= $startSubmission) && (now() <= $endSubmission))
+                    @if (Auth::user()->video_link != null || Auth::user()->video_file != null)
                         <div class="alert alert-success mt-4 text-center">
                             <p class="mb-0">
                                 <b>Terima kasih!</b> Anda telah mengirimkan video pada {{ Auth::user()->video_submitted_at->format('d-m-Y H:i') }}.
