@@ -391,7 +391,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 <script>
-    var formType = 'UPLOAD_DOCUMENT'; // UPLOAD_VIDEO || SUBMIT_PROPOSAL || UPLOAD_DOCUMENT
+    var formType = 'UPLOAD_VIDEO'; // UPLOAD_VIDEO || SUBMIT_PROPOSAL || UPLOAD_DOCUMENT
 </script>
 
 <!-- Validation and Submit JS -->
