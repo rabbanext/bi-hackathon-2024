@@ -79,153 +79,236 @@
             </div>
         @else
             @if (Auth::user()->is_finalis)
-                <div class="section-title pt-5 pb-2">
-                    <p>Submit Video</p>
-                </div>
 
-                
-                @if (Auth::user()->video_submitted_at)
-                    <div class="alert alert-success mt-4 text-center">
-                        <p class="mb-0">
-                            <b>Terima kasih!</b> Anda telah mengirimkan video pada {{ Auth::user()->video_submitted_at->format('d-m-Y H:i') }}.
-                        </p>
-                        <p class="mb-0">
-                            Anda masih memiliki kesempatan untuk mengirimkan video baru sebelum batas waktu berakhir.
-                        </p>
-                        <div class="rows flex-column mt-2">
-                            @if (Auth::user()->video_file)
-                                <a href="{{ Auth::user()->video_file }}" target="_blank" class="btn btn-success">Lihat Video</a>
-                            @endif
+                @php
+                    $startSubmission = \Carbon\Carbon::create(2025, 8, 21, 12, 0); // 21 Agustus 2025 12:00 WIB
+                    $endSubmission = \Carbon\Carbon::create(2025, 8, 26, 23, 59); // 27 Agustus 2025 23:59 WIB
+                @endphp
 
-                            @if (Auth::user()->video_link)
-                                <a href="{{ Auth::user()->video_link }}" target="_blank" class="btn btn-success">Lihat Link</a>
-                            @endif
-                        </div>
-                        
-                        <br/><b>Timeline:</b><br/>
-                        <strong>Penyerahan Draf Pertama</strong> - 21 Agustus 2025 12:00 WIB<br/>
-                        <strong>Penyerahan Draf Final</strong> - 27 Agustus 2025 23:59 WIB
+                @if (now() > $endSubmission)
+                    <div class="section-title pt-5 pb-2">
+                        <p>Submit Dokumen</p>
+                        <p style="font-size: 12px; padding: 1rem 0px;">Silakan unggah file dokumen tim Anda pada form di bawah ini.</p>
                     </div>
                 @else
-                    <div class="alert alert-info mt-4 text-center">
-                        <strong>Mohon segera mengunggah tautan link video dari tim Anda.</strong><br/>
-                        Pastikan tautan dapat diakses dengan baik, jangan lewatkan kesempatan berharga ini untuk menampilkan karya terbaik tim Anda!
-                        
-                        <br/><br/><b>Timeline:</b><br/>
-                        <strong>Penyerahan Draf Pertama</strong> - 21 Agustus 2025 12:00 WIB<br/>
-                        <strong>Penyerahan Draf Final</strong> - 27 Agustus 2025 23:59 WIB
+                    <div class="section-title pt-5 pb-2">
+                        <p>Submit Video</p>
+                        <p style="font-size: 12px; padding: 1rem 0px; margin-bottom:1rem">Silakan unggah file video atau tautan link video dari tim Anda pada form di bawah ini.</p>
                     </div>
                 @endif
 
-                <ul class="nav nav-tabs" id="submitVideoTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="file-tab" data-toggle="tab" href="#file" role="tab" aria-controls="file" aria-selected="true">
-                            <small>Upload File</small>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="link-tab" data-toggle="tab" href="#link" role="tab" aria-controls="link" aria-selected="false">
-                            <small>Submit Link</small>
-                        </a>
-                    </li>
-                </ul>
+                @if (now() < $startSubmission)
+                    @if (Auth::user()->video_submitted_at)
+                        <div class="alert alert-success mt-4 text-center">
+                            <p class="mb-0">
+                                <b>Terima kasih!</b> Anda telah mengirimkan video pada {{ Auth::user()->video_submitted_at->format('d-m-Y H:i') }}.
+                            </p>
+                            <p class="mb-0">
+                                Anda masih memiliki kesempatan untuk mengirimkan video baru sebelum batas waktu berakhir.
+                            </p>
+                            <div class="rows flex-column mt-2">
+                                @if (Auth::user()->video_file)
+                                    <a href="{{ Auth::user()->video_file }}" target="_blank" class="btn btn-success">Lihat Video</a>
+                                @endif
 
-                <div class="tab-content section-content mt-4" id="submitVideoTabContent">
-                    <div class="tab-pane fade show active" id="file" role="tabpanel" aria-labelledby="file-tab">
-                        <div class="alert text-center mb-0">
-                            <small>
-                                <strong>Perhatian!</strong> Pastikan file video yang dikirimkan berformat .mp4, .mpg/.mpeg atau .webm, dengan ukuran maksimal 300MB.
-                            </small>
+                                @if (Auth::user()->video_link)
+                                    <a href="{{ Auth::user()->video_link }}" target="_blank" class="btn btn-success">Lihat Link</a>
+                                @endif
+                            </div>
+                            
+                            <br/><b>Timeline:</b><br/>
+                            <strong>Penyerahan Draf Pertama</strong> - 21 Agustus 2025 12:00 WIB<br/>
+                            <strong>Penyerahan Draf Final</strong> - 27 Agustus 2025 23:59 WIB
                         </div>
-                        <style>
-                            .drop-zone {
-                                border: 2px dashed #9aa0a6;
-                                border-radius: 12px;
-                                padding: 28px;
-                                background: rgba(255, 255, 255, 0.04);
-                                transition: all 0.2s ease;
-                                cursor: pointer;
-                            }
-                            .drop-zone:hover, .drop-zone--over {
-                                border-color: #0d6efd;
-                                background: rgba(13, 110, 253, 0.06);
-                                box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
-                            }
-                            .drop-zone__input { display: none; }
-                            .dz-content .dz-icon { width: 48px; height: 48px; margin: 0 auto 8px; opacity: 0.9; }
-                            .dz-content .dz-icon svg { width: 48px; height: 48px; fill: #0d6efd; }
-                            .file-preview { margin-top: 12px; }
-                            .file-preview__item {
-                                display: flex;
-                                align-items: center;
-                                justify-content: space-between;
-                                gap: 12px;
-                                padding: 10px 12px;
-                                border: 1px solid rgba(13, 110, 253, 0.25);
-                                border-radius: 8px;
-                                background: rgba(13, 110, 253, 0.05);
-                            }
-                            .file-preview__name { font-weight: 600; }
-                            .file-preview__size { font-size: 0.875rem; color: #6c757d; }
-                            .remove-file { cursor: pointer; color: #dc3545; font-weight: 700; padding: 0 8px; }
-                        </style>
-                        <form id="videoFileForm" action="{{ route('submitVideo') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <div class="form-group mb-3">
-                                <label for="video_file" class="mb-2">Video File</label>
-                                <div id="video-drop-zone" class="drop-zone text-center">
-                                    <div class="dz-content">
-                                        <div class="dz-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                                <path d="M12 16V4m0 0l-4 4m4-4l4 4" stroke="#0d6efd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                <path d="M20 16.5a3.5 3.5 0 01-3.5 3.5h-9A3.5 3.5 0 014 16.5c0-1.7 1.2-3.1 2.7-3.4.4-2.5 2.6-4.4 5.3-4.4 2.2 0 4.1 1.3 4.9 3.2 1.7.1 3.1 1.6 3.1 3.6z" fill="#0d6efd" opacity="0.15"/>
-                                            </svg>
+                    @else
+                        <div class="alert alert-info mt-4 text-center">
+                            <strong>Mohon segera mengunggah tautan link video dari tim Anda.</strong><br/>
+                            Pastikan tautan dapat diakses dengan baik, jangan lewatkan kesempatan berharga ini untuk menampilkan karya terbaik tim Anda!
+                            
+                            <br/><br/><b>Timeline:</b><br/>
+                            <strong>Penyerahan Draf Pertama</strong> - 21 Agustus 2025 12:00 WIB<br/>
+                            <strong>Penyerahan Draf Final</strong> - 27 Agustus 2025 23:59 WIB
+                        </div>
+                    @endif
+                @endif
+
+                @if ((now() >= $startSubmission) && (now() <= $endSubmission))
+                    <ul class="nav nav-tabs" id="submitVideoTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="file-tab" data-toggle="tab" href="#file" role="tab" aria-controls="file" aria-selected="true">
+                                <small>Upload File</small>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="link-tab" data-toggle="tab" href="#link" role="tab" aria-controls="link" aria-selected="false">
+                                <small>Submit Link</small>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content section-content mt-4" id="submitVideoTabContent">
+                        <div class="tab-pane fade show active" id="file" role="tabpanel" aria-labelledby="file-tab">
+                            <div class="alert text-center mb-0">
+                                <small>
+                                    <strong>Perhatian!</strong> Pastikan file video yang dikirimkan berformat .mp4, .mpg/.mpeg atau .webm, dengan ukuran maksimal 300MB.
+                                </small>
+                            </div>
+                            <style>
+                                .drop-zone {
+                                    border: 2px dashed #9aa0a6;
+                                    border-radius: 12px;
+                                    padding: 28px;
+                                    background: rgba(255, 255, 255, 0.04);
+                                    transition: all 0.2s ease;
+                                    cursor: pointer;
+                                }
+                                .drop-zone:hover, .drop-zone--over {
+                                    border-color: #0d6efd;
+                                    background: rgba(13, 110, 253, 0.06);
+                                    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+                                }
+                                .drop-zone__input { display: none; }
+                                .dz-content .dz-icon { width: 48px; height: 48px; margin: 0 auto 8px; opacity: 0.9; }
+                                .dz-content .dz-icon svg { width: 48px; height: 48px; fill: #0d6efd; }
+                                .file-preview { margin-top: 12px; }
+                                .file-preview__item {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    gap: 12px;
+                                    width: 100% !important;
+                                    padding: 10px 12px;
+                                    border: 1px solid rgba(13, 110, 253, 0.25);
+                                    border-radius: 8px;
+                                    background: rgba(13, 110, 253, 0.05);
+                                }
+                                .file-preview__name { font-weight: 300; }
+                                .file-preview__size { font-size: 0.875rem; color: #6c757d; }
+                                .remove-file { cursor: pointer; color: #dc3545; font-weight: 700; padding: 0 8px; }
+                            </style>
+                            <form id="videoFileForm" action="{{ route('submitVideo') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="form-group mb-3">
+                                    <label for="video_file" class="mb-2">Video File</label>
+                                    <div id="video-drop-zone" class="drop-zone text-center">
+                                        <div class="dz-content">
+                                            <div class="dz-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M12 16V4m0 0l-4 4m4-4l4 4" stroke="#0d6efd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M20 16.5a3.5 3.5 0 01-3.5 3.5h-9A3.5 3.5 0 014 16.5c0-1.7 1.2-3.1 2.7-3.4.4-2.5 2.6-4.4 5.3-4.4 2.2 0 4.1 1.3 4.9 3.2 1.7.1 3.1 1.6 3.1 3.6z" fill="#0d6efd" opacity="0.15"/>
+                                                </svg>
+                                            </div>
+                                            <p class="mb-1"><strong>Drag & drop</strong> file video di sini</p>
+                                            <p class="text-white mb-0">atau klik untuk memilih file</p>
+                                            <small class="text-white d-block mt-2">MP4, MPG, WEBM • Maks 300 MB</small>
                                         </div>
-                                        <p class="mb-1"><strong>Drag & drop</strong> file video di sini</p>
-                                        <p class="text-white mb-0">atau klik untuk memilih file</p>
-                                        <small class="text-white d-block mt-2">MP4, MPG, WEBM • Maks 300 MB</small>
+                                        <input type="file" class="drop-zone__input" id="video_file" name="video_file" accept=".mp4,.mpg,.mpeg,.webm,video/mp4,video/webm,video/mpeg">
                                     </div>
-                                    <input type="file" class="drop-zone__input" id="video_file" name="video_file" accept=".mp4,.mpg,.mpeg,.webm,video/mp4,video/webm,video/mpeg">
+                                    <div class="file-preview" id="video-file-preview"></div>
                                 </div>
-                                <div class="file-preview" id="video-file-preview"></div>
-                            </div>
-                            <div class="form-group pb-4 text-center">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="tab-pane fade" id="link" role="tabpanel" aria-labelledby="link-tab">
-                        <div class="alert text-center mb-0">
-                            <small>
-                                <strong>Perhatian!</strong> Pastikan link video yang akan dikirimkan adalah link video yang dapat diakses dengan baik.
-                            </small>
+                                <div class="form-group pb-4 text-center">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
                         </div>
-                        <style>
-                            .url-input-wrapper { position: relative; }
-                            .url-input-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); opacity: 0.9; pointer-events: none; }
-                        </style>
-                        <form id="videoLinkForm" action="{{ route('submitVideo') }}" method="POST">
-                            @csrf
-                            <div class="mb-3 url-input-wrapper">
-                                <span class="">
-                                    <i class="bi bi-link"></i>
-                                </span>
-                                <label for="video_link" class="mb-1">Video Link</label>
-                                <input id="video_link" class="form-control url-input @error('video_link') is-invalid @enderror" type="url" name="video_link"
-                                    value="{{ old('video_link') }}" placeholder="https://youtube.com/watch?v=xxxx" autocomplete="video_link" required>
-                                @error('video_link')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                        <div class="tab-pane fade" id="link" role="tabpanel" aria-labelledby="link-tab">
+                            <div class="alert text-center mb-0">
+                                <small>
+                                    <strong>Perhatian!</strong> Pastikan link video yang akan dikirimkan adalah link video yang dapat diakses dengan baik.
+                                </small>
+                            </div>
+                            <style>
+                                .url-input-wrapper { position: relative; }
+                                .url-input-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); opacity: 0.9; pointer-events: none; }
+                            </style>
+                            <form id="videoLinkForm" action="{{ route('submitVideo') }}" method="POST">
+                                @csrf
+                                <div class="mb-3 url-input-wrapper">
+                                    <span class="">
+                                        <i class="bi bi-link"></i>
                                     </span>
-                                @enderror
-                                <div class="mt-2" id="video-link-platform" style="display:none"></div>
-                            </div>
-                            <div class="form-group pb-4 text-center">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                        </form>
+                                    <label for="video_link" class="mb-1">Video Link</label>
+                                    <input id="video_link" class="form-control url-input @error('video_link') is-invalid @enderror" type="url" name="video_link"
+                                        value="{{ old('video_link') }}" placeholder="https://youtube.com/watch?v=xxxx" autocomplete="video_link" required>
+                                    @error('video_link')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                    <div class="mt-2" id="video-link-platform" style="display:none"></div>
+                                </div>
+                                <div class="form-group pb-4 text-center">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
+                @endif
+
+                @if (now() > $endSubmission)
+                    @if (Auth::user()->video_link != null || Auth::user()->video_file != null)
+                        <div class="tab-content section-content mt-4">
+                            <style>
+                                .drop-zone {
+                                    border: 2px dashed #9aa0a6;
+                                    border-radius: 12px;
+                                    padding: 28px;
+                                    background: rgba(255, 255, 255, 0.04);
+                                    transition: all 0.2s ease;
+                                    cursor: pointer;
+                                }
+                                .drop-zone:hover, .drop-zone--over {
+                                    border-color: #0d6efd;
+                                    background: rgba(13, 110, 253, 0.06);
+                                    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+                                }
+                                .drop-zone__input { display: none; }
+                                .dz-content .dz-icon { width: 48px; height: 48px; margin: 0 auto 8px; opacity: 0.9; }
+                                .dz-content .dz-icon svg { width: 48px; height: 48px; fill: #0d6efd; }
+                                .file-preview { margin-top: 12px; }
+                                .file-preview__item {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    gap: 12px;
+                                    width: 100% !important;
+                                    padding: 10px 12px;
+                                    border: 1px solid rgba(13, 110, 253, 0.25);
+                                    border-radius: 8px;
+                                    background: rgba(13, 110, 253, 0.05);
+                                }
+                                .file-preview__name { font-weight: 300; }
+                                .file-preview__size { font-size: 0.875rem; color: #6c757d; }
+                                .remove-file { cursor: pointer; color: #dc3545; font-weight: 700; padding: 0 8px; }
+                            </style>
+                            <form id="documentFileForm" action="{{ route('submitDocument') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="form-group mb-3">
+                                    <label for="document_file" class="mb-2">Document File</label>
+                                    <div id="document-drop-zone" class="drop-zone text-center">
+                                        <div class="dz-content">
+                                            <div class="dz-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M12 16V4m0 0l-4 4m4-4l4 4" stroke="#0d6efd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M20 16.5a3.5 3.5 0 01-3.5 3.5h-9A3.5 3.5 0 014 16.5c0-1.7 1.2-3.1 2.7-3.4.4-2.5 2.6-4.4 5.3-4.4 2.2 0 4.1 1.3 4.9 3.2 1.7.1 3.1 1.6 3.1 3.6z" fill="#0d6efd" opacity="0.15"/>
+                                                </svg>
+                                            </div>
+                                            <p class="mb-1"><strong>Drag & drop</strong> file identitas diri tim di sini</p>
+                                            <p class="text-white mb-0">atau klik untuk memilih file</p>
+                                            <small class="text-white d-block mt-2">PDF, JPEG, JPG, PNG</small>
+                                        </div>
+                                        <input type="file" class="drop-zone__input" id="document_file" name="document_file[]" multiple
+                                            accept=".pdf,.jpeg,.jpg,.png,application/pdf,image/jpeg,image/png">
+                                        <!-- <input type="file" class="drop-zone__input" id="document_file" name="document_file" accept=".pdf,.jpeg,.jpg,.png,application/pdf,image/jpeg,image/png"> -->
+                                    </div>
+                                    <div class="file-preview" id="document-file-preview"></div>
+                                </div>
+                                <div class="form-group pb-4 text-center">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    @endif
+                @endif
 
             @else 
                 <div class="alert alert-warning mt-4 text-center">
@@ -285,12 +368,12 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 <script>
-    var formType = 'UPLOAD_VIDEO'; // UPLOAD_VIDEO || SUBMIT_PROPOSAL
+    var formType = 'UPLOAD_DOCUMENT'; // UPLOAD_VIDEO || SUBMIT_PROPOSAL || UPLOAD_DOCUMENT
 </script>
 
 <!-- Validation and Submit JS -->
 <script>
-    if (formType !== 'UPLOAD_VIDEO') {
+    if (formType !== 'UPLOAD_VIDEO' && formType !== 'UPLOAD_DOCUMENT') {
         function allMembersAreMember() {
             var roleSelects = document.querySelectorAll('.role-select');
             var total = roleSelects.length;
@@ -399,7 +482,7 @@
 
 <!-- Add member JS -->
 <script>
-    if (formType !== 'UPLOAD_VIDEO') {
+    if (formType !== 'UPLOAD_VIDEO' && formType !== 'UPLOAD_DOCUMENT') {
         document.addEventListener('DOMContentLoaded', function () {
             var maxMembers = 3;
             var currentMembers = {{ $countMember }};
@@ -563,7 +646,7 @@
 
 <!-- Add link JS -->
 <script>
-    if (formType !== 'UPLOAD_VIDEO') {
+    if (formType !== 'UPLOAD_VIDEO' && formType !== 'UPLOAD_DOCUMENT') {
         document.addEventListener('DOMContentLoaded', function () {
             var maxLinks = 10;
             var currentLinks = {{ $countLink }};
@@ -745,6 +828,110 @@
                     .replace(/'/g, '&#039;');
             }
         });
+
+    } else if (formType === 'UPLOAD_DOCUMENT') {
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            var dropZone = document.getElementById('document-drop-zone');
+            var fileInput = document.getElementById('document_file');
+            var filePreview = document.getElementById('document-file-preview');
+            var maxBytes = 300 * 1024 * 1024; // 300 MB
+            var dataTransfer = new DataTransfer(); // simpan semua file di sini
+
+            if (!dropZone || !fileInput || !filePreview) { return; }
+
+            // Click to open file chooser
+            dropZone.addEventListener('click', function () {
+                fileInput.click();
+            });
+
+            // Drag events
+            ;['dragenter','dragover'].forEach(function(evt){
+                dropZone.addEventListener(evt, function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropZone.classList.add('drop-zone--over');
+                });
+            });
+            ;['dragleave','drop'].forEach(function(evt){
+                dropZone.addEventListener(evt, function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropZone.classList.remove('drop-zone--over');
+                });
+            });
+
+            dropZone.addEventListener('drop', function (e) {
+                var files = e.dataTransfer && e.dataTransfer.files ? e.dataTransfer.files : [];
+                if (files.length) handleFiles(files);
+            });
+
+            fileInput.addEventListener('change', function () {
+                if (this.files && this.files.length) handleFiles(this.files);
+            });
+
+            filePreview.addEventListener('click', function (e) {
+                if (e.target.classList.contains('remove-file')) {
+                    var index = e.target.getAttribute('data-index');
+                    dataTransfer.items.remove(index);
+                    fileInput.files = dataTransfer.files;
+                    e.target.closest('.file-preview__item').remove();
+                }
+            });
+
+            function handleFiles(files) {
+                Array.from(files).forEach(function(file) {
+                    // Validate type
+                    var allowedTypes = ['application/pdf', 'image/jpeg', 'image/png'];
+                    var allowedExt = ['.pdf', '.jpeg', '.jpg', '.png'];
+                    var fileNameLower = (file.name || '').toLowerCase();
+                    var hasAllowedExt = allowedExt.some(function(ext){ return fileNameLower.endsWith(ext); });
+                    if (!allowedTypes.includes(file.type) && !hasAllowedExt) {
+                        alert('Format tidak didukung. Gunakan PDF, JPEG, JPG, atau PNG.');
+                        return;
+                    }
+
+                    // Validate size
+                    if (file.size > maxBytes) {
+                        alert('Ukuran file melebihi 300MB: ' + file.name);
+                        return;
+                    }
+
+                    // Tambahkan ke DataTransfer
+                    dataTransfer.items.add(file);
+                    fileInput.files = dataTransfer.files;
+
+                    // Tampilkan preview
+                    var fileItem = document.createElement('div');
+                    fileItem.className = 'file-preview__item';
+                    fileItem.innerHTML = `
+                        <span class="file-preview__name">${escapeHtml(file.name)}</span>
+                        <span class="file-preview__size">${formatBytes(file.size)}</span>
+                        <span class="remove-file" data-index="${dataTransfer.items.length - 1}" aria-label="Remove">×</span>
+                    `;
+                    filePreview.appendChild(fileItem);
+                });
+            }
+
+            function formatBytes(bytes, decimals) {
+                if (bytes === 0) return '0 Bytes';
+                var k = 1024;
+                var dm = decimals || 2;
+                var sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                var i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+            }
+
+            function escapeHtml(str) {
+                return String(str)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#039;');
+            }
+        });
+
     } else {
         document.addEventListener('DOMContentLoaded', function () {
             var dropZone = document.querySelector('.drop-zone');
@@ -865,7 +1052,7 @@
 </script>
 
 <script>
-    if (formType !== 'UPLOAD_VIDEO') {
+    if (formType !== 'UPLOAD_VIDEO' && formType !== 'UPLOAD_DOCUMENT') {
         document.addEventListener('DOMContentLoaded', function () {
             var changeFileRadios = document.querySelectorAll('input[name="change_file"]');
             var newFileUpload = document.getElementById('new-file-upload');
@@ -884,7 +1071,7 @@
 </script>
 
 <script>
-    if (formType !== 'UPLOAD_VIDEO') {
+    if (formType !== 'UPLOAD_VIDEO' && formType !== 'UPLOAD_DOCUMENT') {
         // Inisialisasi semua tooltip di halaman
         document.addEventListener("DOMContentLoaded", function(){
             var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))

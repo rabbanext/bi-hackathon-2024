@@ -7,6 +7,7 @@ use App\Http\Controllers\OtpController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\DocumentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,7 +96,11 @@ Route::get('/handle-response/{response}/{email}', [EmailController::class, 'hand
 // Route::get('/submit-video', function () {
 //     return view('dashboard/submit_video');
 // })->name('submitVideoForm');
+
+// Handle upload video or link for finalis
 Route::post('/submit-video', [VideoController::class, 'submitVideo'])->name('submitVideo');
+// Handle upload document for verification
+Route::post('/submit-document', [DocumentController::class, 'submitDocument'])->name('submitDocument');
 
 Route::get('/terms', function () {
     return view('terms');
