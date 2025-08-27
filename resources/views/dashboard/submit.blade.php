@@ -82,7 +82,7 @@
 
                 @php
                     $startSubmission = \Carbon\Carbon::create(2025, 8, 21, 12, 0); // 21 Agustus 2025 12:00 WIB
-                    $endSubmission = \Carbon\Carbon::create(2025, 8, 27, 23, 59); // 27 Agustus 2025 23:59 WIB
+                    $endSubmission = \Carbon\Carbon::create(2025, 8, 28, 06, 0); // 27 Agustus 2025 23:59 WIB
                 @endphp
 
                 @if (now() > $endSubmission)
