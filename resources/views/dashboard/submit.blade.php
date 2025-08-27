@@ -82,7 +82,7 @@
 
                 @php
                     $startSubmission = \Carbon\Carbon::create(2025, 8, 21, 12, 0); // 21 Agustus 2025 12:00 WIB
-                    $endSubmission = \Carbon\Carbon::create(2025, 8, 26, 23, 59); // 27 Agustus 2025 23:59 WIB
+                    $endSubmission = \Carbon\Carbon::create(2025, 8, 27, 23, 59); // 27 Agustus 2025 23:59 WIB
                 @endphp
 
                 @if (now() > $endSubmission)
@@ -247,6 +247,29 @@
                 @if (now() > $endSubmission)
                     @if (Auth::user()->video_link != null || Auth::user()->video_file != null)
                         <div class="tab-content section-content mt-4">
+                            @if (Auth::user()->document_validator)
+                                @php
+                                    $uploadedDocs = json_decode(Auth::user()->document_validator, true) ?: [];
+                                @endphp
+                                @if (count($uploadedDocs))
+                                    <div class="alert alert-success" role="alert">
+                                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                            <strong class="mb-2 mb-sm-0">Dokumen sudah diunggah ({{ count($uploadedDocs) }})</strong>
+                                        </div>
+                                        <ul class="mt-2 mb-0 list-unstyled">
+                                            @foreach ($uploadedDocs as $i => $doc)
+                                                <li class="mb-1 d-flex align-items-center justify-content-between">
+                                                    <span>
+                                                        <span class="badge bg-info me-2">{{ $i + 1 }}</span>
+                                                        <span style="font-size: 10px;">{{ $doc['original_name'] ?? 'Document ' . ($i + 1) }}</span>
+                                                    </span>
+                                                    <a class="btn btn-sm btn-success" href="{{ $doc['url'] ?? '#' }}" target="_blank" rel="noopener">Lihat</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                            @endif
                             <style>
                                 .drop-zone {
                                     border: 2px dashed #9aa0a6;
@@ -283,7 +306,7 @@
                             <form id="documentFileForm" action="{{ route('submitDocument') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group mb-3">
-                                    <label for="document_file" class="mb-2">Document File</label>
+                                    <label for="document_file" class="mb-2">Dokumen Identitas</label>
                                     <div id="document-drop-zone" class="drop-zone text-center">
                                         <div class="dz-content">
                                             <div class="dz-icon">
