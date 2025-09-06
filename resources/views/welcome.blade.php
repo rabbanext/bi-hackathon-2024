@@ -105,7 +105,7 @@
 						<style>
 							.custom-gradient-border {
 								position: relative;
-								border-radius: 12px;
+								border-radius: 8px;
 								padding: 1rem;
 								background: transparent; /* isi transparan */
 								z-index: 0;
@@ -116,7 +116,7 @@
 								position: absolute;
 								inset: 0;
 								border-radius: inherit;
-								padding: 1px; /* tebal border */
+								padding: 3px; /* tebal border */
 								background: linear-gradient(135deg, #2dd9ff, #ff2db1);
 								
 								-webkit-mask:
@@ -128,43 +128,56 @@
 								z-index: -1; /* biar teks tetap di atas */
 								pointer-events: none;
 							}
+							.custom-gradient-hr {
+								border: 0;
+								height: 4px; /* tebal garis */
+								background: linear-gradient(to right, #2dd9ff, #ff2db1); /* warna gradient */
+								border-radius: 50px; /* biar agak rounded */
+								margin: 20px auto; /* jarak atas bawah */
+								width: 50px; /* panjang garis */
+							}
 						</style>
 
 						<div class="section-content mt-3">
 							<div class="text-center pt-5 pb-4">
 								<h2>Kategori Professional</h2>
 							</div>
-							<div class="row pt-lg-4 mb-lg-4">
-								<div class="col-12 col-md-6 col-lg-4">
+							<div class="row pt-lg-4 mb-lg-4 justify-content-center">
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1">
 									<div class="prize custom-gradient-border">
 										<h5>Dewantara</h5>
-										<p class="prize-subtitle">Dewantara</p>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle mb-0">Dewantara</p>
 									</div>
 								</div>
-								<div class="col-12 col-md-6 col-lg-4">
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1">
 									<div class="prize custom-gradient-border">
 										<h5>IONIFY</h5>
-										<p class="prize-subtitle">TARA</p>
-									</div>
-								</div>
-								<div class="col-12 col-md-6 col-lg-4">
-									<div class="prize custom-gradient-border">
-										<h5>Meaningful Intelligence</h5>
-										<p class="prize-subtitle">Garda AI</p>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle mb-0">TARA</p>
 									</div>
 								</div>
 							</div>
 							<div class="row pt-lg-4 mb-lg-4">
-								<div class="col-12 col-md-6 col-lg-4">
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1">
 									<div class="prize custom-gradient-border">
-										<h5>Niriksagara</h5>
-										<p class="prize-subtitle">Niriksagara</p>
+										<h5>Meaningful Intelligence</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle mb-0">Garda AI</p>
 									</div>
 								</div>
-								<div class="col-12 col-md-6 col-lg-4">
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1">
+									<div class="prize custom-gradient-border">
+										<h5>Niriksagara</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle mb-0">Niriksagara</p>
+									</div>
+								</div>
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1">
 									<div class="prize custom-gradient-border">
 										<h5>Orbit</h5>
-										<p class="prize-subtitle">ChatBijak</p>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle mb-0">ChatBijak</p>
 									</div>
 								</div>
 							</div>
@@ -174,37 +187,42 @@
 							<div class="text-center pt-5 pb-1">
 								<h2>Kategori Mahasiswa</h2>
 							</div>
-							<div class="row pt-lg-4 mb-lg-4">
-								<div class="col-12 col-md-6 col-lg-4">
+							<div class="row pt-lg-4 mb-lg-4 justify-content-center">
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1">
 									<div class="prize custom-gradient-border">
 										<h5>Chain Intelligence</h5>
-										<p class="prize-subtitle">CIA</p>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle mb-0">CIA</p>
 									</div>
 								</div>
-								<div class="col-12 col-md-6 col-lg-4">
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1">
 									<div class="prize custom-gradient-border">
 										<h5>Double Core Team</h5>
-										<p class="prize-subtitle">SIBISA</p>
-									</div>
-								</div>
-								<div class="col-12 col-md-6 col-lg-4">
-									<div class="prize custom-gradient-border">
-										<h5>KancaKids</h5>
-										<p class="prize-subtitle">KANCA</p>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle mb-0">SIBISA</p>
 									</div>
 								</div>
 							</div>
 							<div class="row pt-lg-4 mb-lg-4">
-								<div class="col-12 col-md-6 col-lg-4">
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1">
 									<div class="prize custom-gradient-border">
-										<h5>MTAF IMPACT</h5>
-										<p class="prize-subtitle">#UMKMSIAP</p>
+										<h5>KancaKids</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle mb-0">KANCA</p>
 									</div>
 								</div>
-								<div class="col-12 col-md-6 col-lg-4">
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1">
+									<div class="prize custom-gradient-border">
+										<h5>MTAF IMPACT</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle mb-0">#UMKMSIAP</p>
+									</div>
+								</div>
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1">
 									<div class="prize custom-gradient-border">
 										<h5>Tiwas Tak Gondeli Tenanan</h5>
-										<p class="prize-subtitle">GardaChain</p>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle mb-0">GardaChain</p>
 									</div>
 								</div>
 							</div>
