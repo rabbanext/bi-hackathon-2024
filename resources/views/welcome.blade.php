@@ -77,7 +77,7 @@
 			$dateFinalis = \Carbon\Carbon::create(2025, 9, 6, 18, 0); // 6 September 2025 18:00 WIB
 		@endphp
 
-		@if (now() > $dateFinalis || Auth::user()->type == "admin")
+		@if (now() > $dateFinalis)
 			<section id="prizes" class="prizes d-flex flex-column align-items-center justify-content-center">
 				<div class="container">
 					<div class="section-content">
