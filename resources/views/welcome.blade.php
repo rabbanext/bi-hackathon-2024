@@ -77,7 +77,7 @@
 			$dateFinalis = \Carbon\Carbon::create(2025, 9, 6, 18, 0); // 6 September 2025 18:00 WIB
 		@endphp
 
-		@if (now() > $dateFinalis)
+		@if (now() > $dateFinalis || Auth::user()->type == "admin")
 			<section id="prizes" class="prizes d-flex flex-column align-items-center justify-content-center">
 				<div class="container">
 					<div class="section-content">
@@ -86,15 +86,49 @@
 						</div>
 
 						<div class="prize-content mx-0 mx-lg-5 mb-3">
-							<h5 class="mb-0">Terima kasih kepada 30 semifinalis yang sudah berjuang memberikan solusi-solusi yang sangat inovatif untuk tahap submission video.</h5>
+							<h5 class="mb-0">Setelah melalui proses seleksi ketat dari 30 Semifinalis, kami dengan bangga mengumumkan 10 tim Finalis yang berhasil melaju ke tahap selanjutnya.<br/> Daftar Finalis disusun berdasarkan urutan abjad.</h5>
 						</div>
 
 						<div class="prize-content mx-0 mx-lg-5 mb-3">
-							<h5 class="mb-0">Berikut untuk nama-nama finalis yang lolos ke tahap selanjutnya: <br/>Daftar Finalis disusun berdasarkan urutan abjad.</h5>
+							<h5 class="mb-0">Kami mengucapkan selamat kepada para Finalis dan terima kasih kepada seluruh Semifinalis atas semangat serta kontribusi inovasinya.</h5>
 						</div>
 						<div class="prize-content mx-0 mx-lg-5 mb-3">
-							<h5 class="mb-0">Tahap berikutnya akan diinformasikan lebih lanjut di website.</h5>
+							<h5 class="mb-0">Tahap berikutnya adalah pembuatan prototype yang akan didampingi mentor.</h5>
 						</div>
+						<div class="prize-content mx-0 mx-lg-5 mb-3">
+							<h5 class="mb-0">Informasi teknis terkait jadwal, format, dan mentor akan disampaikan langsung kepada masing-masing tim.</h5>
+						</div>
+						<div class="prize-content mx-0 mx-lg-5 mb-3">
+							<h5 class="mb-0">⁠Mari terus berinovasi untuk mendukung ekonomi keuangan digital Indonesia!</h5>
+						</div>
+
+						<style>
+							.custom-gradient-border {
+								position: relative;
+								border-radius: 12px;
+								padding: 1rem;
+								background: transparent; /* isi transparan */
+								z-index: 0;
+							}
+
+							.custom-gradient-border::before {
+								content: "";
+								position: absolute;
+								inset: 0;
+								border-radius: inherit;
+								padding: 1px; /* tebal border */
+								background: linear-gradient(135deg, #2dd9ff, #ff2db1);
+								
+								-webkit-mask:
+									linear-gradient(#000 0 0) content-box,
+									linear-gradient(#000 0 0);
+								-webkit-mask-composite: xor;
+										mask-composite: exclude;
+								
+								z-index: -1; /* biar teks tetap di atas */
+								pointer-events: none;
+							}
+						</style>
 
 						<div class="section-content mt-3">
 							<div class="text-center pt-5 pb-4">
@@ -102,34 +136,34 @@
 							</div>
 							<div class="row pt-lg-4 mb-lg-4">
 								<div class="col-12 col-md-6 col-lg-4">
-									<div class="prize">
-										<h5>1. Dewantara</h5>
+									<div class="prize custom-gradient-border">
+										<h5>Dewantara</h5>
 										<p class="prize-subtitle">Dewantara</p>
 									</div>
 								</div>
 								<div class="col-12 col-md-6 col-lg-4">
-									<div class="prize">
-										<h5>2. IONIFY</h5>
+									<div class="prize custom-gradient-border">
+										<h5>IONIFY</h5>
 										<p class="prize-subtitle">TARA</p>
 									</div>
 								</div>
 								<div class="col-12 col-md-6 col-lg-4">
-									<div class="prize">
-										<h5>3. Meaningful Intelligence</h5>
+									<div class="prize custom-gradient-border">
+										<h5>Meaningful Intelligence</h5>
 										<p class="prize-subtitle">Garda AI</p>
 									</div>
 								</div>
 							</div>
 							<div class="row pt-lg-4 mb-lg-4">
 								<div class="col-12 col-md-6 col-lg-4">
-									<div class="prize">
-										<h5>4. Niriksagara</h5>
+									<div class="prize custom-gradient-border">
+										<h5>Niriksagara</h5>
 										<p class="prize-subtitle">Niriksagara</p>
 									</div>
 								</div>
 								<div class="col-12 col-md-6 col-lg-4">
-									<div class="prize">
-										<h5>5. Orbit</h5>
+									<div class="prize custom-gradient-border">
+										<h5>Orbit</h5>
 										<p class="prize-subtitle">ChatBijak</p>
 									</div>
 								</div>
@@ -142,34 +176,34 @@
 							</div>
 							<div class="row pt-lg-4 mb-lg-4">
 								<div class="col-12 col-md-6 col-lg-4">
-									<div class="prize">
-										<h5>1. Chain Intelligence</h5>
+									<div class="prize custom-gradient-border">
+										<h5>Chain Intelligence</h5>
 										<p class="prize-subtitle">CIA</p>
 									</div>
 								</div>
 								<div class="col-12 col-md-6 col-lg-4">
-									<div class="prize">
-										<h5>2. Double Core Team</h5>
+									<div class="prize custom-gradient-border">
+										<h5>Double Core Team</h5>
 										<p class="prize-subtitle">SIBISA</p>
 									</div>
 								</div>
 								<div class="col-12 col-md-6 col-lg-4">
-									<div class="prize">
-										<h5>3. KancaKids</h5>
+									<div class="prize custom-gradient-border">
+										<h5>KancaKids</h5>
 										<p class="prize-subtitle">KANCA</p>
 									</div>
 								</div>
 							</div>
 							<div class="row pt-lg-4 mb-lg-4">
 								<div class="col-12 col-md-6 col-lg-4">
-									<div class="prize">
-										<h5>4. MTAF IMPACT</h5>
+									<div class="prize custom-gradient-border">
+										<h5>MTAF IMPACT</h5>
 										<p class="prize-subtitle">#UMKMSIAP</p>
 									</div>
 								</div>
 								<div class="col-12 col-md-6 col-lg-4">
-									<div class="prize">
-										<h5>5. Tiwas Tak Gondeli Tenanan</h5>
+									<div class="prize custom-gradient-border">
+										<h5>Tiwas Tak Gondeli Tenanan</h5>
 										<p class="prize-subtitle">GardaChain</p>
 									</div>
 								</div>
