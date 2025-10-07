@@ -227,6 +227,12 @@
 								</div>
 							</div>
 						</div>
+
+						<div class="text-center mt-4">
+							<a href="/documents/Hackathon-2025_Booklet.pdf" target="_blank" class="btn btn-primary btn-header-primary ms-1 ms-lg-4">
+								Lihat Profil Finalis
+							</a>
+						</div>
 					</div>
 				</div>
 			</section>
