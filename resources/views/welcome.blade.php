@@ -75,9 +75,146 @@
 
 		@php
 			$dateFinalis = \Carbon\Carbon::create(2025, 9, 6, 18, 0); // 6 September 2025 18:00 WIB
+			$datePemenang = \Carbon\Carbon::create(2025, 10, 30, 18, 0); // 30 Oktober 2025 18:00 WIB
 		@endphp
 
-		@if (now() > $dateFinalis)
+		@if (now() > $datePemenang)
+
+			<section id="prizes" class="prizes d-flex flex-column align-items-center justify-content-center">
+				<div class="container">
+					<div class="section-content">
+						<div class="section-title text-center pb-5">
+							<p style="font-size: 32px !important;">Announcement <br/> Pemenang & Finalis <br/> Hackathon BI-OJK 2025</p>
+						</div>
+
+						<div class="prize-content mx-0 mx-lg-5 mb-3">
+							<h5 class="mb-0">Terima kasih kepada seluruh peserta yang telah berpartisipasi dan menunjukkan karya terbaiknya!</h5>
+						</div>
+
+						<div class="prize-content mx-0 mx-lg-5 mb-3">
+							<h5 class="mb-0">Berikut adalah para pemenang dari kategori Mahasiswa dan Profesional:</h5>
+						</div>
+
+						<style>
+							.custom-gradient-border {
+								position: relative;
+								border-radius: 8px;
+								padding: 1rem;
+								background: transparent; /* isi transparan */
+								z-index: 0;
+							}
+
+							.custom-gradient-border::before {
+								content: "";
+								position: absolute;
+								inset: 0;
+								border-radius: inherit;
+								padding: 3px; /* tebal border */
+								background: linear-gradient(135deg, #2dd9ff, #ff2db1);
+								
+								-webkit-mask:
+									linear-gradient(#000 0 0) content-box,
+									linear-gradient(#000 0 0);
+								-webkit-mask-composite: xor;
+										mask-composite: exclude;
+								
+								z-index: -1; /* biar teks tetap di atas */
+								pointer-events: none;
+							}
+							.custom-gradient-hr {
+								border: 0;
+								height: 4px; /* tebal garis */
+								background: linear-gradient(to right, #2dd9ff, #ff2db1); /* warna gradient */
+								border-radius: 50px; /* biar agak rounded */
+								margin: 20px auto; /* jarak atas bawah */
+								width: 50px; /* panjang garis */
+							}
+						</style>
+
+						<div class="section-content mt-3">
+							<div class="text-center pt-5 pb-4">
+								<h2>Kategori Professional</h2>
+							</div>
+								<div class="row g-3 align-items-stretch pb-2">
+								<div class="col-12 col-md-4 col-lg-4 text-center d-flex">
+									<div class="section-content gold-gradient w-100 h-100 d-flex align-items-center justify-content-center">
+										<h3 style="margin-bottom:0px; text-shadow:0 0 8px rgb(24, 13, 56) !important;">#1 Dewantara</h3>
+									</div>
+								</div>
+								<div class="col-12 col-md-4 col-lg-4 text-center d-flex">
+									<div class="section-content silver-gradient w-100 h-100 d-flex align-items-center justify-content-center">
+										<h3 style="margin-bottom:0px; text-shadow:0 0 8px rgb(24, 13, 56) !important;">#2 Meaningful Intelligence</h3>
+									</div>
+								</div>
+								<div class="col-12 col-md-4 col-lg-4 text-center d-flex">
+									<div class="section-content bronze-gradient w-100 h-100 d-flex align-items-center justify-content-center">
+										<h3 style="margin-bottom:0px; text-shadow:0 0 8px rgb(24, 13, 56) !important;">#3 Niriksagara</h3>
+									</div>
+								</div>
+							</div>
+								<div class="row pt-lg-4 mb-lg-4 justify-content-center align-items-stretch">
+									<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1  mt-2 d-flex">
+										<div class="prize custom-gradient-border pt-4 pb-2 w-100 h-100 d-flex align-items-center justify-content-center">
+										<h5>#4 Orbit</h5>
+									</div>
+								</div>
+									<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1  mt-2 d-flex">
+										<div class="prize custom-gradient-border pt-4 pb-2 w-100 h-100 d-flex align-items-center justify-content-center">
+										<h5>#5 IONIFY</h5>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="section-content mt-3">
+							<div class="text-center pt-5 pb-4">
+								<h2>Kategori Mahasiswa</h2>
+							</div>
+								<div class="row g-3 align-items-stretch pb-2">
+								<div class="col-12 col-md-4 col-lg-4 text-center d-flex">
+									<div class="section-content gold-gradient w-100 h-100 d-flex align-items-center justify-content-center">
+										<h3 style="margin-bottom:0px; text-shadow:0 0 8px rgb(24, 13, 56) !important;">#1 MTAF IMPACT</h3>
+									</div>
+								</div>
+								<div class="col-12 col-md-4 col-lg-4 text-center d-flex">
+									<div class="section-content silver-gradient w-100 h-100 d-flex align-items-center justify-content-center">
+										<h3 style="margin-bottom:0px; text-shadow:0 0 8px rgb(24, 13, 56) !important;">#2 KancaKids</h3>
+									</div>
+								</div>
+								<div class="col-12 col-md-4 col-lg-4 text-center d-flex">
+									<div class="section-content bronze-gradient w-100 h-100 d-flex align-items-center justify-content-center">
+										<h3 style="margin-bottom:0px; text-shadow:0 0 8px rgb(24, 13, 56) !important;">#3 Chain Intelligence</h3>
+									</div>
+								</div>
+							</div>
+								<div class="row pt-lg-4 mb-lg-4 justify-content-center align-items-stretch">
+									<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1  mt-2 d-flex">
+										<div class="prize custom-gradient-border pt-4 pb-2 w-100 h-100 d-flex align-items-center justify-content-center">
+										<h5>#4 Double Core Team</h5>
+									</div>
+								</div>
+									<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1  mt-2 d-flex">
+										<div class="prize custom-gradient-border pt-4 pb-2 w-100 h-100 d-flex align-items-center justify-content-center">
+										<h5>#5 Tiwas Tak Gondeli Tenanan</h5>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						
+						<div class="prize-content mx-0 mx-lg-5 mt-4 mb-3">
+							<h5 class="mb-0">Selamat kepada seluruh pemenang dan finalis atas dedikasi, inovasi, dan kerja kerasnya.</h5>
+						</div>
+
+						<div class="prize-content mx-0 mx-lg-5 mt-4 mb-3">
+							<h5 class="mb-0">Teruslah berkarya dan berkontribusi untuk masa depan teknologi yang lebih baik!</h5>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		@elseif (now() > $dateFinalis)
+
 			<section id="prizes" class="prizes d-flex flex-column align-items-center justify-content-center">
 				<div class="container">
 					<div class="section-content">
@@ -236,7 +373,7 @@
 					</div>
 				</div>
 			</section>
-
+		
 		@else
 
 			<section id="prizes" class="prizes d-flex flex-column align-items-center justify-content-center">
