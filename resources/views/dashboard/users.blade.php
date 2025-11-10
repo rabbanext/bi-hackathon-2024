@@ -333,14 +333,14 @@
 									@foreach ($memberNames as $key => $name)
 										<tr>
 											<td>{{ $name }}</td>
-											<td>{{ $memberRoles[$key] }}</td>
-											<td>{{ $memberIdentities[$key] }}</td>
-											<td>{{ $memberDomiciles[$key] }}</td>
-											<td>{{ $memberEmail[$key] }}</td>
-											<td>{{ date('d-m-Y', strtotime($memberDate_of_birth[$key])) }}</td>
-											<td>{{ $memberProfession[$key] }}</td>
-											<td>{{ $memberGithub_url[$key] }}</td>
-											<td>{{ $memberLinkedin_url[$key] }}</td>
+											<td>{{ $memberRoles[$key] ?? '-' }}</td>
+											<td>{{ $memberIdentities[$key] ?? '-' }}</td>
+											<td>{{ $memberDomiciles[$key] ?? '-' }}</td>
+											<td>{{ $memberEmail[$key] ?? '-' }}</td>
+											<td>{{ date('d-m-Y', strtotime($memberDate_of_birth[$key] ?? '-')) }}</td>
+											<td>{{ $memberProfession[$key] ?? '-' }}</td>
+											<td>{{ $memberGithub_url[$key] ?? '-' }}</td>
+											<td>{{ $memberLinkedin_url[$key] ?? '-' }}</td>
 										</tr>
 									@endforeach
 								@endif

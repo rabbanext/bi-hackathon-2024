@@ -124,6 +124,38 @@
 	}
 </script>
 <script>
+	const galeryDewantara = GLightbox({
+		selector: 'a[data-glightbox="Dewantara"]'
+	});
+	const galeryMeaningfulIntelligence = GLightbox({
+		selector: 'a[data-glightbox="MeaningfulIntelligence"]'
+	});
+	const galeryNiriksagara = GLightbox({
+		selector: 'a[data-glightbox="Niriksagara"]'
+	});
+	const galeryOrbit = GLightbox({
+		selector: 'a[data-glightbox="Orbit"]'
+	});
+	const galeryIONIFY = GLightbox({
+		selector: 'a[data-glightbox="IONIFY"]'
+	});
+
+	const galeryMTAFIMPACT = GLightbox({
+		selector: 'a[data-glightbox="MTAFIMPACT"]'
+	});
+	const galeryKancaKids = GLightbox({
+		selector: 'a[data-glightbox="KancaKids"]'
+	});
+	const galeryChainIntelligence = GLightbox({
+		selector: 'a[data-glightbox="ChainIntelligence"]'
+	});
+	const galeryDoubleCoreTeam = GLightbox({
+		selector: 'a[data-glightbox="DoubleCoreTeam"]'
+	});
+	const galeryTiwasTakGondeliTenanan = GLightbox({
+		selector: 'a[data-glightbox="TiwasTakGondeliTenanan"]'
+	});
+
 	const lightbox = GLightbox({
 		selector: 'a[data-glightbox="gallery2024"]'
 	});

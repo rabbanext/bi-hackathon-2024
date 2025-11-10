@@ -83,19 +83,10 @@
 			<section id="prizes" class="prizes d-flex flex-column align-items-center justify-content-center">
 				<div class="container">
 					<div class="section-content">
-						<div class="section-title text-center pb-5">
-							<p style="font-size: 32px !important;">Announcement <br/> Pemenang & Finalis <br/> Hackathon BI-OJK 2025</p>
-						</div>
-
-						<div class="prize-content mx-0 mx-lg-5 mb-3">
-							<h5 class="mb-0">Terima kasih kepada seluruh peserta yang telah berpartisipasi dan menunjukkan karya terbaiknya!</h5>
-						</div>
-
-						<div class="prize-content mx-0 mx-lg-5 mb-3">
-							<h5 class="mb-0">Berikut adalah para pemenang dari kategori Mahasiswa dan Profesional:</h5>
-						</div>
-
 						<style>
+							.custom-text-size-14 {
+								font-size: 10px !important;
+							}
 							.custom-gradient-border {
 								position: relative;
 								border-radius: 8px;
@@ -129,38 +120,189 @@
 								margin: 20px auto; /* jarak atas bawah */
 								width: 50px; /* panjang garis */
 							}
+							.custom-gradient-hr2 {
+								border: 0;
+								height: 4px; /* tebal garis */
+								background: white; /* warna gradient */
+								border-radius: 50px; /* biar agak rounded */
+								margin: 20px auto; /* jarak atas bawah */
+								width: 50px; /* panjang garis */
+								z-index: 1;
+							}
+							.custom-gradient-hr3 {
+								border: 0;
+								height: 4px; /* tebal garis */
+								background: black; /* warna gradient */
+								border-radius: 50px; /* biar agak rounded */
+								margin: 20px auto; /* jarak atas bawah */
+								width: 50px; /* panjang garis */
+								z-index: 1;
+							}
 						</style>
+
+						<div class="section-title text-center pb-5">
+							<p style="font-size: 32px !important;">Announcement <br/> Pemenang & Finalis <br/> Hackathon BI-OJK 2025</p>
+						</div>
+
+						<div class="prize-content mx-0 mx-lg-5 mb-3">
+							<h5 class="mb-0">Terima kasih kepada seluruh peserta yang telah berpartisipasi dan menunjukkan karya terbaiknya!</h5>
+						</div>
+
+						<div class="prize-content mx-0 mx-lg-5 mb-3">
+							<h5 class="mb-0">Berikut adalah para pemenang dari kategori Mahasiswa dan Profesional:</h5>
+						</div>
 
 						<div class="section-content mt-3">
 							<div class="text-center pt-5 pb-4">
 								<h2>Kategori Professional</h2>
 							</div>
-								<div class="row g-3 align-items-stretch pb-2">
+							<div class="row g-3 align-items-stretch pb-2" id="pro-hackathon2025" class="pro-hackathon2025">
 								<div class="col-12 col-md-4 col-lg-4 text-center d-flex">
-									<div class="section-content gold-gradient w-100 h-100 d-flex align-items-center justify-content-center">
-										<h3 style="margin-bottom:0px; text-shadow:0 0 8px rgb(24, 13, 56) !important;">#1 Dewantara</h3>
+									<div class="section-content gold-gradient w-100 h-100 d-flex flex-column align-items-center justify-content-center">
+										<a href="/2025/finalis/p-1.webp" data-glightbox="Dewantara">
+											<div>
+												<h3 style="text-shadow:0 0 8px rgb(24, 13, 56) !important;">#1 Dewantara</h3>
+												<hr class="custom-gradient-hr3"/>
+												<p class="prize-subtitle" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">Dewantara</p>
+												<h4 class="prize-subtitle mb-0" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">Rp 200.000.000</h4>
+											</div>
+										</a>
 									</div>
 								</div>
 								<div class="col-12 col-md-4 col-lg-4 text-center d-flex">
-									<div class="section-content silver-gradient w-100 h-100 d-flex align-items-center justify-content-center">
-										<h3 style="margin-bottom:0px; text-shadow:0 0 8px rgb(24, 13, 56) !important;">#2 Meaningful Intelligence</h3>
+									<div class="section-content silver-gradient w-100 h-100 d-flex flex-column align-items-center justify-content-center">
+										<a href="/2025/finalis/p-2.webp" data-glightbox="MeaningfulIntelligence">
+											<h3 style="text-shadow:0 0 8px rgb(24, 13, 56) !important;">#2 Meaningful Intelligence</h3>
+											<hr class="custom-gradient-hr3"/>
+											<p class="prize-subtitle" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">GardaAI</p>
+											<h4 class="prize-subtitle mb-0" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">Rp 100.000.000</h4>
+										</a>
 									</div>
 								</div>
 								<div class="col-12 col-md-4 col-lg-4 text-center d-flex">
-									<div class="section-content bronze-gradient w-100 h-100 d-flex align-items-center justify-content-center">
-										<h3 style="margin-bottom:0px; text-shadow:0 0 8px rgb(24, 13, 56) !important;">#3 Niriksagara</h3>
+									<div class="section-content bronze-gradient w-100 h-100 d-flex flex-column align-items-center justify-content-center">
+										<a href="/2025/finalis/p-3.webp" data-glightbox="Niriksagara">
+											<h3 style="text-shadow:0 0 8px rgb(24, 13, 56) !important;">#3 Niriksagara</h3>
+											<hr class="custom-gradient-hr3"/>
+											<p class="prize-subtitle" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">Niriksagara</p>
+											<h4 class="prize-subtitle mb-0" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">Rp 50.000.000</h4>
+										</a>
 									</div>
 								</div>
 							</div>
-								<div class="row pt-lg-4 mb-lg-4 justify-content-center align-items-stretch">
-									<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1  mt-2 d-flex">
-										<div class="prize custom-gradient-border pt-4 pb-2 w-100 h-100 d-flex align-items-center justify-content-center">
-										<h5>#4 Orbit</h5>
+							<div class="row pt-lg-4 mb-lg-4 justify-content-center align-items-stretch">
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1 mt-2 d-flex">
+									<div class="prize custom-gradient-border pt-4 pb-2 w-100 h-100 align-items-center justify-content-center">
+										<a href="/2025/finalis/p-3.webp" data-glightbox="Orbit">
+											<h5>#4 Orbit</h5>
+											<hr class="custom-gradient-hr"/>
+											<p class="prize-subtitle">ChatBijak</p>
+											<h4 class="prize-subtitle">Rp 15.000.000</h4>
+										</a>
 									</div>
 								</div>
-									<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1  mt-2 d-flex">
-										<div class="prize custom-gradient-border pt-4 pb-2 w-100 h-100 d-flex align-items-center justify-content-center">
-										<h5>#5 IONIFY</h5>
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1  mt-2 d-flex">
+									<div class="prize custom-gradient-border pt-4 pb-2 w-100 h-100 align-items-center justify-content-center">
+										<a href="/2025/finalis/p-3.webp" data-glightbox="IONIFY">
+											<h5>#5 IONIFY</h5>
+											<hr class="custom-gradient-hr"/>
+											<p class="prize-subtitle">TARA</p>
+											<h4 class="prize-subtitle">Rp 15.000.000</h4>
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<section class="hackathon2025 d-none">
+								<div class="section-title text-center pb-4">
+									<p>2025</p>
+								</div>
+								<div class="container">
+									<div class="row g-3">
+										<div class="col-12 col-md-6 col-lg-3">
+											<a href="/2025/finalis/p-1.webp" data-glightbox="Dewantara">
+												<img src="/2025/finalis/p-1.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+											</a>
+										</div>
+										<div class="col-12 col-md-6 col-lg-3">
+											<a href="/2025/finalis/p-2.webp" data-glightbox="MeaningfulIntelligence">
+												<img src="/2025/finalis/p-2.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 2">
+											</a>
+										</div>
+										<div class="col-12 col-md-6 col-lg-3">
+											<a href="/2025/finalis/p-3.webp" data-glightbox="Niriksagara">
+												<img src="/2025/finalis/p-3.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 3">
+											</a>
+										</div>
+										<div class="col-12 col-md-6 col-lg-3">
+											<a href="/2025/finalis/p-4.webp" data-glightbox="Orbit">
+												<img src="/2025/finalis/p-4.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 4">
+											</a>
+										</div>
+										<div class="col-12 col-md-6 col-lg-3">
+											<a href="/2025/finalis/p-5.webp" data-glightbox="IONIFY">
+												<img src="/2025/finalis/p-5.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 5">
+											</a>
+										</div>
+									</div>
+								</div>
+							</section>
+
+							<br/>
+							<hr class="custom-gradient-hr2 w-100"/>
+							<div class="text-center pt-4">
+								<h4>Innovation Frontier 1</h4>
+							</div>
+
+							<div class="row pt-lg-4 mb-lg-4 g-2 g-lg-4">
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1">
+									<div class="prize custom-gradient-border">
+										<h5>ChainDefend</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle">ChainDefend</p>
+										<p class="prize-subtitle mb-0">RP 8.000.000</p>
+									</div>
+								</div>
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1">
+									<div class="prize custom-gradient-border">
+										<h5>GoHansip</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle">GoHansip</p>
+										<p class="prize-subtitle mb-0">RP 8.000.000</p>
+									</div>
+								</div>
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1">
+									<div class="prize custom-gradient-border">
+										<h5>Hackathon Hunter</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle">JagaCrypto</p>
+										<p class="prize-subtitle mb-0">RP 8.000.000</p>
+									</div>
+								</div>
+							</div>
+
+
+							<br/>
+							<hr class="custom-gradient-hr2 w-100"/>
+							<div class="text-center pt-4">
+								<h4>Innovation Frontier 2</h4>
+							</div>
+
+							<div class="row pt-lg-4 mb-lg-4 justify-content-center align-items-stretch g-2 g-lg-4">
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1">
+									<div class="prize custom-gradient-border">
+										<h5>Logisticc</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle">SMARTEXPORT.ID</p>
+										<p class="prize-subtitle mb-0">RP 5.500.000</p>
+									</div>
+								</div>
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1">
+									<div class="prize custom-gradient-border">
+										<h5>NEO NUSA</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle">BI-RISE</p>
+										<p class="prize-subtitle mb-0">RP 5.500.000</p>
 									</div>
 								</div>
 							</div>
@@ -170,40 +312,251 @@
 							<div class="text-center pt-5 pb-4">
 								<h2>Kategori Mahasiswa</h2>
 							</div>
-								<div class="row g-3 align-items-stretch pb-2">
+							<div class="row g-3 align-items-stretch pb-2">
 								<div class="col-12 col-md-4 col-lg-4 text-center d-flex">
-									<div class="section-content gold-gradient w-100 h-100 d-flex align-items-center justify-content-center">
-										<h3 style="margin-bottom:0px; text-shadow:0 0 8px rgb(24, 13, 56) !important;">#1 MTAF IMPACT</h3>
+									<div class="section-content gold-gradient w-100 h-100 d-flex flex-column align-items-center justify-content-center">
+										<a href="/2025/finalis/m-1.webp" data-glightbox="MTAFIMPACT">
+											<h3 style="text-shadow:0 0 8px rgb(24, 13, 56) !important;">#1 MTAF IMPACT</h3>
+											<hr class="custom-gradient-hr3"/>
+											<p class="prize-subtitle" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">#UMKMSIAP</p>
+											<h4 class="prize-subtitle mb-0" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">Rp 100.000.000</h4>
+										</a>
 									</div>
 								</div>
 								<div class="col-12 col-md-4 col-lg-4 text-center d-flex">
-									<div class="section-content silver-gradient w-100 h-100 d-flex align-items-center justify-content-center">
-										<h3 style="margin-bottom:0px; text-shadow:0 0 8px rgb(24, 13, 56) !important;">#2 KancaKids</h3>
+									<div class="section-content silver-gradient w-100 h-100 d-flex flex-column align-items-center justify-content-center">
+										<a href="/2025/finalis/m-2.webp" data-glightbox="KancaKids">
+											<h3 style="text-shadow:0 0 8px rgb(24, 13, 56) !important;">#2 KancaKids</h3>
+											<hr class="custom-gradient-hr3"/>
+											<p class="prize-subtitle" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">Kanca</p>
+											<h4 class="prize-subtitle mb-0" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">Rp 50.000.000</h4>
+										</a>
 									</div>
 								</div>
 								<div class="col-12 col-md-4 col-lg-4 text-center d-flex">
-									<div class="section-content bronze-gradient w-100 h-100 d-flex align-items-center justify-content-center">
-										<h3 style="margin-bottom:0px; text-shadow:0 0 8px rgb(24, 13, 56) !important;">#3 Chain Intelligence</h3>
+									<div class="section-content bronze-gradient w-100 h-100 d-flex flex-column align-items-center justify-content-center">
+										<a href="/2025/finalis/m-3.webp" data-glightbox="ChainIntelligence">
+											<h3 style="text-shadow:0 0 8px rgb(24, 13, 56) !important;">#3 Chain Intelligence</h3>
+											<hr class="custom-gradient-hr3"/>
+											<p class="prize-subtitle" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">CIA</p>
+											<h4 class="prize-subtitle mb-0" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">Rp 20.000.000</h4>
+										</a>
 									</div>
 								</div>
 							</div>
-								<div class="row pt-lg-4 mb-lg-4 justify-content-center align-items-stretch">
-									<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1  mt-2 d-flex">
-										<div class="prize custom-gradient-border pt-4 pb-2 w-100 h-100 d-flex align-items-center justify-content-center">
-										<h5>#4 Double Core Team</h5>
+
+							<div class="row pt-lg-4 mb-lg-4 justify-content-center align-items-stretch  g-2 g-lg-4">
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1 mt-2 d-flex">
+									<div class="prize custom-gradient-border pt-4 pb-2 w-100 h-100 align-items-center justify-content-center">
+										<a href="/2025/finalis/m-4.webp" data-glightbox="DoubleCoreTeam">
+											<h5>#4 Double Core Team</h5>
+											<hr class="custom-gradient-hr"/>
+											<p class="prize-subtitle">SIBISA</p>
+											<h4 class="prize-subtitle">Rp 10.000.000</h4>
+										</a>
 									</div>
 								</div>
-									<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1  mt-2 d-flex">
-										<div class="prize custom-gradient-border pt-4 pb-2 w-100 h-100 d-flex align-items-center justify-content-center">
-										<h5>#5 Tiwas Tak Gondeli Tenanan</h5>
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1  mt-2 d-flex">
+									<div class="prize custom-gradient-border pt-4 pb-2 w-100 h-100 align-items-center justify-content-center">
+										<a href="/2025/finalis/m-5.webp" data-glightbox="TiwasTakGondeliTenanan">
+											<h5>#5 Tiwas Tak Gondeli Tenanan</h5>
+											<hr class="custom-gradient-hr"/>
+											<p class="prize-subtitle">GardaChain</p>
+											<h4 class="prize-subtitle">Rp 10.000.000</h4>
+										</a>
+									</div>
+								</div>
+							</div>
+
+
+
+							<section class="hackathon2025 d-none">
+								<div class="section-title text-center pb-4">
+									<p>2025</p>
+								</div>
+								<div class="container">
+									<div class="row g-3">
+										<div class="col-12 col-md-6 col-lg-3">
+											<a href="/2025/finalis/m-1.webp" data-glightbox="MTAFIMPACT">
+												<img src="/2025/finalis/m-1.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 1">
+											</a>
+										</div>
+										<div class="col-12 col-md-6 col-lg-3">
+											<a href="/2025/finalis/m-2.webp" data-glightbox="KancaKids">
+												<img src="/2025/finalis/m-2.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 2">
+											</a>
+										</div>
+										<div class="col-12 col-md-6 col-lg-3">
+											<a href="/2025/finalis/m-3.webp" data-glightbox="ChainIntelligence">
+												<img src="/2025/finalis/m-3.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 3">
+											</a>
+										</div>
+										<div class="col-12 col-md-6 col-lg-3">
+											<a href="/2025/finalis/m-4.webp" data-glightbox="DoubleCoreTeam">
+												<img src="/2025/finalis/m-4.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 4">
+											</a>
+										</div>
+										<div class="col-12 col-md-6 col-lg-3">
+											<a href="/2025/finalis/m-5.webp" data-glightbox="TiwasTakGondeliTenanan">
+												<img src="/2025/finalis/m-5.webp" class="img-fluid rounded shadow-sm" alt="Gallery Image 5">
+											</a>
+										</div>
+									</div>
+								</div>
+							</section>
+
+							<br/>
+							<hr class="custom-gradient-hr2 w-100"/>
+							<div class="text-center pt-4">
+								<h4>Innovation Frontier 1</h4>
+							</div>
+
+							<div class="row pt-lg-4 mb-lg-4 g-2 g-lg-4">
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1">
+									<div class="prize custom-gradient-border">
+										<h5>FAAS</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle">SRIKANDI</p>
+										<p class="prize-subtitle mb-0">RP 7.000.000</p>
+									</div>
+								</div>
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1">
+									<div class="prize custom-gradient-border">
+										<h5>Geprek Zago</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle">Deschain  </p>
+										<p class="prize-subtitle mb-0">RP 7.000.000</p>
+									</div>
+								</div>
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1">
+									<div class="prize custom-gradient-border">
+										<h5>Mataku</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle">MATA GARUDA</p>
+										<p class="prize-subtitle mb-0">RP 7.000.000</p>
+									</div>
+								</div>
+							</div>
+
+							<br/>
+							<hr class="custom-gradient-hr2 w-100"/>
+							<div class="text-center pt-4">
+								<h4>Innovation Frontier 2</h4>
+							</div>
+
+							<div class="row pt-lg-4 mb-lg-4 justify-content-center align-items-stretch g-2 g-lg-4">
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1">
+									<div class="prize custom-gradient-border">
+										<h5>Sagara</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle">Sagara</p>
+										<p class="prize-subtitle mb-0">RP 4.500.000</p>
+									</div>
+								</div>
+								<div class="col-12 col-md-6 col-lg-4 pb-1 pt-1">
+									<div class="prize custom-gradient-border">
+										<h5>NLxOTI</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle">ARCHANGEL </p>
+										<p class="prize-subtitle mb-0">RP 4.500.000</p>
 									</div>
 								</div>
 							</div>
 						</div>
 
-						
+
+						<div class="section-content mt-3">
+							<div class="text-center pt-5 pb-4">
+								<h2>Semifinalis<br/>Mahasiswa & Profesional</h2>
+							</div>
+
+							<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-5 g-3 pt-lg-4 mb-lg-4 align-items-stretch justify-content-center">
+								<div class="col d-flex">
+									<div class="prize custom-gradient-border w-100 h-100 d-flex flex-column align-items-center justify-content-center text-center">
+										<h5 class="prize-subtitle mb-0" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">SamaRata</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">SamaRata</p>
+										<p class="prize-subtitle mb-0">RP 4.000.000</p>
+									</div>
+								</div>
+								<div class="col d-flex">
+									<div class="prize custom-gradient-border w-100 h-100 d-flex flex-column align-items-center justify-content-center text-center">
+										<h5 class="prize-subtitle mb-0" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">Wani Menang!</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">#SakuNegara</p>
+										<p class="prize-subtitle mb-0">RP 4.000.000</p>
+									</div>
+								</div>
+								<div class="col d-flex">
+									<div class="prize custom-gradient-border w-100 h-100 d-flex flex-column align-items-center justify-content-center text-center">
+										<h5 class="prize-subtitle mb-0" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">Indonesia Emas</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">Partisipro</p>
+										<p class="prize-subtitle mb-0">RP 4.000.000</p>
+									</div>
+								</div>
+								<div class="col d-flex">
+									<div class="prize custom-gradient-border w-100 h-100 d-flex flex-column align-items-center justify-content-center text-center">
+										<h5 class="prize-subtitle mb-0" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">Seryu Labs</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">JudolBlocker</p>
+										<p class="prize-subtitle mb-0">RP 4.000.000</p>
+									</div>
+								</div>
+								<div class="col d-flex">
+									<div class="prize custom-gradient-border w-100 h-100 d-flex flex-column align-items-center justify-content-center text-center">
+										<h5 class="prize-subtitle mb-0" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">ApAjGas</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle custom-text-size-14" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">Sistem Monitoring Anggaran Pemda dengan Anomaly Detection dan Clustering</p>
+										<p class="prize-subtitle mb-0">RP 4.000.000</p>
+									</div>
+								</div>
+								<div class="col d-flex">
+									<div class="prize custom-gradient-border w-100 h-100 d-flex flex-column align-items-center justify-content-center text-center">
+										<h5 class="prize-subtitle mb-0" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">Cakrawala Digital</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">VerasiData</p>
+										<p class="prize-subtitle mb-0">RP 4.000.000</p>
+									</div>
+								</div>
+								<div class="col d-flex">
+									<div class="prize custom-gradient-border w-100 h-100 d-flex flex-column align-items-center justify-content-center text-center">
+										<h5 class="prize-subtitle mb-0" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">The Funatics</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">FINEVO+</p>
+										<p class="prize-subtitle mb-0">RP 4.000.000</p>
+									</div>
+								</div>
+								<div class="col d-flex">
+									<div class="prize custom-gradient-border w-100 h-100 d-flex flex-column align-items-center justify-content-center text-center">
+										<h5 class="prize-subtitle mb-0" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">Pika Pikachu</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">KIP+</p>
+										<p class="prize-subtitle mb-0">RP 4.000.000</p>
+									</div>
+								</div>
+								<div class="col d-flex">
+									<div class="prize custom-gradient-border w-100 h-100 d-flex flex-column align-items-center justify-content-center text-center">
+										<h5 class="prize-subtitle mb-0" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">BEYOND</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">JALA</p>
+										<p class="prize-subtitle mb-0">RP 4.000.000</p>
+									</div>
+								</div>
+								<div class="col d-flex">
+									<div class="prize custom-gradient-border w-100 h-100 d-flex flex-column align-items-center justify-content-center text-center">
+										<h5 class="prize-subtitle mb-0" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">Dextektif</h5>
+										<hr class="custom-gradient-hr"/>
+										<p class="prize-subtitle" style="text-shadow:0 0 8px rgb(24, 13, 56) !important; color: #fff !important;">Dextektif</p>
+										<p class="prize-subtitle mb-0">RP 4.000.000</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
 						<div class="prize-content mx-0 mx-lg-5 mt-4 mb-3">
-							<h5 class="mb-0">Selamat kepada seluruh pemenang dan finalis atas dedikasi, inovasi, dan kerja kerasnya.</h5>
+							<h5 class="mb-0">Selamat kepada seluruh pemenang, semifinalis, dan finalis atas dedikasi, inovasi, dan kerja kerasnya.</h5>
 						</div>
 
 						<div class="prize-content mx-0 mx-lg-5 mt-4 mb-3">
